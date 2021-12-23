@@ -3753,9 +3753,7 @@ exports.basic = {
                             TYPE: exports.bullet,
                             LABEL: 'Assassin',
                             ALT_FIRE: true,
-                        }, }, {
-                    POSITION: [   5,    8.5,   -1.6,     8,      0,      0,      0,   ], 
-                        }, {   
+                        }, }, {  
                     POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
@@ -5697,10 +5695,12 @@ exports.bot = {
 
             exports.devACs.UPGRADES_TIER_4 = [];
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.single];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pummeler, exports.single];
 
-    exports.basic.UPGRADES_TIER_2 = [exports.smash];
+    exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler];
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash];
+        exports.mauler.UPGRADES_TIER_3 = [exports.spike];
+        exports.autopummeler.UPGRADES_TIER_3 = [exports.autosmash];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.hexa, exports.gunner, exports.cruiser];
         exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble, exports.battleship];
