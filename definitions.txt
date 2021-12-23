@@ -655,6 +655,30 @@ exports.obstacle = {
         LABEL: "Obstacle",
     };
 
+    exports.mazeObstacle = {
+        TYPE: 'wall',
+        DAMAGE_CLASS: 1,
+        LABEL: 'Maze Wall',
+        FACING_TYPE: '',
+        SHAPE: 4,
+        BODY: {
+            PUSHABILITY: 10000,
+            HEALTH: 10000,
+            SHIELD: 10000,
+            REGEN: 10000,
+            DAMAGE: 10000,
+            RESIST: 10000,
+            STEALTH: 10000,
+            ACCELERATION: 10000,
+        },
+        VALUE: 0,
+        SIZE: 100,
+        COLOR: 16,
+        VARIES_IN_SIZE: false,
+        GIVE_KILL_MESSAGE: true,
+        ACCEPTS_SCORE: false,
+    };
+
 // WEAPONS
 const wepHealthFactor = 0.5;
 const wepDamageFactor = 1.5;
@@ -726,7 +750,7 @@ exports.trap = {
     TYPE: 'trap',
     ACCEPTS_SCORE: false,
     SHAPE: -3, 
-    MOTION_TYPE: 'glide', // def
+    MOTION_TYPE: 'motor', // def
     FACING_TYPE: 'turnWithSpeed',
     HITS_OWN_TYPE: 'push',
     DIE_AT_RANGE: true,
@@ -736,7 +760,7 @@ exports.trap = {
         RANGE: 450,
         DENSITY: 2.5,
         RESIST: 2.5,
-        SPEED: 0,
+        SPEED: 0.5,
     },
 };
     exports.block = {
