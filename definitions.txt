@@ -3978,7 +3978,7 @@ exports.basic = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.flank]),
                             TYPE: exports.bullet,
-                        }, },
+                        }, }, {
                     POSITION: [  13,    11,      1,      0,      0,     180,     0,   ],
                         }, {
                     POSITION: [   4,    11,     1.7,    13,      0,     180,     0,   ], 
