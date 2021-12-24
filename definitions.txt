@@ -4179,7 +4179,7 @@ exports.miniboss = {
         rgn: 0.7,
         mob: 0,        
     }),
-    LEVEL: 45,
+    LEVEL: 60,
     CONTROLLERS: ['nearestDifferentMaster', 'minion', 'canRepel'],
     AI: { NO_LEAD: true, },
     FACING_TYPE: 'autospin',
@@ -4213,7 +4213,7 @@ exports.miniboss2 = {
         VALUE: 150000,
         BODY: {
             FOV: 1.3,
-            SPEED: base.SPEED * 0.25,
+            SPEED: base.SPEED * 0.25 * 5,
             HEALTH: 25,
             SHIELD: base.SHIELD * 1.25,
             REGEN: base.REGEN,
@@ -4230,7 +4230,7 @@ exports.miniboss2 = {
         VALUE: 150000,
         BODY: {
             FOV: 1.3,
-            SPEED: base.SPEED * 0.25,
+            SPEED: base.SPEED * 0.25 * 5,
             HEALTH: 25,
             SHIELD: base.SHIELD * 1.25,
             REGEN: base.REGEN,
@@ -4355,7 +4355,7 @@ exports.miniboss2 = {
             VALUE: 250000,
             BODY: {
                 FOV: 1.3,
-                SPEED: base.SPEED * 0.1,
+                SPEED: base.SPEED * 0.1 * 5,
                 HEALTH: 60,
                 SHIELD: base.SHIELD * 2,
                 REGEN: base.REGEN,
@@ -4453,7 +4453,7 @@ exports.miniboss2 = {
             VALUE: 250000,
             BODY: {
                 FOV: 1.3,
-                SPEED: base.SPEED * 0.1,
+                SPEED: base.SPEED * 0.1 * 5,
                 HEALTH: 60,
                 SHIELD: base.SHIELD * 2,
                 REGEN: base.REGEN,
