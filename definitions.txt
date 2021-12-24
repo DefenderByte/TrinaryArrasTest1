@@ -5696,14 +5696,132 @@ exports.miniboss2 = {
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
+    LEVEL: 45,
+    NAME: '[AI] ',
+    DANGER: 8,
     SIZE: 12,
+    COLOR: 16,
+    BODY: {
+        SPEED: base.SPEED * 0.05,
+        FOV: base.FOV * 1.25,
+        HEALTH: base.HEALTH * 0.25,
+        DAMAGE: base.DAMAGE * 0.16,
+        SHIELD: base.SHIELD * 0.15,
+        REGEN: base.REGEN * 0.01,
+    },
     //COLOR: 17,
-    NAME: "ai_",
     CONTROLLERS: [
-        'nearestDifferentMaster', 'mapTargetToGoal', 'fleeAtLowHealth'
+        'nearestDifferentMaster', 'mapAltToFire', 'minion', 'fleeAtLowHealth'
     ],
     AI: { STRAFE: true, },
-};
+}
+exports.botT1 = {
+    PARENT: [exports.bot],
+    AUTO_UPGRADE: 'random',
+    FACING_TYPE: 'looseToTarget',
+    DANGER: 8,
+    SIZE: 12,
+    COLOR: 16,
+    SKILL: skillSet({
+        rld: 1,
+        dam: 0.2,
+        pen: 0.5,
+        str: 0.3,
+        spd: 1,
+        atk: 0,
+        hlt: 0,
+        shi: 0,
+        rgn: 0,
+        mob: 0,        
+    }),
+    BODY: {
+        SPEED: base.SPEED * 0.1,
+        FOV: base.FOV * 1.25,
+        HEALTH: base.HEALTH * 0.5,
+        DAMAGE: base.DAMAGE * 0.45,
+        SHIELD: base.SHIELD * 0.32,
+        REGEN: base.REGEN * 0.01,
+    },
+    AI: { STRAFE: true, },
+}
+exports.botT2 = {
+    PARENT: [exports.bot],
+    AUTO_UPGRADE: 'random',
+    FACING_TYPE: 'looseToTarget',
+    DANGER: 8,
+    SIZE: 12,
+    COLOR: 8,
+    SKILL: skillSet({
+        rld: 1,
+        dam: 0.8,
+        pen: 0.6,
+        str: 0.8,
+        spd: 1,
+        atk: 0.3,
+        hlt: 0.5,
+        shi: 0.2,
+        rgn: 0.1,
+        mob: 0,        
+    }),
+    BODY: {
+        SPEED: base.SPEED * 0.1,
+        FOV: base.FOV * 1.25,
+        HEALTH: base.HEALTH * 1.2,
+        DAMAGE: base.DAMAGE * 0.975,
+        SHIELD: base.SHIELD * 0.875,
+        REGEN: base.REGEN * 0.01,
+    },
+    AI: { STRAFE: true, },
+}
+exports.botT3 = {
+    PARENT: [exports.bot],
+    AUTO_UPGRADE: 'random',
+    FACING_TYPE: 'looseToTarget',
+    DANGER: 8,
+    COLOR: 36,
+    SKILL: skillSet({
+        rld: 1,
+        dam: 1,
+        pen: 1,
+        str: 1,
+        spd: 1,
+        atk: 1,
+        hlt: 1,
+        shi: 1,
+        rgn: 1,
+        mob: 0,        
+    }),
+    BODY: {
+        SPEED: base.SPEED * 0.025,
+        FOV: base.FOV * 2.25,
+        HEALTH: base.HEALTH * 1.6,
+        DAMAGE: base.DAMAGE * 1.5,
+        SHIELD: base.SHIELD * 1.25,
+        REGEN: base.REGEN * 0.01,
+    },
+    AI: { STRAFE: true, },
+    VALUE: 300000,
+}
+exports.botT3_A = {
+    PARENT: [exports.botT3],
+    NAME: '𝓐𝓘 ',
+}
+exports.botT3_B = {
+    PARENT: [exports.botT3],
+    NAME: '𝔸𝕀 ',
+}
+exports.botT3_C = {
+    PARENT: [exports.botT3],
+    NAME: 'ᴀɪ ',
+}
+exports.botT3_D = {
+    PARENT: [exports.botT3],
+    NAME: '𝑨𝑰 ',
+}
+exports.botT3_E = {
+    PARENT: [exports.botT3],
+    NAME: '卂丨 ',
+}
 
 // UPGRADE PATHS
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
