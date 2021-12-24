@@ -1603,6 +1603,9 @@ exports.chooseBotName = () => {
         'In Russia, PUPPET PUTS HAND IN YOU',
         'In Russia, KENNY KILLS YOU',
         'In Russia, JOKES MAKE YOU',
+        // My suggested names
+        'In Russia, PUMMELER UPGRADES FROM SMASHER/MAULER/AUTO-PUMMELER/MINIMINE/DASHER/CLIPPER/PUMMELER CEPTION/SCANNER/GLASS PUMMELER/MINI BONKER/PUNCHER/NUKER BOI/ARMED DIRECTOR',
+        'In Russia, DO NOT STEAL OR DIE',
     ]);
 };
 
