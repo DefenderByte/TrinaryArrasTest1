@@ -750,7 +750,7 @@ exports.trap = {
     TYPE: 'trap',
     ACCEPTS_SCORE: false,
     SHAPE: -3, 
-    MOTION_TYPE: 'motor', // def
+    MOTION_TYPE: 'glide', // def
     FACING_TYPE: 'turnWithSpeed',
     HITS_OWN_TYPE: 'push',
     DIE_AT_RANGE: true,
@@ -4180,7 +4180,7 @@ exports.miniboss = {
         mob: 0,        
     }),
     LEVEL: 60,
-    CONTROLLERS: ['nearestDifferentMaster', 'minion', 'canRepel'],
+    CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     AI: { NO_LEAD: true, },
     FACING_TYPE: 'autospin',
     HITS_OWN_TYPE: 'hard',
@@ -5711,7 +5711,7 @@ exports.bot = {
     },
     //COLOR: 17,
     CONTROLLERS: [
-        'nearestDifferentMaster', 'mapAltToFire', 'minion', 'fleeAtLowHealth'
+        'nearestDifferentMaster', 'mapTargetToGoal', 'fleeAtLowHealth'
     ],
     AI: { STRAFE: true, },
 }
