@@ -1839,8 +1839,10 @@ exports.basic = {
             };
             exports.autopummeler = makeAuto(exports.pummeler, 'Auto-Pummeler', { type: exports.autoSmasherTurret, size: 11, });
             exports.autopummeler.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl,];
+            exports.autopummeler.STAT_NAMES = statnames.autosmash;
             exports.autosmash = makeAuto(exports.smash, 'Auto-Smasher', { type: exports.autoSmasherTurret, size: 11, });
             exports.autosmash.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl,];
+            exports.autosmash.STAT_NAMES = statnames.autosmash;
 
     exports.twin = {
         PARENT: [exports.genericTank],
@@ -1912,12 +1914,12 @@ exports.basic = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.machgun]),
                             TYPE: exports.bullet,
-                        }, },  { 
+                        }, }, { 
                     POSITION: [  14,     3,     4.0,     3,      0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.machgun]),
                             TYPE: exports.bullet,
-                        }, }, 
+                        }, },
                 ]
             };
             exports.autogunner = makeAuto(exports.gunner);            
@@ -3991,6 +3993,7 @@ exports.basic = {
             exports.bushwhack = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Bushwhacker',
+                STAT_NAMES: statnames.generic,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.7, 
                     FOV: base.FOV * 1.2,
@@ -4014,7 +4017,7 @@ exports.basic = {
             exports.twinbuilder = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Twin Builder',
-                STAT_NAMES: statnames.trap,
+                STAT_NAMES: statnames.block,
                 DANGER: 7,
                 BODY: {
                     SPEED: base.SPEED * 0.8,
