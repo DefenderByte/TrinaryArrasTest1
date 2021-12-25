@@ -380,6 +380,183 @@ exports.food = {
 
 const basePolygonDamage = 1;
 const basePolygonHealth = 2;
+exports.orangepentagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 3,
+    },
+    LABEL: 'Orange Pentagon',
+    VALUE: 19500,
+    SHAPE: 5,
+    SIZE: 16,
+    COLOR: 207,
+    BODY: {
+        DAMAGE: 3,
+        DENSITY: 8,
+        HEALTH: 100,
+        RESIST: 1.25,
+        PENETRATION: 1.1,
+    },
+    DRAW_HEALTH: true,
+};
+exports.orangetriangle = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 2,
+    },
+    LABEL: 'Orange Triangle',
+    VALUE: 7500,
+    SHAPE: 3,
+    SIZE: 9,
+    COLOR: 207,
+    BODY: {
+        DAMAGE: 1,
+        DENSITY: 6,
+        HEALTH: 30,
+        RESIST: 1.15,
+        PENETRATION: 1.5,
+    },
+    DRAW_HEALTH: true,
+};
+exports.orangesquare = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 1,
+    },
+    LABEL: 'Orange Square',
+    VALUE: 1500,
+    SHAPE: 4,
+    SIZE: 10,
+    COLOR: 207,
+    BODY: {
+        DAMAGE: 0.5,
+        DENSITY: 4,
+        HEALTH: 20,
+        PENETRATION: 2,
+    },
+    DRAW_HEALTH: true,
+    INTANGIBLE: false,
+};
+
+exports.greenbigPentagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 4,
+    },
+    LABEL: 'Green Beta Pentagon',
+    VALUE: 25000,
+    SHAPE: 5,
+    SIZE: 30,
+    COLOR: 31,
+    BODY: {
+        DAMAGE: 2 * basePolygonDamage,
+        DENSITY: 30,
+        HEALTH: 125 * basePolygonHealth,
+        RESIST: Math.pow(1.25, 2),
+        SHIELD: 20 * basePolygonHealth,
+        REGEN: 0.2,
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true,
+};
+exports.greenhexagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 4,
+    },
+    LABEL: 'Green Hexagon',
+    VALUE: 45000,
+    SHAPE: 6,
+    SIZE: 28,
+    COLOR: 31,
+    BODY: {
+        DAMAGE: 2 * basePolygonDamage,
+        DENSITY: 10,
+        HEALTH: 400,
+        RESIST: 1.45,
+        PENETRATION: 1,
+    },
+    DRAW_HEALTH: true,
+};
+exports.greenpentagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 3,
+    },
+    LABEL: 'Green Pentagon',
+    VALUE: 30000,
+    SHAPE: 5,
+    SIZE: 16,
+    COLOR: 31,
+    BODY: {
+        DAMAGE: 3,
+        DENSITY: 8,
+        HEALTH: 200,
+        RESIST: 1.25,
+        PENETRATION: 1.1,
+    },
+    DRAW_HEALTH: true,
+};
+exports.greentriangle = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 2,
+    },
+    LABEL: 'Green Triangle',
+    VALUE: 7000,
+    SHAPE: 3,
+    SIZE: 9,
+    COLOR: 31,
+    BODY: {
+        DAMAGE: 1,
+        DENSITY: 6,
+        HEALTH: 60,
+        RESIST: 1.15,
+        PENETRATION: 1.5,
+    },
+    DRAW_HEALTH: true,
+};
+exports.greensquare = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 1,
+    },
+    LABEL: 'Green Square',
+    VALUE: 2000,
+    SHAPE: 4,
+    SIZE: 10,
+    COLOR: 31,
+    BODY: {
+        DAMAGE: 0.5,
+        DENSITY: 4,
+        HEALTH: 20,
+        PENETRATION: 2,
+    },
+    DRAW_HEALTH: true,
+    INTANGIBLE: false,
+};
+
+exports.gem = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 0,
+    },
+    LABEL: 'Gem',
+    VALUE: 2000,
+    SHAPE: 6,
+    SIZE: 5,
+    COLOR: 0,
+    BODY: {
+        DAMAGE: basePolygonDamage/4,
+        DENSITY: 4,
+        HEALTH: 10,
+        PENETRATION: 2,
+        RESIST: 2,
+        PUSHABILITY: 0.25,
+    },
+    DRAW_HEALTH: true,
+    INTANGIBLE: false,
+};
 exports.hugePentagon = {
     PARENT: [exports.food],
     FOOD: {
@@ -537,73 +714,6 @@ exports.egg = {
     DRAW_HEALTH: false,
 };
 
-exports.greenpentagon = {
-    PARENT: [exports.food],
-    LABEL: 'Pentagon',
-    VALUE: 30000,
-    SHAPE: 5,
-    SIZE: 16,
-    COLOR: 1,
-    BODY: {
-        DAMAGE: 3,
-        DENSITY: 8,
-        HEALTH: 200,
-        RESIST: 1.25,
-        PENETRATION: 1.1,
-    },
-    DRAW_HEALTH: true,
-};
-exports.greentriangle = {
-    PARENT: [exports.food],
-    LABEL: 'Triangle',
-    VALUE: 7000,
-    SHAPE: 3,
-    SIZE: 9,
-    COLOR: 1,
-    BODY: {
-        DAMAGE: 1,
-        DENSITY: 6,
-        HEALTH: 60,
-        RESIST: 1.15,
-        PENETRATION: 1.5,
-    },
-    DRAW_HEALTH: true,
-};
-exports.greensquare = {
-    PARENT: [exports.food],
-    LABEL: 'Square',
-    VALUE: 2000,
-    SHAPE: 4,
-    SIZE: 10,
-    COLOR: 1,
-    BODY: {
-        DAMAGE: 0.5,
-        DENSITY: 4,
-        HEALTH: 20,
-        PENETRATION: 2,
-    },
-    DRAW_HEALTH: true,
-    INTANGIBLE: false,
-};
-
-exports.gem = {
-    PARENT: [exports.food],
-    LABEL: 'Gem',
-    VALUE: 2000,
-    SHAPE: 6,
-    SIZE: 5,
-    COLOR: 0,
-    BODY: {
-        DAMAGE: basePolygonDamage/4,
-        DENSITY: 4,
-        HEALTH: 10,
-        PENETRATION: 2,
-        RESIST: 2,
-        PUSHABILITY: 0.25,
-    },
-    DRAW_HEALTH: true,
-    INTANGIBLE: false,
-};
 exports.bigObstacle = {
     TYPE: 'wall',
     DAMAGE_CLASS: 1,
