@@ -2383,7 +2383,7 @@ exports.basic = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  27,    8.5,     1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
                         TYPE: exports.bullet,
                     }, },
             ],
@@ -2401,7 +2401,7 @@ exports.basic = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  32,    8.5,     1,      0,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.ranger]),
                             TYPE: exports.bullet,
                         }, }, {
                     POSITION: [   5,    8.5,    -1.6,    8,      0,      0,      0,   ], 
