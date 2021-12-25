@@ -999,10 +999,10 @@ exports.missile = {
             RANGE: 120,
         },
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [   6,   10.5,     1.5,    9,      0,     180,    0.5,   ], 
+            POSITION: [   6,   10.5,     1.5,    9,      0,     180,     1,    ], 
                 PROPERTIES: {
                     AUTOFIRE: true,
-                    SHOOT_SETTINGS: combineStats([g.basic, g.rocket, g.double_reload, g.low_power, g.much_more_recoil, g.more_speed, g.more_speed]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.rocket, g.double_reload, g.low_power, g.much_more_recoil, g.more_speed]),
                     TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
                     STAT_CALCULATOR: gunCalcNames.thruster,
                 }, },
@@ -2482,7 +2482,7 @@ exports.basic = {
                         }, {
                     POSITION: [ 16.5,  11.5,   -1.5,     0,      0,      0,      0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.arty]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.skim]),
                             TYPE: exports.rocket,
                             STAT_CALCULATOR: gunCalcNames.sustained,
                         }, },
