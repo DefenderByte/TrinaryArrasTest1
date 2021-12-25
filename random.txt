@@ -1547,7 +1547,7 @@ exports.chooseBotName = () => {
         'In Russia, SHINY POLYGON FINDS YOU', 'You finds Shiny Polygon',
         'In Russia, REALITY ENDS RAGNAROK', 'Ragnarok ends reality',
         'In Russia, RAGNAROK BELIEVES IN YOU', 'You believes in Ragnarok',
-        'In Russia, THE COKE CASSOWARIES TREMOR AS THE WORLD REBORN ANEW', 'The world tremors as the Coke cassowaries reborn anew!',
+        'In Russia, THE COKE CASSOWARIES TREMOR AS THE WORLD REBORN ANEW', 'The world tremors as the Coke Cassowaries reborn anew!',
         'In Russia, ALVISS IS RIPPED APART AND THE REALMS ARE DARKEN', 'The realms are ripped apart and Alviss is darken',
         'In Russia, ARENA CLOSES ARENA CLOSER', 'Arena Closer closes arena',
         'In Russia, WE SHOOT BULLETS TO GAIN SCORE WITH POLYGONS AS AMMUNITION', 'We shoot Polygons to gain score with bullets as ammunition',
@@ -1592,7 +1592,7 @@ exports.chooseBotName = () => {
         'In Russia, MOUSE TRAPS YOU',
         'In Russia, DEERS HUNT YOU',
         'In Russia, MONKEY SPANKS YOU',
-        'In Russia, SPOON BENDS YOU',
+        'In Russia, A SPOON BENDS YOU',
         'In Russia, ICE CREAM TRUCK CHASES KIDS',
         'In Russia, SANDWHICH MAKES YOU FOR DINNER',
         'In Russia, DOG WALKS YOU',
@@ -1606,6 +1606,9 @@ exports.chooseBotName = () => {
         // My suggested names
         'In Russia, PUMMELER UPGRADES FROM SMASHER/MAULER/AUTO-PUMMELER/MINIMINE/DASHER/CLIPPER/PUMMELER CEPTION/SCANNER/GLASS PUMMELER/MINI BONKER/PUNCHER/NUKER BOI/ARMED DIRECTOR',
         'In Russia, DO NOT STEAL OR DIE',
+        'Krios', // Nest Defender 1
+        'Tethys', // Nest Defender 2
+        'Mnemosyne', // Nest Defender 3
     ]);
 };
 
@@ -2689,7 +2692,7 @@ case 'fiocel':
     ], n) ;
 case 'nyxcel':
     return exports.chooseN([
-        'Nyx', //Since when do pink triangles use tanks?
+        'Nyx', //Since when do pink triangles use tanks? or maybe he is an eternal or a Nest Defender?
     ], n) ;
 case 'chacel':
     return exports.chooseN([
@@ -2698,6 +2701,14 @@ case 'chacel':
 case 'eucel':
     return exports.chooseN([
         'E:U', //K-Pop strikes again
+    ], n) ;
+case 'defbtsarmy':
+    return exports.chooseN([
+        'Artemis',
+        'Odin',
+        'Apollo', // 13
+        'Nyx',
+        'Thor', // z46 says It’s not based off of Avengers. It’s based off of Norse Mythology
     ], n) ;
     case 'poly': //Influx
     return exports.chooseN([
