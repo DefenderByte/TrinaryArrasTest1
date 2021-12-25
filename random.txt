@@ -2565,6 +2565,18 @@ case 'zapcel':
         'Zaphkiel', //Beer Casso on Steroids
         'Santa', //Beer Casso on Steroids
     ], n);
+case 'artcel':
+    return exports.chooseN([
+        'Artemis',
+    ], n);
+case 'demcel':
+    return exports.chooseN([
+        'Demeter', //kinda sus bc he green
+    ], n);
+case 'odicel':
+    return exports.chooseN([
+        'Odin',
+    ], n);
 case 'sscel':
     return exports.chooseN([
         'SS Pirashiaha', //The abbreviation of Salt Shaker is SS
