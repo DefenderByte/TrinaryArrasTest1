@@ -7446,6 +7446,10 @@ exports.guardian_lite = {
     PARENT: [exports.sentry],
     LABEL: 'Guardian Lite',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 21.5,
+    },
     GUNS: [{
         POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
             PROPERTIES: {
@@ -7463,6 +7467,10 @@ exports.crasher_dasher = {
     PARENT: [exports.sentry],
     LABEL: 'Crasher Dasher',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 20,
+    },
     GUNS: [{
         POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
             PROPERTIES: {
@@ -7486,6 +7494,10 @@ exports.crash_fighter = {
     PARENT: [exports.sentry],
     LABEL: 'Crash Fighter',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 21.5,
+    },
     GUNS: [{
         POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
             PROPERTIES: {
@@ -7513,6 +7525,10 @@ exports.caltrop_fighter = {
     LABEL: 'Caltrop Fighter',
     FACING_TYPE: 'autospin',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 25,
+    },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  15,     7,      1,     -2,      0,      60,     0,   ], 
             }, {
@@ -7541,6 +7557,10 @@ exports.guardian_lite2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Guardian Lite',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 21.5,
+    },
     GUNS: [{
         POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
             PROPERTIES: {
@@ -7558,6 +7578,10 @@ exports.crasher_dasher2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Crasher Dasher',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 20,
+    },
     GUNS: [{
         POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
             PROPERTIES: {
@@ -7581,6 +7605,10 @@ exports.crash_fighter2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Crash Fighter',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 21.5,
+    },
     GUNS: [{
         POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
             PROPERTIES: {
@@ -7608,6 +7636,10 @@ exports.caltrop_fighter2 = {
     LABEL: 'Caltrop Fighter',
     FACING_TYPE: 'autospin',
     DANGER: 3,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 25,
+    },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  15,     7,      1,     -2,      0,      60,     0,   ], 
             }, {
