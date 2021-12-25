@@ -5121,8 +5121,8 @@ exports.sentrySwarm = {
         }, },
     ],
 };
-exports.sentryGun = makeAuto(exports.sentry, 'Sentry', { type: exports.heavy3gun, size: 12, });
-exports.sentryTrap = makeAuto(exports.sentry, 'Sentry', { type: exports.trapTurret, size: 12, });
+exports.sentryGun = makeAuto(exports.sentry, 'Sentry', { type: exports.sentryTurret, size: 12, });
+exports.sentryTrap = makeAuto(exports.sentry, 'Sentry', { type: exports.turretTrap, size: 12, });
 exports.sentrySnipe = makeAuto(exports.sentry, 'Sentry', { type: exports.turretSnipe, size: 12, });
 exports.sentrySwarm2 = {
     PARENT: [exports.sentry2],
@@ -5229,7 +5229,7 @@ exports.miniboss2 = {
                         },
             ],
         };
-        exports.elite_sprayer2 = { 
+        exports.elite_sprayer_nonauto = { 
             PARENT: [exports.elite2],
             LABEL: 'Harcadium Sprayer',
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -7442,6 +7442,201 @@ exports.miniboss2 = {
                 ],
             };
 
+exports.guardian_lite = {
+    PARENT: [exports.sentry],
+    LABEL: 'Guardian Lite',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, },
+    ],
+};
+exports.crasher_dasher = {
+    PARENT: [exports.sentry],
+    LABEL: 'Crasher Dasher',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  12,     0,      0,      0,     360,   1, ], 
+            TYPE: [exports.autoTurret],
+            },
+    ],
+};
+exports.crash_fighter = {
+    PARENT: [exports.sentry],
+    LABEL: 'Crash Fighter',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,      60,    180,   0, ], 
+            TYPE: [exports.auto3gun],
+            }, {
+        POSITION: [  14,     8,      0,     300,    180,   0, ], 
+            TYPE: [exports.auto3gun],
+            },
+    ],
+};
+exports.caltrop_fighter = {
+    PARENT: [exports.sentry],
+    LABEL: 'Caltrop Fighter',
+    FACING_TYPE: 'autospin',
+    DANGER: 3,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  15,     7,      1,     -2,      0,      60,     0,   ], 
+            }, {
+        POSITION: [   3,     7,     1.7,     13,     0,      60,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, }, {
+        POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
+            }, {
+        POSITION: [   3,     7,     1.7,     13,     0,     180,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, }, {
+        POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
+            }, {
+        POSITION: [   3,     7,     1.7,     13,     0,     300,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, },
+    ],
+};
+exports.guardian_lite2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Guardian Lite',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, },
+    ],
+};
+exports.crasher_dasher2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Crasher Dasher',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  12,     0,      0,      0,     360,   1, ], 
+            TYPE: [exports.autoTurret],
+            },
+    ],
+};
+exports.crash_fighter2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Crash Fighter',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,      60,    180,   0, ], 
+            TYPE: [exports.auto3gun],
+            }, {
+        POSITION: [  14,     8,      0,     300,    180,   0, ], 
+            TYPE: [exports.auto3gun],
+            },
+    ],
+};
+exports.caltrop_fighter2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Caltrop Fighter',
+    FACING_TYPE: 'autospin',
+    DANGER: 3,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  15,     7,      1,     -2,      0,      60,     0,   ], 
+            }, {
+        POSITION: [   3,     7,     1.7,     13,     0,      60,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, }, {
+        POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
+            }, {
+        POSITION: [   3,     7,     1.7,     13,     0,     180,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, }, {
+        POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
+            }, {
+        POSITION: [   3,     7,     1.7,     13,     0,     300,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, },
+    ],
+};
+
+        /*'Krios',
+        'Tethys',
+        'Mnemosyne',*/
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -7575,11 +7770,11 @@ exports.botT3_E = {
 // UPGRADE PATHS
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
-            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer2, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2];
+            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
-            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2];
+            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
