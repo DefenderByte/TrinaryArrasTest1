@@ -17,15 +17,15 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-    [ "roid", "norm", "norm", "norm", "rock", "norm", "norm", "norm", "roid" ],
+    [ "norm", "norm", "norm", "norm", "roid", "norm", "norm", "norm", "norm" ],
+    [ "norm", "rock", "norm", "norm", "norm", "norm", "norm", "rock", "norm" ],
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
-    [ "norm", "norm", "roid", "norm", "rock", "norm", "roid", "norm", "norm" ],
     [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
-    [ "rock", "norm", "rock", "nest", "roid", "nest", "rock", "norm", "rock" ],
+    [ "roid", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "roid" ],
     [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
-    [ "norm", "norm", "roid", "norm", "rock", "norm", "roid", "norm", "norm" ],
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
-    [ "roid", "norm", "norm", "norm", "rock", "norm", "norm", "norm", "roid" ]
+    [ "norm", "rock", "norm", "norm", "norm", "norm", "norm", "rock", "norm" ],
+    [ "norm", "norm", "norm", "norm", "roid", "norm", "norm", "norm", "norm" ]
   ],
   "X_GRID": 9,
   "Y_GRID": 9,
@@ -35,9 +35,9 @@
   "FOOD": [
     0, 
     0.75,
-    0.22,
-    0.1,
-    0.005,
+    0.5,
+    0.25,
+    0.125,
     0,
     0
   ],
@@ -46,8 +46,8 @@
     0.0,
     0.0,
     0.75,
-    0.23,
-    0.02,
+    0.5,
+    0.25,
     0
   ],
   "MAX_SKILL": 9,
@@ -64,6 +64,6 @@
   "MIN_SPEED": 0.001,
   "FOOD_AMOUNT": 0.4, 
   "SKILL_BOOST": 5,
-  "BOTS": 5,
+  "BOTS": 10,
   "GLASS_HEALTH_FACTOR": 2
 }
