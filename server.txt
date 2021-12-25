@@ -4624,19 +4624,51 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[Class.palisade], 1, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[Class.palisade], 2, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[Class.palisade], 3, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[Class.palisade], 4, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 4, 'castle', 'norm']; 
+                        sockets.broadcast('A strange trembling...');
+                        break;
+                    case 8: 
+                        choice = [[Class.dread, Class.octog], 1, 'poly', 'rock']; 
+                        sockets.broadcast('Influx Detected...');
+                        break;
+                    case 9: 
+                        choice = [[Class.dread, Class.octog], 2, 'poly', 'rock']; 
+                        sockets.broadcast('Influx Detected...');
+                        break;
+                    case 10: 
+                        choice = [[Class.dread, Class.octog], 3, 'poly', 'rock']; 
+                        sockets.broadcast('Influx Detected...');
+                        break;
+                    case 11: 
+                        choice = [[Class.dread, Class.octog], 4, 'poly', 'rock']; 
+                        sockets.broadcast('Influx Detected...');
+                        break;
+                    case 12: 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 1, 'woomy', 'nest']; 
+                        sockets.broadcast('A strange trembling...');
+                        break;
+                    case 13: 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 2, 'woomy', 'nest']; 
+                        sockets.broadcast('A strange trembling...');
+                        break;
+                    case 14: 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 3, 'woomy', 'nest']; 
+                        sockets.broadcast('A strange trembling...');
+                        break;
+                    case 15: 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 4, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                 }
@@ -4659,7 +4691,7 @@ var maintainloop = (() => {
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
-            /*let f = (loc, team) => { 
+            let f = (loc, team) => { 
                 let o = new Entity(loc);
                     o.define(Class.baseProtector);
                     o.team = -team;
@@ -4667,7 +4699,7 @@ var maintainloop = (() => {
             };
             for (let i=1; i<5; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); 
-            }*/
+            }
         // Return the spawning function
         let bots = [];
         return () => {
@@ -4788,7 +4820,13 @@ var maintainloop = (() => {
                         Class.flanktrap,
                         Class.guntrap,
                         Class.bushwhack,
-                        Class.twinbuilder
+                        Class.twinbuilder,
+                        Class.hurricane,
+                        Class.weirdspike,
+                        Class.quadtrapper,
+                        Class.bentboomer,
+                        Class.ball,
+                        Class.op_anni
                       ])
                     );
                     o.name += ran.chooseBotName();
