@@ -5037,7 +5037,7 @@ exports.crasher = {
         DENSITY: 10,
         RESIST: 2,
     },
-    VALUE: 15,
+    VALUE: 5,
     MOTION_TYPE: 'motor',
     FACING_TYPE: 'smoothWithMotion',
     HITS_OWN_TYPE: 'hard',
