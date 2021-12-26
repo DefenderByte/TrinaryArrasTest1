@@ -2274,17 +2274,17 @@ exports.basic = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,      1,      0,      5,      0,     0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  18,    10,      1,      0,     -5,      0,     0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  21,    10,      1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
                         TYPE: exports.bullet,
                     }, }, 
             ],
@@ -2299,27 +2299,27 @@ exports.basic = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  16,    10,      1,      0,     -5,      0,    0.667, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.quint]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint]),
                             TYPE: exports.bullet,
                         }, }, { 
                     POSITION: [  16,    10,      1,      0,      5,      0,    0.667, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.quint]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint]),
                             TYPE: exports.bullet,
                         }, }, { 
                     POSITION: [  19,    10,      1,      0,     -3,      0,    0.333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.quint]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint]),
                             TYPE: exports.bullet,
                         }, },  { 
                     POSITION: [  19,    10,      1,      0,      3,      0,    0.333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.quint]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint]),
                             TYPE: exports.bullet,
                         }, },  { 
                     POSITION: [  22,    10,      1,      0,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.quint]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint]),
                             TYPE: exports.bullet,
                         }, }, 
                 ],
@@ -7698,6 +7698,7 @@ exports.caltrop_fighter2 = {
             exports.baby_leviathan = {
                 PARENT: [exports.sentry],
                 LABEL: 'Baby Leviathan',
+                FACING_TYPE: 'autospin',
                 COLOR: 14,
                 SHAPE: 5,
                 SIZE: 15,
@@ -7750,6 +7751,7 @@ exports.caltrop_fighter2 = {
             exports.baby_leviathan2 = {
                 PARENT: [exports.sentry2],
                 LABEL: 'Baby Leviathan',
+                FACING_TYPE: 'autospin',
                 COLOR: 14,
                 SHAPE: 5,
                 SIZE: 15,
@@ -7851,6 +7853,7 @@ exports.penta_sentry2 = {
         exports.nest_defender = { 
             PARENT: [exports.sentry],
             TYPE: 'tank',
+            FACING_TYPE: 'autospin',
             DANGER: 5,
             LABEL: 'Nest Defender',
             SHAPE: 7,
