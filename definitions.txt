@@ -7942,7 +7942,7 @@ exports.krimissile = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  10,     0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,   180, 0], 
@@ -7975,7 +7975,7 @@ exports.krimissile = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  10,     0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,   180, 0], 
