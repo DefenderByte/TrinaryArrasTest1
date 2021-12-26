@@ -7499,16 +7499,16 @@ exports.crash_fighter = {
         HEALTH: 21.5,
     },
     GUNS: [{
-        POSITION: [  17,     2,      1,      0,      3,      0,      0,    ], 
+        POSITION: [  17,     4,      1,     -7,      7,      0,      0,   ],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.pound]),
                 TYPE: exports.bullet,
             }, }, {
-        POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,   ], 
+        POSITION: [  17,     4,      1,     -7,     -7,      0,     0.5,  ],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.pound]),
                 TYPE: exports.bullet,
-            }, },
+            }, }, {
         POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
@@ -7616,16 +7616,16 @@ exports.crash_fighter2 = {
         HEALTH: 21.5,
     },
     GUNS: [{
-        POSITION: [  17,     2,      1,      0,      3,      0,      0,    ], 
+        POSITION: [  17,     4,      1,     -7,      7,      0,      0,   ],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.pound]),
                 TYPE: exports.bullet,
             }, }, {
-        POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,   ], 
+        POSITION: [  17,     4,      1,     -7,     -7,      0,     0.5,  ],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.pound]),
                 TYPE: exports.bullet,
-            }, },
+            }, }, {
         POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
@@ -7641,7 +7641,6 @@ exports.crash_fighter2 = {
 exports.caltrop_fighter2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Caltrop Fighter',
-    FACING_TYPE: 'autospin',
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7678,8 +7677,334 @@ exports.caltrop_fighter2 = {
     ],
 };
 
-        /*'Krios',
-        'Tethys',
+    exports.babylevigun = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Turret',
+        SHAPE: 5,
+        COLOR: 14,
+        BODY: {
+            FOV: 3,
+        },
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        COLOR: 16,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [ 4.5,     14,     1,      10,     0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret, g.heavy3, g.giga3, g.levi]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
+            exports.baby_leviathan = {
+                PARENT: [exports.sentry],
+                LABEL: 'Baby Leviathan',
+                COLOR: 14,
+                SHAPE: 5,
+                SIZE: 15,
+                VALUE: 200000,
+                AI: { NO_LEAD: false, },
+                BODY: {
+                    FOV: 0.75,
+                    SPEED: base.SPEED * 1,
+                    HEALTH: 20,
+                    DAMAGE: 1.5,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [   7,     0,      0,     180,    360, 1], 
+                        TYPE: exports.babylevigun,
+                            },
+                ],
+            };
+            exports.baby_leviathan2 = {
+                PARENT: [exports.sentry2],
+                LABEL: 'Baby Leviathan',
+                COLOR: 14,
+                SHAPE: 5,
+                SIZE: 15,
+                VALUE: 200000,
+                AI: { NO_LEAD: false, },
+                BODY: {
+                    FOV: 0.75,
+                    SPEED: base.SPEED * 1,
+                    HEALTH: 20,
+                    DAMAGE: 1.5,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [   7,     0,      0,     180,    360, 1], 
+                        TYPE: exports.babylevigun,
+                            },
+                ],
+            };
+exports.pentaSentryBody = {
+    CONTROLLERS: ['spin'],
+    COLOR: 9,
+    SHAPE: 5,
+    INDEPENDENT: true,
+};
+exports.penta_sentry = {
+    PARENT: [exports.sentry],
+    LABEL: 'Penta Sentry',
+    COLOR: 14,
+    SHAPE: 5,
+    DANGER: 3,
+    VALUE: 50000,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 20,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  10,     0,      0,     180,    360,   1, ], 
+            TYPE: [exports.autoTurret],
+            }, {
+        POSITION: [ 20.5,    0,      0,      0,     360,   0, ], 
+            TYPE: [exports.pentaSentryBody],
+            },
+    ],
+};
+exports.penta_sentry2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Penta Sentry',
+    COLOR: 14,
+    SHAPE: 5,
+    DANGER: 3,
+    VALUE: 50000,
+    BODY: {
+        FOV: 0.65,
+        HEALTH: 20,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  10,     0,      0,     180,    360,   1, ], 
+            TYPE: [exports.autoTurret],
+            }, {
+        POSITION: [ 20.5,    0,      0,      0,     360,   0, ], 
+            TYPE: [exports.pentaSentryBody],
+            },
+    ],
+};
+
+        exports.nest_defender = { 
+            PARENT: [exports.sentry],
+            TYPE: 'tank',
+            DANGER: 5,
+            LABEL: 'Nest Defender',
+            SHAPE: 7,
+            SIZE: 24,
+            BODY: {
+                FOV: 1,
+                SPEED: base.SPEED * 0.1,
+                HEALTH: 1000,
+            },
+            VALUE: 100000,
+        };
+        exports.nest_defender2 = { 
+            PARENT: [exports.sentry2],
+            TYPE: 'tank',
+            DANGER: 5,
+            LABEL: 'Nest Defender',
+            SHAPE: 7,
+            SIZE: 24,
+            BODY: {
+                FOV: 1,
+                SPEED: base.SPEED * 0.1,
+                HEALTH: 1000,
+            },
+            VALUE: 100000,
+        };
+exports.krimissile = {
+    PARENT: [exports.bullet],
+    LABEL: 'Missile',
+    INDEPENDENT: true,
+    BODY: {
+        RANGE: 240,
+    },  
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,     11,     1,      0,      0,     180,     0,   ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.much_morerecoil, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, },
+    ],
+};
+            exports.krigun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: base.FOV * 1.05,
+                },
+                LABEL: 'Launcher',
+                DANGER: 6,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,    12,    -0.5,     9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,    13,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.skim]),
+                            TYPE: exports.launchmissile,
+                            LABEL: 'Launched',
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+            };
+    exports.kribody = {
+        CONTROLLERS: ['reversespin'],
+        DANGER: 5,
+        COLOR: 14,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [  11,     8,      0,      36,    190, 0], 
+                TYPE: exports.krigun,
+            }, {
+            POSITION: [  11,     8,      0,     108,    180, 0], 
+                TYPE: exports.krigun,
+            }, {
+            POSITION: [  11,     8,      0,     180,    180, 0], 
+                TYPE: exports.krigun,
+            }, {
+            POSITION: [  11,     8,      0,    -108,    180, 0], 
+                TYPE: exports.krigun,
+            }, {
+            POSITION: [  11,     8,      0,     -36,    180, 0], 
+                TYPE: exports.krigun,
+            },
+        ],
+    };
+        exports.nestdefend_krios = { 
+            PARENT: [exports.nest_defender],
+            COLOR: 14,
+            NAME: 'Krios',
+            BODY: {
+                SPEED: base.SPEED * 0.5,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.kribody,
+                        }, {
+                POSITION: [ 4.4,     9,      0,    180/7,   180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*3,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*5,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,    180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   -180/7,   180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*3,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*5,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.nestdefend_krios2 = { 
+            PARENT: [exports.nest_defender2],
+            COLOR: 14,
+            BODY: {
+                SPEED: base.SPEED * 0.5,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.kribody,
+                        }, {
+                POSITION: [ 4.4,     9,      0,    180/7,   180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*3,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*5,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,    180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   -180/7,   180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*3,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*5,  180, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+
+        /*'Tethys',
         'Mnemosyne',*/
 
 exports.bot = {
@@ -7819,7 +8144,7 @@ exports.botT3_E = {
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
-            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2];
+            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
