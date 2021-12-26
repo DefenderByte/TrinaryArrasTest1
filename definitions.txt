@@ -7868,6 +7868,7 @@ exports.penta_sentry2 = {
         exports.nest_defender2 = { 
             PARENT: [exports.sentry2],
             TYPE: 'tank',
+            FACING_TYPE: 'autospin',
             DANGER: 5,
             LABEL: 'Nest Defender',
             SHAPE: 7,
