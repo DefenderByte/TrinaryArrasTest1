@@ -4606,7 +4606,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -4671,6 +4671,11 @@ var maintainloop = (() => {
                         choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 4, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
+                    case 16: 
+                        choice = [[ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.nestdefend_krios])], 10, 'tissue', 'nest']; 
+                        sockets.broadcast('The call was answered.');
+                        sockets.broadcast('The nest cries out for help!');
+                        break;
                 }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
@@ -4682,7 +4687,8 @@ var maintainloop = (() => {
         if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
-            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter]) : Class.crasher;
+            let nest_defender = (ran.dice(100)) ? ran.choose([Class.nestdefend_krios]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter]);
+            let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, nest_defender]) : Class.crasher;
             let o = new Entity(spot);
                 o.define(type);
                 o.team = -100;
