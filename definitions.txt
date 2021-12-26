@@ -2759,12 +2759,12 @@ exports.basic = {
                             WAIT_TO_CYCLE: true,     
                             MAX_CHILDREN: 3,   
                         }, }, {
-                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
+                    POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
                             TYPE: exports.bullet,
                         }, }, {
-                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
+                    POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
                             TYPE: exports.bullet,
@@ -4081,14 +4081,14 @@ exports.basic = {
                     FOV: base.FOV * 1.25,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
+                    POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.flank]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
                             TYPE: exports.bullet,
                         }, }, {
-                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
+                    POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.flank]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
                             TYPE: exports.bullet,
                         }, }, {
                     POSITION: [  13,    11,      1,      0,      0,     180,     0,   ],
@@ -7451,9 +7451,9 @@ exports.guardian_lite = {
         HEALTH: 21.5,
     },
     GUNS: [{
-        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
                 TYPE: exports.drone,
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -7472,9 +7472,9 @@ exports.crasher_dasher = {
         HEALTH: 20,
     },
     GUNS: [{
-        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
                 TYPE: exports.drone,
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -7499,9 +7499,19 @@ exports.crash_fighter = {
         HEALTH: 21.5,
     },
     GUNS: [{
-        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+        POSITION: [  17,     2,      1,      0,      3,      0,      0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                TYPE: exports.bullet,
+            }, }, {
+        POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                TYPE: exports.bullet,
+            }, },
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
                 TYPE: exports.drone,
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -7510,43 +7520,39 @@ exports.crash_fighter = {
                 MAX_CHILDREN: 4,
             }, },
     ],
-    TURRETS: [{
-        /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  14,     8,      0,      60,    180,   0, ], 
-            TYPE: [exports.auto3gun],
-            }, {
-        POSITION: [  14,     8,      0,     300,    180,   0, ], 
-            TYPE: [exports.auto3gun],
-            },
-    ],
 };
 exports.caltrop_fighter = {
     PARENT: [exports.sentry],
     LABEL: 'Caltrop Fighter',
-    FACING_TYPE: 'autospin',
     DANGER: 3,
     BODY: {
         FOV: 0.65,
         HEALTH: 25,
     },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  15,     7,      1,     -2,      0,      60,     0,   ], 
-            }, {
-        POSITION: [   3,     7,     1.7,     13,     0,      60,     0,   ], 
+        POSITION: [   6,     12,    1.25,    6,      0,      60,     0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
-                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, }, {
+        POSITION: [   6,     12,    1.25,    6,      0,     300,     0,    ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
             }, }, {
         POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
             }, {
         POSITION: [   3,     7,     1.7,     13,     0,     180,     0,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
-                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
-            }, }, {
-        POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
-            }, {
-        POSITION: [   3,     7,     1.7,     13,     0,     300,     0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                 TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
@@ -7562,9 +7568,9 @@ exports.guardian_lite2 = {
         HEALTH: 21.5,
     },
     GUNS: [{
-        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
                 TYPE: exports.drone,
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -7583,9 +7589,9 @@ exports.crasher_dasher2 = {
         HEALTH: 20,
     },
     GUNS: [{
-        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
                 TYPE: exports.drone,
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -7610,9 +7616,19 @@ exports.crash_fighter2 = {
         HEALTH: 21.5,
     },
     GUNS: [{
-        POSITION: [    7,    14,    1.2,     7,     0,    180,     0,  ], 
+        POSITION: [  17,     2,      1,      0,      3,      0,      0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.fallen_overlord]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                TYPE: exports.bullet,
+            }, }, {
+        POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                TYPE: exports.bullet,
+            }, },
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
                 TYPE: exports.drone,
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
@@ -7620,15 +7636,6 @@ exports.crash_fighter2 = {
                 WAIT_TO_CYCLE: true,
                 MAX_CHILDREN: 4,
             }, },
-    ],
-    TURRETS: [{
-        /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  14,     8,      0,      60,    180,   0, ], 
-            TYPE: [exports.auto3gun],
-            }, {
-        POSITION: [  14,     8,      0,     300,    180,   0, ], 
-            TYPE: [exports.auto3gun],
-            },
     ],
 };
 exports.caltrop_fighter2 = {
@@ -7641,23 +7648,29 @@ exports.caltrop_fighter2 = {
         HEALTH: 25,
     },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  15,     7,      1,     -2,      0,      60,     0,   ], 
-            }, {
-        POSITION: [   3,     7,     1.7,     13,     0,      60,     0,   ], 
+        POSITION: [   6,     12,    1.25,    6,      0,      60,     0,    ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
-                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
+            }, }, {
+        POSITION: [   6,     12,    1.25,    6,      0,     300,     0,    ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 4,
             }, }, {
         POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
             }, {
         POSITION: [   3,     7,     1.7,     13,     0,     180,     0,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
-                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
-            }, }, {
-        POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
-            }, {
-        POSITION: [   3,     7,     1.7,     13,     0,     300,     0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                 TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
