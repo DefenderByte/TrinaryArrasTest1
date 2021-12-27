@@ -7899,13 +7899,14 @@ exports.krimissile = {
                 },
                 LABEL: 'Launcher',
                 DANGER: 6,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  10,    12,    -0.5,     9,      0,      0,      0,  ], 
                         }, {
                     POSITION: [  17,    13,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.skim]),
-                            TYPE: exports.launchmissile,
+                            TYPE: exports.krimissile,
                             LABEL: 'Launched',
                             STAT_CALCULATOR: gunCalcNames.sustained,
                         }, },
@@ -7942,7 +7943,7 @@ exports.krimissile = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  15,     0,      0,      0,     360, 1], 
+                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,   180, 0], 
@@ -7975,7 +7976,7 @@ exports.krimissile = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  15,     0,      0,      0,     360, 1], 
+                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,   180, 0], 
@@ -8001,6 +8002,86 @@ exports.krimissile = {
                         },
             ],
         };
+            exports.krios_saucer2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Krios Saucer',
+                COLOR: 27,
+                SHAPE: 5,
+                SIZE: 30,
+                VALUE: 300000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 25,
+                    SHIELD: 1,
+                    REGEN: 0.01,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.fallen_overlord]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 6,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.fallen_overlord]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 6,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.fallen_overlord]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 6,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.fallen_overlord]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 6,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.fallen_overlord]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 6,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 4.85,   6.7,     0,      0,     360,   1, ], 
+                        TYPE: [exports.defendgun],
+                        }, {
+                    POSITION: [ 4.85,   6.7,     0,     120,    360,   1, ], 
+                        TYPE: [exports.defendgun],
+                        }, {
+                    POSITION: [ 4.85,   6.7,     0,     240,    360,   1, ], 
+                        TYPE: [exports.defendgun],
+                        },
+                ],
+            };
 
         /*'Tethys',
         'Mnemosyne',*/
