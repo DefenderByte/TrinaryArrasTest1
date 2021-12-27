@@ -4602,7 +4602,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 40 && ran.dice(100 - timer)) {
+            if (timer > 4200 && ran.dice(9000 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
@@ -4672,9 +4672,8 @@ var maintainloop = (() => {
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 16: 
-                        choice = [[ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.crash_fighter, Class.caltrop_fighter, Class.nestdefend_krios])], 10, 'tissue', 'nest']; 
-                        sockets.broadcast('The call was answered.');
-                        sockets.broadcast('The nest cries out for help!');
+                        choice = [[Class.nestdefend_krios], 1, 'kricel', 'nest']; 
+                        sockets.broadcast('Krios has envisioned your arrival...');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
