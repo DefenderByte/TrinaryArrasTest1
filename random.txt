@@ -2565,6 +2565,10 @@ case 'zapcel':
         'Zaphkiel', //Beer Casso on Steroids
         'Santa', //Beer Casso on Steroids
     ], n);
+case 'kricel':
+    return exports.chooseN([
+        'Krios',
+    ], n);
 case 'artcel':
     return exports.chooseN([
         'Artemis',
