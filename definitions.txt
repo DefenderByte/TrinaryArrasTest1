@@ -256,6 +256,10 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     mothership:         [1.25,  1,     1,      1,      1,      1,      1.1,    0.775,  0.8,    15,     1,      1,      1.15],
     skimboss:           [1,     0.5,   1,      0.9,    1.2,    1.2,    1.2,    1.1,    1,      0.7,    1,      1,      1],
     quadtrap:           [1.15,  1,     1,      1,      0.75,   0.8,    0.8,    1.4,    0.9,    0.75,   0.9,    1,      0.9],
+    /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // WIP
+    lance:              [1.55,  0,     0.1,    1,      0.1,    3.515,  1.56,   0.4,    1,      0.05,   1,      180,    1],
+        flail:          [1,     1,     1,      0.83,   0.83,   0.83,   1,      1,      1,      1,      1,      1,      1],
+    no_damage:          [1,     1,     1,      1,      1,      0,      1,      1,      1,      1,      1,      1,      1],
     /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // My g.stats
     much_more_damage:   [1,     1,     1,      1,      1.35,   1.3,    1,      1,      1,      1,      1,      1,      1],
 even_much_more_damage:  [1,     1,     1,      1,      1.8,    1.5,    1,      1,      1,      1,      1,      1,      1],
@@ -1390,7 +1394,7 @@ exports.turretTrap = {
     };
 exports.octogtrap = {
     PARENT: [exports.genericTank],
-    LABEL: 'Auto-Turret',
+    LABEL: 'Turret',
     BODY: {
         FOV: 3,
     },
@@ -8002,6 +8006,73 @@ exports.krimissile = {
                         },
             ],
         };
+    exports.krisaucepart = {
+        LABEL: 'Collision',
+        DANGER: 7,
+        COLOR: 14,
+        SHAPE: 5,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [   1,    16,     1.8,     0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.lance, g.flail, g.no_damage]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [  11,     0,      0,      0,     360, 0], 
+                TYPE: exports.levigun,
+            },
+        ],
+    };
+    exports.krisaucepart2 = {
+        DANGER: 7,
+        COLOR: 27,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [  11,     8,      0,      0,     360, 0], 
+                TYPE: exports.krigun,
+            },
+        ],
+    };
+exports.krisaucemissile = {
+    PARENT: [exports.missile],
+    LABEL: 'Roto Missile',
+    FACING_TYPE: 'fastautospin',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,     6,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,     180,     0,  ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+            }, },
+    ],
+};
+            exports.krisaucegun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Twister',
+                DANGER: 7,
+                BODY: {
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    10,     -0.5,    9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  20,    12,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.skim]),
+                            TYPE: exports.krisaucemissile,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  11,    12,    -1.5,     3,      0,      0,      0,  ], 
+                        },
+                ],
+            };
             exports.krios_saucer2 = {
                 PARENT: [exports.miniboss2],
                 LABEL: 'Krios Saucer',
@@ -8011,8 +8082,8 @@ exports.krimissile = {
                 VALUE: 300000,
                 BODY: {
                     FOV: 1.3,
-                    SPEED: base.SPEED * 0.25,
-                    HEALTH: 25,
+                    SPEED: base.SPEED * 0.05,
+                    HEALTH: 50,
                     SHIELD: 1,
                     REGEN: 0.01,
                     DAMAGE: 3,
@@ -8071,14 +8142,35 @@ exports.krimissile = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [ 4.85,   6.7,     0,      0,     360,   1, ], 
-                        TYPE: [exports.defendgun],
+                    POSITION: [  23,     35,     0,      0,      0,    1, ], 
+                        TYPE: [exports.krisaucepart],
                         }, {
-                    POSITION: [ 4.85,   6.7,     0,     120,    360,   1, ], 
-                        TYPE: [exports.defendgun],
+                    POSITION: [  23,     35,     0,      36,     0,    1, ], 
+                        TYPE: [exports.krisaucepart2],
                         }, {
-                    POSITION: [ 4.85,   6.7,     0,     240,    360,   1, ], 
-                        TYPE: [exports.defendgun],
+                    POSITION: [  23,     35,     0,      72,     0,    1, ], 
+                        TYPE: [exports.krisaucepart],
+                        }, {
+                    POSITION: [  23,     35,     0,     108,     0,    1, ], 
+                        TYPE: [exports.krisaucepart2],
+                        }, {
+                    POSITION: [  23,     35,     0,     144,     0,    1, ], 
+                        TYPE: [exports.krisaucepart],
+                        }, {
+                    POSITION: [  23,     35,     0,     180,     0,    1, ], 
+                        TYPE: [exports.krisaucepart2],
+                        }, {
+                    POSITION: [  23,     35,     0,    -144,     0,    1, ], 
+                        TYPE: [exports.krisaucepart],
+                        }, {
+                    POSITION: [  23,     35,     0,    -108,     0,    1, ], 
+                        TYPE: [exports.krisaucepart2],
+                        }, {
+                    POSITION: [  23,     35,     0,     -72,     0,    1, ], 
+                        TYPE: [exports.krisaucepart],
+                        }, {
+                    POSITION: [  23,     35,     0,     -36,     0,    1, ], 
+                        TYPE: [exports.krisaucepart2],
                         },
                 ],
             };
@@ -8219,7 +8311,7 @@ exports.botT3_E = {
 // UPGRADE PATHS
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
-            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2];
+            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
