@@ -8055,7 +8055,7 @@ exports.krisaucemissile = {
                         }, {
                     POSITION: [ 14.5,   14,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret, g.heavy3, g.giga3, g.levi, g.arty, g.skim]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.levi]),
                             TYPE: exports.krisaucemissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
                         }, }, {
