@@ -7883,10 +7883,10 @@ exports.krimissile = {
         RANGE: 240,
     },  
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  14,     11,     1,      0,      0,     180,     0,   ], 
+        POSITION: [  14,     6,      1,      0,      0,     180,     0,   ], 
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.much_morerecoil, g.more_speed]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.much_more_recoil, g.more_speed]),
                 TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
             }, },
@@ -8049,8 +8049,9 @@ exports.krisaucemissile = {
                 BODY: {
                     FOV: base.FOV * 5,
                 },
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  14,    12,     -0.5,   0.5,     0,      0,      0,  ], 
+                    POSITION: [  14,    12,     -0.5,   2.5,     0,      0,      0,  ], 
                         }, {
                     POSITION: [ 14.5,   14,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
@@ -8161,7 +8162,7 @@ exports.krisaucemissile = {
                     POSITION: [  23,     35,     0,     -36,     0,    1, ], 
                         TYPE: [exports.krisaucepart2],
                         }, {
-                    POSITION: [  11,     0,      0,      0,      0,    1, ], 
+                    POSITION: [  11,     0,      0,      0,     360,   1, ], 
                         TYPE: [exports.krisaucegun],
                         },
                 ],
