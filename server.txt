@@ -4673,6 +4673,7 @@ var maintainloop = (() => {
                         break;
                     case 16: 
                         choice = [[Class.nestdefend_krios], 1, 'kricel', 'nest']; 
+                        sockets.broadcast('Krios: I told you not to destroy my nest! Now you fools will PAY!');
                         sockets.broadcast('Krios has envisioned your arrival...');
                         break;
                 }
