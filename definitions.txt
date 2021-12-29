@@ -2000,7 +2000,7 @@ exports.basic = {
             exports.machinegunner = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Machine Gunner',
-                DANGER: 6,
+                DANGER: 7,
                 BODY: {
                     SPEED: base.SPEED * 0.9,
                 },
@@ -7441,6 +7441,7 @@ exports.miniboss2 = {
 exports.guardian_lite = {
     PARENT: [exports.sentry],
     LABEL: 'Guardian Lite',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7462,6 +7463,7 @@ exports.guardian_lite = {
 exports.crasher_dasher = {
     PARENT: [exports.sentry],
     LABEL: 'Crasher Dasher',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7489,6 +7491,7 @@ exports.crasher_dasher = {
 exports.crash_fighter = {
     PARENT: [exports.sentry],
     LABEL: 'Crash Fighter',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7520,6 +7523,7 @@ exports.crash_fighter = {
 exports.caltrop_fighter = {
     PARENT: [exports.sentry],
     LABEL: 'Caltrop Fighter',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7558,6 +7562,7 @@ exports.caltrop_fighter = {
 exports.guardian_lite2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Guardian Lite',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7579,6 +7584,7 @@ exports.guardian_lite2 = {
 exports.crasher_dasher2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Crasher Dasher',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7606,6 +7612,7 @@ exports.crasher_dasher2 = {
 exports.crash_fighter2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Crash Fighter',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7637,6 +7644,7 @@ exports.crash_fighter2 = {
 exports.caltrop_fighter2 = {
     PARENT: [exports.sentry2],
     LABEL: 'Caltrop Fighter',
+    SIZE: 15,
     DANGER: 3,
     BODY: {
         FOV: 0.65,
@@ -7681,7 +7689,7 @@ exports.caltrop_fighter2 = {
             FOV: 3,
         },
         CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
-        COLOR: 14,
+        COLOR: 27,
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [ 4.5,     14,     1,      10,     0,      0,      0,   ], 
                 PROPERTIES: {
@@ -7818,7 +7826,7 @@ exports.penta_sentry = {
         POSITION: [  10,     0,      0,     180,    360,   1, ], 
             TYPE: [exports.autoTurret],
             }, {
-        POSITION: [ 20.5,    0,      0,      0,     360,   0, ], 
+        POSITION: [ 21.5,    0,      0,      0,     360,   0, ], 
             TYPE: [exports.pentaSentryBody],
             },
     ],
@@ -7839,7 +7847,7 @@ exports.penta_sentry2 = {
         POSITION: [  10,     0,      0,     180,    360,   1, ], 
             TYPE: [exports.autoTurret],
             }, {
-        POSITION: [ 20.5,    0,      0,      0,     360,   0, ], 
+        POSITION: [ 21.5,    0,      0,      0,     360,   0, ], 
             TYPE: [exports.pentaSentryBody],
             },
     ],
@@ -8049,6 +8057,7 @@ exports.krisaucemissile = {
                 BODY: {
                     FOV: base.FOV * 5,
                 },
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  14,    12,     -0.5,   2.5,     0,      0,      0,  ], 
                         }, {
@@ -8265,7 +8274,7 @@ exports.krisaucemissile = {
                     POSITION: [  23,     35,     0,     -36,     0,    1, ], 
                         TYPE: [exports.krisaucepart2],
                         }, {
-                    POSITION: [  11,     0,      0,      0,      0,    1, ], 
+                    POSITION: [  11,     0,      0,      0,     360,   1, ], 
                         TYPE: [exports.krisaucegun],
                         },
                 ],
