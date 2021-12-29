@@ -7954,25 +7954,25 @@ exports.krimissile = {
                 POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
-                POSITION: [   6,     9,      0,    180/7,   180, 0], 
+                POSITION: [   6,     9,      0,    180/7,    0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*3,  180, 0], 
+                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*5,  180, 0], 
+                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,     180,    180, 0], 
+                POSITION: [   6,     9,      0,     180,     0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   -180/7,   180, 0], 
+                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*3,  180, 0], 
+                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*5,  180, 0], 
+                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
                     TYPE: exports.trapTurret,
                         },
             ],
@@ -7987,31 +7987,30 @@ exports.krimissile = {
                 POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
-                POSITION: [   6,     9,      0,    180/7,   180, 0], 
+                POSITION: [   6,     9,      0,    180/7,    0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*3,  180, 0], 
+                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*5,  180, 0], 
+                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,     180,    180, 0], 
+                POSITION: [   6,     9,      0,     180,     0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   -180/7,   180, 0], 
+                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*3,  180, 0], 
+                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*5,  180, 0], 
+                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
                     TYPE: exports.trapTurret,
                         },
             ],
         };
     exports.krisaucepart = {
-        LABEL: 'Collision',
         DANGER: 7,
         COLOR: 14,
         SHAPE: 5,
