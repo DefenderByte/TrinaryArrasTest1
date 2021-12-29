@@ -1204,6 +1204,7 @@ exports.chooseBotName = () => {
         'im on fandom lmfaooo',
         'im on scratch lmfaooo',
         'im on yt lmfaooo',
+        'im on (mogus) lmfaooo',
         'OK SUK WHANG',
         'this mode is trash',
         'cool BLYAT tank XD',
@@ -1609,6 +1610,17 @@ exports.chooseBotName = () => {
         'Krios', // Nest Defender 1
         'Tethys', // Nest Defender 2
         'Mnemosyne', // Nest Defender 3
+        'Sussusfrust',
+        'Sassafras',
+        'sarfassaS',
+        'SassassaS',
+        'sarfafras',
+        'Sassa-Ass',
+        'S-ass-afras',
+        'sasasasasas',
+        'Ass-Ass-In',
+        'Sassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassassafras',
+        'ssassssass',
     ]);
 };
 
@@ -2718,6 +2730,126 @@ case 'eucel':
     return exports.chooseN([
         'E:U', //K-Pop strikes again
     ], n) ;
+case 'yuqcel':
+    return exports.chooseN([
+        'Yuqi', //Blocks you just to swarm you
+    ], n) ;
+case 'tsucel':
+    return exports.chooseN([
+        'Tsuyu', //This one has the real Big Cheese, in fact it's even orange.
+    ], n) ;
+case 'naycel':
+    return exports.chooseN([
+        'Nayeon', //Auto-5's spammed everywhere help!
+    ], n) ;
+case 'dahcel':
+    return exports.chooseN([
+        'Dahyun', //Spawns Trap Sentries
+    ], n) ;
+case 'yabcel':
+    return exports.chooseN([
+        'Yabuki', //Spawns Gun Sentries
+    ], n) ;
+case 'chycel':
+    return exports.chooseN([
+        'Chaeyeon', //Spawns Swarm Senties
+    ], n) ;
+case 'hwncel':
+    return exports.chooseN([
+        'Hyewon', //The cassowary of cassowaries?
+    ], n) ;
+case 'mbycel':
+    return exports.chooseN([
+        'Byulyi', //GeoScoph and OffisialNickname will like this.
+    ], n) ;
+case 'whecel':
+    return exports.chooseN([
+        'Wheein', //If there'S one with hypermissiles, why not one with alphamissiles
+    ], n) ;
+case 'hwacel':
+    return exports.chooseN([
+        'Hwasa', //Migrator blocks everywhere not knowing how to dodge their drones and doomed to die to Cruisers
+    ], n) ;
+case 'suacel':
+    return exports.chooseN([
+        'SuA', //The real Ninja Celestial
+    ], n) ;
+case 'hancel':
+    return exports.chooseN([
+        'Handong', //Handong being equipped with Spraying stuff, huh? Guess the reference.
+    ], n) ;
+case 'yhncel':
+    return exports.chooseN([
+        'Yoohyeon', //Spawns beta testers... is she the mother of them?
+    ], n) ;
+case 'damcel':
+    return exports.chooseN([
+        'Dami', //I guess this one is all about Tap Gurds?
+    ], n) ;
+case 'ghncel':
+    return exports.chooseN([
+        'Gahyeon', //Essentially a Multitool... kind of?
+    ], n) ;
+case 'hyncel':
+    return exports.chooseN([
+        'Hayoung', //Egg Directors?
+    ], n) ;
+case 'gyrcel':
+    return exports.chooseN([
+        'Gyuri', //A droneless rogue variant
+    ], n) ;
+case 'jwncel':
+    return exports.chooseN([
+        'Jiwon', //Only Drones variant
+    ], n) ;
+case 'ngycel':
+    return exports.chooseN([
+        'Nagyoung', //Spams you with harrasments when she kills you lol
+    ], n) ;
+case 'sancel':
+    return exports.chooseN([
+        'Sangah', //Partially invisible - the complete troll.
+    ], n) ;
+case 'chocel':
+    return exports.chooseN([
+        'Chowon', //Extra Defense
+    ], n) ;
+case 'nyocel':
+    return exports.chooseN([
+        'Nayoung', //The real Gunner variant
+    ], n) ;
+case 'yjncel':
+    return exports.chooseN([
+        'Yujeong', //Swarms you with bees and small bullets.
+    ], n) ;
+case 'huicel':
+    return exports.chooseN([
+        'Huiyeon', //Spreads Infestors
+    ], n) ;
+case 'syncel':
+    return exports.chooseN([
+        'Soyeon', //Sentry Elite
+    ], n) ;
+case 'ygscel':
+    return exports.chooseN([
+        'Yong Sun', //The true swarmer and a savage at once
+    ], n) ;
+case 'srmcel':
+    return exports.chooseN([
+        'Saerom', //Leader of the rogue bosses
+    ], n) ;
+case 'jiumcel':
+    return exports.chooseN([
+        'JiU', //Tryhard at outflanking victims
+    ], n) ;
+case 'clcel':
+    return exports.chooseN([
+        'CL', //Sometimes called Scarlet, saying how C and L are in that name
+    ], n) ;
+case 'hslcel':
+    return exports.chooseN([
+        'Haseul', //Sometimes goes by Queen Flame
+    ], n) ;
 case 'defbtsarmy':
     return exports.chooseN([
         'Artemis',
@@ -2770,6 +2902,7 @@ case 'defbtsarmy':
         'Sassafras',
         'Hemisphere',
         'Sassaracha', //eh
+        'SHINY! [(Omega/Lord) Sassafras appears]', // OMEGA sasasasasas
       ], n);
     case 'xyv': //thought it needed more unique names
     return exports.chooseN([
@@ -2785,7 +2918,6 @@ case 'defbtsarmy':
         'Uno Reverse Card', //if you kill me I survive you die
         'C Y K A B L Y A T', //Blyat is best tank!
         'Zavodila', //Ruv vibes
-        'Zalgodila', //Zalgo version of this
         'A M O G U S', //When the impostor is sus
         'Ra-Ra-Rasputin', //There lived a certain man
         'TYLGO JEDNO W GŁOVIE MAM', //Polish Cow
