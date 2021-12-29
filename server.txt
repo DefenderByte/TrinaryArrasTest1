@@ -4605,7 +4605,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 4200 && ran.dice(9000 - timer)) {
+            if (timer > 420 && ran.dice(900 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
@@ -4677,7 +4677,7 @@ var maintainloop = (() => {
                     case 16: 
                         choice = [[Class.krios_saucer], 1, 'kricel', 'nest']; 
                         sockets.broadcast('Krios: I told you not to destroy my nest! Now you fools will PAY!');
-                        sockets.broadcast('Krios has envisioned your arrival...');
+                        sockets.broadcast('Don\'t get... wait, no, correction: KRIOS has envisioned your arrival!');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
