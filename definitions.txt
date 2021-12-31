@@ -8084,7 +8084,7 @@ exports.krisaucemissile = {
                         }, {
                     POSITION: [ 14.5,   14,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.levi]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.fast_launch, g.levi]),
                             TYPE: exports.krisaucemissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
                         }, }, {
@@ -8110,17 +8110,32 @@ exports.krisaucemissile = {
                         }, {
                     POSITION: [ 14.5,   14,      1,      0,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.levi]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.fast_launch, g.very_fast_launch, g.demoman, g.levi]),
                             TYPE: exports.krisaucemissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
-                        },
-                        COLOR_SETTINGS: {
-                            SKIN: 16,
                         }, }, {
                     POSITION: [  11,    14,   -1.35,     0,      0,      0,      0,  ], 
-                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 16,
+                        }, },
                 ],
             };
+exports.pentaQuarsarDrone = {
+    PARENT: [exports.drone],
+    LABEL: 'Quarsar',
+    COLOR: 14,
+    SHAPE: 'M 1 0 L -0.1 0.8 L 0.1 0 L -0.1 -0.8 z M -0.1 0 L -0.25 0.3 L -1.2 0 L -0.25 -0.3 z',
+    DANGER: 5,
+    BODY: {
+        FOV: base.FOV * 2,
+        DAMAGE: 1.5 * wepDamageFactor,
+        DENSITY: 8,
+        HEALTH: 10 * wepHealthFactor,
+        RESIST: 1.25,
+        PENETRATION: 1.1,
+        SPEED: 3,
+    },
+};
             exports.krisaucephase2 = {
                 PARENT: [exports.miniboss2],
                 LABEL: 'Pentatron',
@@ -8137,68 +8152,189 @@ exports.krisaucemissile = {
                     DAMAGE: 3,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,    10,     0.01,    0,      0,      0,      0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,      72,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,     144,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,    -144,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,     -72,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
-                            TYPE: exports.drone,
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
                             LABEL: '(Pentavian) Spawned',
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                            MAX_CHILDREN: 6,
+                            MAX_CHILDREN: 3,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
-                            TYPE: exports.drone,
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
                             LABEL: '(Pentavian) Spawned',
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                            MAX_CHILDREN: 6,
+                            MAX_CHILDREN: 3,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
-                            TYPE: exports.drone,
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
                             LABEL: '(Pentavian) Spawned',
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                            MAX_CHILDREN: 6,
+                            MAX_CHILDREN: 3,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
-                            TYPE: exports.drone,
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
                             LABEL: '(Pentavian) Spawned',
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                            MAX_CHILDREN: 6,
+                            MAX_CHILDREN: 3,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
-                            TYPE: exports.drone,
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
                             LABEL: '(Pentavian) Spawned',
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                            MAX_CHILDREN: 6,
+                            MAX_CHILDREN: 3,
                         }, },
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   7,     0,      0,      0,     360,   1, ], 
+                    POSITION: [  11,     0,      0,      0,     360,   1, ], 
                         TYPE: [exports.phase2saucegun],
                         },
                 ],
+            };
+            exports.ai_krisaucephase2 = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Pentatron',
+                COLOR: 14,
+                SHAPE: 5,
+                SIZE: 30,
+                VALUE: 150000,
+                FRAG: [[exports.nestdefend_krios]],
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.5,
+                    HEALTH: 25,
+                    SHIELD: 1,
+                    REGEN: 0.01,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,    10,     0.01,    0,      0,      0,      0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,      72,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,     144,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,    -144,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [  18,    10,     0.01,    0,      0,     -72,     0,  ],
+                        COLOR_SETTINGS: {
+                            COLOR: 14,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
+                            LABEL: '(Pentavian) Spawned',
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
+                            LABEL: '(Pentavian) Spawned',
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
+                            LABEL: '(Pentavian) Spawned',
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
+                            LABEL: '(Pentavian) Spawned',
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                            TYPE: exports.pentaQuarsarDrone,
+                            LABEL: '(Pentavian) Spawned',
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 3,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  11,     0,      0,      0,     360,   1, ], 
+                        TYPE: [exports.phase2saucegun],
+                        },
+                ],
+                BROADCAST_MESSAGE: 'After all, (Krios) also hates you!',
             };
             exports.krios_saucer = {
                 PARENT: [exports.miniboss],
@@ -8215,6 +8351,7 @@ exports.krisaucemissile = {
                     REGEN: 0.01,
                     DAMAGE: 3,
                 },
+                FRAG: [[exports.ai_krisaucephase2, {NAME: 'Krios'}]],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
                         PROPERTIES: {
@@ -8303,6 +8440,7 @@ exports.krisaucemissile = {
                         TYPE: [exports.krisaucegun],
                         },
                 ],
+                BROADCAST_MESSAGE: 'Hee hee hee, attack these foolish tanks! Quarsars & Nest Defenders!',
             };
             exports.krios_saucer2 = {
                 PARENT: [exports.miniboss2],
