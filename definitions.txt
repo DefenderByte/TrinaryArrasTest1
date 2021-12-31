@@ -257,6 +257,11 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     skimboss:           [1,     0.5,   1,      0.9,    1.2,    1.2,    1.2,    1.1,    1,      0.7,    1,      1,      1],
     quadtrap:           [1.15,  1,     1,      1,      0.75,   0.8,    0.8,    1.4,    0.9,    0.75,   0.9,    1,      0.9],
     /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // My g.stats
+    mega_pierce:        [1,     1,     1,      1,    10000,   0.1,   10000,    1,      1,      1,      1,      0,      1],
+    mega_pen:           [1,     1,     1,      1,      1,      1,    10000,    1,      1,      1,      1,      1,      1], 
+    ebh:                [1.125, 1,     1,      1,     0.8,    0.75,    2,     1.25,    1,     0.6,     1,     1.2,     1], 
+    skim_max:           [0.8,   1,     1,      1,      1,      1,      1,      1,      3,      1,      1,      1,      1], 
+    bit_less_range:     [1,     1,     1,      1,      1,      1,      1,      1,      1,     2/3,     1,      1,      1],
     much_more_damage:   [1,     1,     1,      1,      1.35,   1.3,    1,      1,      1,      1,      1,      1,      1],
 even_much_more_damage:  [1,     1,     1,      1,      1.8,    1.5,    1,      1,      1,      1,      1,      1,      1],
     tons_more_damage:   [1,     1,     1,      1,      4,      3,      1,      1,      1,      1,      1,      1,      1],
@@ -2794,7 +2799,7 @@ exports.basic = {
                             SHOOT_SETTINGS: guntype,
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,          
-                        }, }
+                        }, },
                 ],
             };
         }
@@ -8547,6 +8552,250 @@ exports.pentaQuarsarDrone = {
                 ],
             };
 
+        exports.shinyTetratorBullet = {
+            PARENT: [exports.bullet],
+            LABEL: 'Battleship',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   7,    7.5,    0.6,     7,      4,      90,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
+                        TYPE: exports.autoswarm,
+                        AUTOFIRE: true,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,      90,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
+                        TYPE: exports.autoswarm,
+                        AUTOFIRE: true,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,      4,     270,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
+                        TYPE: exports.autoswarm,
+                        AUTOFIRE: true,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,     270,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
+                        TYPE: exports.autoswarm,
+                        AUTOFIRE: true,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, },
+            ],
+        };
+        exports.shinyTetrator = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Tetrator',
+            COLOR: 31,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  24,     9,      1,      0,      0,      0,      0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  19,    12,    -1.3,     0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.double, g.pound, g.half_reload, g.one_third_reload, g.five, g.more_speed, g.fast, g.double_range, g.bit_less_range]),
+                        TYPE: exports.shinyTetratorBullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  24,     9,      1,      0,      0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  19,    12,    -1.3,     0,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.double, g.pound, g.half_reload, g.one_third_reload, g.five, g.more_speed, g.fast, g.double_range, g.bit_less_range]),
+                        TYPE: exports.shinyTetratorBullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  15,     7,    -1.3,     0,      0,      90,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  15,     7,    -1.3,     0,      0,     270,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, },
+            ],
+        };
+exports.shiningTurret = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 0.8
+    },
+    COLOR: 31,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret]),
+                TYPE: exports.bullet,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 31,
+            }, },
+    ],
+};
+exports.shinySpawn_crasher = {
+  PARENT: [exports.genericTank],
+  COLOR: 31,
+  SHAPE: [[0,0]],
+  FRAG: [exports.crasher, {COLOR: 31}]
+}
+exports.shining_cascader = {
+    PARENT: [exports.sentry],
+    LABEL: 'Shining Cascader',
+    COLOR: 31,
+    SIZE: 15,
+    DANGER: 3,
+    VALUE: 50000,
+    BODY: {
+        FOV: 1,
+        HEALTH: 17,
+    },
+    GUNS: [{
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 15,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 31,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,      60,    180,   1, ], 
+            TYPE: [exports.shiningTurret],
+            }, {
+        POSITION: [  14,     8,      0,     300,    180,   1, ], 
+            TYPE: [exports.shiningTurret],
+            }, {
+        POSITION: [  14,     0,      8,      0,      0,    1, ], 
+            TYPE: [exports.shinyTetrator],
+            }, {
+        POSITION: [   1,     1,      0,      0,      0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      24,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      48,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      72,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      96,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     120,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     144,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     168,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     192,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     216,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     240,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     264,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     288,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     312,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     336,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            },
+    ],
+};
+exports.shining_cascader2 = {
+    PARENT: [exports.sentry],
+    LABEL: 'Shining Cascader',
+    COLOR: 31,
+    SIZE: 15,
+    DANGER: 3,
+    VALUE: 50000,
+    BODY: {
+        FOV: 1,
+        HEALTH: 17,
+    },
+    GUNS: [{
+        POSITION: [   6,     12,    1.25,    6,      0,     180,     0,    ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone, g.guardian]),
+                TYPE: exports.drone,
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                WAIT_TO_CYCLE: true,
+                MAX_CHILDREN: 15,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 31,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,      60,    180,   1, ], 
+            TYPE: [exports.shiningTurret],
+            }, {
+        POSITION: [  14,     8,      0,     300,    180,   1, ], 
+            TYPE: [exports.shiningTurret],
+            }, {
+        POSITION: [  14,     0,      8,      0,      0,    1, ], 
+            TYPE: [exports.shinyTetrator],
+            },
+    ],
+};
+
         /*'Tethys',
         'Mnemosyne',*/
 
@@ -8687,7 +8936,7 @@ exports.botT3_E = {
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
-            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2];
+            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.shining_cascader2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
