@@ -8627,7 +8627,7 @@ exports.pentaQuarsarDrone = {
                     COLOR_SETTINGS: {
                         COLOR: 31,
                     }, }, {
-                POSITION: [  15,     7,    -1.3,     0,      0,      90,     0,   ], 
+                POSITION: [  15,     7,     0.6,     0,      0,      90,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
                         TYPE: exports.swarm,
@@ -8636,7 +8636,7 @@ exports.pentaQuarsarDrone = {
                     COLOR_SETTINGS: {
                         COLOR: 31,
                     }, }, {
-                POSITION: [  15,     7,    -1.3,     0,      0,     270,     0,   ], 
+                POSITION: [  15,     7,     0.6,     0,      0,     270,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.half_reload, g.low_power, g.bit_less_range, g.meta, g.no_recoil]),
                         TYPE: exports.swarm,
@@ -8700,13 +8700,13 @@ exports.shining_cascader = {
     ],
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  14,     8,      0,      60,    180,   1, ], 
+        POSITION: [  14,     8,      0,      60,    180,   0, ], 
             TYPE: [exports.shiningTurret],
             }, {
-        POSITION: [  14,     8,      0,     300,    180,   1, ], 
+        POSITION: [  14,     8,      0,     300,    180,   0, ], 
             TYPE: [exports.shiningTurret],
             }, {
-        POSITION: [  14,     0,      10,     0,      0,    1, ], 
+        POSITION: [  15,     0,      0,      0,      0,    1, ], 
             TYPE: [exports.shinyTetrator],
             }, {
         POSITION: [   1,     1,      0,      0,      0,    0, ],
@@ -8755,6 +8755,7 @@ exports.shining_cascader = {
             TYPE: exports.shinySpawn_crasher,
             },
     ],
+    BROADCAST_MESSAGE: 'An Unusually Shiny Hesperian Artifact has been killed!',
 };
 exports.shining_cascader2 = {
     PARENT: [exports.sentry2],
@@ -8784,13 +8785,13 @@ exports.shining_cascader2 = {
     ],
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  14,     8,      0,      60,    180,   1, ], 
+        POSITION: [  14,     8,      0,      60,    180,   0, ], 
             TYPE: [exports.shiningTurret],
             }, {
-        POSITION: [  14,     8,      0,     300,    180,   1, ], 
+        POSITION: [  14,     8,      0,     300,    180,   0, ], 
             TYPE: [exports.shiningTurret],
             }, {
-        POSITION: [  14,     0,      10,     0,      0,    1, ], 
+        POSITION: [  15,     0,      0,      0,      0,    1, ], 
             TYPE: [exports.shinyTetrator],
             },
     ],
