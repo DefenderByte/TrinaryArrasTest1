@@ -9094,7 +9094,7 @@ exports.shining_caltrop2 = {
                         COLOR_SETTINGS: {
                             COLOR: 9,
                         }, }, {
-                    POSITION: [  25,    0.3,    -55,     0,      0,      0,      0,   ],
+                    POSITION: [  25,    0.3,    -55,     0,      0,     180,     0,   ],
                         COLOR_SETTINGS: {
                             COLOR: 31,
                         }, },
@@ -9107,8 +9107,8 @@ exports.shining_expunger = {
     SHAPE: 0,
     SIZE: 15,
     DANGER: 3,
+    INVISIBLE: [0.1, 0.01, 0.01],
     VALUE: 50000,
-    ALPHA: 0.5,
     BODY: {
         FOV: 1,
         HEALTH: 17,
@@ -9118,7 +9118,7 @@ exports.shining_expunger = {
         POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
             TYPE: [exports.shiningStalkerVPN],
             }, {
-        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
+        POSITION: [   7,     0,    -13.1,    0,     360,   0, ], 
             TYPE: [exports.shiningStalkerVPN],
             },
     ],
@@ -9130,8 +9130,8 @@ exports.shining_expunger2 = {
     SHAPE: 0,
     SIZE: 15,
     DANGER: 3,
+    INVISIBLE: [0.1, 0.01, 0.01],
     VALUE: 50000,
-    ALPHA: 0.5,
     BODY: {
         FOV: 1,
         HEALTH: 17,
@@ -9141,7 +9141,7 @@ exports.shining_expunger2 = {
         POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
             TYPE: [exports.shiningStalkerVPN],
             }, {
-        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
+        POSITION: [   7,     0,    -13.1,    0,     360,   0, ], 
             TYPE: [exports.shiningStalkerVPN],
             },
     ],
