@@ -9001,7 +9001,7 @@ exports.shining_caltrop = {
     },
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  10,     0,      0,      60,    360,   1, ], 
+        POSITION: [  10,     0,      0,     180,    360,   1, ], 
             TYPE: [exports.shiningTurret],
             }, {
         POSITION: [   7,    12.1,    0,      0,      0,    0, ],
@@ -9058,7 +9058,7 @@ exports.shining_caltrop2 = {
     },
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  10,     0,      0,      60,    360,   1, ], 
+        POSITION: [  10,     0,      0,     180,    360,   1, ], 
             TYPE: [exports.shiningTurret],
             }, {
         POSITION: [   7,    12.1,    0,      0,      0,    0, ],
@@ -9069,33 +9069,80 @@ exports.shining_caltrop2 = {
             }, {
         POSITION: [   7,    12.1,    0,     240,     0,    0, ],
             TYPE: exports.shiningTriangle,
+            },
+    ],
+};
+            exports.shiningStalkerVPN = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Stalker (VPN Active)',
+                SHAPE: 5,
+                COLOR: 31,
+                DANGER: 7,
+                BODY: {
+                    FOV: base.FOV * 1.4,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  25,    8.5,   -1.75,    0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 31,
+                        }, }, {
+                    POSITION: [19.95,  5.15,    1.35,    0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 9,
+                        }, }, {
+                    POSITION: [  25,    0.3,    -55,     0,      0,      0,      0,   ],
+                        COLOR_SETTINGS: {
+                            COLOR: 31,
+                        }, },
+                ],
+            };
+exports.shining_expunger = {
+    PARENT: [exports.sentry],
+    LABEL: 'Shining Expunger',
+    COLOR: 31,
+    SHAPE: 0,
+    SIZE: 15,
+    DANGER: 3,
+    VALUE: 50000,
+    ALPHA: 0.5,
+    BODY: {
+        FOV: 1,
+        HEALTH: 17,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
+            TYPE: [exports.shiningStalkerVPN],
             }, {
-        POSITION: [   1,     1,      0,      0,      0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
+        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
+            TYPE: [exports.shiningStalkerVPN],
+            },
+    ],
+};
+exports.shining_expunger2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Shining Expunger',
+    COLOR: 31,
+    SHAPE: 0,
+    SIZE: 15,
+    DANGER: 3,
+    VALUE: 50000,
+    ALPHA: 0.5,
+    BODY: {
+        FOV: 1,
+        HEALTH: 17,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
+            TYPE: [exports.shiningStalkerVPN],
             }, {
-        POSITION: [   1,     1,      0,      40,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,      80,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,     120,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,     160,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,     200,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,     240,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,     280,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
-            }, {
-        POSITION: [   1,     1,      0,     320,     0,    0, ],
-            TYPE: exports.shinySpawn_crasher,
+        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
+            TYPE: [exports.shiningStalkerVPN],
             },
     ],
 };
@@ -9241,6 +9288,7 @@ exports.botT3_E = {
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.shining_cascader2, exports.shining_devastator2, exports.shining_caltrop2, exports.devSentries2];
+            exports.devSentries2.UPGRADES_TIER_4 = [exports.shining_expunger2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
