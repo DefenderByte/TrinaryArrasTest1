@@ -242,7 +242,7 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     rocket:             [0.48,  2,     1.5,    0.85,   0.25,   0.25,   0.25,   0.75,   1,      0.5,    1,      1.25,   1],
     jump:               [11,    12,    1,      1,      0,      1,      1,      1,      1,      1,      1,      1,      1],
     guardian:           [0.45,  8,     1,      0.7,    2,      1,      1,      1,      1,      1.8,    0.25,   1,      0.25],
-    flame:              [0.518, 1.25,  4.25,   0.25,   1.25,   1.25,   2,      0.8,    0,      1.85,   1,      3,      1.6],
+    flame:              [0.518, 1.25,  4.25,   1,      1.25,   1.25,   2,      0.8,    0,      1.85,   1,      3,      1.6],
     levi_five:          [1.15,  0,     1,      1,      0.95,   0.95,   0.95,   1.125,  1.1,    1.15,   2,      1.1,    1],
     levi:               [2,     0,     1.25,   1,      1,      1,      1,      0.65,   1,      0.75,   1,      1,      1],
     a_lotta_damage:     [0.8,   1,     1,      1.2,    1.5,    1.75,   1.25,   1,      1,      1,      1,      1,      1],
@@ -8912,7 +8912,7 @@ exports.shining_devastator = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  21,     14,     1,      0,      0,      90,     0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.mach, g.mini, g.flame]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.pound]),
                 TYPE: exports.bullet,
             },
             COLOR_SETTINGS: {
@@ -8921,7 +8921,7 @@ exports.shining_devastator = {
             }, }, {
         POSITION: [  21,     14,     1,      0,      0,     270,     0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.mach, g.mini, g.flame]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.pound]),
                 TYPE: exports.bullet,
             },
             COLOR_SETTINGS: {
@@ -8955,7 +8955,7 @@ exports.shining_devastator2 = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  21,     14,     1,      0,      0,      90,     0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.mach, g.mini, g.flame]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.pound]),
                 TYPE: exports.bullet,
             },
             COLOR_SETTINGS: {
@@ -8964,7 +8964,7 @@ exports.shining_devastator2 = {
             }, }, {
         POSITION: [  21,     14,     1,      0,      0,     270,     0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.mach, g.mini, g.flame]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.pound]),
                 TYPE: exports.bullet,
             },
             COLOR_SETTINGS: {
@@ -8981,7 +8981,123 @@ exports.shining_devastator2 = {
             TYPE: [exports.shiningBackBooster],
             },
     ],
+};
+exports.shiningTriangle = {
+    COLOR: 31,
+    SHAPE: -3,
+};
+exports.shining_caltrop = {
+    PARENT: [exports.sentry],
+    LABEL: 'Shining Caltrop',
+    COLOR: 31,
+    SHAPE: 0,
+    SIZE: 15,
+    DANGER: 3,
+    VALUE: 50000,
+    BODY: {
+        FOV: 1,
+        SPEED: 0.5,
+        HEALTH: 17,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  10,     0,      0,      60,    360,   1, ], 
+            TYPE: [exports.shiningTurret],
+            }, {
+        POSITION: [   7,    12.1,    0,      0,      0,    0, ],
+            TYPE: exports.shiningTriangle,
+            }, {
+        POSITION: [   7,    12.1,    0,     120,     0,    0, ],
+            TYPE: exports.shiningTriangle,
+            }, {
+        POSITION: [   7,    12.1,    0,     240,     0,    0, ],
+            TYPE: exports.shiningTriangle,
+            }, {
+        POSITION: [   1,     1,      0,      0,      0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      40,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      80,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     120,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     160,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     200,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     240,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     280,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     320,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            },
+    ],
     BROADCAST_MESSAGE: 'An Unusually Shiny Hesperian Artifact has been killed!',
+};
+exports.shining_caltrop2 = {
+    PARENT: [exports.sentry2],
+    LABEL: 'Shining Caltrop',
+    COLOR: 31,
+    SHAPE: 0,
+    SIZE: 15,
+    DANGER: 3,
+    VALUE: 50000,
+    BODY: {
+        FOV: 1,
+        SPEED: 0.5,
+        HEALTH: 17,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  10,     0,      0,      60,    360,   1, ], 
+            TYPE: [exports.shiningTurret],
+            }, {
+        POSITION: [   7,    12.1,    0,      0,      0,    0, ],
+            TYPE: exports.shiningTriangle,
+            }, {
+        POSITION: [   7,    12.1,    0,     120,     0,    0, ],
+            TYPE: exports.shiningTriangle,
+            }, {
+        POSITION: [   7,    12.1,    0,     240,     0,    0, ],
+            TYPE: exports.shiningTriangle,
+            }, {
+        POSITION: [   1,     1,      0,      0,      0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      40,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,      80,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     120,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     160,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     200,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     240,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     280,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            }, {
+        POSITION: [   1,     1,      0,     320,     0,    0, ],
+            TYPE: exports.shinySpawn_crasher,
+            },
+    ],
 };
 
         /*'Tethys',
@@ -9124,7 +9240,7 @@ exports.botT3_E = {
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
-            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.shining_cascader2, exports.shining_devastator2];
+            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.shining_cascader2, exports.shining_devastator2, exports.shining_caltrop2, exports.devSentries2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
