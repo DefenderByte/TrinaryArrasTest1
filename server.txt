@@ -1794,6 +1794,9 @@ class Entity {
         if (set.PERSISTS_AFTER_DEATH != null) { 
             this.settings.persistsAfterDeath = set.PERSISTS_AFTER_DEATH; 
         }
+        if (set.FRAG != null) {
+            this.settings.frag = set.FRAG;
+        }
         if (set.CLEAR_ON_MASTER_UPGRADE != null) { 
             this.settings.clearOnMasterUpgrade = set.CLEAR_ON_MASTER_UPGRADE; 
         }
@@ -2458,6 +2461,25 @@ class Entity {
                 }
                 sockets.broadcast(usurptText);
             }
+            if (this.settings.frag && (!this.dedByRange || !this.settings.fragile)) {
+                    if (Array.isArray(this.settings.frag)) {
+                        for (let e of this.settings.frag) {
+                            let o = new Entity({ x: this.x, y: this.y, });
+                            o.team = -100;
+                            if (Array.isArray(e)) {
+                                e.forEach(ee => o.define(ee));
+                            } else {
+                                o.define(e);
+                                o.color = this.color;
+                            }
+                        }
+                    } else {
+                        let o = new Entity({ x: this.x, y: this.y, });
+                        o.team = this.team;
+                        o.color = this.color;
+                        o.define(this.settings.frag);
+                    }
+                }
             // Kill it
             return 1;
         } 
