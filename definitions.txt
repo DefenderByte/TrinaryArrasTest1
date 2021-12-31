@@ -8803,6 +8803,7 @@ exports.shining_cascader2 = {
             exports.shiningNeedlenose = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Needlenose',
+                COLOR: 31,
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  21,     8,      1,      0,      0,      0,      0,   ], 
@@ -8812,7 +8813,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 5,
+                            SKIN: 15,
                         }, }, {
                     POSITION: [  19,     8,      1,      0,      0,      0,     1/3,  ], 
                         PROPERTIES: {
@@ -8821,7 +8822,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 5,
+                            SKIN: 15,
                         }, }, {
                     POSITION: [  17,     8,      1,      0,      0,      0,     2/3,  ], 
                         PROPERTIES: {
@@ -8830,7 +8831,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 5,
+                            SKIN: 15,
                         }, }, {
                     POSITION: [  25,    0.3,    -55,     0,      0,      0,      0,   ],
                         COLOR_SETTINGS: {
@@ -8841,6 +8842,7 @@ exports.shining_cascader2 = {
             exports.shiningBackBooster = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Booster',
+                COLOR: 31,
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  13,     8,      1,      0,     -2,     135,   23/30, ], 
@@ -8851,7 +8853,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 1,
+                            SKIN: 10,
                         }, }, {
                     POSITION: [  13,     8,      1,      0,      2,     225,   23/30, ], 
                         PROPERTIES: {
@@ -8861,9 +8863,9 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 1,
+                            SKIN: 9,
                         }, }, {
-                    POSITION: [  16,     8,      1,      0,      1,     145,   13/30, ], 
+                    POSITION: [  16,     8,      1,      0,     -1,     145,   13/30, ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster, g.more_recoil]),
                             TYPE: exports.bullet,
@@ -8871,7 +8873,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 1,
+                            SKIN: 10,
                         }, }, {
                     POSITION: [  16,     8,      1,      0,      1,     215,   13/30, ], 
                         PROPERTIES: {
@@ -8881,7 +8883,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 1,
+                            SKIN: 9,
                         }, }, {
                     POSITION: [  19,     8,      1,      0,      0,     180,    0.1,  ], 
                         PROPERTIES: {
@@ -8891,7 +8893,7 @@ exports.shining_cascader2 = {
                         },
                         COLOR_SETTINGS: {
                             COLOR: 31,
-                            SKIN: 1,
+                            SKIN: 13,
                         }, },
                 ],
             };
