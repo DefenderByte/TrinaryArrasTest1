@@ -8706,7 +8706,7 @@ exports.shining_cascader = {
         POSITION: [  14,     8,      0,     300,    180,   1, ], 
             TYPE: [exports.shiningTurret],
             }, {
-        POSITION: [  14,     0,      8,      0,      0,    1, ], 
+        POSITION: [  14,     0,      10,     0,      0,    1, ], 
             TYPE: [exports.shinyTetrator],
             }, {
         POSITION: [   1,     1,      0,      0,      0,    0, ],
@@ -8757,7 +8757,7 @@ exports.shining_cascader = {
     ],
 };
 exports.shining_cascader2 = {
-    PARENT: [exports.sentry],
+    PARENT: [exports.sentry2],
     LABEL: 'Shining Cascader',
     COLOR: 31,
     SIZE: 15,
@@ -8790,7 +8790,7 @@ exports.shining_cascader2 = {
         POSITION: [  14,     8,      0,     300,    180,   1, ], 
             TYPE: [exports.shiningTurret],
             }, {
-        POSITION: [  14,     0,      8,      0,      0,    1, ], 
+        POSITION: [  14,     0,      10,     0,      0,    1, ], 
             TYPE: [exports.shinyTetrator],
             },
     ],
