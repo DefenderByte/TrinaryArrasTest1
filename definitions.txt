@@ -7860,6 +7860,7 @@ exports.pentagonQuarsar = {
     PARENT: [exports.sentry],
     LABEL: 'Quintogen',
     COLOR: 14,
+    SIZE: 16,
     SHAPE: 'M 1 0 L -0.1 0.8 L 0.1 0 L -0.1 -0.8 z M -0.1 0 L -0.25 0.3 L -1.2 0 L -0.25 -0.3 z',
     DANGER: 5,
     VALUE: 400,
@@ -7870,6 +7871,7 @@ exports.pentagonQuarsar = {
         HEALTH: 10 * 2,
         RESIST: 1.25,
         PENETRATION: 1.1,
+        SPEED: 3,
     },
 };
 
@@ -8111,6 +8113,9 @@ exports.krisaucemissile = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.levi]),
                             TYPE: exports.krisaucemissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
+                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 16,
                         }, }, {
                     POSITION: [  11,    14,   -1.35,     0,      0,      0,      0,  ], 
                         },
@@ -8118,7 +8123,7 @@ exports.krisaucemissile = {
             };
             exports.krisaucephase2 = {
                 PARENT: [exports.miniboss2],
-                LABEL: 'Krios Saucer',
+                LABEL: 'Pentatron',
                 COLOR: 14,
                 SHAPE: 5,
                 SIZE: 30,
@@ -8540,7 +8545,7 @@ exports.botT3_E = {
 // UPGRADE PATHS
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
-            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2];
+            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
