@@ -4719,7 +4719,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Don\'t get... wait, no, correction: KRIOS has envisioned your arrival!');
                         break;
                     case 17: 
-                        choice = [[Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.nestdefend_tethys], 10, 'poly', 'nest']; 
+                        choice = [[Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.namelessdefend_tethys], 10, 'poly', 'nest']; 
                         sockets.broadcast('Tethys: I\'d rather be shiny... and I AM!');
                         sockets.broadcast('Sentries unite... wait, no, correction: Prepare for a dazzling display of shininess!');
                         break;
