@@ -8556,56 +8556,107 @@ exports.pentaQuarsarDrone = {
                 ],
             };
 
-            exports.shiningClick = {
+exports.rareSentry = {
+    PARENT: [exports.sentry],
+    DANGER: 3,
+    COLOR: 31,
+    VALUE: 3000,
+};
+exports.rareSentry2 = {
+    PARENT: [exports.sentry2],
+    DANGER: 3,
+    COLOR: 31,
+    VALUE: 3000,
+};
+exports.rareSentrySwarm = {
+    PARENT: [exports.rareSentry],
+    LABEL: 'PS3_33 Lite',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    6,    12,    1.25,    6,     0,    180,     0,  ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.swarm, g.more_recoil, g.double_reload]),
+            TYPE: exports.swarm,
+            STAT_CALCULATOR: gunCalcNames.swarm,     
+        }, },
+    ],
+};
+exports.rareSentrySwarm2 = {
+    PARENT: [exports.rareSentry2],
+    LABEL: 'PS3_33 Lite',
+    DANGER: 3,
+    GUNS: [{
+        POSITION: [    6,    12,    1.25,    6,     0,    180,     0,  ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.swarm, g.more_recoil, g.double_reload]),
+            TYPE: exports.swarm,
+            STAT_CALCULATOR: gunCalcNames.swarm,     
+        }, },
+    ],
+};
+        exports.rareSentryTurret = {
+            PARENT: [exports.genericTank],
+            DANGER: 6,
+            LABEL: 'Turret',
+            BODY: {
+                FOV: 3,
+            },
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            COLOR: 16,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  17,     3,      1,      0,     -6,     -7,     0.25,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Secondary',
+                    }, }, {
+                POSITION: [  17,     3,      1,      0,      6,      7,     0.75,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Secondary',
+                    }, }, {
+                POSITION: [  19,     12,     1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Primary',
+                    }, },
+            ],
+        };
+exports.rareSentryGun = makeAuto(exports.rareSentry, 'Sentry', { type: exports.rareSentryTurret, size: 12, });
+exports.rareSentryGun2 = makeAuto(exports.rareSentry2, 'Sentry', { type: exports.rareSentryTurret, size: 12, });
+            exports.rareSentryTrapTurret = {
                 PARENT: [exports.genericTank],
-                LABEL: 'Clicker',
-                SHAPE: 5,
-                COLOR: 31,
-                DANGER: 7,
+                DANGER: 6,
+                LABEL: 'Turret',
                 BODY: {
-                    FOV: base.FOV * 1.4,
+                    FOV: 4.15,
                 },
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  25,    8.5,   -1.75,    0,      0,      0,      0,   ], 
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                COLOR: 16,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
+                    POSITION: [  24,     8,      1,      0,      0,      0,      0, ], 
+                            }, {
+                    POSITION: [   4,     8,     1.3,     22,     0,      0,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.click]),
-                            TYPE: exports.bullet,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR: 31,
-                        }, }, {
-                    POSITION: [19.95,  5.15,    1.35,    0,      0,      0,      0,   ], 
-                        COLOR_SETTINGS: {
-                            COLOR: 9,
-                        }, }, {
-                    POSITION: [  25,    0.3,    -55,     0,      0,     180,     0,   ],
-                        COLOR_SETTINGS: {
-                            COLOR: 31,
+                            SHOOT_SETTINGS: combineStats([g.trap, g.barricade]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, { 
+                    POSITION: [   4,     8,     1.3,     18,     0,      0,    0.333, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.barricade]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, { 
+                    POSITION: [   4,     8,     1.3,     14,     0,      0,    0.667, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.barricade]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                 ],
             };
-exports.shining_expunger = {
-    PARENT: [exports.sentry],
-    LABEL: 'Shining Expunger',
-    COLOR: 31,
-    SHAPE: 0,
-    SIZE: 15,
-    DANGER: 3,
-    VALUE: 50000,
-    BODY: {
-        FOV: 1,
-        HEALTH: 17,
-    },
-    TURRETS: [{
-        /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [   7,     0,     13.1,    0,     360,   0, ], 
-            TYPE: [exports.shiningClick],
-            }, {
-        POSITION: [   7,     0,    -13.1,    0,     360,   0, ], 
-            TYPE: [exports.shiningClick],
-            },
-    ],
-};
+exports.rareSentryTrap = makeAuto(exports.rareSentry, 'Sentry', { type: exports.rareSentryTrapTurret, size: 12, });
+exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: exports.rareSentryTrapTurret, size: 12, });
 
         /*'Tethys',
         'Mnemosyne',*/
@@ -8747,7 +8798,7 @@ exports.botT3_E = {
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
-            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.devSentries2];
+            exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
             exports.devSentries2.UPGRADES_TIER_4 = [];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
