@@ -54,7 +54,7 @@ const skillSet = (() => {
 })();
 
 const g = { // Gun info here 
-    trap:               [39,    1,     0.25,   0.65,   1.05,   0.325,  1.05,   4.9,    1,      1.75,   1,      15,     3], // Used by Trapper Branch
+    trap:               [36,    1,     0.25,   0.6,    1,      0.75,   1,      5,      1,      1,      1,      15,     3], // Used by Trapper Branch
     swarm:              [27,    0.25,  0.05,   0.4,    0.9,    0.235,  0.65,   3.5,    1,      1,      1.25,   5,      1.25], // Used by Cruiser Branch
     drone:              [68,    0.25,  0.1,    0.6,    5,      0.295,  0.96,   2.305,  1,      1,      1,      1,      1.1], // Used by Director Branch
     factory:            [72,    1,     0.1,    0.7,    2,      0.2,    1,      3,      1,      1,      1,      0.1,    1], // Used by Spawner Branch
@@ -1373,7 +1373,7 @@ exports.trapTurret = {
             }, {
         POSITION: [   4,    14,     1.8,    16,      0,      0,      0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.trap, g.low_power, g.fast, g.half_reload]),
                 TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
             }, },
     ],
@@ -1391,7 +1391,7 @@ exports.turretTrap = {
             }, {
         POSITION: [   4,    14,     1.8,    16,      0,      0,      0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.auto_turret]),
+                SHOOT_SETTINGS: combineStats([g.trap, g.low_power, g.fast, g.half_reload]),
                 TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
             }, },
     ],
@@ -8004,25 +8004,25 @@ exports.krimissile = {
                 POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
-                POSITION: [   6,     9,      0,    180/7,    0,  0], 
+                POSITION: [   6,     9,      0,    180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,     180,     0,  0], 
+                POSITION: [   6,     9,      0,     180,     90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
+                POSITION: [   6,     9,      0,   -180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         },
             ],
@@ -8037,25 +8037,25 @@ exports.krimissile = {
                 POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
-                POSITION: [   6,     9,      0,    180/7,    0,  0], 
+                POSITION: [   6,     9,      0,    180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,     180,     0,  0], 
+                POSITION: [   6,     9,      0,     180,     90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
+                POSITION: [   6,     9,      0,   -180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         },
             ],
@@ -8749,25 +8749,25 @@ exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: export
                 POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.tetbody,
                         }, {
-                POSITION: [   6,     9,      0,    180/7,    0,  0], 
+                POSITION: [   6,     9,      0,    180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,     180,     0,  0], 
+                POSITION: [   6,     9,      0,     180,     90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
+                POSITION: [   6,     9,      0,   -180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         },
             ],
@@ -8782,25 +8782,25 @@ exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: export
                 POSITION: [ 12.5,    0,      0,      0,     360, 1], 
                     TYPE: exports.tetbody,
                         }, {
-                POSITION: [   6,     9,      0,    180/7,    0,  0], 
+                POSITION: [   6,     9,      0,    180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,   180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,     180,     0,  0], 
+                POSITION: [   6,     9,      0,     180,     90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
+                POSITION: [   6,     9,      0,   -180/7,    90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*3,   90, 0], 
                     TYPE: exports.trapTurret,
                         }, {
-                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
+                POSITION: [   6,     9,      0,  -180/7*5,   90, 0], 
                     TYPE: exports.trapTurret,
                         },
             ],
