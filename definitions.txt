@@ -608,6 +608,25 @@ exports.bigPentagon = {
     DRAW_HEALTH: true,
     GIVE_KILL_MESSAGE: true,
 };
+exports.octagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 6,
+    },
+    LABEL: 'Octagon',
+    VALUE: 1725,
+    SHAPE: 8,
+    SIZE: 40,
+    COLOR: 229,
+    BODY: {
+        DAMAGE: 6 * basePolygonDamage,
+        DENSITY: 14,
+        HEALTH: 45 * basePolygonHealth,
+        RESIST: 2,
+        PENETRATION: 0.8,
+    },
+    DRAW_HEALTH: true,
+};
 exports.heptagon = {
     PARENT: [exports.food],
     FOOD: {
@@ -8658,8 +8677,136 @@ exports.rareSentryGun2 = makeAuto(exports.rareSentry2, 'Sentry', { type: exports
 exports.rareSentryTrap = makeAuto(exports.rareSentry, 'Sentry', { type: exports.rareSentryTrapTurret, size: 12, });
 exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: exports.rareSentryTrapTurret, size: 12, });
 
-        /*'Tethys',
-        'Mnemosyne',*/
+            exports.tetgun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: base.FOV * 1.2,
+                },
+                LABEL: 'Clicker',
+                DANGER: 6,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  23,     4,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.click]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  23,     4,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.click]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  23,     4,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.click]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  23,     4,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.click]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  24,     4,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.click]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   8,    8.5,    -1.5,    5,      0,      0,      0,  ], 
+                        },
+                ],
+            };
+    exports.tetbody = {
+        CONTROLLERS: ['reversespin'],
+        DANGER: 5,
+        COLOR: 31,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [  11,     8,      0,      36,    190, 0], 
+                TYPE: exports.tetgun,
+            }, {
+            POSITION: [  11,     8,      0,     108,    180, 0], 
+                TYPE: exports.tetgun,
+            }, {
+            POSITION: [  11,     8,      0,     180,    180, 0], 
+                TYPE: exports.tetgun,
+            }, {
+            POSITION: [  11,     8,      0,    -108,    180, 0], 
+                TYPE: exports.tetgun,
+            }, {
+            POSITION: [  11,     8,      0,     -36,    180, 0], 
+                TYPE: exports.tetgun,
+            },
+        ],
+    };
+        exports.nestdefend_tethys = { 
+            PARENT: [exports.nest_defender],
+            COLOR: 31,
+            NAME: 'Tethys',
+            BODY: {
+                SPEED: base.SPEED * 0.5,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                    TYPE: exports.tetbody,
+                        }, {
+                POSITION: [   6,     9,      0,    180/7,    0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.nestdefend_tethys2 = { 
+            PARENT: [exports.nest_defender2],
+            COLOR: 31,
+            BODY: {
+                SPEED: base.SPEED * 0.5,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                    TYPE: exports.tetbody,
+                        }, {
+                POSITION: [   6,     9,      0,    180/7,    0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*3,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*5,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   -180/7,    0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*3,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*5,   0,  0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+
+        // Mnemosyne
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
@@ -8799,7 +8946,7 @@ exports.botT3_E = {
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
-            exports.devSentries2.UPGRADES_TIER_4 = [];
+            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
