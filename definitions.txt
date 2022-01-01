@@ -8772,6 +8772,39 @@ exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: export
                         },
             ],
         };
+        exports.namelessdefend_tethys = { 
+            PARENT: [exports.nest_defender],
+            COLOR: 31,
+            BODY: {
+                SPEED: base.SPEED * 0.5,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                    TYPE: exports.tetbody,
+                        }, {
+                POSITION: [   6,     9,      0,    180/7,    90, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*3,   90, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   180/7*5,   90, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     90, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,   -180/7,    90, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*3,   90, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,  -180/7*5,   90, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
         exports.nestdefend_tethys2 = { 
             PARENT: [exports.nest_defender2],
             COLOR: 31,
