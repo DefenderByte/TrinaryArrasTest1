@@ -2599,6 +2599,14 @@ case 'kricel':
     return exports.chooseN([
         'Krios',
     ], n);
+case 'tetcel':
+    return exports.chooseN([
+        'Tethys',
+    ], n);
+case 'mnecel':
+    return exports.chooseN([
+        'Mnemosyne',
+    ], n);
 case 'artcel':
     return exports.chooseN([
         'Artemis',
