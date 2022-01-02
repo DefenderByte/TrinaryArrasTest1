@@ -9003,6 +9003,9 @@ exports.mneBullet = {
             LABEL: 'Heatseeker',
             DANGER: 6,
             CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+            BODY: {
+                FOV: base.FOV * 1.2,
+            },
             GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   24,    8.5,     1,      0,      0,      0,      0,   ], 
                     }, {
@@ -9114,47 +9117,47 @@ exports.mneBullet = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  22,     6,      1,      0,      5,      0,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  20,     6,      1,      0,      5,      0,     1/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  18,     6,      1,      0,      5,      0,     2/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, {
                 POSITION: [  22,     6,      1,      0,     -5,      0,     3/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  20,     6,      1,      0,     -5,      0,     4/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  18,     6,      1,      0,     -5,      0,     5/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, {
                 POSITION: [  24,     6,      1,      0,      0,      0,     6/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  22,     6,      1,      0,      0,      0,     7/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  20,     6,      1,      0,      0,      0,     8/9,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.mini, g.gunner]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.mini, g.gunner]),
                         TYPE: exports.bullet,
                     }, }, { 
                 POSITION: [  20,    11,      1,      0,      0,      0,      0,   ], 
@@ -9216,8 +9219,6 @@ exports.cascadeMin = {
                 DAMAGE: base.DAMAGE * 2.5,
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  14,    16,      1,      0,      0,     180,     0,   ], 
-                    }, {
                 POSITION: [   6,    12,     1.25,    6,      0,     180,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
@@ -9266,8 +9267,6 @@ exports.cascadeMin = {
                 DAMAGE: base.DAMAGE * 2.5,
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  14,    16,      1,      0,      0,     180,     0,   ], 
-                    }, {
                 POSITION: [   6,    12,     1.25,    6,      0,     180,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
