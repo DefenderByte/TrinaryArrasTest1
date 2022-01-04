@@ -9299,6 +9299,574 @@ exports.cascadeMin = {
             ],
         };
 
+        exports.celestial = { 
+            PARENT: [exports.miniboss],
+            DANGER: 10,
+            LABEL: 'Coke Cassowary',
+            SHAPE: 9,
+            SIZE: 48,
+            BODY: {
+                FOV: 2,
+                SPEED: base.SPEED * 0.01,
+                HEALTH: 1000,
+                SHIELD: 0.1,
+                REGEN: 0.0001,
+                DAMAGE: 2,
+            },
+            VALUE: 1000000,
+            AI: { NO_LEAD: false, },
+        };
+        exports.celestial2 = { 
+            PARENT: [exports.miniboss2],
+            DANGER: 10,
+            LABEL: 'Coke Cassowary',
+            SHAPE: 9,
+            SIZE: 48,
+            BODY: {
+                FOV: 2,
+                SPEED: base.SPEED * 0.01,
+                HEALTH: 1000,
+                SHIELD: 0.1,
+                REGEN: 0.0001,
+                DAMAGE: 2,
+            },
+            VALUE: 1000000,
+            AI: { NO_LEAD: false, },
+        };
+    exports.palChip = {
+        PARENT: [exports.drone],
+        LABEL: 'Pentagon Sunchip Drone',
+        SHAPE: 5,
+        BODY: {
+            PENETRATION: 1.75,
+            HEALTH: 1.8 * wepHealthFactor,
+            DAMAGE: 1.6 * wepDamageFactor,
+            SHIELD: 0.1,
+            REGEN: 0.1,
+            SPEED: 1.9,
+        },
+        INDEPENDENT: true,
+        DRAW_HEALTH: true,
+    };
+        exports.palsep = {
+            CONTROLLERS: ['reversespin'],
+            COLOR: 14,
+            SHAPE: 7,
+            MAX_CHILDREN: 21,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [ 4.5,     6,      1.2,    8,      0,    180/7,    0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [ 4.5,     6,      1.2,    8,      0,   180/7*3,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [ 4.5,     6,      1.2,    8,      0,   180/7*5,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [ 4.5,     6,      1.2,    8,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [ 4.5,     6,      1.2,    8,      0,   -180/7,    0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [ 4.5,     6,      1.2,    8,      0,  -180/7*3,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [ 4.5,     6,      1.2,    8,      0,  -180/7*5,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.palChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, },
+            ],
+        };
+            exports.palswarmer = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Swarmer',
+                BODY: {
+                    FOV: 1.25,
+                },
+                INDEPENDENT: true,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    14,     -1.2,    5,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  15,    12,      1,      5,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.hive, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.double_range, g.no_recoil]),
+                            TYPE: exports.hivepal,
+                        }, },
+                ],
+            };
+        exports.palpen = {
+            CONTROLLERS: ['spin'],
+            COLOR: 14,
+            SHAPE: 5,
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     8,      0,      36,    190, 0], 
+                    TYPE: exports.palswarmer,
+                }, {
+                POSITION: [  11,     8,      0,     108,    180, 0], 
+                    TYPE: exports.palswarmer,
+                }, {
+                POSITION: [  11,     8,      0,     180,    180, 0], 
+                    TYPE: exports.palswarmer,
+                }, {
+                POSITION: [  11,     8,      0,    -108,    180, 0], 
+                    TYPE: exports.palswarmer,
+                }, {
+                POSITION: [  11,     8,      0,     -36,    180, 0], 
+                    TYPE: exports.palswarmer,
+                },
+            ],
+        };
+        exports.celestial_paladin = { 
+            PARENT: [exports.celestial],
+            COLOR: 14,
+            NAME: 'Paladin',
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.palsep,
+                        }, {
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.palpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_paladin2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 14,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.palsep,
+                        }, {
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.palpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.freGun = {
+            PARENT: [exports.genericTank],
+            DANGER: -1,
+            LABEL: 'Cruiser',
+            STAT_NAMES: statnames.swarm,
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+            BODY: {
+                FOV: 1.6,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   7,    7.5,    0.6,     7,      4,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: [exports.autoswarm, { BODY: { FOV: 1.8, }, }],
+                        STAT_CALCULATOR: gunCalcNames.swarm,               
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,      0,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: [exports.autoswarm, { BODY: { FOV: 1.8, }, }],
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, },
+            ],
+        };
+    exports.fresep = {
+        CONTROLLERS: ['reversespin'],
+        COLOR: 1,
+        SHAPE: 7,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     9,      0,    180/7,   180, 0], 
+                TYPE: exports.freGun,
+            }, {
+            POSITION: [   9,     9,      0,    180/7*3, 180, 0], 
+                TYPE: exports.freGun,
+            }, {
+            POSITION: [   9,     9,      0,    180/7*5, 180, 0], 
+                TYPE: exports.freGun,
+            }, {
+            POSITION: [   9,     9,      0,     180,    180, 0], 
+                TYPE: exports.freGun,
+            }, {
+            POSITION: [   9,     9,      0,   -180/7*5, 180, 0], 
+                TYPE: exports.freGun,
+            }, {
+            POSITION: [   9,     9,      0,   -180/7*3, 180, 0], 
+                TYPE: exports.freGun,
+            }, {
+            POSITION: [   9,     9,      0,    -180/7,  180, 0], 
+                TYPE: exports.freGun,
+            }, 
+        ],
+    };
+        exports.frepen = {
+            CONTROLLERS: ['spin'],
+            COLOR: 1,
+            SHAPE: 5,
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     8,      0,      36,    190, 0], 
+                    TYPE: exports.auto4gun,
+                }, {
+                POSITION: [  11,     8,      0,     108,    180, 0], 
+                    TYPE: exports.auto4gun,
+                }, {
+                POSITION: [  11,     8,      0,     180,    180, 0], 
+                    TYPE: exports.auto4gun,
+                }, {
+                POSITION: [  11,     8,      0,    -108,    180, 0], 
+                    TYPE: exports.auto4gun,
+                }, {
+                POSITION: [  11,     8,      0,     -36,    180, 0], 
+                    TYPE: exports.auto4gun,
+                },
+            ],
+        };
+        exports.celestial_freyja = { 
+            PARENT: [exports.celestial],
+            COLOR: 1,
+            NAME: 'Freyja',
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.fresep,
+                        }, {
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.frepen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_freyja2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 1,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.fresep,
+                        }, {
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.frepen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+    exports.zapsep = {
+        CONTROLLERS: ['reversespin'], 
+        COLOR: 2,
+        MAX_CHILDREN: 35,
+        SHAPE: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180/7*3,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180/7*5,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    -180/7,   0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    -180/7*3, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [ 4.5,     6,     1.2,     8,      0,    -180/7*5, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, },
+                ]
+    };
+    exports.zappen = {
+        CONTROLLERS: ['spin'], 
+        COLOR: 2,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [  11,     8,      0,      36,    180, 0], 
+                TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
+            }, {
+            POSITION: [  11,     8,      0,     108,    180, 0], 
+                TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
+            }, {
+            POSITION: [  11,     8,      0,     180,    180, 0], 
+                TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
+            }, {
+            POSITION: [  11,     8,      0,    -108,    180, 0], 
+                TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
+            }, {
+            POSITION: [  11,     8,      0,    -36,     180, 0], 
+                TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
+            }, 
+        ],
+    };
+        exports.celestial_zaphkiel = { 
+            PARENT: [exports.celestial],
+            NAME: 'Zaphkiel',
+            COLOR: 2,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.fresep,
+                        }, {
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.frepen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_zaphkiel2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 2,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.fresep,
+                        }, {
+                POSITION: [  10,     0,      0,      0,     360, 1], 
+                    TYPE: exports.frepen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -9432,7 +10000,8 @@ exports.botT3_E = {
 // UPGRADE PATHS
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
-            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.mega_cascade2];
+            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.mega_cascade2, exports.celestial_paladin2, exports.celestial_freyja2, exports.devBosses2];
+            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_zaphkiel2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
