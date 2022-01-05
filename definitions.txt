@@ -10093,6 +10093,31 @@ exports.artmissile = {
                         },
             ],
         };
+        exports.demsep = {
+            CONTROLLERS: ['reversespin'],
+            COLOR: 1,
+            SHAPE: 7,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2, 180/7 + 0.5, 0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2, 180/7 + 0.5, 0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     0,    180/7,    0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, },
+            ],
+        };
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
