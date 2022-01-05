@@ -106,7 +106,7 @@ const g = { // Gun info here
         destroy:        [2.25,  1.85,  0.5,    1,      1.72,   1.62,   1.2,    0.75,   0.575,  1,      1.6,    1,      3],
             anni:       [1,     1.2,   1,      1,      1,      1.2,    1,      1,      1,      1,      1,      1,      1],    
             steam:      [1.125, 1,     0.85,   1,      1,      1,      1,      1.25,   1.1,    1,      1,      0.85,   1],
-        decentralize:   [1.24,  1.3,   1.1,    1.25,   1.1,    1,      1.1,    1.05,   1,      1,      1,      1,      1],
+            decimate:   [1.24,  1.3,   1.1,    1.25,   1.1,    1,      1.1,    1.05,   1,      1,      1,      1,      1],
             intercept:  [1.375, 1,     1,      1,      1,      0.975,  1,      1,      1,      0.925,  1,      1,      1],
             wreck:      [1.25,  0.7,   1,      1,      0.9,    0.9,    0.9,    1,      1,      1,      0.9,    1,      0.9],
             op_anni:    [0.5,   0,     0.25,   1,      1,      1,      1,      2,      1,      1,      1,      1,      1],
@@ -7976,19 +7976,19 @@ exports.krimissile = {
         COLOR: 14,
         SHAPE: 5,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [  11,     8,      0,      36,    190, 0], 
+            POSITION: [   9,     9,      0,      36,    190, 0], 
                 TYPE: exports.krigun,
             }, {
-            POSITION: [  11,     8,      0,     108,    180, 0], 
+            POSITION: [   9,     9,      0,     108,    180, 0], 
                 TYPE: exports.krigun,
             }, {
-            POSITION: [  11,     8,      0,     180,    180, 0], 
+            POSITION: [   9,     9,      0,     180,    180, 0], 
                 TYPE: exports.krigun,
             }, {
-            POSITION: [  11,     8,      0,    -108,    180, 0], 
+            POSITION: [   9,     9,      0,    -108,    180, 0], 
                 TYPE: exports.krigun,
             }, {
-            POSITION: [  11,     8,      0,     -36,    180, 0], 
+            POSITION: [   9,     9,      0,     -36,    180, 0], 
                 TYPE: exports.krigun,
             },
         ],
@@ -8001,7 +8001,7 @@ exports.krimissile = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,    45, 0], 
@@ -8034,7 +8034,7 @@ exports.krimissile = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.kribody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,    45, 0], 
@@ -8721,19 +8721,19 @@ exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: export
         COLOR: 31,
         SHAPE: 5,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [  11,     8,      0,      36,    190, 0], 
+            POSITION: [   9,     9,      0,      36,    190, 0], 
                 TYPE: exports.tetgun,
             }, {
-            POSITION: [  11,     8,      0,     108,    180, 0], 
+            POSITION: [   9,     9,      0,     108,    180, 0], 
                 TYPE: exports.tetgun,
             }, {
-            POSITION: [  11,     8,      0,     180,    180, 0], 
+            POSITION: [   9,     9,      0,     180,    180, 0], 
                 TYPE: exports.tetgun,
             }, {
-            POSITION: [  11,     8,      0,    -108,    180, 0], 
+            POSITION: [   9,     9,      0,    -108,    180, 0],
                 TYPE: exports.tetgun,
             }, {
-            POSITION: [  11,     8,      0,     -36,    180, 0], 
+            POSITION: [   9,     9,      0,     -36,    180, 0], 
                 TYPE: exports.tetgun,
             },
         ],
@@ -8779,7 +8779,7 @@ exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: export
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.tetbody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,    45, 0], 
@@ -8812,7 +8812,7 @@ exports.rareSentryTrap2 = makeAuto(exports.rareSentry2, 'Sentry', { type: export
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.tetbody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,    45, 0], 
@@ -9022,19 +9022,19 @@ exports.mneBullet = {
         COLOR: 2,
         SHAPE: 5,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [  11,     8,      0,      36,    190, 0], 
+            POSITION: [   9,     9,      0,      36,    190, 0], 
                 TYPE: exports.mnegun,
             }, {
-            POSITION: [  11,     8,      0,     108,    180, 0], 
+            POSITION: [   9,     9,      0,     108,    180, 0], 
                 TYPE: exports.mnegun,
             }, {
-            POSITION: [  11,     8,      0,     180,    180, 0], 
+            POSITION: [   9,     9,      0,     180,    180, 0], 
                 TYPE: exports.mnegun,
             }, {
-            POSITION: [  11,     8,      0,    -108,    180, 0], 
+            POSITION: [   9,     9,      0,    -108,    180, 0], 
                 TYPE: exports.mnegun,
             }, {
-            POSITION: [  11,     8,      0,     -36,    180, 0], 
+            POSITION: [   9,     9,      0,     -36,    180, 0], 
                 TYPE: exports.mnegun,
             },
         ],
@@ -9047,7 +9047,7 @@ exports.mneBullet = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.mnebody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,    45, 0], 
@@ -9080,7 +9080,7 @@ exports.mneBullet = {
                 SPEED: base.SPEED * 0.5,
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [ 12.5,    0,      0,      0,     360, 1], 
+                POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.mnebody,
                         }, {
                 POSITION: [   6,     9,      0,    180/7,    45, 0], 
@@ -9354,7 +9354,7 @@ exports.cascadeMin = {
             SHAPE: 7,
             MAX_CHILDREN: 21,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [ 4.5,     6,      1.2,    8,      0,    180/7,    0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9362,7 +9362,7 @@ exports.cascadeMin = {
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.necro,
                     }, }, {
-                POSITION: [ 4.5,     6,      1.2,    8,      0,   180/7*3,   0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*3,   0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9370,7 +9370,7 @@ exports.cascadeMin = {
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.necro,
                     }, }, {
-                POSITION: [ 4.5,     6,      1.2,    8,      0,   180/7*5,   0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*5,   0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9378,7 +9378,7 @@ exports.cascadeMin = {
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.necro,
                     }, }, {
-                POSITION: [ 4.5,     6,      1.2,    8,      0,     180,     0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,     180,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9386,7 +9386,7 @@ exports.cascadeMin = {
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.necro,
                     }, }, {
-                POSITION: [ 4.5,     6,      1.2,    8,      0,   -180/7,    0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,   -180/7,    0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9394,7 +9394,7 @@ exports.cascadeMin = {
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.necro,
                     }, }, {
-                POSITION: [ 4.5,     6,      1.2,    8,      0,  -180/7*3,   0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*3,   0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9402,7 +9402,7 @@ exports.cascadeMin = {
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.necro,
                     }, }, {
-                POSITION: [ 4.5,     6,      1.2,    8,      0,  -180/7*5,   0,   ], 
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*5,   0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
                         TYPE: exports.palChip,
@@ -9434,19 +9434,19 @@ exports.cascadeMin = {
             COLOR: 14,
             SHAPE: 5,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  11,     8,      0,      36,    190, 0], 
+                POSITION: [   9,     8,      0,      36,    190, 0], 
                     TYPE: exports.palswarmer,
                 }, {
-                POSITION: [  11,     8,      0,     108,    180, 0], 
+                POSITION: [   9,     8,      0,     108,    180, 0], 
                     TYPE: exports.palswarmer,
                 }, {
-                POSITION: [  11,     8,      0,     180,    180, 0], 
+                POSITION: [   9,     8,      0,     180,    180, 0], 
                     TYPE: exports.palswarmer,
                 }, {
-                POSITION: [  11,     8,      0,    -108,    180, 0], 
+                POSITION: [   9,     8,      0,    -108,    180, 0], 
                     TYPE: exports.palswarmer,
                 }, {
-                POSITION: [  11,     8,      0,     -36,    180, 0], 
+                POSITION: [   9,     8,      0,     -36,    180, 0], 
                     TYPE: exports.palswarmer,
                 },
             ],
@@ -9462,7 +9462,7 @@ exports.cascadeMin = {
                 POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.palsep,
                         }, {
-                POSITION: [  10,     0,      0,      0,     360, 1], 
+                POSITION: [   9,     0,      0,      0,     360, 1], 
                     TYPE: exports.palpen,
                         }, {
                 POSITION: [   6,     9,      0,      20,     45, 0], 
@@ -9504,7 +9504,7 @@ exports.cascadeMin = {
                 POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.palsep,
                         }, {
-                POSITION: [  10,     0,      0,      0,     360, 1], 
+                POSITION: [   9,     0,      0,      0,     360, 1], 
                     TYPE: exports.palpen,
                         }, {
                 POSITION: [   6,     9,      0,      20,     45, 0], 
@@ -9593,19 +9593,19 @@ exports.cascadeMin = {
             COLOR: 1,
             SHAPE: 5,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  11,     8,      0,      36,    190, 0], 
+                POSITION: [   9,     8,      0,      36,    190, 0], 
                     TYPE: exports.auto4gun,
                 }, {
-                POSITION: [  11,     8,      0,     108,    180, 0], 
+                POSITION: [   9,     8,      0,     108,    180, 0], 
                     TYPE: exports.auto4gun,
                 }, {
-                POSITION: [  11,     8,      0,     180,    180, 0], 
+                POSITION: [   9,     8,      0,     180,    180, 0], 
                     TYPE: exports.auto4gun,
                 }, {
-                POSITION: [  11,     8,      0,    -108,    180, 0], 
+                POSITION: [   9,     8,      0,    -108,    180, 0], 
                     TYPE: exports.auto4gun,
                 }, {
-                POSITION: [  11,     8,      0,     -36,    180, 0], 
+                POSITION: [   9,     8,      0,     -36,    180, 0], 
                     TYPE: exports.auto4gun,
                 },
             ],
@@ -9621,7 +9621,7 @@ exports.cascadeMin = {
                 POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.fresep,
                         }, {
-                POSITION: [  10,     0,      0,      0,     360, 1], 
+                POSITION: [   9,     0,      0,      0,     360, 1], 
                     TYPE: exports.frepen,
                         }, {
                 POSITION: [   6,     9,      0,      20,     45, 0], 
@@ -9663,7 +9663,7 @@ exports.cascadeMin = {
                 POSITION: [  15,     0,      0,      0,     360, 1], 
                     TYPE: exports.fresep,
                         }, {
-                POSITION: [  10,     0,      0,      0,     360, 1], 
+                POSITION: [   9,     0,      0,      0,     360, 1], 
                     TYPE: exports.frepen,
                         }, {
                 POSITION: [   6,     9,      0,      20,     45, 0], 
@@ -9701,7 +9701,7 @@ exports.cascadeMin = {
         MAX_CHILDREN: 35,
         SHAPE: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180/7,    0,   ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9709,7 +9709,7 @@ exports.cascadeMin = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                         }, }, {
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180/7*3,  0,  ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*3,  0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9717,7 +9717,7 @@ exports.cascadeMin = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                         }, }, {
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180/7*5,  0,  ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*5,  0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9725,7 +9725,7 @@ exports.cascadeMin = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                         }, }, {
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    180,      0,  ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180,      0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9733,7 +9733,7 @@ exports.cascadeMin = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                         }, }, {
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    -180/7,   0,  ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7,   0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9741,7 +9741,7 @@ exports.cascadeMin = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                         }, }, {
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    -180/7*3, 0,  ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*3, 0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9749,7 +9749,7 @@ exports.cascadeMin = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                         }, }, {
-                    POSITION: [ 4.5,     6,     1.2,     8,      0,    -180/7*5, 0,  ], 
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*5, 0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
                             TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
@@ -9764,19 +9764,19 @@ exports.cascadeMin = {
         COLOR: 2,
         SHAPE: 5,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [  11,     8,      0,      36,    180, 0], 
+            POSITION: [   9,     8,      0,      36,    180, 0], 
                 TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
             }, {
-            POSITION: [  11,     8,      0,     108,    180, 0], 
+            POSITION: [   9,     8,      0,     108,    180, 0], 
                 TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
             }, {
-            POSITION: [  11,     8,      0,     180,    180, 0], 
+            POSITION: [   9,     8,      0,     180,    180, 0], 
                 TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
             }, {
-            POSITION: [  11,     8,      0,    -108,    180, 0], 
+            POSITION: [   9,     8,      0,    -108,    180, 0], 
                 TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
             }, {
-            POSITION: [  11,     8,      0,    -36,     180, 0], 
+            POSITION: [   9,     8,      0,    -36,     180, 0], 
                 TYPE: [ exports.skimturret, { BODY: { FOV: base.FOV * 2.25, }, COLOR: 16, }, ],
             }, 
         ],
@@ -9790,10 +9790,10 @@ exports.cascadeMin = {
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  15,     0,      0,      0,     360, 1], 
-                    TYPE: exports.fresep,
+                    TYPE: exports.zapsep,
                         }, {
-                POSITION: [  10,     0,      0,      0,     360, 1], 
-                    TYPE: exports.frepen,
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.zappen,
                         }, {
                 POSITION: [   6,     9,      0,      20,     45, 0], 
                     TYPE: exports.trapTurret,
@@ -9832,10 +9832,237 @@ exports.cascadeMin = {
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  15,     0,      0,      0,     360, 1], 
-                    TYPE: exports.fresep,
+                    TYPE: exports.zapsep,
                         }, {
-                POSITION: [  10,     0,      0,      0,     360, 1], 
-                    TYPE: exports.frepen,
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.zappen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+    exports.artChip = {
+        PARENT: [exports.drone],
+        LABEL: 'Pentagon',
+        SHAPE: 5,
+        BODY: {
+            PENETRATION: 1.75,
+            HEALTH: 1.8 * wepHealthFactor,
+            DAMAGE: 1.6 * wepDamageFactor,
+            SHIELD: 0.1,
+            REGEN: 0.1,
+            SPEED: 1.9,
+        },
+        INDEPENDENT: true,
+        DRAW_HEALTH: true,
+    };
+        exports.artsep = {
+            CONTROLLERS: ['reversespin'],
+            COLOR: 14,
+            SHAPE: 7,
+            MAX_CHILDREN: 21,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*3,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*5,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,   -180/7,    0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*3,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, }, {
+                POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*5,   0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        TYPE: exports.artChip,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                    }, },
+            ],
+        };
+exports.artmissile = {
+    PARENT: [exports.missile],
+    LABEL: 'Roto Missile',
+    FACING_TYPE: 'fastautospin',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,     6,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,     180,     0,  ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+            }, },
+    ],
+};
+            exports.artgun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Twister',
+                DANGER: 7,
+                BODY: {
+                    FOV: base.FOV * 3,
+                },
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,   10.35,   -0.5,    9,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  17,     15,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.fast_launch, g.very_fast_launch, g.demoman]),
+                            TYPE: exports.artmissile,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [ 7.5,     15,  -1.35,    4.5,     0,      0,      0,  ], 
+                        },
+                ],
+            };
+
+    exports.artpen = {
+        CONTROLLERS: ['spin'], 
+        COLOR: 14,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     8,      0,      36,    180, 0], 
+                TYPE: exports.artgun,
+            }, {
+            POSITION: [   9,     8,      0,     108,    180, 0], 
+                TYPE: exports.artgun,
+            }, {
+            POSITION: [   9,     8,      0,     180,    180, 0], 
+                TYPE: exports.artgun,
+            }, {
+            POSITION: [   9,     8,      0,    -108,    180, 0], 
+                TYPE: exports.artgun,
+            }, {
+            POSITION: [   9,     8,      0,    -36,     180, 0], 
+                TYPE: exports.artgun,
+            }, 
+        ],
+    };
+        exports.celestial_artemis = { 
+            PARENT: [exports.celestial],
+            NAME: 'Artemis',
+            COLOR: 14,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.artsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.artpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_artemis2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 14,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.artsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.artpen,
                         }, {
                 POSITION: [   6,     9,      0,      20,     45, 0], 
                     TYPE: exports.trapTurret,
@@ -10001,7 +10228,7 @@ exports.botT3_E = {
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.mega_cascade2, exports.celestial_paladin2, exports.celestial_freyja2, exports.devBosses2];
-            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_zaphkiel2];
+            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_zaphkiel2, exports.celestial_artemis2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
