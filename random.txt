@@ -1639,6 +1639,8 @@ exports.chooseBotName = () => {
         'Tick Toct',
         'Nonadci',
         'Icoaether',
+        '<b><i>HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW</i></b>... (ad nauseum)',
+        'NECROMANCER SUPERIOR TO OVERLORD, NECROMANCER SUPERIOR TO OVERLORD, NECROMANCER SUPERIOR TO OVERLORD, NECROMANCER SUPERIOR TO OVERLORD... (cursed)',
     ]);
 };
 
@@ -2573,6 +2575,7 @@ case 'tissue': //SO MANY NAMES
         'ᴇ:ᴜ',
         '𝓘𝓽𝔃𝔂',
         '𝑬𝒗𝒆𝒓𝒈𝒍𝒐𝒘',
+        '<b><i>HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW</i></b>... (ad nauseum)',
     ], n);
 case 'palcel':
     return exports.chooseN([
@@ -3199,6 +3202,6 @@ case 'defbtsarmy':
         'Seulgi', 
         'Irene', 
         ], n);
-  default: return 'unnamed';
+  default: return 'ꜰꜰꜰ';
     }
 };
