@@ -4648,7 +4648,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 250, 400, 250)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 250, 400, 250, 20, 20, 20, 20, 20, 20)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -4732,6 +4732,30 @@ var maintainloop = (() => {
                         sockets.broadcast('Dud lol why did i made this');
                         sockets.broadcast('Mnemosyne: It\'s swarm time, puny tanks!'); // HAW
                         sockets.broadcast('The Surge... wait, no, correction: Mnemosyne is ready, and has long been so...');
+                        break;
+                    case 20: 
+                        choice = [[Class.celestial_paladin], 1, 'palcel', 'rock']; 
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 21: 
+                        choice = [[Class.celestial_freyja], 1, 'frecel', 'rock']; 
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 20: 
+                        choice = [[Class.celestial_zaphkiel], 1, 'zapcel', 'rock']; 
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 21: 
+                        choice = [[Class.celestial_artemis], 1, 'artcel', 'rock']; 
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 20: 
+                        choice = [[Class.celestial_demeter], 1, 'demcel', 'rock']; 
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 21: 
+                        choice = [[Class.celestial_odin], 1, 'odicel', 'rock']; 
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
