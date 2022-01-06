@@ -9565,25 +9565,25 @@ exports.cascadeMin = {
         COLOR: 1,
         SHAPE: 7,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [   9,     9,      0,    180/7,   180, 0], 
+            POSITION: [   8,     8,      0,    180/7,   180, 0], 
                 TYPE: exports.freGun,
             }, {
-            POSITION: [   9,     9,      0,    180/7*3, 180, 0], 
+            POSITION: [   8,     8,      0,    180/7*3, 180, 0], 
                 TYPE: exports.freGun,
             }, {
-            POSITION: [   9,     9,      0,    180/7*5, 180, 0], 
+            POSITION: [   8,     8,      0,    180/7*5, 180, 0], 
                 TYPE: exports.freGun,
             }, {
-            POSITION: [   9,     9,      0,     180,    180, 0], 
+            POSITION: [   8,     8,      0,     180,    180, 0], 
                 TYPE: exports.freGun,
             }, {
-            POSITION: [   9,     9,      0,   -180/7*5, 180, 0], 
+            POSITION: [   8,     8,      0,   -180/7*5, 180, 0], 
                 TYPE: exports.freGun,
             }, {
-            POSITION: [   9,     9,      0,   -180/7*3, 180, 0], 
+            POSITION: [   8,     8,      0,   -180/7*3, 180, 0], 
                 TYPE: exports.freGun,
             }, {
-            POSITION: [   9,     9,      0,    -180/7,  180, 0], 
+            POSITION: [   8,     8,      0,    -180/7,  180, 0], 
                 TYPE: exports.freGun,
             }, 
         ],
@@ -10093,29 +10093,449 @@ exports.artmissile = {
                         },
             ],
         };
-        exports.demsep = {
+        exports.demsep = (() => {
+            let a = 180/7, d = 1/7; D = 0.5; return {
             CONTROLLERS: ['reversespin'],
             COLOR: 1,
             SHAPE: 7,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [ 4.5,     2,     0.75,   7.5,    -2, 180/7 + 0.5, 0,   ], 
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,      a,     0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
                         TYPE: exports.swarm,
                         STAT_CALCULATOR: gunCalcNames.swarm,
                     }, }, {
-                POSITION: [ 4.5,     2,     0.75,   7.5,     2, 180/7 + 0.5, 0,   ], 
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,      a,     0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
                         TYPE: exports.swarm,
                         STAT_CALCULATOR: gunCalcNames.swarm,
                     }, }, {
-                POSITION: [ 4.5,     2,     0.75,   7.5,     0,    180/7,    0,   ], 
+                POSITION: [   6,     2,     0.75,   7.5,     0,      a,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.pentachip, g.pound, g.pound, g.pound, g.more_speed, g.fast, g.no_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     a*3,   1*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     a*3,   1*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     a*3,    1*d,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     a*5,   2*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     a*5,   2*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     a*5,    2*d,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     180,   3*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     180,   3*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     180,    3*d,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     a*9,   4*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     a*9,   4*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     a*9,    4*d,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     a*11,  5*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     a*11,  5*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     a*11,   5*d,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     a*13,  6*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     a*13,  6*d+D, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     a*13,   6*d,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.mini, g.double_range]),
                         TYPE: exports.swarm,
                         STAT_CALCULATOR: gunCalcNames.swarm,
                     }, },
+            ],
+        };})();
+            exports.demswarmer = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Swarmer',
+                BODY: {
+                    FOV: 1.25,
+                },
+                INDEPENDENT: true,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    14,     -1.2,    5,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  15,    12,      1,      5,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.hive, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.double_range, g.no_recoil]),
+                            TYPE: exports.hivepal,
+                        }, },
+                ],
+            };
+        exports.dempen = {
+            CONTROLLERS: ['spin'],
+            COLOR: 1,
+            SHAPE: 5,
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   9,     8,      0,      36,    190, 0], 
+                    TYPE: exports.demswarmer,
+                }, {
+                POSITION: [   9,     8,      0,     108,    180, 0], 
+                    TYPE: exports.demswarmer,
+                }, {
+                POSITION: [   9,     8,      0,     180,    180, 0], 
+                    TYPE: exports.demswarmer,
+                }, {
+                POSITION: [   9,     8,      0,    -108,    180, 0], 
+                    TYPE: exports.demswarmer,
+                }, {
+                POSITION: [   9,     8,      0,     -36,    180, 0], 
+                    TYPE: exports.demswarmer,
+                },
+            ],
+        };
+        exports.celestial_demeter = { 
+            PARENT: [exports.celestial],
+            COLOR: 1,
+            NAME: 'Demeter',
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.demsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.dempen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_demeter2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 1,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.demsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.dempen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+    exports.odisep = {
+        CONTROLLERS: ['reversespin'], 
+        COLOR: 2,
+        MAX_CHILDREN: 28,
+        SHAPE: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*3,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*5,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7,   0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*3, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*5, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.slow, g.half_reload, g.one_third_reload, g.near_double_size, g.double, g.triplet]),
+                            TYPE: [exports.drone, { BODY: { FOV: base.FOV * 1.25, SPEED: 4.2, }, INDEPENDENT: true, }],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, },
+                ]
+    };
+            exports.odingun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Rifle',
+                BODY: {
+                    FOV: base.FOV * 1.225,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */                       
+                    POSITION: [  20,    10.5,    1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  24,     7,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle]),
+                            TYPE: exports.bullet,
+                     }, },
+                ],
+            };
+    exports.odipen = {
+        CONTROLLERS: ['spin'], 
+        COLOR: 2,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     8,      0,      36,    180, 0], 
+                TYPE: exports.odingun,
+            }, {
+            POSITION: [   9,     8,      0,     108,    180, 0], 
+                TYPE: exports.odingun,
+            }, {
+            POSITION: [   9,     8,      0,     180,    180, 0], 
+                TYPE: exports.odingun,
+            }, {
+            POSITION: [   9,     8,      0,    -108,    180, 0], 
+                TYPE: exports.odingun,
+            }, {
+            POSITION: [   9,     8,      0,    -36,     180, 0], 
+                TYPE: exports.odingun,
+            }, 
+        ],
+    };
+        exports.celestial_odin = { 
+            PARENT: [exports.celestial],
+            NAME: 'Odin',
+            COLOR: 2,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.odisep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.odipen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_odin2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 2,
+            BODY: {
+                SPEED: base.SPEED * 0.05,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.odisep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.odipen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
             ],
         };
 
@@ -10253,7 +10673,7 @@ exports.botT3_E = {
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.mega_cascade2, exports.celestial_paladin2, exports.celestial_freyja2, exports.devBosses2];
-            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_zaphkiel2, exports.celestial_artemis2];
+            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
