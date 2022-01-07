@@ -8847,7 +8847,7 @@ exports.defendOfShiniesMinPupil = {
 exports.defendOfShiniesMinEye = {
     COLOR: 9,
     SHAPE: 0,
-    INDEPENDENT: true,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
     TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  11,     4,      0,      0,      0,   1],
             TYPE: exports.defendOfShiniesMinPupil,
@@ -8888,7 +8888,7 @@ exports.defendOfShiniesMinEye = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [10.25,    0,      0,      0,      0,   1, ], 
+                    POSITION: [10.25,    0,      0,      0,     360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -8927,10 +8927,10 @@ exports.defendOfShiniesMinEye = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [7.625,   6.5,     0,      0,      0,   1, ], 
+                    POSITION: [7.625,    0,    -6.5,     0,     360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         }, {
-                    POSITION: [7.625,   6.5,     0,      0,      0,   1, ], 
+                    POSITION: [7.625,   6.5,    6.5,     0,     360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -8986,6 +8986,7 @@ exports.defendOfShiniesMinEye = {
                 BODY: {
                     FOV: 1.25,
                 },
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  14,    14,     -1.2,    5,      0,      0,      0,   ], 
                         }, {
@@ -9085,19 +9086,19 @@ exports.defendOfShiniesMinEye = {
                         TYPE: exports.swarm,
                         STAT_CALCULATOR: gunCalcNames.swarm,
                     }, }, {
-                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     120,    0.5,  ], 
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     180,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.swarm,
                         STAT_CALCULATOR: gunCalcNames.swarm,
                     }, }, {
-                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     120,    0.5,  ], 
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     180,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.swarm,
                         STAT_CALCULATOR: gunCalcNames.swarm,
                     }, }, {
-                POSITION: [   6,     2,     0.75,   7.5,     0,     120,     0,   ], 
+                POSITION: [   6,     2,     0.75,   7.5,     0,     180,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.swarm,
