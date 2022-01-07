@@ -8927,10 +8927,10 @@ exports.defendOfShiniesMinEye = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [7.625,    0,    -6.5,     0,     360,  1, ], 
+                    POSITION: [7.625,    6,      0,      90,    360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         }, {
-                    POSITION: [7.625,    0,     6.5,     0,     360,  1, ], 
+                    POSITION: [7.625,    6,      0,     270,    360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -9495,10 +9495,10 @@ exports.cascadeMin = {
             ],
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [   6,     7,      0,     120,    360,   0, ], 
+                POSITION: [   6,     7,      0,     120,    360,   1, ], 
                     TYPE: [exports.megaCascadeGun],
                     }, {
-                POSITION: [   6,     7,      0,     240,    360,   0, ],
+                POSITION: [   6,     7,      0,     240,    360,   1, ],
                     TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
@@ -9546,10 +9546,10 @@ exports.cascadeMin = {
             ],
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [   6,     7,      0,      60,    120,   0, ], 
+                POSITION: [   6,     7,      0,     120,    360,   1, ], 
                     TYPE: [exports.megaCascadeGun],
                     }, {
-                POSITION: [   6,     7,      0,     300,    120,   0, ],
+                POSITION: [   6,     7,      0,     240,    360,   1, ],
                     TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    120,   0, ],
