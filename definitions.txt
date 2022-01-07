@@ -8930,7 +8930,7 @@ exports.defendOfShiniesMinEye = {
                     POSITION: [7.625,    0,    -6.5,     0,     360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         }, {
-                    POSITION: [7.625,   6.5,    6.5,     0,     360,  1, ], 
+                    POSITION: [7.625,    0,     6.5,     0,     360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -9495,16 +9495,16 @@ exports.cascadeMin = {
             ],
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [   6,     7,      0,      60,    120,   0, ], 
+                POSITION: [   6,     7,      0,     120,    360,   0, ], 
                     TYPE: [exports.megaCascadeGun],
                     }, {
-                POSITION: [   6,     7,      0,     300,    120,   0, ],
+                POSITION: [   6,     7,      0,     240,    360,   0, ],
                     TYPE: [exports.megaCascadeGun],
                     }, {
-                POSITION: [  10,     8,      0,      60,    120,   0, ],
+                POSITION: [  10,     8,      0,      60,    180,   0, ],
                     TYPE: [exports.mnegun],
                     }, {
-                POSITION: [  10,     8,      0,     300,    120,   0, ],
+                POSITION: [  10,     8,      0,     300,    180,   0, ],
                     TYPE: [exports.mnegun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
