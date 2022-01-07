@@ -8888,7 +8888,7 @@ exports.defendOfShiniesMinEye = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [10.25,    0,      0,      0,     360,  1, ], 
+                    POSITION: [10.25,    0,      0,      0,      0,   1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -8927,10 +8927,10 @@ exports.defendOfShiniesMinEye = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [  9.5,   6.5,     0,      90,    360,  1, ], 
+                    POSITION: [7.625,   6.5,     0,      0,      0,   1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         }, {
-                    POSITION: [  9.5,   6.5,     0,     270,    360,  1, ], 
+                    POSITION: [7.625,   6.5,     0,      0,      0,   1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -8969,13 +8969,13 @@ exports.defendOfShiniesMinEye = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [5.6375,   4,      0,      60,    360,  1, ], 
+                    POSITION: [   5,     6,      0,      60,    360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         }, {
-                    POSITION: [5.6375,   4,      0,     180,    360,  1, ], 
+                    POSITION: [   5,     6,      0,     180,    360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         }, {
-                    POSITION: [5.6375,   4,      0,     300,    360,  1, ], 
+                    POSITION: [   5,     6,      0,     300,    360,  1, ], 
                         TYPE: [exports.defendOfShiniesMinEye],
                         },
                 ],
@@ -9129,10 +9129,10 @@ exports.defendOfShiniesMinEye = {
                 POSITION: [   5,     7,      0,      90,    360,  1],
                     TYPE: exports.defendOfShiniesGun,
                         }, {
-                POSITION: [   5,     7,      0,     210,    360,  1],
+                POSITION: [   5,     7,      0,     150,    360,  1],
                     TYPE: exports.tetgun,
                         }, {
-                POSITION: [   5,     7,      0,     150,    360,  1],
+                POSITION: [   5,     7,      0,     210,    360,  1],
                     TYPE: exports.defendOfShiniesGun,
                         }, {
                 POSITION: [   5,     7,      0,     270,    360,  1],
