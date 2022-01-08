@@ -3057,7 +3057,6 @@ exports.basic = {
             exports.factory = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Factory',
-                SHAPE: 4,
                 DANGER: 7,
                 STAT_NAMES: statnames.minion,
                 BODY: {
@@ -9986,6 +9985,7 @@ exports.triangleCascade2 = {
 exports.mneBullet = {
     PARENT: [exports.bullet],
     LABEL: 'Heat Missile',
+    MOTION_TYPE: 'chase',
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     INDEPEDENT: true,
 };
@@ -11800,6 +11800,7 @@ exports.bentHomingBullet = {
     PARENT: [exports.bullet],
     LABEL: 'Heat Missile',
     SHAPE: 'M -0.25 -0.3 L -1 0 L -0.25 0.3 L 0 0.375 L 0 0.75 L 1 0 L 0 -0.75 L 0 -0.375 Z',
+    MOTION_TYPE: 'chase',
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     INDEPEDENT: true,
 };
