@@ -260,6 +260,9 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     laser:              [0.355, 0.2,   1,      1,      0.6,    0.51,   0.6,    1.35,   1,      1,      0.25,   0.05,   0.5],
     basemaker:          [6.25,  1.4,   0.1,    1,      1,      0.75,   1,      0.5,    1,      1,      1,      15,     1],
     stronger:           [1,     1,     1,      1,      1.05,   1.05,   1,      1.1,    1,      1,      1,      1,      1],
+    /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // WIP
+    ceptionist:         [1.2,   1,     1,      1,      1,      1,      1,      0.95,   0.95,   0.95,   1,      1,      1],
+    ceptionist_bullet:  [1.2,   1,     1,      1,      0.5,    0.475,  0.5,    0.7,    0.7,    1,      1,      1,      1],
     /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // My g.stats
     mega_pierce:        [1,     1,     1,      1,    10000,   0.1,   10000,    1,      1,      1,      1,      0,      1],
     mega_pen:           [1,     1,     1,      1,      1,      1,    10000,    1,      1,      1,      1,      1,      1], 
@@ -12050,6 +12053,48 @@ exports.cwisnuke = {
                             },
                 ],
             };
+            exports.flameceptionistmarking = {
+                PARENT: [exports.genericTank],
+                COLOR: 17,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 17,
+                            SKIN: 1,
+                        }, },
+                ],
+            };
+            exports.flameceptionistbullet = {
+                PARENT: [exports.bullet],
+                LABEL: 'Flamethrower',
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.ceptionist, g.ceptionist_bullet]),
+                            TYPE: exports.missile,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 17,
+                            SKIN: 1,
+                        }, },
+                ],
+            };
+            exports.flameceptionist2 = {
+                PARENT: [exports.bullet],
+                LABEL: 'Flamethrower Ceptionist²',
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.ceptionist]),
+                            TYPE: exports.flameceptionistbullet,
+                        },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.flameceptionistmarking,
+                            },
+                ],
+            };
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
@@ -12196,7 +12241,7 @@ exports.botT3_E = {
 
             exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.factory, exports.destroy, exports.shotgun, exports.builder, exports.artillery, exports.skimmer];
 
-            exports.devOverdone.UPGRADES_TIER_4 = [];
+            exports.devOverdone.UPGRADES_TIER_4 = [exports.flameceptionist2];
 
             exports.devACs.UPGRADES_TIER_4 = [exports.arenaCloser2, exports.devACs2];
 
