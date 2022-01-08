@@ -11806,21 +11806,21 @@ exports.bentHomingBullet = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  19,     8,      1,      0,     -2,     -20,     0,   ], 
                     }, {
-                POSITION: [   2,     10,     1,      22,    -2,     -20,    0.5,  ], 
+                POSITION: [   2,     12,     1,      19,    -2,     -20,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,      20,     0,   ], 
                     }, {
-                POSITION: [   2,     10,     1,      22,     2,      20,    0.5,  ], 
+                POSITION: [   2,     12,     1,      19,     2,      20,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     }, {
-                POSITION: [   2,     10,     1,      22,     0,      0,      0,   ], 
+                POSITION: [   2,     12,     1,      22,     0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
@@ -11922,13 +11922,13 @@ exports.bot = {
     ],
     AI: { STRAFE: true, },
 }
-exports.botT1 = {
+exports.botT1 = { // FFA Version
     PARENT: [exports.bot],
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
     DANGER: 8,
     SIZE: 12,
-    COLOR: 16,
+    COLOR: 12,
     SKILL: skillSet({
         rld: 1,
         dam: 0.2,
@@ -11985,7 +11985,7 @@ exports.botT3 = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
     DANGER: 8,
-    COLOR: 36,
+    COLOR: 'rainbow',
     SKILL: skillSet({
         rld: 1,
         dam: 1,
