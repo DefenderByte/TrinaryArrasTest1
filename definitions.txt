@@ -9985,8 +9985,9 @@ exports.triangleCascade2 = {
 exports.mneBullet = {
     PARENT: [exports.bullet],
     LABEL: 'Heat Missile',
-    MOTION_TYPE: 'chase',
+    MOTION_TYPE: 'swarm',
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
+    CRAVES_ATTENTION: true,
     INDEPEDENT: true,
 };
         exports.mnegun = {
@@ -11800,8 +11801,9 @@ exports.bentHomingBullet = {
     PARENT: [exports.bullet],
     LABEL: 'Heat Missile',
     SHAPE: 'M -0.25 -0.3 L -1 0 L -0.25 0.3 L 0 0.375 L 0 0.75 L 1 0 L 0 -0.75 L 0 -0.375 Z',
-    MOTION_TYPE: 'chase',
+    MOTION_TYPE: 'swarm',
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
+    CRAVES_ATTENTION: true,
     INDEPEDENT: true,
 };
         exports.bentHoming = {
