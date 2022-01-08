@@ -11760,6 +11760,145 @@ exports.artmissile = {
                         }, },
                 ],
             };
+            exports.underranger = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sentinel',
+                DANGER: 8,
+                STAT_NAMES: statnames.drone,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.15,
+                },
+                SHAPE: 4,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  32,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.ranger]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   5,    8.5,    -1.6,    8,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,     180,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
+                            TYPE: exports.sunchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                            MAX_CHILDREN: 14,
+                        }, },
+                    ],
+            };
+
+exports.bentHomingBullet = {
+    PARENT: [exports.autoswarm],
+    LABEL: 'Heat Missile',
+    SHAPE: 'M -0.25 -0.3 L -1 0 L -0.25 0.3 L 0 0.375 L 0 0.75 L 1 0 L 0 -0.75 L 0 -0.375 Z',
+};
+        exports.bentHoming = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Seeker',
+            DANGER: 8,
+            BODY: {
+                SPEED: base.SPEED * 0.9,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     -2,     -20,     0,   ], 
+                    }, {
+                POSITION: [   2,     10,     1,      22,    -2,     -20,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,      2,      20,     0,   ], 
+                    }, {
+                POSITION: [   2,     10,     1,      22,     2,      20,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   2,     10,     1,      22,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+
+            exports.hybridflanktrap = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Chimera',
+                DANGER: 7,
+                STAT_NAMES: 6,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.weak]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: false, 
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [  13,     8,      1,      0,      0,     180,     0,  ], 
+                        }, {
+                    POSITION: [   4,     8,     1.7,    13,      0,     180,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.flank]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                    ],
+            };
+
+            exports.mini1gun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Minigun',
+                DANGER: 7,
+                SHAPE: 4,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                BODY: {
+                    FOV: 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  26,    12,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.auto]),
+                            TYPE: exports.bullet,
+                        }, }, { 
+                    POSITION: [  21,    12,      1,      0,      0,      0,    0.333,], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.auto]),
+                            TYPE: exports.bullet,
+                        }, }, { 
+                    POSITION: [  16,    12,      1,      0,      0,      0,    0.667,], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.auto]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.mini1 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Automaton',
+                DANGER: 7,
+                BODY: {
+                    FOV: 1.2,
+                },
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  11,     8,      0,      0,     180, 0], 
+                        TYPE: exports.mini1gun,
+                            },
+                ],
+            };
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
@@ -11919,7 +12058,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.hexa, exports.gunner, exports.cruiser];
         exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble, exports.battleship];
-        exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple];
+        exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple, exports.bentHoming];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
         exports.gunner.UPGRADES_TIER_3 = [exports.guntrap, exports.autogunner, exports.nailgun, exports.machinegunner, exports.overgunner, exports.hurricane];
 
@@ -11927,6 +12066,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
         exports.assassin.UPGRADES_TIER_3 = [exports.ranger, exports.autoass];
             exports.assassin.UPGRADES_TIER_4 = [exports.falcon];
+            exports.ranger.UPGRADES_TIER_4 = [exports.underranger];
         exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.dual];
         exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer];
             exports.boomer.UPGRADES_TIER_4 = [exports.bentboomer];
@@ -11936,7 +12076,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
         exports.artillery.UPGRADES_TIER_3 = [exports.mortar, exports.autoarty];
-        exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.automini, exports.minitrap];
+        exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.automini, exports.mini1, exports.minitrap];
 
     exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap];
         exports.flank.UPGRADES_TIER_3 = [];
@@ -11944,7 +12084,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.auto5, exports.autohexa, exports.hexatrap, exports.hurricane];
             exports.hexatrap.UPGRADES_TIER_4 = [exports.quadtrapper];
         exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.sniper3, exports.machine3, exports.banshee];
-        exports.flanktrap.UPGRADES_TIER_3 = [exports.bushwhack, exports.guntrap, exports.fortress, exports.bomber];
+        exports.flanktrap.UPGRADES_TIER_3 = [exports.bushwhack, exports.guntrap, exports.fortress, exports.bomber, exports.hybridflanktrap];
             exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer];
