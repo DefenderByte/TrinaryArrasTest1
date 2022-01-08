@@ -9068,6 +9068,7 @@ exports.defendOfShiniesP2Eye = {
                 BODY: {
                     FOV: 1.25,
                 },
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  14,    14,     -1.2,    5,      0,      0,      0,   ], 
                         }, {
@@ -9084,13 +9085,13 @@ exports.defendOfShiniesP2Eye = {
         COLOR: 21,
         SHAPE: 136,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [ 4.65,   9.85,    0,      0,     360, 1], 
+            POSITION: [ 4.65,   9.85,    0,      0,     190, 1], 
                 TYPE: exports.defendOfShiniesP2Hand,
                 }, {
-            POSITION: [ 4.65,   9.85,    0,     120,    360, 1], 
+            POSITION: [ 4.65,   9.85,    0,     120,    190, 1], 
                 TYPE: exports.defendOfShiniesP2Hand,
                 }, {
-            POSITION: [ 4.65,   9.85,    0,     240,    360, 1], 
+            POSITION: [ 4.65,   9.85,    0,     240,    190, 1], 
                 TYPE: exports.defendOfShiniesP2Hand,
                 },
         ],
@@ -9101,13 +9102,13 @@ exports.defendOfShiniesP2Eye = {
         COLOR: 21,
         SHAPE: 136,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [ 4.65,   9.85,    0,      0,     360, 1], 
+            POSITION: [ 4.65,   9.85,    0,      0,     190, 1], 
                 TYPE: exports.defendOfShiniesP2Hand,
                 }, {
-            POSITION: [ 4.65,   9.85,    0,     120,    360, 1], 
+            POSITION: [ 4.65,   9.85,    0,     120,    190, 1], 
                 TYPE: exports.defendOfShiniesP2Hand,
                 }, {
-            POSITION: [ 4.65,   9.85,    0,     240,    360, 1], 
+            POSITION: [ 4.65,   9.85,    0,     240,    190, 1], 
                 TYPE: exports.defendOfShiniesP2Hand,
                 },
         ],
