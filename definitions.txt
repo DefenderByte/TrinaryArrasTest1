@@ -12087,7 +12087,7 @@ exports.cwisnuke = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.ceptionist]),
                             TYPE: exports.flameceptionistbullet,
-                        },
+                        }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  10,     0,      0,      0,      0,  1], 
