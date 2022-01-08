@@ -9008,7 +9008,7 @@ exports.defendOfShiniesP2Eye = {
     CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
     TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  11,     4,      0,      0,      0,   1],
-            TYPE: exports.defendOfShiniesMinPupil,
+            TYPE: exports.defendOfShiniesP2Pupil,
                 },
     ],
 };
@@ -11484,6 +11484,283 @@ exports.artmissile = {
             ],
         };
 
+        exports.eDestroyLite = {
+            PARENT: [exports.sentry],
+            LABEL: 'Elite Destroyer Lite',
+            BODY: {
+                HEALTH: 25,
+                DAMAGE: 1.25,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [    5,    16,     1,      6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.more_recoil]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Devastator',
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     0,      0,       0,    360,   1, ],  
+                    TYPE: [exports.auto4gun, { COLOR: 5, }]
+                    },
+            ],
+        };
+        exports.eDestroyLite2 = {
+            PARENT: [exports.sentry2],
+            LABEL: 'Elite Destroyer Lite',
+            BODY: {
+                HEALTH: 25,
+                DAMAGE: 1.25,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [    5,    16,     1,      6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.more_recoil]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Devastator',
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     0,      0,       0,    360,   1, ],  
+                    TYPE: [exports.auto4gun, { COLOR: 5, }]
+                    },
+            ],
+        };
+        exports.eDestroy = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Mini Elite Destroyer',
+            FACING_TYPE: 'autospin',
+            SHAPE: 3,
+            BODY: {
+                FOV: 1.15,
+                SPEED: base.SPEED * 0.5,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [    5,    14,     1,      6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Devastator',
+                    }, }, {
+                POSITION: [    5,    14,     1,      6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Devastator',
+                    }, }, {
+                POSITION: [    5,    14,     1,      6,      0,     -60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Devastator',
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     0,      0,     180,    360,   0, ], 
+                    TYPE: [exports.crasherSpawner]
+                    }, {
+                POSITION: [  11,     0,      0,      60,    360,   0, ],  
+                    TYPE: [exports.crasherSpawner]
+                    }, {
+                POSITION: [  11,     0,      0,     -60,    360,   0, ],  
+                    TYPE: [exports.crasherSpawner]
+                    }, {
+                POSITION: [  11,     0,      0,       0,    360,   1, ],  
+                    TYPE: [exports.bigauto4gun]
+                    },
+            ],
+        };
+        exports.eGunnerLite = {
+            PARENT: [exports.sentry],
+            LABEL: 'Elite Gunner Lite',
+            BODY: {
+                HEALTH: 25,
+                DAMAGE: 1.25,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+                    }, {
+                POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+                        TYPE: exports.block,
+                    }, }, {                
+                POSITION: [   6,    14,     -2,      2,      0,      60,     0,   ],
+                    }, {                
+                POSITION: [   6,    14,     -2,      2,      0,     300,     0,   ],
+                    },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     8,      0,     60,     180,   0, ], 
+                    TYPE: [exports.auto3gun],
+                    }, {
+                POSITION: [  11,     8,      0,     300,    180,   0, ],
+                    TYPE: [exports.auto3gun],
+                }
+            ],
+        };
+        exports.eGunnerLite2 = {
+            PARENT: [exports.sentry2],
+            LABEL: 'Elite Gunner Lite',
+            BODY: {
+                HEALTH: 25,
+                DAMAGE: 1.25,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+                    }, {
+                POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+                        TYPE: exports.block,
+                    }, }, {                
+                POSITION: [   6,    14,     -2,      2,      0,      60,     0,   ],
+                    }, {                
+                POSITION: [   6,    14,     -2,      2,      0,     300,     0,   ],
+                    },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,     8,      0,     60,     180,   0, ], 
+                    TYPE: [exports.auto3gun],
+                    }, {
+                POSITION: [  11,     8,      0,     300,    180,   0, ],
+                    TYPE: [exports.auto3gun],
+                }
+            ],
+        };
+        exports.eGunner = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Mini Elite Gunner',
+            SHAPE: 3,
+            BODY: {
+                FOV: 1.15,
+                SPEED: base.SPEED * 0.5,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+                    }, {
+                POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+                        TYPE: exports.pillbox,
+                    }, },
+            ],
+            AI: { NO_LEAD: false, },
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  14,     8,      0,     60,     180,   0, ], 
+                    TYPE: [exports.auto4gun],
+                    }, {
+                POSITION: [  14,     8,      0,     300,    180,   0, ],
+                    TYPE: [exports.auto4gun],
+                }
+            ],
+        };
+
+            exports.fallen_booster = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Fallen Booster',
+                FACING_TYPE: 'looseToTarget',
+                SIZE: 22,
+                COLOR: 18,
+                BODY: {
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 0.6,
+                    DENSITY: base.DENSITY * 0.2,
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.25,
+                    DAMAGE: 3,
+                },
+                DANGER: 7,
+                VALUE: 300000,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.tri_front, g.much_more_recoil]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Front',
+                        }, }, {   
+                    POSITION: [  13,     8,      1,      0,     -1,     135,    0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster, g.half_recoil]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  13,     8,      1,      0,      1,     225,    0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster, g.half_recoil]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     145,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     215,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, },
+                ],
+            };
+            exports.fallen_booster2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Fallen Booster',
+                FACING_TYPE: 'looseToTarget',
+                SIZE: 22,
+                COLOR: 18,
+                BODY: {
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 0.6,
+                    DENSITY: base.DENSITY * 0.2,
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.25,
+                    DAMAGE: 3,
+                },
+                DANGER: 7,
+                VALUE: 300000,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.tri_front, g.much_more_recoil]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Front',
+                        }, }, {   
+                    POSITION: [  13,     8,      1,      0,     -1,     135,    0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster, g.half_recoil]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  13,     8,      1,      0,      1,     225,    0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster, g.half_recoil]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     145,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     215,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -11618,12 +11895,12 @@ exports.botT3_E = {
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
-            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2];
+            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
-            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2];
+            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni];
 
@@ -11644,7 +11921,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble, exports.battleship];
         exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
-        exports.gunner.UPGRADES_TIER_3 = [exports.autogunner, exports.nailgun, exports.machinegunner, exports.overgunner, exports.hurricane];
+        exports.gunner.UPGRADES_TIER_3 = [exports.guntrap, exports.autogunner, exports.nailgun, exports.machinegunner, exports.overgunner, exports.hurricane];
 
     exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini];
         exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
@@ -11656,6 +11933,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
 
     exports.machine.UPGRADES_TIER_2 = [exports.mini, exports.gunner, exports.automachine, exports.spray];
         exports.destroy.UPGRADES_TIER_3 = [exports.anni, exports.hybrid, exports.autodestroy, exports.hiveshooter];
+            exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
+            exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
         exports.artillery.UPGRADES_TIER_3 = [exports.mortar, exports.autoarty];
         exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.automini, exports.minitrap];
 
@@ -11666,6 +11945,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
             exports.hexatrap.UPGRADES_TIER_4 = [exports.quadtrapper];
         exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.sniper3, exports.machine3, exports.banshee];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bushwhack, exports.guntrap, exports.fortress, exports.bomber];
+            exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer];
         exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.battleship, exports.overgunner, exports.autoover, exports.master];  
