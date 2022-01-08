@@ -9079,9 +9079,8 @@ exports.defendOfShiniesP2Eye = {
                 ],
             };
     exports.defendOfShiniesP2Ring1 = {
-        PARENT: [exports.genericTank],
         LABEL: 'Base Nucleus',
-        FACING_TYPE: 'fastautospin',
+        CONTROLLERS: ['spin'],
         COLOR: 21,
         SHAPE: 136,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -9097,9 +9096,8 @@ exports.defendOfShiniesP2Eye = {
         ],
     };
     exports.defendOfShiniesP2Ring2 = {
-        PARENT: [exports.genericTank],
         LABEL: 'Base Nucleus',
-        FACING_TYPE: 'fastverseautospin',
+        CONTROLLERS: ['reversespin'],
         COLOR: 21,
         SHAPE: 136,
         TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -9193,8 +9191,7 @@ exports.defendOfShiniesP2Eye = {
                 LABEL: 'Mini Sugar Cube',
                 DANGER: 7,
                 BODY: {
-                    ACCELERATION: base.ACCEL * 0.7,
-                    SPEED: base.SPEED * 0.8,
+                    SPEED: base.SPEED * 0.4,
                     FOV: base.FOV * 1.15,
                 },
                 SHAPE: 125,
@@ -9282,69 +9279,54 @@ exports.defendOfShiniesP2Eye = {
                 PENETRATION: 1,
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  19,     8,      1,      0,     5.5,     85,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,    -2,      60,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,    -5.5,     35,     0,   ], 
+                POSITION: [ 4.5,     2,      1,     7.5,     2,      60,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,     5.5,     60,     0,   ], 
+                POSITION: [   6,     2,      1,     7.5,     0,      60,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,     60,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,    -2,     180,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,     5.5,    205,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,     2,     180,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,    -5.5,    155,     0,   ], 
+                POSITION: [   6,     2,      1,     7.5,     0,     180,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                POSITION: [ 4.5,     2,      1,     7.5,    -2,     300,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,     2,     300,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,     5.5,    325,    0.5,  ], 
+                POSITION: [   6,     2,      1,     7.5,     0,     300,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
-                        TYPE: exports.bullet,
-                    }, }, {
-                POSITION: [  19,     8,      1,      0,    -5.5,    275,     0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
-                        TYPE: exports.bullet,
-                    }, }, {
-                POSITION: [  20,     8,      1,      0,     5.5,    300,     0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
-                        TYPE: exports.bullet,
-                    }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,    300,    0.5,  ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
                 POSITION: [   3,     4,      1.6,    8,      0,      0,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
                         TYPE: exports.defendOfShiniesP2Min,
                         STAT_CALCULATOR: gunCalcNames.drone,
                         AUTOFIRE: true,
@@ -9357,7 +9339,7 @@ exports.defendOfShiniesP2Eye = {
                     }, }, {
                 POSITION: [   3,     4,      1.6,    8,      0,     120,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
                         TYPE: exports.defendOfShiniesP2Min,
                         STAT_CALCULATOR: gunCalcNames.drone,
                         AUTOFIRE: true,
@@ -9370,7 +9352,7 @@ exports.defendOfShiniesP2Eye = {
                     }, }, {
                 POSITION: [   3,     4,      1.6,    8,      0,     240,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
                         TYPE: exports.defendOfShiniesP2Min,
                         STAT_CALCULATOR: gunCalcNames.drone,
                         AUTOFIRE: true,
@@ -9426,69 +9408,54 @@ exports.defendOfShiniesP2Eye = {
                 PENETRATION: 1,
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  19,     8,      1,      0,     5.5,     85,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,    -2,      60,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,    -5.5,     35,     0,   ], 
+                POSITION: [ 4.5,     2,      1,     7.5,     2,      60,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,     5.5,     60,     0,   ], 
+                POSITION: [   6,     2,      1,     7.5,     0,      60,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,     60,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,    -2,     180,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,     5.5,    205,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,     2,     180,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,    -5.5,    155,     0,   ], 
+                POSITION: [   6,     2,      1,     7.5,     0,     180,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                POSITION: [ 4.5,     2,      1,     7.5,    -2,     300,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                POSITION: [ 4.5,     2,      1,     7.5,     2,     300,    0.5,  ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
-                POSITION: [  19,     8,      1,      0,     5.5,    325,    0.5,  ], 
+                POSITION: [   6,     2,      1,     7.5,     0,     300,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
-                        TYPE: exports.bullet,
-                    }, }, {
-                POSITION: [  19,     8,      1,      0,    -5.5,    275,     0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
-                        TYPE: exports.bullet,
-                    }, }, {
-                POSITION: [  20,     8,      1,      0,     5.5,    300,     0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
-                        TYPE: exports.bullet,
-                    }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,    300,    0.5,  ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.triplet, g.pound, g.destroy, g.more_speed, g.more_speed, g.double_range]),
                         TYPE: exports.bullet,
                     }, }, {
                 POSITION: [   3,     4,      1.6,    8,      0,      0,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
                         TYPE: exports.defendOfShiniesP2Min,
                         STAT_CALCULATOR: gunCalcNames.drone,
                         AUTOFIRE: true,
@@ -9501,7 +9468,7 @@ exports.defendOfShiniesP2Eye = {
                     }, }, {
                 POSITION: [   3,     4,      1.6,    8,      0,     120,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
                         TYPE: exports.defendOfShiniesP2Min,
                         STAT_CALCULATOR: gunCalcNames.drone,
                         AUTOFIRE: true,
@@ -9514,7 +9481,7 @@ exports.defendOfShiniesP2Eye = {
                     }, }, {
                 POSITION: [   3,     4,      1.6,    8,      0,     240,     0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
                         TYPE: exports.defendOfShiniesP2Min,
                         STAT_CALCULATOR: gunCalcNames.drone,
                         AUTOFIRE: true,
