@@ -11963,7 +11963,7 @@ exports.cwisnuke = {
                     POSITION: [  20,    7.5,     1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.pound]),
-                            TYPE: cwisnuke,
+                            TYPE: exports.cwisnuke,
                         },
                         COLOR_SETTINGS: {
                             COLOR: 9,
