@@ -12055,7 +12055,9 @@ exports.cwisnuke = {
             };
             exports.flameceptionistmarking = {
                 PARENT: [exports.genericTank],
+                LABEL: '',
                 COLOR: 17,
+                DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
                         COLOR_SETTINGS: {
@@ -12067,6 +12069,7 @@ exports.cwisnuke = {
             exports.flameceptionistbullet = {
                 PARENT: [exports.bullet],
                 LABEL: 'Flamethrower',
+                DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
@@ -12082,11 +12085,16 @@ exports.cwisnuke = {
             exports.flameceptionist2 = {
                 PARENT: [exports.bullet],
                 LABEL: 'Flamethrower Ceptionist²',
+                DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.ceptionist]),
                             TYPE: exports.flameceptionistbullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 17,
+                            SKIN: 1,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
