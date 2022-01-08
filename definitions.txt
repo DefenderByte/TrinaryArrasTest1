@@ -9269,6 +9269,7 @@ exports.defendOfShiniesP2Eye = {
             COLOR: 21,
             SHAPE: 6,
             SIZE: 24,
+            VALUE: 150000,
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED * 0.05,
@@ -9398,6 +9399,7 @@ exports.defendOfShiniesP2Eye = {
             COLOR: 21,
             SHAPE: 6,
             SIZE: 24,
+            VALUE: 150000,
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED * 0.05,
@@ -9527,6 +9529,7 @@ exports.defendOfShiniesP2Eye = {
             COLOR: 31,
             SHAPE: 6,
             SIZE: 24,
+            VALUE: 150000,
             FRAG: [[exports.ai_defendOfShiniesPhase2, {NAME: 'Tethys'}]],
             BODY: {
                 FOV: 1.5,
@@ -9676,6 +9679,7 @@ exports.defendOfShiniesP2Eye = {
             COLOR: 31,
             SHAPE: 6,
             SIZE: 24,
+            VALUE: 150000,
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED * 0.05,
