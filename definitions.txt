@@ -12074,7 +12074,8 @@ exports.cwisnuke = {
                     POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame, g.ceptionist, g.ceptionist_bullet]),
-                            TYPE: exports.missile,
+                            TYPE: exports.bullet,
+                            AUTOFIRE: true,
                         },
                         COLOR_SETTINGS: {
                             COLOR: 17,
@@ -12093,7 +12094,6 @@ exports.cwisnuke = {
                             TYPE: exports.flameceptionistbullet,
                         },
                         COLOR_SETTINGS: {
-                            COLOR: 17,
                             SKIN: 1,
                         }, },
                 ],
