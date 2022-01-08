@@ -9130,7 +9130,7 @@ exports.defendOfShiniesP2Eye = {
             exports.defendOfShiniesP2MinTurret = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Bent Double',
-                COLOR: 12
+                COLOR: 12,
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  19,     8,      1,      0,     -1,     -25,    0.5,  ], 
@@ -9700,7 +9700,7 @@ exports.defendOfShiniesP2Eye = {
                     TYPE: exports.defendOfShiniesGun,
                         },
             ],
-            BROADCAST_MESSAGE: 'Move away, he's calling out for a little surprise...',
+            BROADCAST_MESSAGE: 'Move away, he\'s calling out for a little surprise...',
         };
         exports.defendOfShinies2 = {
             PARENT: [exports.miniboss2],
