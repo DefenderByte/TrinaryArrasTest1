@@ -9983,13 +9983,18 @@ exports.triangleCascade2 = {
     ],
 };
 exports.mneBullet = {
-    PARENT: [exports.bullet],
+    PARENT: [exports.autoswarm],
     LABEL: 'Heat Missile',
-    MOTION_TYPE: 'swarm',
-    CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
-    CRAVES_ATTENTION: true,
-    AI: { FARMER: true, },
-    INDEPEDENT: true,
+    SHAPE: 0,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.33 * wepHealthFactor,
+        DAMAGE: 4 * wepDamageFactor,
+        PUSHABILITY: 0.3,
+    },
 };
         exports.mnegun = {
             PARENT: [exports.genericTank],
@@ -11799,14 +11804,18 @@ exports.artmissile = {
             };
 
 exports.bentHomingBullet = {
-    PARENT: [exports.bullet],
+    PARENT: [exports.autoswarm],
     LABEL: 'Heat Missile',
     SHAPE: 'M -0.25 -0.3 L -1 0 L -0.25 0.3 L 0 0.375 L 0 0.75 L 1 0 L 0 -0.75 L 0 -0.375 Z',
-    MOTION_TYPE: 'swarm',
-    CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
-    CRAVES_ATTENTION: true,
-    AI: { FARMER: true, },
-    INDEPEDENT: true,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.33 * wepHealthFactor,
+        DAMAGE: 4 * wepDamageFactor,
+        PUSHABILITY: 0.3,
+    },
 };
         exports.bentHoming = {
             PARENT: [exports.genericTank],
