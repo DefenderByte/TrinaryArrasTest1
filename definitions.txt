@@ -8997,6 +8997,153 @@ exports.defendOfShiniesMinEye = {
                         }, },
                 ],
             };
+        exports.defendOfShinies = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Defender of Shinies',
+            COLOR: 31,
+            SHAPE: 6,
+            SIZE: 64,
+            BODY: {
+                FOV: 1.5,
+                SPEED: base.SPEED * 0.05,
+                HEALTH: 30,
+                SHIELD: base.SHIELD * 1.25,
+                REGEN: base.REGEN,
+                DAMAGE: 3,
+                DENSITY: 10,
+                PENETRATION: 1,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  4.5,  11.5,    -1.3,    6,      0,      60,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  4.5,  11.5,    -1.3,    6,      0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  4.5,  11.5,    -1.3,    6,      0,     300,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  4.5,   8.5,    -1.5,    7,      0,      60,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  4.5,   8.5,    -1.5,    7,      0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [  4.5,   8.5,    -1.5,    7,      0,     300,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 31,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,    8,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 4,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,    8,      0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesMin2,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 4,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,    8,      0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesMin3,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 4,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,      60,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,      60,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,    -2,     300,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [ 4.5,     2,     0.75,   7.5,     2,     300,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, }, {
+                POSITION: [   6,     2,     0.75,   7.5,     0,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.triplet, g.pound, g.more_speed, g.more_speed, g.double_range]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   5,     7,      0,      30,    360,  1],
+                    TYPE: exports.tetgun,
+                        }, {
+                POSITION: [   5,     7,      0,      90,    360,  1],
+                    TYPE: exports.defendOfShiniesGun,
+                        }, {
+                POSITION: [   5,     7,      0,     150,    360,  1],
+                    TYPE: exports.tetgun,
+                        }, {
+                POSITION: [   5,     7,      0,     210,    360,  1],
+                    TYPE: exports.defendOfShiniesGun,
+                        }, {
+                POSITION: [   5,     7,      0,     270,    360,  1],
+                    TYPE: exports.tetgun,
+                        }, {
+                POSITION: [   5,     7,      0,     330,    360,  1],
+                    TYPE: exports.defendOfShiniesGun,
+                        },
+            ],
+        };
         exports.defendOfShinies2 = {
             PARENT: [exports.miniboss2],
             LABEL: 'Defender of Shinies',
@@ -9496,16 +9643,16 @@ exports.cascadeMin = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.mnegun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.mnegun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    180,   0, ],
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
@@ -9547,16 +9694,16 @@ exports.cascadeMin = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.mnegun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.mnegun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    120,   0, ],
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    120,   0, ],
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
