@@ -1043,7 +1043,7 @@ exports.missile = {
             RANGE: 90,
             FOV: 0.5,
         },  
-        FACING_TYPE: 'turnWithSpeed',
+        FACING_TYPE: 'fastautospin',
         INDEPENDENT: true,
         CONTROLLERS: ['alwaysFire', 'nearestDifferentMaster', 'targetSelf',],
         AI: { NO_LEAD: true, },
@@ -8997,12 +8997,569 @@ exports.defendOfShiniesMinEye = {
                         }, },
                 ],
             };
+exports.defendOfShiniesP2Pupil = {
+    COLOR: 21,
+    SHAPE: 0,
+    INDEPENDENT: true,
+};
+exports.defendOfShiniesP2Eye = {
+    COLOR: 9,
+    SHAPE: 0,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  11,     4,      0,      0,      0,   1],
+            TYPE: exports.defendOfShiniesMinPupil,
+                },
+    ],
+};
+            exports.defendOfShiniesP2Gun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: base.FOV * 1.2,
+                },
+                LABEL: 'Void Knocker',
+                DANGER: 6,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  4,      3,      1,     11,      3,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach, g.click, g.sgun]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 15,
+                        }, }, {
+                    POSITION: [  4,      4,      1,     13,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach, g.click, g.sgun]),
+                            TYPE: exports.casing,
+                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 15,
+                        }, }, {
+                    POSITION: [  1,      4,      1,     12,     -1,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach, g.click, g.sgun]),
+                            TYPE: exports.casing,
+                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 15,
+                        }, }, {
+                    POSITION: [  1,      4,      1,     11,      1,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach, g.click, g.sgun]),
+                            TYPE: exports.casing,
+                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 15,
+                        }, }, {
+                    POSITION: [   8,    8.5,    -1.5,    5,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach, g.click, g.sgun, g.fake]),
+                            TYPE: exports.casing,
+                        }, },
+                ],
+            };
+            exports.defendOfShiniesP2Hand = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Swarmer',
+                SHAPE: 135,
+                COLOR: 21,
+                BODY: {
+                    FOV: 1.25,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    14,     -1.2,    5,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  15,    12,      1,      5,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.hive, g.more_speed, g.more_speed, g.more_speed, g.double_range]),
+                            TYPE: exports.hive,
+                        }, },
+                ],
+            };
+    exports.defendOfShiniesP2Ring1 = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Base Nucleus',
+        FACING_TYPE: 'fastautospin',
+        COLOR: 21,
+        SHAPE: 136,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [ 4.65,   9.85,    0,      0,     360, 1], 
+                TYPE: exports.defendOfShiniesP2Hand,
+                }, {
+            POSITION: [ 4.65,   9.85,    0,     120,    360, 1], 
+                TYPE: exports.defendOfShiniesP2Hand,
+                }, {
+            POSITION: [ 4.65,   9.85,    0,     240,    360, 1], 
+                TYPE: exports.defendOfShiniesP2Hand,
+                },
+        ],
+    };
+    exports.defendOfShiniesP2Ring2 = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Base Nucleus',
+        FACING_TYPE: 'fastverseautospin',
+        COLOR: 21,
+        SHAPE: 136,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [ 4.65,   9.85,    0,      0,     360, 1], 
+                TYPE: exports.defendOfShiniesP2Hand,
+                }, {
+            POSITION: [ 4.65,   9.85,    0,     120,    360, 1], 
+                TYPE: exports.defendOfShiniesP2Hand,
+                }, {
+            POSITION: [ 4.65,   9.85,    0,     240,    360, 1], 
+                TYPE: exports.defendOfShiniesP2Hand,
+                },
+        ],
+    };
+    exports.defendOfShiniesP2Chip = {
+        PARENT: [exports.drone],
+        SHAPE: 125,
+        HITS_OWN_TYPE: 'hard',
+        BODY: {
+            FOV: 1.25,
+        },
+        AI: {
+            BLIND: true,
+            FARMER: true,
+        },
+        DRAW_HEALTH: true,
+    };
+            exports.defendOfShiniesP2MinTurret = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bent Double',
+                COLOR: 12
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,     -1,     -25,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.double]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 12,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      1,      25,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.double]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 12,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.double]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 12,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,     -1,     155,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.double]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 12,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      1,    -155,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.double]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 12,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.double]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 12,
+                        }, },
+                ],
+            };
+    exports.defendOfShiniesP2Explosion = {
+        PARENT: [exports.bullet],
+        SHAPE: 125,
+        FACING_TYPE: 'fastautospin',
+    };
+            exports.defendOfShiniesP2Min = {
+                PARENT: [exports.minion],
+                LABEL: 'Mini Sugar Cube',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.15,
+                },
+                SHAPE: 125,
+                FACING_TYPE: 'autospin',
+                MAX_CHILDREN: 22,
+                INDEPEDENT: true,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   1,     10,    1.2,     5,      0,      45,     0    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy]),
+                            TYPE: exports.defendOfShiniesP2Explosion,
+                            SHOOT_ON_DEATH: true,
+                        }, }, {
+                    POSITION: [   1,     10,    1.2,     5,      0,     135,     0    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy]),
+                            TYPE: exports.defendOfShiniesP2Explosion,
+                            SHOOT_ON_DEATH: true,
+                        }, }, {
+                    POSITION: [   1,     10,    1.2,     5,      0,     225,     0    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy]),
+                            TYPE: exports.defendOfShiniesP2Explosion,
+                            SHOOT_ON_DEATH: true,
+                        }, }, {
+                    POSITION: [   1,     10,    1.2,     5,      0,     315,     0    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy]),
+                            TYPE: exports.defendOfShiniesP2Explosion,
+                            SHOOT_ON_DEATH: true,
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,     90,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            TYPE: exports.defendOfShiniesP2Chip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,     270,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            TYPE: exports.defendOfShiniesP2Chip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,      0,     0.25, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            TYPE: exports.defendOfShiniesP2Chip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,     180,    0.75  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            TYPE: exports.defendOfShiniesP2Chip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,     180,    360,  1],
+                        TYPE: exports.defendOfShiniesP2MinTurret,
+                            },
+                ],
+            };
+        exports.defendOfShiniesPhase2 = {
+            PARENT: [exports.miniboss2],
+            LABEL: 'Defender of Shinies',
+            COLOR: 21,
+            SHAPE: 6,
+            SIZE: 24,
+            BODY: {
+                FOV: 1.5,
+                SPEED: base.SPEED * 0.05,
+                HEALTH: 30,
+                SHIELD: base.SHIELD * 1.25,
+                REGEN: base.REGEN,
+                DAMAGE: 3,
+                DENSITY: 10,
+                PENETRATION: 1,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     5.5,     85,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,    -5.5,     35,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,     60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,     60,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,     5.5,    205,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,    -5.5,    155,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,     5.5,    325,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,    -5.5,    275,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,    300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,    300,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [   3,     4,      1.6,    8,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesP2Min,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    },
+                    COLOR_SETTINGS: {
+                        SKIN: 2,
+                    }, }, {
+                POSITION: [   3,     4,      1.6,    8,      0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesP2Min,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    },
+                    COLOR_SETTINGS: {
+                        SKIN: 2,
+                    }, }, {
+                POSITION: [   3,     4,      1.6,    8,      0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesP2Min,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    },
+                    COLOR_SETTINGS: {
+                        SKIN: 2,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   5,     7,      0,      30,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Gun,
+                        }, {
+                POSITION: [   5,     7,      0,      90,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Eye,
+                        }, {
+                POSITION: [   5,     7,      0,     150,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Gun,
+                        }, {
+                POSITION: [   5,     7,      0,     210,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Eye,
+                        }, {
+                POSITION: [   5,     7,      0,     270,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Gun,
+                        }, {
+                POSITION: [   5,     7,      0,     330,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Eye,
+                        }, {
+                POSITION: [  34,     0,      0,      0,     360,  0],
+                    TYPE: exports.defendOfShiniesP2Ring1,
+                        }, {
+                POSITION: [  34,     0,      0,      0,     360,  0],
+                    TYPE: exports.defendOfShiniesP2Ring2,
+                        },
+            ],
+        };
+        exports.ai_defendOfShiniesPhase2 = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Defender of Shinies',
+            COLOR: 21,
+            SHAPE: 6,
+            SIZE: 24,
+            BODY: {
+                FOV: 1.5,
+                SPEED: base.SPEED * 0.05,
+                HEALTH: 30,
+                SHIELD: base.SHIELD * 1.25,
+                REGEN: base.REGEN,
+                DAMAGE: 3,
+                DENSITY: 10,
+                PENETRATION: 1,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     5.5,     85,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,    -5.5,     35,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,     60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,     60,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,     5.5,    205,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,    -5.5,    155,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,     5.5,    325,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,    -5.5,    275,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,    300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,    300,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.spam, g.hewn, g.more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [   3,     4,      1.6,    8,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesP2Min,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    },
+                    COLOR_SETTINGS: {
+                        SKIN: 2,
+                    }, }, {
+                POSITION: [   3,     4,      1.6,    8,      0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesP2Min,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    },
+                    COLOR_SETTINGS: {
+                        SKIN: 2,
+                    }, }, {
+                POSITION: [   3,     4,      1.6,    8,      0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
+                        TYPE: exports.defendOfShiniesP2Min,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    },
+                    COLOR_SETTINGS: {
+                        SKIN: 2,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   5,     7,      0,      30,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Gun,
+                        }, {
+                POSITION: [   5,     7,      0,      90,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Eye,
+                        }, {
+                POSITION: [   5,     7,      0,     150,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Gun,
+                        }, {
+                POSITION: [   5,     7,      0,     210,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Eye,
+                        }, {
+                POSITION: [   5,     7,      0,     270,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Gun,
+                        }, {
+                POSITION: [   5,     7,      0,     330,    360,  1],
+                    TYPE: exports.defendOfShiniesP2Eye,
+                        }, {
+                POSITION: [  34,     0,      0,      0,     360,  0],
+                    TYPE: exports.defendOfShiniesP2Ring1,
+                        }, {
+                POSITION: [  34,     0,      0,      0,     360,  0],
+                    TYPE: exports.defendOfShiniesP2Ring2,
+                        },
+            ],
+        };
         exports.defendOfShinies = {
             PARENT: [exports.miniboss],
             LABEL: 'Defender of Shinies',
             COLOR: 31,
             SHAPE: 6,
-            SIZE: 64,
+            SIZE: 24,
+            FRAG: [[exports.ai_defendOfShiniesPhase2, {NAME: 'Tethys'}]],
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED * 0.05,
@@ -9038,7 +9595,7 @@ exports.defendOfShiniesMinEye = {
                     COLOR_SETTINGS: {
                         COLOR: 31,
                     }, }, {
-                POSITION: [   4,      6,    -1.6,    8,      0,      0,      0,   ], 
+                POSITION: [   4,     6,     -1.6,    8,      0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
                         TYPE: exports.defendOfShiniesMin,
@@ -9048,7 +9605,7 @@ exports.defendOfShiniesMinEye = {
                         SYNCS_SKILLS: true,
                         WAIT_TO_CYCLE: true,
                     }, }, {
-                POSITION: [   4,      6,    -1.6,    8,      0,     120,     0,   ], 
+                POSITION: [   4,     6,     -1.6,    8,      0,     120,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
                         TYPE: exports.defendOfShiniesMin2,
@@ -9058,7 +9615,7 @@ exports.defendOfShiniesMinEye = {
                         SYNCS_SKILLS: true,
                         WAIT_TO_CYCLE: true,
                     }, }, {
-                POSITION: [   4,      6,    -1.6,    8,      0,     240,     0,   ], 
+                POSITION: [   4,     6,     -1.6,    8,      0,     240,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
                         TYPE: exports.defendOfShiniesMin3,
@@ -9143,13 +9700,14 @@ exports.defendOfShiniesMinEye = {
                     TYPE: exports.defendOfShiniesGun,
                         },
             ],
+            BROADCAST_MESSAGE: 'Move away, he's calling out for a little surprise...',
         };
         exports.defendOfShinies2 = {
             PARENT: [exports.miniboss2],
             LABEL: 'Defender of Shinies',
             COLOR: 31,
             SHAPE: 6,
-            SIZE: 64,
+            SIZE: 24,
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED * 0.05,
@@ -9185,7 +9743,7 @@ exports.defendOfShiniesMinEye = {
                     COLOR_SETTINGS: {
                         COLOR: 31,
                     }, }, {
-                POSITION: [   4,      6,    -1.6,    8,      0,      0,      0,   ], 
+                POSITION: [   4,     6,     -1.6,    8,      0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
                         TYPE: exports.defendOfShiniesMin,
@@ -9195,7 +9753,7 @@ exports.defendOfShiniesMinEye = {
                         SYNCS_SKILLS: true,
                         WAIT_TO_CYCLE: true,
                     }, }, {
-                POSITION: [   4,      6,    -1.6,    8,      0,     120,     0,   ], 
+                POSITION: [   4,     6,     -1.6,    8,      0,     120,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
                         TYPE: exports.defendOfShiniesMin2,
@@ -9205,7 +9763,7 @@ exports.defendOfShiniesMinEye = {
                         SYNCS_SKILLS: true,
                         WAIT_TO_CYCLE: true,
                     }, }, {
-                POSITION: [   4,      6,    -1.6,    8,      0,     240,     0,   ], 
+                POSITION: [   4,     6,     -1.6,    8,      0,     240,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.factory, g.pound]),
                         TYPE: exports.defendOfShiniesMin3,
@@ -11084,8 +11642,8 @@ exports.botT3_E = {
 // UPGRADE PATHS
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
-            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.mega_cascade2, exports.celestial_paladin2, exports.devBosses2];
-            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2];
+            exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
+            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
