@@ -12083,7 +12083,7 @@ exports.cwisnuke = {
                 ],
             };
             exports.flameceptionist2 = {
-                PARENT: [exports.bullet],
+                PARENT: [exports.genericTank],
                 LABEL: 'Flamethrower Ceptionist²',
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
