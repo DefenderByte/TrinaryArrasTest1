@@ -1127,6 +1127,8 @@ class Gun {
                 false : info.PROPERTIES.SYNCS_SKILLS;
             this.negRecoil = (info.PROPERTIES.NEGATIVE_RECOIL == null) ?
                 false : info.PROPERTIES.NEGATIVE_RECOIL;
+            this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?
+                false : info.PROPERTIES.SHOOT_ON_DEATH;
         }
         if (info.COLOR_SETTINGS != null) {
             if (info.COLOR_SETTINGS.COLOR != null && info.COLOR_SETTINGS != null) {
@@ -1212,7 +1214,7 @@ class Gun {
                     this.body.maxChildren > this.body.children.length * ((this.calculator == 'necro') ? sk.rld : 1)
                 : true;                
             // Override in invuln
-            if (this.body.master.invuln) {
+            if (this.body.master.invuln || this.shootOnDeath) {
                 shootPermission = false;
             }
             // Cycle up if we should
@@ -2240,8 +2242,14 @@ class Entity {
         case 'autospin':
             this.facing += 0.02 / roomSpeed;
             break;
+        case 'reverseautospin':
+            this.facing -= 0.02 / roomSpeed;
+            break;
         case 'fastautospin':
             this.facing += 0.05 / roomSpeed;
+            break;
+        case 'fastverseautospin':
+            this.facing -= 0.05 / roomSpeed;
             break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
@@ -2382,6 +2390,30 @@ class Entity {
 
         // Check for death
         if (this.isDead()) {
+            //Shoot on death
+            this.guns.forEach(gun => {
+                if (gun.shootOnDeath) {
+                    // get Skills
+                    let sk =
+                        gun.bulletStats === "master" ? gun.body.skill : gun.bulletStats;
+                    this.canShoot = true;
+                    // Find the end of the gun
+                    if (gun.body != null) {
+                        let gx =
+                            gun.offset *
+                            Math.cos(gun.direction + gun.angle + gun.body.facing) +
+                            (1.5 * gun.length - (gun.width * gun.settings.size) / 2) *
+                            Math.cos(gun.angle + gun.body.facing);
+                        let gy =
+                            gun.offset *
+                            Math.sin(gun.direction + gun.angle + gun.body.facing) +
+                            (1.5 * gun.length - (gun.width * gun.settings.size) / 2) *
+                            Math.sin(gun.angle + gun.body.facing);
+                        // FIRE!
+                        gun.fire(gx, gy, sk);
+                    }
+                }
+            })
             // Initalize message arrays
             let killers = [], killTools = [], notJustFood = false;
             // If I'm a tank, call me a nameless player
@@ -4648,7 +4680,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 250, 400, 250, 20, 20, 20, 20, 20, 20)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 400, 250, 400, 250, 20, 20, 20, 20, 20, 20)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -4724,36 +4756,41 @@ var maintainloop = (() => {
                         sockets.broadcast('Sentries unite... wait, no, correction: Prepare for a dazzling display of shininess!');
                         break;
                     case 18: 
+                        choice = [[Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.namelessdefend_tethys], 1, 'tetcel', 'nest']; 
+                        sockets.broadcast('Tethys: I\'d rather be shiny... and I AM! WAIT WHAT THE POLYGON IS THAT');
+                        sockets.broadcast('Prepare for a dazzling display of shininess! He has detected for some imbalance!');
+                        break;
+                    case 19: 
                         choice = [[Class.triangleCascade], 10, 'poly', 'nest']; 
                         sockets.broadcast('The Surge has arrived!');
                         break;
-                    case 19: 
+                    case 20: 
                         choice = [[Class.mega_cascade], 1, 'mnecel', 'nest']; 
                         sockets.broadcast('Dud lol why did i made this');
                         sockets.broadcast('Mnemosyne: It\'s swarm time, puny tanks!'); // HAW
                         sockets.broadcast('The Surge... wait, no, correction: Mnemosyne is ready, and has long been so...');
                         break;
-                    case 20: 
+                    case 21: 
                         choice = [[Class.celestial_paladin], 1, 'palcel', 'rock']; 
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
-                    case 21: 
+                    case 22: 
                         choice = [[Class.celestial_freyja], 1, 'frecel', 'rock']; 
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
-                    case 20: 
+                    case 23: 
                         choice = [[Class.celestial_zaphkiel], 1, 'zapcel', 'rock']; 
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
-                    case 21: 
+                    case 24: 
                         choice = [[Class.celestial_artemis], 1, 'artcel', 'rock']; 
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
-                    case 20: 
+                    case 25: 
                         choice = [[Class.celestial_demeter], 1, 'demcel', 'rock']; 
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
-                    case 21: 
+                    case 26: 
                         choice = [[Class.celestial_odin], 1, 'odicel', 'rock']; 
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
