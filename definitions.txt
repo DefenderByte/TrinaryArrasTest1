@@ -9988,6 +9988,7 @@ exports.mneBullet = {
     MOTION_TYPE: 'swarm',
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     CRAVES_ATTENTION: true,
+    AI: { FARMER: true, },
     INDEPEDENT: true,
 };
         exports.mnegun = {
@@ -11804,6 +11805,7 @@ exports.bentHomingBullet = {
     MOTION_TYPE: 'swarm',
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     CRAVES_ATTENTION: true,
+    AI: { FARMER: true, },
     INDEPEDENT: true,
 };
         exports.bentHoming = {
