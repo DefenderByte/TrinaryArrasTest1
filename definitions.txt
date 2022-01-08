@@ -3066,14 +3066,18 @@ exports.basic = {
                 },
                 MAX_CHILDREN: 6,
                 GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [   4,     14,     1.2,     8,      0,      0,      0,   ],
+                    POSITION: [   5,     11,      1,      10.5,   0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   2,     14,     1.01,    15.5,   0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory]),
                             TYPE: exports.minion,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
-                        }, },
+                        }, }, {
+                    POSITION: [   4,     14,      1,      8,      0,      0,      0,   ], 
+                        },
                 ],
             };
 
@@ -9980,9 +9984,10 @@ exports.triangleCascade2 = {
     ],
 };
 exports.mneBullet = {
-    PARENT: [exports.autoswarm],
+    PARENT: [exports.bullet],
     LABEL: 'Heat Missile',
-    SHAPE: 0,
+    CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
+    INDEPEDENT: true,
 };
         exports.mnegun = {
             PARENT: [exports.genericTank],
@@ -11792,9 +11797,11 @@ exports.artmissile = {
             };
 
 exports.bentHomingBullet = {
-    PARENT: [exports.autoswarm],
+    PARENT: [exports.bullet],
     LABEL: 'Heat Missile',
     SHAPE: 'M -0.25 -0.3 L -1 0 L -0.25 0.3 L 0 0.375 L 0 0.75 L 1 0 L 0 -0.75 L 0 -0.375 Z',
+    CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
+    INDEPEDENT: true,
 };
         exports.bentHoming = {
             PARENT: [exports.genericTank],
@@ -11806,21 +11813,21 @@ exports.bentHomingBullet = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  19,     8,      1,      0,     -2,     -20,     0,   ], 
                     }, {
-                POSITION: [   2,     12,     1,      19,    -2,     -20,    0.5,  ], 
+                POSITION: [   2,     12,    1.01,    19,    -2,     -20,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,      20,     0,   ], 
                     }, {
-                POSITION: [   2,     12,     1,      19,     2,      20,    0.5,  ], 
+                POSITION: [   2,     12,    1.01,    19,     2,      20,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     }, {
-                POSITION: [   2,     12,     1,      22,     0,      0,      0,   ], 
+                POSITION: [   2,     12,    1.01,    22,     0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
