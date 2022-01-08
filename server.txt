@@ -4972,7 +4972,8 @@ var maintainloop = (() => {
                         Class.underranger,
                         Class.bentHoming,
                         Class.hybridflanktrap,
-                        Class.mini1
+                        Class.mini1,
+                        Class.ohmyfuckinggodIHAVENUKESSSSDSDSDSDSDSDSDS
                       ])
                     );
                     o.name += ran.chooseBotName();
