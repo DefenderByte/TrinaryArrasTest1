@@ -12173,13 +12173,13 @@ exports.cwisnuke = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
                             TYPE: exports.bullet,
                         }, }, {
-                    POSITION: [   6,     5,     0.6,     8,     6.5,    15.5,  0.75,  ], 
+                    POSITION: [   6,     5,     0.6,     6,     6.5,    15.5,  0.75,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                         }, }, {
-                    POSITION: [   6,     5,     0.6,     8,    -6.5,   -15.5,  0.25,  ], 
+                    POSITION: [   6,     5,     0.6,     6,    -6.5,   -15.5,  0.25,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm]),
                             TYPE: exports.swarm,
