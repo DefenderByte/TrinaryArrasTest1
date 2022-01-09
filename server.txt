@@ -4973,7 +4973,13 @@ var maintainloop = (() => {
                         Class.bentHoming,
                         Class.hybridflanktrap,
                         Class.mini1,
-                        Class.ohmyfuckinggodIHAVENUKESSSSDSDSDSDSDSDSDS
+                        Class.ohmyfuckinggodIHAVENUKESSSSDSDSDSDSDSDSDS,
+                        Class.pellet,
+                        Class.hewn_pellet,
+                        Class.sail,
+                        Class.bore,
+                        Class.punt,
+                        Class.screw_punt
                       ])
                     );
                     o.name += ran.chooseBotName();
