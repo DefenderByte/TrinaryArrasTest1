@@ -1978,12 +1978,47 @@ exports.basic = {
                     TYPE: exports.spikeBody,
                 }],
             };
-            exports.autopummeler = makeAuto(exports.pummeler, 'Auto-Pummeler', { type: exports.autoSmasherTurret, size: 11, });
-            exports.autopummeler.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl,];
-            exports.autopummeler.STAT_NAMES = statnames.autosmash;
-            exports.autosmash = makeAuto(exports.smash, 'Auto-Smasher', { type: exports.autoSmasherTurret, size: 11, });
-            exports.autosmash.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl,];
-            exports.autosmash.STAT_NAMES = statnames.autosmash;
+            exports.autopummeler = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Auto-Pummeler',
+                DANGER: 6,
+                BODY: {
+                    DENSITY: base.DENSITY * 1.5,
+                },
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  20,     0,      0,      0,     360,  0,], 
+                        TYPE: exports.smasherBody,
+                            }, {
+                    POSITION: [  11,     0,      0,     180,    360,  1,], 
+                        TYPE: exports.autoTurret,
+                            },
+                ],
+                IS_SMASHER: true,
+                SKILL_CAP: [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl,],
+                STAT_NAMES: statnames.autosmash,
+            };
+            exports.autosmash = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Auto-Smasher',
+                DANGER: 6,
+                BODY: {
+                    FOV: base.FOV * 1.05,
+                    DENSITY: base.DENSITY * 2,
+                },
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 21.5,    0,      0,      0,     360,  0,], 
+                        TYPE: exports.smasherBody,
+                            }, {
+                    POSITION: [  11,     0,      0,     180,    360,  1,], 
+                        TYPE: exports.autoTurret,
+                            },
+                ],
+                IS_SMASHER: true,
+                SKILL_CAP: [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl,],
+                STAT_NAMES: statnames.autosmash,
+            };
 
     exports.twin = {
         PARENT: [exports.genericTank],
@@ -10147,6 +10182,80 @@ exports.cascadeMin = {
             },
     ],
 };
+exports.megaCasHue = {
+    SHAPE: 10002,
+};
+exports.megaCasbullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Overheated Bullet',
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  24,     0,      0,      0,      0,    0, ], 
+            TYPE: [exports.megaCasHue],
+            },
+    ],
+};
+exports.megaCasnuke = {
+    PARENT: [exports.autoswarm],
+    LABEL: 'Overheated Exploding Missile',
+    SHAPE: 0,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [   1,     6,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
+                TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
+                SHOOT_ON_DEATH: true,
+            }, }, {
+        POSITION: [   1,     6,      1,      0,      0,      90,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
+                TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
+                SHOOT_ON_DEATH: true,
+            }, }, {
+        POSITION: [   1,     6,      1,      0,      0,     180,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
+                TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
+                SHOOT_ON_DEATH: true,
+            }, }, {
+        POSITION: [   1,     6,      1,      0,      0,     270,     0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
+                TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
+                SHOOT_ON_DEATH: true,
+            }, },
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  24,     0,      0,      0,      0,    0, ], 
+            TYPE: [exports.megaCasHue],
+            },
+    ],
+};
+        exports.megaCasgun = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Hellseeker',
+            DANGER: 6,
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+            BODY: {
+                FOV: base.FOV * 1.2,
+            },
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   24,    8.5,     1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
+                        TYPE: exports.megaCasnuke,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 12,
+                        SKIN: 2,
+                    }, }, {
+                POSITION: [ 13.95,  5.15,     1,      0,      0,      0,      0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 207,
+                    }, },
+            ],
+        };
         exports.mega_cascade = {
             PARENT: [exports.miniboss],
             LABEL: 'Mega Cascade',
@@ -10188,13 +10297,16 @@ exports.cascadeMin = {
                     TYPE: [exports.mnegun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    180,   0, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
+                    }, {
+                POSITION: [  24,     0,      0,      0,      0,    0, ],
+                    TYPE: [exports.megaCasHue],
                     },
             ],
         };
@@ -10239,13 +10351,16 @@ exports.cascadeMin = {
                     TYPE: [exports.mnegun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    120,   0, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    120,   0, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
+                    }, {
+                POSITION: [  24,     0,      0,      0,      0,    0, ],
+                    TYPE: [exports.megaCasHue],
                     },
             ],
         };
