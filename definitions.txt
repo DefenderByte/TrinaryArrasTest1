@@ -10182,10 +10182,6 @@ exports.cascadeMin = {
             },
     ],
 };
-exports.megaCasHue = {
-    SHAPE: 10003,
-    INDEPENDENT: true,
-};
 exports.megaCasMarking = {
     COLOR: 207,
     INDEPENDENT: true,
@@ -10193,24 +10189,24 @@ exports.megaCasMarking = {
 exports.megaCasbullet = {
     PARENT: [exports.bullet],
     LABEL: 'Overheated Bullet',
-    POISON: true,
-    POISONEFFECTIVENESS: {
-        HP: 5,
-        HPP: 0.1,
-        SH: 8,
-        SHP: 0,
-        BDM: 1,
-        BSM: 1,
-        Time: 50,
-        AddTime: 0,
-        ExpDam: 1,
-        Interval: 300,
+    ONLY_HITS_SAME: {
+        ACTIVATED: true,
+        POISON: true,
+        POISONEFFECTIVENESS: {
+            HP: 5,
+            HPP: 0.1,
+            SH: 8,
+            SHP: 0,
+            BDM: 1,
+            BSM: 1,
+            Time: 50,
+            AddTime: 0,
+            ExpDam: 1,
+            Interval: 300,
+        },
     },
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  24,     0,      0,      0,      0,    0, ], 
-            TYPE: [exports.megaCasHue],
-            }, {
         POSITION: [  10,     0,      0,      0,      0,    1, ], 
             TYPE: [exports.megaCasMarking],
             },
@@ -10220,18 +10216,21 @@ exports.megaCasnuke = {
     PARENT: [exports.autoswarm],
     LABEL: 'Overheated Exploding Missile',
     SHAPE: 0,
-    POISON: true,
-    POISONEFFECTIVENESS: {
-        HP: 5,
-        HPP: 0.1,
-        SH: 8,
-        SHP: 0,
-        BDM: 1,
-        BSM: 1,
-        Time: 50,
-        AddTime: 0,
-        ExpDam: 1,
-        Interval: 300,
+    ONLY_HITS_SAME: {
+        ACTIVATED: true,
+        POISON: true,
+        POISONEFFECTIVENESS: {
+            HP: 5,
+            HPP: 0.1,
+            SH: 8,
+            SHP: 0,
+            BDM: 1,
+            BSM: 1,
+            Time: 50,
+            AddTime: 0,
+            ExpDam: 1,
+            Interval: 300,
+        },
     },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   1,     6,      1,      0,      0,      0,      0,   ], 
@@ -10261,9 +10260,6 @@ exports.megaCasnuke = {
     ],
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  24,     0,      0,      0,      0,    0, ], 
-            TYPE: [exports.megaCasHue],
-            }, {
         POSITION: [  10,     0,      0,      0,      0,    1, ], 
             TYPE: [exports.megaCasMarking],
             },
@@ -10309,18 +10305,21 @@ exports.megaCasnuke = {
                 REGEN: base.REGEN,
                 DAMAGE: base.DAMAGE * 2.5,
             },
-            POISON: true,
-            POISONEFFECTIVENESS: {
-                HP: 5,
-                HPP: 0.1,
-                SH: 8,
-                SHP: 0,
-                BDM: 1,
-                BSM: 1,
-                Time: 50,
-                AddTime: 0,
-                ExpDam: 1,
-                Interval: 300
+            ONLY_HITS_SAME: {
+                ACTIVATED: true,
+                POISON: true,
+                POISONEFFECTIVENESS: {
+                    HP: 5,
+                    HPP: 0.1,
+                    SH: 8,
+                    SHP: 0,
+                    BDM: 1,
+                    BSM: 1,
+                    Time: 50,
+                    AddTime: 0,
+                    ExpDam: 1,
+                    Interval: 300,
+                },
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   6,    12,     1.25,    6,      0,     180,     0,   ], 
@@ -10354,9 +10353,6 @@ exports.megaCasnuke = {
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
-                    }, {
-                POSITION: [  24,     0,      0,      0,      0,    0, ],
-                    TYPE: [exports.megaCasHue],
                     },
             ],
         };
@@ -10421,9 +10417,6 @@ exports.megaCasnuke = {
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
-                    }, {
-                POSITION: [  24,     0,      0,      0,      0,    0, ],
-                    TYPE: [exports.megaCasHue],
                     },
             ],
         };
@@ -12458,10 +12451,6 @@ exports.cwisnuke = {
                 ],
             };
 
-exports.yaeyasnywbfHue = {
-    SHAPE: 10003,
-    INDEPENDENT: true,
-};
 exports.yaeyasnywbfMarking = {
     COLOR: 207,
     INDEPENDENT: true,
@@ -12469,24 +12458,24 @@ exports.yaeyasnywbfMarking = {
 exports.yaeyasnywbfbullet = {
     PARENT: [exports.bullet],
     LABEL: 'SINNER Bullet',
-    POISON: true,
-    POISONEFFECTIVENESS: {
-        HP: 5,
-        HPP: 0.1,
-        SH: 8,
-        SHP: 0,
-        BDM: 1,
-        BSM: 1,
-        Time: 50,
-        AddTime: 0,
-        ExpDam: 1,
-        Interval: 300,
+    ONLY_HITS_SAME: {
+        ACTIVATED: true,
+        POISON: true,
+        POISONEFFECTIVENESS: {
+            HP: 5,
+            HPP: 0.1,
+            SH: 8,
+            SHP: 0,
+            BDM: 1,
+            BSM: 1,
+            Time: 50,
+            AddTime: 0,
+            ExpDam: 1,
+            Interval: 300,
+        },
     },
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
-        POSITION: [  24,     0,      0,      0,      0,    0, ], 
-            TYPE: [exports.yaeyasnywbfHue],
-            }, {
         POSITION: [  10,     0,      0,      0,      0,    1, ], 
             TYPE: [exports.yaeyasnywbfMarking],
             },
@@ -12499,18 +12488,21 @@ exports.yaeyasnywbfbullet = {
                 BODY: {
                     FOV: 1.2,
                 },
-                POISON: true,
-                POISONEFFECTIVENESS: {
-                    HP: 5,
-                    HPP: 0.1,
-                    SH: 8,
-                    SHP: 0,
-                    BDM: 1,
-                    BSM: 1,
-                    Time: 50,
-                    AddTime: 0,
-                    ExpDam: 1,
-                    Interval: 300,
+                ONLY_HITS_SAME: {
+                    ACTIVATED: true,
+                    POISON: true,
+                    POISONEFFECTIVENESS: {
+                        HP: 5,
+                        HPP: 0.1,
+                        SH: 8,
+                        SHP: 0,
+                        BDM: 1,
+                        BSM: 1,
+                        Time: 50,
+                        AddTime: 0,
+                        ExpDam: 1,
+                        Interval: 300,
+                    },
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
@@ -12525,11 +12517,6 @@ exports.yaeyasnywbfbullet = {
                         COLOR_SETTINGS: {
                             COLOR: 207,
                         }, },
-                ],
-                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [  24,     0,      0,      0,      0,  0], 
-                        TYPE: exports.yaeyasnywbfHue,
-                            },
                 ],
             };
 
