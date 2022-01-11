@@ -5114,7 +5114,8 @@ var maintainloop = (() => {
                         Class.sail,
                         Class.bore,
                         Class.punt,
-                        Class.screw_punt
+                        Class.screw_punt,
+                        Class.yaeyasnywbf
                       ])
                     );
                     o.name += ran.chooseBotName();
