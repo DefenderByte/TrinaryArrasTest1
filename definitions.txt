@@ -10341,16 +10341,16 @@ exports.megaCasnuke = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    180,   0, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
@@ -10368,6 +10368,19 @@ exports.megaCasnuke = {
             SHAPE: 3,
             SIZE: 60,
             VALUE: 500000,
+            POISON: true,
+            POISONEFFECTIVENESS: {
+                HP: 5,
+                HPP: 0.1,
+                SH: 8,
+                SHP: 0,
+                BDM: 1,
+                BSM: 1,
+                Time: 50,
+                AddTime: 0,
+                ExpDam: 1,
+                Interval: 300
+            },
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED,
@@ -10395,16 +10408,16 @@ exports.megaCasnuke = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    180,   0, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
