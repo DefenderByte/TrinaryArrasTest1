@@ -12458,6 +12458,81 @@ exports.cwisnuke = {
                 ],
             };
 
+exports.yaeyasnywbfHue = {
+    SHAPE: 10003,
+    INDEPENDENT: true,
+};
+exports.yaeyasnywbfMarking = {
+    COLOR: 207,
+    INDEPENDENT: true,
+};
+exports.yaeyasnywbfbullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'SINNER Bullet',
+    POISON: true,
+    POISONEFFECTIVENESS: {
+        HP: 5,
+        HPP: 0.1,
+        SH: 8,
+        SHP: 0,
+        BDM: 1,
+        BSM: 1,
+        Time: 50,
+        AddTime: 0,
+        ExpDam: 1,
+        Interval: 300,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  24,     0,      0,      0,      0,    0, ], 
+            TYPE: [exports.yaeyasnywbfHue],
+            }, {
+        POSITION: [  10,     0,      0,      0,      0,    1, ], 
+            TYPE: [exports.yaeyasnywbfMarking],
+            },
+    ],
+};
+            exports.yaeyasnywbf = {
+                PARENT: [exports.genericTank],
+                LABEL: 'YOU ARE ENTITY YOU ARE SINNER NOW YOU WILL BURN FOREVER!', // HAW HAW HAW
+                DANGER: 7,
+                BODY: {
+                    FOV: 1.2,
+                },
+                POISON: true,
+                POISONEFFECTIVENESS: {
+                    HP: 5,
+                    HPP: 0.1,
+                    SH: 8,
+                    SHP: 0,
+                    BDM: 1,
+                    BSM: 1,
+                    Time: 50,
+                    AddTime: 0,
+                    ExpDam: 1,
+                    Interval: 300,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [15.077,   8,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame]),
+                            TYPE: exports.yaeyasnywbfbullet,
+                        },
+                        COLOR_SETTINGS: {
+                            SKIN: 1,
+                        }, }, {
+                    POSITION: [ 13.95,  5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 207,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  24,     0,      0,      0,      0,  0], 
+                        TYPE: exports.yaeyasnywbfHue,
+                            },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -12628,7 +12703,7 @@ exports.botT3_E = {
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
             exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2];
 
-            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.ohmyfuckinggodIHAVENUKESSSSDSDSDSDSDSDSDS];
+            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.ohmyfuckinggodIHAVENUKESSSSDSDSDSDSDSDSDS, exports.yaeyasnywbf];
 
             exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.factory, exports.destroy, exports.builder, exports.artillery, exports.skimmer];
 
