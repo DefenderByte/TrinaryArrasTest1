@@ -10186,13 +10186,33 @@ exports.megaCasHue = {
     SHAPE: 10003,
     INDEPENDENT: true,
 };
+exports.megaCasMarking = {
+    COLOR: 207,
+    INDEPENDENT: true,
+};
 exports.megaCasbullet = {
     PARENT: [exports.bullet],
     LABEL: 'Overheated Bullet',
+    POISON: true,
+    POISONEFFECTIVENESS: {
+        HP: 5,
+        HPP: 0.1,
+        SH: 8,
+        SHP: 0,
+        BDM: 1,
+        BSM: 1,
+        Time: 50,
+        AddTime: 0,
+        ExpDam: 1,
+        Interval: 300,
+    },
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  24,     0,      0,      0,      0,    0, ], 
             TYPE: [exports.megaCasHue],
+            }, {
+        POSITION: [  10,     0,      0,      0,      0,    1, ], 
+            TYPE: [exports.megaCasMarking],
             },
     ],
 };
@@ -10200,6 +10220,19 @@ exports.megaCasnuke = {
     PARENT: [exports.autoswarm],
     LABEL: 'Overheated Exploding Missile',
     SHAPE: 0,
+    POISON: true,
+    POISONEFFECTIVENESS: {
+        HP: 5,
+        HPP: 0.1,
+        SH: 8,
+        SHP: 0,
+        BDM: 1,
+        BSM: 1,
+        Time: 50,
+        AddTime: 0,
+        ExpDam: 1,
+        Interval: 300,
+    },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   1,     6,      1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
@@ -10230,6 +10263,9 @@ exports.megaCasnuke = {
         /*********  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  24,     0,      0,      0,      0,    0, ], 
             TYPE: [exports.megaCasHue],
+            }, {
+        POSITION: [  10,     0,      0,      0,      0,    1, ], 
+            TYPE: [exports.megaCasMarking],
             },
     ],
 };
@@ -10273,6 +10309,19 @@ exports.megaCasnuke = {
                 REGEN: base.REGEN,
                 DAMAGE: base.DAMAGE * 2.5,
             },
+            POISON: true,
+            POISONEFFECTIVENESS: {
+                HP: 5,
+                HPP: 0.1,
+                SH: 8,
+                SHP: 0,
+                BDM: 1,
+                BSM: 1,
+                Time: 50,
+                AddTime: 0,
+                ExpDam: 1,
+                Interval: 300
+            },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   6,    12,     1.25,    6,      0,     180,     0,   ], 
                     PROPERTIES: {
@@ -10292,16 +10341,16 @@ exports.megaCasnuke = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    180,   0, ],
-                    TYPE: [exports.megaCascadeGun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
@@ -10346,15 +10395,15 @@ exports.megaCasnuke = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
-                POSITION: [  10,     8,      0,      60,    120,   0, ],
+                POSITION: [  10,     8,      0,      60,    180,   0, ],
                     TYPE: [exports.megaCasgun],
                     }, {
-                POSITION: [  10,     8,      0,     300,    120,   0, ],
+                POSITION: [  10,     8,      0,     300,    180,   0, ],
                     TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
