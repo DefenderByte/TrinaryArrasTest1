@@ -1664,6 +1664,36 @@ class Entity {
         this.alpha = 1;
         this.hit = 0;
         this.invisible = [0, 0, 0];
+        this.ContactPoison = false;
+        this.ContactFreeze = false;
+        this.PoisonEffectiveness = {
+            HP: 5,
+            HPP: 0,
+            SH: 5,
+            SHP: 0,
+            BDM: 1,
+            BSM: 1,
+            Time: 3,
+            AddTime: 0,
+            ExpDam: 1,
+            Interval: 1000
+        };
+        this.FreezeEffectiveness = {
+            SlowMulti: 0.5,
+            Time: 3,
+            AddTime: 0
+        };
+        this.PoisonImmunity = 1;
+        this.FreezeImmunity = 1;
+        this.PoisonEffect = false;
+        this.FreezeEffect = false;
+        this.Poisoned = {
+            IsPoisoned: false
+        };
+        this.Frozen = {
+            IsFrozen: false,
+            SlowMulti: 1
+        };
         // Get a new unique id
         this.id = entitiesIdLog++;
         this.team = this.id;
@@ -1852,6 +1882,30 @@ class Entity {
         }
         if (set.INVISIBLE != null) { 
             this.invisible = set.INVISIBLE;
+        }
+        if (set.POISON != null) {
+            this.ContactPoison = set.POISON;
+        }
+        if (set.FREEZE != null) {
+            this.ContactFreeze = set.FREEZE;
+        }
+        if (set.POISONEFFECTIVENESS != null) {
+            this.PoisonEffectiveness = set.POISONEFFECTIVENESS;
+        }
+        if (set.FREEZEEFFECTIVENESS != null) {
+            this.FreezeEffectiveness = set.FREEZEEFFECTIVENESS;
+        }
+        if (set.POISONIMMUNITY != null) {
+            this.PoisonImmunity = set.POISONIMMUNITY;
+        }
+        if (set.FREEZEIMMUNITY != null) {
+            this.FreezeImmunity = set.FREEZEIMMUNITY;
+        }
+        if (set.SHOWPOISON != null) {
+            this.PoisonEffect = set.SHOWPOISON;
+        }
+        if (set.SHOWFREEZE != null) {
+            this.FreezeEffect = set.SHOWFREEZE;
         }
         if (set.DANGER != null) { 
             this.dangerValue = set.DANGER; 
@@ -4245,7 +4299,7 @@ var gameloop = (() => {
             }
             return 0;
         }
-        function advancedcollide(my, n, doDamage, doInelastic, nIsFirmCollide = false) {
+        function advancedcollide(my, n, doDamage, doInelastic, nIsFirmCollide = false, CheckForEffects = false) {
             // Prepare to check
             let tock = Math.min(my.stepRemaining, n.stepRemaining),
                 combinedRadius = n.size + my.size,
@@ -4424,7 +4478,49 @@ var gameloop = (() => {
                             my.damageRecieved += damage._n * deathFactor._n;
                             n.damageRecieved += damage._me * deathFactor._me;
                         }
+                        /*  POISON & FREEZE COLLISIONS  */
+                        if (n.ContactPoison && my.Poisoned.IsPoisoned == false) {
+                            my.Poisoned = n.PoisonEffectiveness;
+                            my.Poisoned.IsPoisoned = true;
+                        };
+                        if (my.ContactPoison && n.Poisoned.IsPoisoned == false) {
+                            n.Poisoned = my.PoisonEffectiveness;
+                            n.Poisoned.IsPoisoned = true;
+                        };
+                        if (n.ContactFreeze && my.Frozen.IsFrozen == false) {
+                            my.Frozen = n.FreezeEffectiveness;
+                            my.Frozen.IsFrozen = true;
+                        };
+                        if (my.ContactFreeze && n.Frozen.IsFrozen == false) {
+                            n.Frozen = my.FreezeEffectiveness;
+                            n.Frozen.IsFrozen = true;
+                        };
                     }
+                    if (CheckForEffects) {
+                        /*  POISON & FREEZE COLLISIONS  */
+                        if (n.OnlyHitsSame.POISON) {
+                            my.Poisoned = n.OnlyHitsSame.POISONEFFECTIVENESS;
+                            my.Poisoned.IsPoisoned = true;
+                        };
+                        if (my.OnlyHitsSame.POISON) {
+                            n.Poisoned = my.OnlyHitsSame.POISONEFFECTIVENESS;
+                            n.Poisoned.IsPoisoned = true;
+                        };
+                        if (n.OnlyHitsSame.FREEZE) {
+                            my.Frozen = n.OnlyHitsSame.FREEZEEFFECTIVENESS;
+                            my.Frozen.IsFrozen = true;
+                        };
+                        if (my.OnlyHitsSame.FREEZE) {
+                            n.Frozen = my.OnlyHitsSame.FREEZEEFFECTIVENESS;
+                            n.Frozen.IsFrozen = true;
+                        };
+                        if (my.OnlyHitsSame.ACTIVATED) {
+                            my.destroy()
+                        }
+                        if (n.OnlyHitsSame.ACTIVATED) {
+                            n.destroy()
+                        }
+                    };
                     /************* DO MOTION ***********/    
                     if (nIsFirmCollide < 0) {
                         nIsFirmCollide *= -0.5;
@@ -4596,6 +4692,45 @@ var gameloop = (() => {
     //setTimeout(moveloop, 1000 / roomSpeed / 30 - delta); 
 })();
 // A less important loop. Runs at an actual 5Hz regardless of game speed.
+function applypoison(element) {
+    if (element.Poisoned.IsPoisoned >= 1) {
+        element.blend.amount = 1
+        element.Poisoned.IsPoisoned -= 1
+        let numberOfRotations = 1
+        if (element.Poisoned.ExpDam == 1) {
+            numberOfRotations = element.Poisoned.Time * 1000 / element.Poisoned.Interval
+        }
+        if (!element.invuln && element.health.amount - element.PoisonImmunity * ((element.Poisoned.HP / numberOfRotations) + ((element.health.max * element.Poisoned.HPP) / numberOfRotations)) > 0) {
+            element.health.amount -= element.PoisonImmunity * ((element.Poisoned.HP / numberOfRotations) + ((element.health.max * element.Poisoned.HPP) / numberOfRotations))
+            element.shield.amount -= element.PoisonImmunity * ((element.Poisoned.SH / numberOfRotations) + ((element.shield.max * element.Poisoned.SHP) / numberOfRotations))
+        }
+        setTimeout(() => {
+            applypoison(element)
+        }, element.Poisoned.Interval);
+    } else {
+        element.Poisoned.IsPoisoned = false
+    }
+};
+//this runs for every object, testing to see if it is poisoned or if it should display a color effect
+function poison(element) {
+    if (element.Poisoned.IsPoisoned === true && element.invuln !== true) {
+        element.Poisoned.Time += (Math.random() < 0.5 ? -1 : 1) * (Math.round(Math.random())) * element.Poisoned.AddTime
+        element.Poisoned.IsPoisoned = (element.Poisoned.Time * 1000 / element.Poisoned.Interval)
+        setTimeout(() => {
+            applypoison(element)
+        }, element.Poisoned.Interval);
+    }
+};
+//the freeze alternative to poison, exxcept all we need to do is make sure it stops after a predetermite amount of time
+function freeze(element) {
+    if (element.Frozen.IsFrozen === true && element.invuln !== true) {
+        element.Frozen.Time += (Math.random() < 0.5 ? -1 : 1) * (Math.round(Math.random())) * element.Frozen.AddTime
+        element.Frozen.IsFrozen = 2 //2 is just a number to show you are already poisoned, so don't redo it
+        setTimeout(() => {
+            element.Frozen.IsFrozen = false
+        }, element.Frozen.Time * 1000);
+    }
+};
 var maintainloop = (() => {
     // Place obstacles
     function placeRoids() {
