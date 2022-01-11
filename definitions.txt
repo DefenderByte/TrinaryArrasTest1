@@ -10284,7 +10284,7 @@ exports.megaCasnuke = {
                         TYPE: exports.megaCasnuke,
                     },
                     COLOR_SETTINGS: {
-                        COLOR: 12,
+                        COLOR: 189,
                         SKIN: 2,
                     }, }, {
                 POSITION: [ 13.95,  5.15,     1,      0,      0,      0,      0,   ], 
