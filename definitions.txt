@@ -10183,7 +10183,8 @@ exports.cascadeMin = {
     ],
 };
 exports.megaCasHue = {
-    SHAPE: 10002,
+    SHAPE: 10003,
+    INDEPENDENT: true,
 };
 exports.megaCasbullet = {
     PARENT: [exports.bullet],
@@ -10234,7 +10235,7 @@ exports.megaCasnuke = {
 };
         exports.megaCasgun = {
             PARENT: [exports.genericTank],
-            LABEL: 'Hellseeker',
+            LABEL: 'Diabolical Overheatseeker',
             DANGER: 6,
             CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
             BODY: {
@@ -10291,16 +10292,16 @@ exports.megaCasnuke = {
             TURRETS: [{
                 /*********  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [   6,     7,      0,     120,    360,   1, ], 
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [   6,     7,      0,     240,    360,   1, ],
-                    TYPE: [exports.mnegun],
+                    TYPE: [exports.megaCasgun],
                     }, {
                 POSITION: [  10,     8,      0,      60,    180,   0, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [  10,     8,      0,     300,    180,   0, ],
-                    TYPE: [exports.megaCasgun],
+                    TYPE: [exports.megaCascadeGun],
                     }, {
                 POSITION: [   5,     0,      0,     180,    360,   1, ],
                     TYPE: [exports.skimturret],
@@ -11920,28 +11921,28 @@ exports.bentHomingBullet = {
         exports.bentHoming = {
             PARENT: [exports.genericTank],
             LABEL: 'Seeker',
-            DANGER: 8,
+            DANGER: 7,
             BODY: {
                 SPEED: base.SPEED * 0.9,
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  19,     8,      1,      0,     -2,     -20,     0,   ], 
                     }, {
-                POSITION: [   2,     12,    1.01,    19,    -2,     -20,    0.5,  ], 
+                POSITION: [   3,     11,    1.01,    16,    -2,     -20,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,      20,     0,   ], 
                     }, {
-                POSITION: [   2,     12,    1.01,    19,     2,      20,    0.5,  ], 
+                POSITION: [   3,     11,    1.01,    16,     2,      20,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     }, {
-                POSITION: [   2,     12,    1.01,    22,     0,      0,      0,   ], 
+                POSITION: [   3,     11,    1.01,    19,     0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
                         TYPE: exports.bentHomingBullet,
@@ -12567,54 +12568,55 @@ exports.botT3_E = {
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.ohmyfuckinggodIHAVENUKESSSSDSDSDSDSDSDSDS];
 
-            exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.factory, exports.destroy, exports.shotgun, exports.builder, exports.artillery, exports.skimmer];
+            exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.factory, exports.destroy, exports.builder, exports.artillery, exports.skimmer];
 
             exports.devOverdone.UPGRADES_TIER_4 = [exports.flameceptionist2];
 
             exports.devACs.UPGRADES_TIER_4 = [exports.arenaCloser2, exports.devACs2];
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pummeler, exports.single, exports.pellet];
-
-    exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.hexa, exports.gunner, exports.cruiser];
-        exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble, exports.battleship];
-        exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple, exports.bentHoming];
-            exports.triple.UPGRADES_TIER_4 = [exports.quint];
-        exports.gunner.UPGRADES_TIER_3 = [exports.guntrap, exports.autogunner, exports.nailgun, exports.machinegunner, exports.overgunner, exports.hurricane];
-
-    exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.bore];
-        exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
-        exports.assassin.UPGRADES_TIER_3 = [exports.ranger, exports.autoass];
-            exports.assassin.UPGRADES_TIER_4 = [exports.falcon];
-            exports.ranger.UPGRADES_TIER_4 = [exports.underranger];
-        exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.dual];
-        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer];
-            exports.boomer.UPGRADES_TIER_4 = [exports.bentboomer];
-
-    exports.machine.UPGRADES_TIER_2 = [exports.mini, exports.gunner, exports.automachine, exports.spray];
-        exports.destroy.UPGRADES_TIER_3 = [exports.anni, exports.hybrid, exports.autodestroy, exports.hiveshooter];
-            exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
-            exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
-        exports.artillery.UPGRADES_TIER_3 = [exports.mortar, exports.autoarty];
-        exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.automini, exports.mini1, exports.minitrap];
-
-    exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap];
-        exports.flank.UPGRADES_TIER_3 = [];
-        exports.tri.UPGRADES_TIER_3 = [exports.fighter, exports.booster, exports.bomber, exports.autotri, exports.surfer];
-        exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.auto5, exports.autohexa, exports.hexatrap, exports.hurricane];
-            exports.hexatrap.UPGRADES_TIER_4 = [exports.quadtrapper];
-        exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.sniper3, exports.machine3, exports.banshee];
-        exports.flanktrap.UPGRADES_TIER_3 = [exports.bushwhack, exports.guntrap, exports.fortress, exports.bomber, exports.hybridflanktrap];
-            exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
-
-    exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.battleship, exports.overgunner, exports.autoover, exports.master];  
-        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.autounderseer];
-        exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress, exports.autocruiser];
+exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin, exports.sniper, exports.director, exports.machine, exports.flank, exports.pellet];
 
     exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler];
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash];
         exports.mauler.UPGRADES_TIER_3 = [exports.spike];
         exports.autopummeler.UPGRADES_TIER_3 = [exports.autosmash];
+
+    exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa];
+        exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship];
+        exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming];
+            exports.triple.UPGRADES_TIER_4 = [exports.quint];
+        exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane];
+
+    exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.bore];
+        exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
+        exports.assassin.UPGRADES_TIER_3 = [exports.autoass, exports.ranger];
+            exports.assassin.UPGRADES_TIER_4 = [exports.falcon];
+            exports.ranger.UPGRADES_TIER_4 = [exports.underranger];
+        exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.dual];
+        exports.builder.UPGRADES_TIER_3 = [exports.engineer, exports.construct, exports.autobuilder, exports.boomer, exports.twinbuilder];
+            exports.boomer.UPGRADES_TIER_4 = [exports.bentboomer];
+
+    exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer];
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.master, exports.overtrap, exports.autoover, exports.overgunner, exports.battleship];  
+        exports.underseer.UPGRADES_TIER_3 = [exports.autounderseer, exports.necromancer];
+        exports.cruiser.UPGRADES_TIER_3 = [exports.autocruiser, exports.battleship, exports.carrier, exports.fortress];
+
+    exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini];
+        exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun,];
+            exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
+            exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
+        exports.artillery.UPGRADES_TIER_3 = [exports.autoarty, exports.mortar];
+        exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1];
+
+    exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap];
+        exports.flank.UPGRADES_TIER_3 = [exports.tripletwin];
+        exports.tri.UPGRADES_TIER_3 = [exports.booster, exports.fighter, exports.surfer, exports.bomber, exports.autotri];
+        exports.hexa.UPGRADES_TIER_3 = [exports.autohexa, exports.octo, exports.hexatrap, exports.auto5, exports.hurricane];
+            exports.hexatrap.UPGRADES_TIER_4 = [exports.quadtrapper];
+        exports.auto3.UPGRADES_TIER_3 = [exports.banshee, exports.auto5, exports.heavy3, exports.sniper3, exports.machine3, exports.auto4];
+            exports.heavy3.UPGRADES_TIER_4 = [exports.builder3];
+        exports.flanktrap.UPGRADES_TIER_3 = [exports.fortress, exports.bomber, exports.guntrap, exports.bushwhack, exports.hybridflanktrap];
+            exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
 
     exports.pellet.UPGRADES_TIER_2 = [exports.gunner, exports.cruiser, exports.hewn_pellet, exports.sail, exports.bore, exports.punt];
         exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier];
