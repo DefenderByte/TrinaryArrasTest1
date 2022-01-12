@@ -3274,7 +3274,7 @@ const sockets = (() => {
                 };
 
 
-                case "RollAnimations": //UIA
+                case "A": //UIA
                 {
                     if (player.body != null) {
                         var animation = false
