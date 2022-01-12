@@ -12522,7 +12522,7 @@ exports.yaeyasnywbfbullet = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
                         }, {
-                    POSITION: [  18,   5.15,     1,      0,      0,      0,      0,   ], 
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
                         COLOR_SETTINGS: {
                             COLOR: 150,
                         }, }, {
@@ -12535,16 +12535,16 @@ exports.yaeyasnywbfbullet = {
             };
             for (let i=1; i<=29; i++) exports['backbone' + i] = {
                 PARENT: [exports.genericTank],
-                LABEL: 'Backbone',
+                LABEL: '...',
                 LABELSWITCH: ['backbone' + i],
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.75, 
                     FOV: base.FOV * 1.2,
                 },
-                GUNS: [{
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
                         }, {
-                    POSITION: [  18,   5.15,     1,      0,      0,      0,      0,   ], 
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
                         COLOR_SETTINGS: {
                             COLOR: 150 + i,
                         }, }, {
@@ -12564,7 +12564,7 @@ exports.yaeyasnywbfbullet = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
                         }, {
-                    POSITION: [  18,   5.15,     1,      0,      0,      0,      0,   ], 
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
                         COLOR_SETTINGS: {
                             COLOR: 180,
                         }, }, {
