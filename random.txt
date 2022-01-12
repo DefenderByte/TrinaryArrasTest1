@@ -1641,6 +1641,8 @@ exports.chooseBotName = () => {
         'Icoaether',
         '<b><i>HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW HAW</i></b>... (ad nauseum)',
         'NECROMANCER SUPERIOR TO OVERLORD, NECROMANCER SUPERIOR TO OVERLORD, NECROMANCER SUPERIOR TO OVERLORD, NECROMANCER SUPERIOR TO OVERLORD... (cursed)',
+        'Is this- Mickey, Mouse! Toots! Choo Choo!Choo Choo!Choo Cho => https://www.youtube.com/channel/UCF8dP9VIpVIMyXOikoL0xTQ',
+        'OH HELL NO z46 IS HERE',
     ]);
 };
 
