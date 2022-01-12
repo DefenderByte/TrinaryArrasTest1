@@ -12572,19 +12572,34 @@ exports.yaeyasnywbfbullet = {
                         COLOR_SETTINGS: {
                             COLOR: 180,
                         }, }, {
-                    POSITION: [   4,     10,     0.6,    7,      21,     90,     0,   ], 
+                    POSITION: [   4,     10,     0.6,    7,     -21,     90,     0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 3,
+                            SKIN: 15,
+                        }, }, {
+                    POSITION: [   4,     10,     0.6,    7,      21,    270,     0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 3,
+                            SKIN: 15,
+                        }, }, {
+                    POSITION: [   4,     10,     0.6,    7,     -21,     90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
+                            TYPE: exports.bullet,
+                        },
                         COLOR_SETTINGS: {
                             COLOR: 3,
                         }, }, {
-                    POSITION: [   4,     10,     0.6,    7,     -21,    270,     0,   ], 
+                    POSITION: [   4,     10,     0.6,    7,      21,    270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
+                            TYPE: exports.bullet,
+                        },
                         COLOR_SETTINGS: {
                             COLOR: 3,
                         }, }, {
                     POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
-                            TYPE: exports.bullet,
-                        }, },
+                        },
                 ],
             };
 
