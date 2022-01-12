@@ -10305,22 +10305,6 @@ exports.megaCasnuke = {
                 REGEN: base.REGEN,
                 DAMAGE: base.DAMAGE * 2.5,
             },
-            ONLY_HITS_SAME: {
-                ACTIVATED: true,
-                POISON: true,
-                POISONEFFECTIVENESS: {
-                    HP: 5,
-                    HPP: 0.1,
-                    SH: 8,
-                    SHP: 0,
-                    BDM: 1,
-                    BSM: 1,
-                    Time: 50,
-                    AddTime: 0,
-                    ExpDam: 1,
-                    Interval: 300,
-                },
-            },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   6,    12,     1.25,    6,      0,     180,     0,   ], 
                     PROPERTIES: {
@@ -10364,19 +10348,6 @@ exports.megaCasnuke = {
             SHAPE: 3,
             SIZE: 60,
             VALUE: 500000,
-            POISON: true,
-            POISONEFFECTIVENESS: {
-                HP: 5,
-                HPP: 0.1,
-                SH: 8,
-                SHP: 0,
-                BDM: 1,
-                BSM: 1,
-                Time: 50,
-                AddTime: 0,
-                ExpDam: 1,
-                Interval: 300
-            },
             BODY: {
                 FOV: 1.5,
                 SPEED: base.SPEED,
@@ -12509,6 +12480,7 @@ exports.yaeyasnywbfbullet = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.mini, g.flame]),
                             TYPE: exports.yaeyasnywbfbullet,
+                            LABEL: 'Ember',
                         },
                         COLOR_SETTINGS: {
                             SKIN: 1,
@@ -12516,6 +12488,90 @@ exports.yaeyasnywbfbullet = {
                     POSITION: [ 13.95,  5.15,     1,      0,      0,      0,      0,   ], 
                         COLOR_SETTINGS: {
                             COLOR: 207,
+                        }, },
+                ],
+            };
+
+            exports.steam = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Steamroller',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75, 
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.backbone0 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Backbone',
+                LABELSWITCH: 'backbone0',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75, 
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  18,   5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150,
+                        }, }, {
+                    POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            for (let i=1; i<=29; i++) exports['backbone' + i] = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Backbone',
+                LABELSWITCH: ['backbone' + i],
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75, 
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [{
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  18,   5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150 + i,
+                        }, }, {
+                    POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
+                        },
+                ],
+            };
+            exports.backbone30 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Backbone',
+                LABELSWITCH: 'backbone30',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75, 
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  18,   5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 180,
+                        }, }, {
+                    POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
+                            TYPE: exports.bullet,
                         }, },
                 ],
             };
@@ -12726,9 +12782,10 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.cruiser.UPGRADES_TIER_3 = [exports.autocruiser, exports.battleship, exports.carrier, exports.fortress];
 
     exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini];
-        exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun,];
+        exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam];
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
+            exports.steam.UPGRADES_TIER_4 = [exports.backbone0];
         exports.artillery.UPGRADES_TIER_3 = [exports.autoarty, exports.mortar];
         exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1];
 
