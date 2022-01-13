@@ -2330,6 +2330,18 @@ class Entity {
         case 'fastverseautospin':
             this.facing -= 0.05 / roomSpeed;
             break;
+        case 'fasterautospin':
+            this.facing += 0.072 / roomSpeed;
+            break;
+        case 'fasterseautospin':
+            this.facing -= 0.072 / roomSpeed;
+            break;
+        case 'fastestautospin':
+            this.facing += 0.1 / roomSpeed;
+            break;
+        case 'fastestreverseautospin':
+            this.facing -= 0.1 / roomSpeed;
+            break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
             break;
