@@ -270,7 +270,14 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     hivemind:           [2.25,  0,     1,      1.4,    1,      1,      1,      1,      1,      1,      1,      1,      1],
     splitter:           [0.5,   0,     1,      1.4,    0.75,   0.75,   1,      0.5,    1,      0.85,   1,      1,      1],
     bit_more_spread:    [1,     1,     1.15,   1,      1,      1,      1,      1,      1,      1,      1,      1.5,    1],
-    more_spread:      ,     1,     1.5,   1,      1,      1,      1,      1,      1,      1,      1,      1.5,    1],
+    more_spread:        [1,     1,     1.5,    1,      1,      1,      1,      1,      1,      1,      1,      1.5,    1],
+    gatekeeper:         [0.875, 1,     1,      1.25,   1.1,    1.1,    1.05,   2,      3,      0.8,    0.1,    1,      1],
+    contagi:            [1,     0.5,   1.5,    1,      0.6,    0.6,    0.75,   1.05,   1,      1,      0.9,    0.75,   0.7],
+    c4:                 [1000,  0,     1,      1,      3,      5.75,   3,      0,      0,      0.1,    2,      1,      1],
+    trap_fragment:      [1000,  0,     0.75,   0.7,    2,      2,      1.25,   1.15,   1,      0.4,    1.5,    0.5,    1.15],
+    sock:               [0.5,   0,     1,      0.8,    0.65,   0.7,    0.75,   0.85,   0.75,   0.5,    0.5,    1,      0.7],
+    redistribute2:      [1,     1,     1,      0.7,    2.5,    2,      2,      1,      1,      1,      1.5,    1,      1.5],
+    decelerate:         [1,     1,     1,      1,      1,      1,      1,      1,      0,      1,      1,      1,      1],
     /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // WIP
     ceptionist:         [1.2,   1,     1,      1,      1,      1,      1,      0.95,   0.95,   0.95,   1,      1,      1],
     ceptionist_bullet:  [1.2,   1,     1,      1,      0.5,    0.475,  0.5,    0.7,    0.7,    1,      1,      1,      1],
@@ -12559,10 +12566,18 @@ exports.yaeyasnywbfbullet = {
                         COLOR_SETTINGS: {
                             COLOR: 150 + i,
                         }, }, {
-                    POSITION: [   4,     10,     0.6,    7,      21,     0,      0,   ], 
-                        }, {
-                    POSITION: [   4,     10,     0.6,    7,     -21,     0,      0,   ], 
-                        }, {
+                    POSITION: [   4,     10,     0.6, 0+(7/30*i), -21,     90,     0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 229,
+                        }, }, {
+                    POSITION: [   4,     10,     0.6, 0+(7/30*i), 21,    270,     0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 229,
+                        }, }, {
+                    POSITION: [   4,     14,     0.6, 16+(10/30*i), 0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 229,
+                        }, }, {
                     POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
                         },
                 ],
@@ -12585,29 +12600,15 @@ exports.yaeyasnywbfbullet = {
                         }, }, {
                     POSITION: [   4,     10,     0.6,    7,     -21,     90,     0,   ], 
                         COLOR_SETTINGS: {
-                            COLOR: 3,
-                            SKIN: 15,
+                            COLOR: 229,
                         }, }, {
                     POSITION: [   4,     10,     0.6,    7,      21,    270,     0,   ], 
                         COLOR_SETTINGS: {
-                            COLOR: 3,
-                            SKIN: 15,
+                            COLOR: 229,
                         }, }, {
-                    POSITION: [   4,     10,     0.6,    7,     -21,     90,     0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
-                            TYPE: exports.bullet,
-                        },
+                    POSITION: [   4,     14,     0.6,    26,     0,      0,      0,   ], 
                         COLOR_SETTINGS: {
-                            COLOR: 3,
-                        }, }, {
-                    POSITION: [   4,     10,     0.6,    7,      21,    270,     0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam]),
-                            TYPE: exports.bullet,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR: 3,
+                            COLOR: 229,
                         }, }, {
                     POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
                         },
