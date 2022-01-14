@@ -12595,9 +12595,8 @@ exports.backbomb = {
                         }, }, {
                     POSITION: [   4,     14,     0.6,    26,     0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam, g.backbone_hammer, g.decelerate]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam, g.decelerate]),
                             TYPE: exports.backbomb,
-                            ALT_FIRE: true,
                             WAIT_TO_CYCLE: true,
                         },
                         COLOR_SETTINGS: {
@@ -12663,7 +12662,7 @@ exports.backbomb = {
                         }, }, {
                     POSITION: [   4,     14,     0.6,    26,     0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam, g.backbone_hammer, g.decelerate]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.steam, g.decelerate]),
                             TYPE: exports.backbomb,
                             WAIT_TO_CYCLE: true,
                         },
