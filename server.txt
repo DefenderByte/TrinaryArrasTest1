@@ -2197,6 +2197,9 @@ class Entity {
             this.upgrades = [];
             this.define(saveMe);
             this.sendMessage('You have upgraded to ' + this.label + '.');
+            if (this.labelswitch != null) {
+                this.sendMessage('Press Shift to switch class');
+            };
             let ID = this.id;
             entities.forEach(instance => {
                 if (instance.settings.clearOnMasterUpgrade && instance.master.id === ID) {
@@ -2236,8 +2239,28 @@ class Entity {
             },
             a = this.acceleration / roomSpeed;
         switch (this.motionType) {
-        case 'glide':
+        case "accel":
             this.maxSpeed = this.topSpeed;
+            this.damp = -0.05;
+            break;
+        case "megaccel":
+            this.maxSpeed = this.topSpeed;
+            this.damp = -0.3;
+            break;
+        case "grow":
+            this.SIZE += 1;
+            this.maxSpeed = this.topSpeed;
+            break;
+        case "ultragrow":
+            this.SIZE += 10;
+            this.maxSpeed = this.topSpeed;
+            break;
+        case "AOE":
+            this.SIZE += 300;
+            this.maxSpeed = this.topSpeed;
+            break;
+        case 'glide':
+            this.maxSpeed = this.topSpeed
             this.damp = 0.05;
             break;
         case 'motor':
@@ -5038,7 +5061,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Sentries unite... wait, no, correction: Prepare for a dazzling display of shininess!');
                         break;
                     case 18: 
-                        choice = [[Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.namelessdefend_tethys], 1, 'tetcel', 'nest']; 
+                        choice = [[Class.defendOfShinies], 1, 'tetcel', 'nest']; 
                         sockets.broadcast('Tethys: I\'d rather be shiny... and I AM! WAIT WHAT THE POLYGON IS THAT');
                         sockets.broadcast('Prepare for a dazzling display of shininess! He has detected for some imbalance!');
                         break;
@@ -5263,12 +5286,13 @@ var maintainloop = (() => {
                         Class.screw_punt,
                         Class.yaeyasnywbf,
                         Class.steam,
-                        Class.backbone0,
-                        Class.backbone30
+                        Class.ai_backbone,
+                        Class.ai_backbone_hammer
                       ])
                     );
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
+                    o.color = 12;
                     // o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]);
                     bots.push(o);
                 }
