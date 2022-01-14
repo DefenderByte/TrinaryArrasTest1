@@ -12465,7 +12465,7 @@ exports.backbaseTurret = {
 exports.backbombexplode = {
     PARENT: [exports.bullet],
     LABEL: 'Explosion',
-    BODY: { ACCELERATION: 10, RANGE: 30, SPEED: 0.001, },
+    BODY: { HEALTH: 1 * wepHealthFactor, ACCELERATION: 10, RANGE: 30, SPEED: 0.001, },
     MOTION_TYPE: 'ultragrow',
 };
 exports.backbomb = {
@@ -12481,7 +12481,7 @@ exports.backbomb = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   2,     15,     1,      0,      0,      0,      0,  ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.destroy, g.destroy]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.destroy, g.destroy, g.c4]),
                 TYPE: [exports.backbombexplode, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
             }, }, {
