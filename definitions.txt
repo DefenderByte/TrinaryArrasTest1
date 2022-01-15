@@ -292,7 +292,7 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     much_more_damage:   [1,     1,     1,      1,      1.35,   1.3,    1,      1,      1,      1,      1,      1,      1],
 even_much_more_damage:  [1,     1,     1,      1,      1.8,    1.5,    1,      1,      1,      1,      1,      1,      1],
     tons_more_damage:   [1,     1,     1,      1,      4,      3,      1,      1,      1,      1,      1,      1,      1],
-    backbone:           [1.55,  0,     0.1,    1,      0.1,    0.5184, 1.32,   0.4,    1,      0.05,   9,      180,    3.45],
+    backbone:           [1.55,  0,     0.1,    1,      0.1,    5.184,  1.32,   0.4,    1,      0.05,   9,      180,    3.45],
     backbone_hammer:    [6.5,   0,     1,      1,      6,      6,      6,      1,      1,      1,      1,      0.5,    1],
 };
 
@@ -9891,6 +9891,7 @@ exports.defendOfShiniesP2Eye = {
             exports.defend_lite = {
                 PARENT: [exports.sentry],
                 LABEL: 'Defender Lite',
+                FACING_TYPE: 'autospin',
                 COLOR: 2,
                 SHAPE: 3,
                 SIZE: 12,
@@ -9933,6 +9934,7 @@ exports.defendOfShiniesP2Eye = {
             exports.defend_lite2 = {
                 PARENT: [exports.sentry2],
                 LABEL: 'Defender Lite',
+                FACING_TYPE: 'autospin',
                 COLOR: 2,
                 SHAPE: 3,
                 SIZE: 12,
@@ -12864,6 +12866,62 @@ exports.backbomb = {
                 ],
             };
 
+exports.sentryMultiSwarm = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    COLOR: 16,
+    BODY: {
+        FOV: 3,
+    },
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [   7,     14,     0.6,    7,      0,     180,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.flank, g.auto]),
+                TYPE: exports.swarm,
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            }, },
+    ],
+};
+exports.sentryMultitool = {
+    PARENT: [exports.sentry],
+    FACING_TYPE: 'autospin',
+    DANGER: 3,
+    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     6,      0,      60,    180,  0],
+            TYPE: exports.sentryTurret,
+                }, {
+        POSITION: [  14,     6,      0,     180,    180,  0],
+            TYPE: exports.turretTrap,
+                }, {
+        POSITION: [  14,     6,      0,     300,    180,  0],
+            TYPE: exports.turretSnipe,
+                }, {
+        POSITION: [  12,     0,      0,     180,    360,  1],
+            TYPE: exports.sentryMultiSwarm,
+                },
+    ],
+};
+exports.sentryMultitool2 = {
+    PARENT: [exports.sentry2],
+    FACING_TYPE: 'autospin',
+    DANGER: 3,
+    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     6,      0,      60,    180,  0],
+            TYPE: exports.sentryTurret,
+                }, {
+        POSITION: [  14,     6,      0,     180,    180,  0],
+            TYPE: exports.turretTrap,
+                }, {
+        POSITION: [  14,     6,      0,     300,    180,  0],
+            TYPE: exports.turretSnipe,
+                }, {
+        POSITION: [  12,     0,      0,     180,    360,  1],
+            TYPE: exports.sentryMultiSwarm,
+                },
+    ],
+};
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -13032,7 +13090,7 @@ exports.botT3_E = {
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
-            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2];
+            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2, exports.sentryMultitool2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0];
 
