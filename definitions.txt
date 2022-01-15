@@ -12465,8 +12465,16 @@ exports.backbaseTurret = {
 exports.backbombexplode = {
     PARENT: [exports.bullet],
     LABEL: 'Explosion',
-    BODY: { HEALTH: 1 * wepHealthFactor, ACCELERATION: 0, RANGE: 450, SPEED: 0, },
     MOTION_TYPE: 'ultragrow',
+    BODY: {
+        PENETRATION: 10,
+        SPEED: 0,
+        RANGE: 90,
+        DENSITY: 0.1,
+        HEALTH: 2 * wepHealthFactor,
+        DAMAGE: 1.5 * wepDamageFactor,
+        PUSHABILITY: 0,
+    },
 };
 exports.backbomb = {
     PARENT: [exports.bullet],
