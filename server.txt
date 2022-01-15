@@ -4988,19 +4988,19 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 400, 250, 400, 250, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180)) {
                     case 0: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 1, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 1: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 2, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 2, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 2: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 3, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 3, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 3: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner], 4, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 4, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
@@ -5020,19 +5020,19 @@ var maintainloop = (() => {
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
-                        choice = [[Class.dread, Class.octog], 1, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator], 1, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 9: 
-                        choice = [[Class.dread, Class.octog], 2, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator], 2, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 10: 
-                        choice = [[Class.dread, Class.octog], 3, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator], 3, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 11: 
-                        choice = [[Class.dread, Class.octog], 4, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator], 4, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
