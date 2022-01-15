@@ -13084,6 +13084,7 @@ exports.eAutoGun = {
     PARENT: [exports.genericTank],
     LABEL: 'Auto-Turret',
     COLOR: 16,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  22,    10,      1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
@@ -13096,6 +13097,7 @@ exports.eAutoGun = {
             PARENT: [exports.genericTank],
             DANGER: 7,
             LABEL: 'Turret',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
@@ -13322,7 +13324,7 @@ exports.eAutoGun = {
                 BODY: {
                     FOV: 1.6,
                 },
-                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  10,    11,    -0.5,    14,      0,      0,      0,  ], 
                         }, {
@@ -13458,6 +13460,7 @@ exports.eAutoGun = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Turret',
                 DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  27,     8,      1,      0,      0,      0,      0,   ], 
                         PROPERTIES: {
@@ -13635,6 +13638,7 @@ exports.eAutoGun = {
                 PARENT: [exports.genericTank],
                 LABEL: 'S-Streamliner',
                 DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  24,     8,      1,      0,      0,      0,      0,   ], 
                         PROPERTIES: {
@@ -13896,6 +13900,1212 @@ exports.eAutoGun = {
                     }, {
                 POSITION: [ 6.75,    0,      0,     180,    360,   1, ], 
                     TYPE: [exports.eTrapTurret],
+                    },
+            ],
+        };
+    exports.eCeptionistSGun = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Turret',
+        BODY: {
+            FOV: 1.5,
+        },
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        COLOR: 16,
+        DANGER: -1,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [ 21.5,    10,     1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.low_power, g.low_power, g.half_reload, g.double_range]),
+                    TYPE: exports.bullet,
+                }, }
+        ],
+    };
+exports.eCeptionistDriveswarm = makeAuto(exports.swarm, 'Swarm Drone', { type: exports.eCeptionistSGun, });
+exports.eCeptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Basic',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.eCeptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.eCeptionistGun = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Basic Ceptionist',
+    DANGER: 7,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.ceptionist, g.twin, g.triplet, g.half_reload]),
+                TYPE: exports.eCeptionistBullet,
+            }, }, 
+    ],
+    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  10,     0,      0,      0,      0,  1], 
+            TYPE: exports.eCeptionistMarking,
+        },
+    ],
+};
+        exports.elite_ceptionist = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Ceptionist',
+            FACING_TYPE: 'toTarget',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  16,     8,     1.5,     0,      0,    -150,     2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  16,     8,     1.5,     0,      0,     150,     2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,     1.5,     0,      0,    -165,     1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,     1.5,     0,      0,     165,     1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  22,     8,     1.5,     0,      0,     180,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,      60,      0,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,      60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,      60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,     -60,     0,   ],
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,     -60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,     -60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   7,     7,      0,     120,    360,   1, ],  
+                    TYPE: [exports.eCeptionistGun, ]
+                    }, {
+                POSITION: [   7,     7,      0,    -120,    360,   1, ],  
+                    TYPE: [exports.eCeptionistGun, ]
+                    },
+            ],
+        };
+        exports.elite_ceptionist2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Ceptionist',
+            FACING_TYPE: 'toTarget',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  16,     8,     1.5,     0,      0,    -150,     2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  16,     8,     1.5,     0,      0,     150,     2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,     1.5,     0,      0,    -165,     1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  19,     8,     1.5,     0,      0,     165,     1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  22,     8,     1.5,     0,      0,     180,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet, g.mach, g.much_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,      60,      0,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,      60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,      60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,     -60,     0,   ],
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,     -60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,     -60,     0.5,  ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.one_third_reload, g.double_size, g.slow, g.low_power]),
+                      TYPE: [exports.eCeptionistDriveswarm],
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   7,     7,      0,     120,    360,   1, ],  
+                    TYPE: [exports.eCeptionistGun, ]
+                    }, {
+                POSITION: [   7,     7,      0,    -120,    360,   1, ],  
+                    TYPE: [exports.eCeptionistGun, ]
+                    },
+            ],
+        };
+
+exports.eTwistMissile = {
+    PARENT: [exports.bullet],
+    LABEL: 'Roto Missile',
+    INDEPENDENT: true,
+    BODY: {
+        RANGE: 150,
+    },
+    FACING_TYPE: 'fastautospin',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,     6,      1,      0,      0,      0,      0,  ],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.one_third_reload, g.low_power, g.twin, g.double, g.triplet, g.more_speed, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,      90,     0,  ],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.one_third_reload, g.low_power, g.twin, g.double, g.triplet, g.more_speed, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,     180,     0,  ],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.one_third_reload, g.low_power, g.twin, g.double, g.triplet, g.more_speed, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,     270,     0,  ],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.one_third_reload, g.low_power, g.twin, g.double, g.triplet, g.more_speed, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, },
+    ],
+};
+            exports.eTwistGun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Twister',
+                DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    10,     -0.5,    9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  20,    12,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.half_reload, g.half_reload, g.more_speed, g.fast, g.five, g.no_recoil]),
+                            TYPE: exports.eTwistMissile,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  11,    12,    -1.5,     3,      0,      0,      0,  ], 
+                        },
+                ],
+            };
+        exports.elite_twister = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Twister',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,    10,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   2,    10,     1.2,     18,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.half_reload, g.one_third_reload, g.fast, g.half_range]),
+                        TYPE: exports.block,
+                    }, }, {
+                POSITION: [  18,    10,      1,      0,      0,     120,     0,   ], 
+                    }, {
+                POSITION: [   2,    10,     1.2,     18,     0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.half_reload, g.one_third_reload, g.fast, g.half_range]),
+                        TYPE: exports.block,
+                    }, }, {
+                POSITION: [  18,    10,      1,      0,      0,     240,     0,   ], 
+                    }, {
+                POSITION: [   2,    10,     1.2,     18,     0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.half_reload, g.one_third_reload, g.fast, g.half_range]),
+                        TYPE: exports.block,
+                    }, }, 
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eTwistGun, { COLOR: 5, }],
+                }, {
+                POSITION: [  12,     8,      0,      60,    180,   0, ],
+                    TYPE: [exports.bigauto4gun, { COLOR: 5, BODY: { FOV: 2 }, INDEPENDENT: true }],
+                }, {
+                POSITION: [  12,     8,      0,     180,    180,   0, ],
+                    TYPE: [exports.bigauto4gun, { COLOR: 5, BODY: { FOV: 2 }, INDEPENDENT: true }],
+                }, {
+                POSITION: [  12,     8,      0,     300,    180,   0, ],
+                    TYPE: [exports.bigauto4gun, { COLOR: 5, BODY: { FOV: 2 }, INDEPENDENT: true }],
+                }, 
+            ],
+        };
+        exports.elite_twister2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Twister',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,    10,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   2,    10,     1.2,     18,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.half_reload, g.one_third_reload, g.fast, g.half_range]),
+                        TYPE: exports.block,
+                    }, }, {
+                POSITION: [  18,    10,      1,      0,      0,     120,     0,   ], 
+                    }, {
+                POSITION: [   2,    10,     1.2,     18,     0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.half_reload, g.one_third_reload, g.fast, g.half_range]),
+                        TYPE: exports.block,
+                    }, }, {
+                POSITION: [  18,    10,      1,      0,      0,     240,     0,   ], 
+                    }, {
+                POSITION: [   2,    10,     1.2,     18,     0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.half_reload, g.one_third_reload, g.fast, g.half_range]),
+                        TYPE: exports.block,
+                    }, }, 
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eTwistGun, { COLOR: 5, }],
+                }, {
+                POSITION: [  12,     8,      0,      60,    180,   0, ],
+                    TYPE: [exports.bigauto4gun, { COLOR: 5, BODY: { FOV: 2 }, INDEPENDENT: true }],
+                }, {
+                POSITION: [  12,     8,      0,     180,    180,   0, ],
+                    TYPE: [exports.bigauto4gun, { COLOR: 5, BODY: { FOV: 2 }, INDEPENDENT: true }],
+                }, {
+                POSITION: [  12,     8,      0,     300,    180,   0, ],
+                    TYPE: [exports.bigauto4gun, { COLOR: 5, BODY: { FOV: 2 }, INDEPENDENT: true }],
+                }, 
+            ],
+        };
+
+        exports.ePoachGun = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Hunter',
+            DANGER: 7,
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  23,     7,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.sniper, g.hunter, g.hunter2, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  20,     11,     1,      0,      0,      0,     0.1,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.sniper, g.hunter, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, },
+            ],
+        };
+        exports.elite_poacher = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Poacher',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   5,     6,     1.5,     6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.double_reload, g.double_reload, g.double_reload, g.double_reload, g.pound, g.more_speed, g.fast]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 1.75}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 10,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.double_reload, g.double_reload, g.double_reload, g.double_reload, g.pound, g.more_speed, g.fast]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 1.75}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 10,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,   
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.double_reload, g.double_reload, g.double_reload, g.double_reload, g.pound, g.more_speed, g.fast]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 1.75}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 10,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,    
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     9,      0,     30,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,    -30,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,     90,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,    -90,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,    -150,     0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,     150,     0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.ePoachGun, { COLOR: 5, } ],
+                    },
+            ],
+        };
+        exports.elite_poacher2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Poacher',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   5,     6,     1.5,     6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.double_reload, g.double_reload, g.double_reload, g.double_reload, g.pound, g.more_speed, g.fast]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 1.75}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 10,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.double_reload, g.double_reload, g.double_reload, g.double_reload, g.pound, g.more_speed, g.fast]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 1.75}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 10,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,   
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.double_reload, g.double_reload, g.double_reload, g.double_reload, g.pound, g.more_speed, g.fast]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 1.75}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 10,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,    
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     9,      0,     30,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,    -30,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,     90,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,    -90,      0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,    -150,     0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [   6,     9,      0,     150,     0,    0, ], 
+                    TYPE: exports.trapTurret,
+                    }, {
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.ePoachGun, { COLOR: 5, } ],
+                    },
+            ],
+        };
+        exports.eAssGun = {
+            PARENT: [exports.genericTank],
+            DANGER: 7,
+            LABEL: 'Turret',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  30,   12.5,     1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.half_reload, g.one_third_reload, g.more_speed, g.more_speed, g.more_speed, g.five]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,   12.5,    -1.6,    0,      0,      0,      0,   ], 
+                },
+            ],
+        };
+        exports.elite_assassin = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Assassin',
+            BODY: {
+                FOV: 2.5,
+            },
+            GUNS: [ { /** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  5,     5,      1,      6,    -6.5,     60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,     6.5,     60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {
+                POSITION: [  5,     5,      1,      6,    -6.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,     6.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {
+                POSITION: [  5,     5,      1,      6,    -6.5,    300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,      0,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,     6.5,    300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, 
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     6,      0,      0,     360,   1, ],
+                    TYPE: exports.eAssGun,
+                    }, {
+                POSITION: [   6,     6,      0,     120,    360,   1, ],
+                    TYPE: exports.eAssGun,
+                    }, {
+                POSITION: [   6,     6,      0,     240,    360,   1, ],
+                    TYPE: exports.eAssGun,
+                    }, {
+                POSITION: [   5,    12,      0,       0,    240,   0, ], 
+                    TYPE: exports.trapTurret
+                    }, {
+                POSITION: [   5,    12,      0,     120,    240,   0, ],  
+                    TYPE: exports.trapTurret
+                    }, {
+                POSITION: [   5,    12,      0,     240,    240,   0, ],  
+                    TYPE: exports.trapTurret
+                    },
+            ],
+        };
+        exports.elite_assassin2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Assassin',
+            BODY: {
+                FOV: 2.5,
+            },
+            GUNS: [ { /** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  5,     5,      1,      6,    -6.5,     60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,     6.5,     60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {
+                POSITION: [  5,     5,      1,      6,    -6.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,     6.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {
+                POSITION: [  5,     5,      1,      6,    -6.5,    300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,      0,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, {  
+                POSITION: [  5,     5,      1,      6,     6.5,    300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound]),
+                        TYPE: exports.bullet
+                    }, }, 
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     6,      0,      0,     360,   1, ],
+                    TYPE: exports.eAssGun,
+                    }, {
+                POSITION: [   6,     6,      0,     120,    360,   1, ],
+                    TYPE: exports.eAssGun,
+                    }, {
+                POSITION: [   6,     6,      0,     240,    360,   1, ],
+                    TYPE: exports.eAssGun,
+                    }, {
+                POSITION: [   5,    12,      0,       0,    240,   0, ], 
+                    TYPE: exports.trapTurret
+                    }, {
+                POSITION: [   5,    12,      0,     120,    240,   0, ],  
+                    TYPE: exports.trapTurret
+                    }, {
+                POSITION: [   5,    12,      0,     240,    240,   0, ],  
+                    TYPE: exports.trapTurret
+                    },
+            ],
+        };
+exports.eCyGun = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Auto Turret',
+    BODY: {FOV: 2.5},
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.auto, g.five, g.triple, g.morespeed, g.fast]),
+                TYPE: exports.bullet,
+            }, }
+    ],
+};
+        exports.eCycloneTurret = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Cyclone',
+            CONTROLLERS: ['reversespin'],
+            DANGER: 7,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  15,    3.5,     1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,      90,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     270,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {      
+                POSITION: [  15,    3.5,     1,      0,      0,      30,    1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triple, g.gunner, g.spam, g.morespeed, g.morespeed, g.morespeed, g.pound, g.doublereload, g.threequartersrof]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     120,    1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     210,    1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     300,    1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {      
+                POSITION: [  15,    3.5,     1,      0,      0,      60,    2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     150,    2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     240,    2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, }, {   
+                POSITION: [  15,    3.5,     1,      0,      0,     330,    2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.twin, g.double, g.triplet, g.gunner, g.spam, g.more_speed, g.more_speed, g.more_speed, g.pound, g.double_reload, g.one_third_reload]),
+                        TYPE: exports.bullet,
+                    }, },
+            ],
+        };
+        exports.elite_cyclone = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Cyclone',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [    5,    3.2,    -2,     6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.halfreload, g.doublesize, g.fast, g.triple, g.triple]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,     180,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,     180,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,      60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,      60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,     -60,     0,   ],
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,     -60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,     -60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     9,      0,     30,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,    -30,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,     90,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,    -90,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,    -150,    160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,     150,    160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eCycloneTurret, { COLOR: 5, } ],
+                    },
+            ],
+        };
+        exports.elite_cyclone2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Cyclone',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [    5,    3.2,    -2,     6,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.halfreload, g.doublesize, g.fast, g.triple, g.triple]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,     180,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,     180,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,      60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,      60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      0,     -60,     0,   ],
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,      8,     -60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, }, {
+                POSITION: [    5,    3.2,    -2,     6,     -8,     -60,     0.5,   ], 
+                    PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
+                      TYPE: exports.autoswarm,
+                      STAT_CALCULATOR: gunCalcNames.swarm, 
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     9,      0,     30,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,    -30,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,     90,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,    -90,     160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,    -150,    160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [   6,     9,      0,     150,    160,   0, ], 
+                    TYPE: exports.eCyGun,
+                    }, {
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eCycloneTurret, { COLOR: 5, } ],
+                    },
+            ],
+        };
+
+exports.eliteMiss = {
+    PARENT: [exports.bullet],
+    LABEL: 'Missile',
+    INDEPENDENT: true,
+    BODY: {
+        RANGE: 160,
+    },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,     6,      1,      0,      0,     180,     0,   ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.low_power, g.twin, g.double, g.triplet, g.tons_more_recoil, g.more_speed, g.more_speed, g.more_speed, g.half_range]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, },
+    ],
+};
+            exports.eLaunchGun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: 2.25,
+                },
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                LABEL: 'Launcher',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,     12,    -0.5,    9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,     13,     1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.triplet, g.arty, g.arty, g.skim, g.half_reload, g.five]),
+                            TYPE: exports.eliteMiss,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+            };
+exports.eliteLaunchTurret = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Hyperskimmer',
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  12,    14,    -0.5,     10,     0,      0,      0,   ], 
+            }, {
+        POSITION: [  10,    14,    -0.5,     10,     0,      0,      0,   ], 
+            }, {
+        POSITION: [  18,    15,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.double, g.triplet, g.pound, g.arty, g.arty, g.skim, g.skim, g.one_third_reload, g.more_speed, g.more_speed, g.more_speed]),
+                TYPE: exports.hypermissile,
+            }, },
+    ],
+};
+        exports.elite_launcher = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Launcher',
+            BODY: {
+                SPEED: base.SPEED * 0.1,
+            },
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     8,      0,     30,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,    -30,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,     90,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,    -90,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,    -150,    120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,     150,    120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [  10,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eliteLaunchTurret, { COLOR: 5, } ],
+                    },
+            ],
+        };
+        exports.elite_launcher2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Launcher',
+            BODY: {
+                SPEED: base.SPEED * 0.1,
+            },
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     8,      0,     30,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,    -30,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,     90,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,    -90,     120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,    -150,    120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [   6,     8,      0,     150,    120,   0, ], 
+                    TYPE: exports.eLaunchGun,
+                    }, {
+                POSITION: [  10,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eliteLaunchTurret, { COLOR: 5, } ],
+                    },
+            ],
+        };
+
+        exports.eCrossHunt = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Hunter',
+            DANGER: 6,
+            BODY: {
+                FOV: 1.75,
+            },
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  24,     8,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunter2, g.half_reload, g.half_reload, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  21,    10,      1,      0,      0,      0,     0.1,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.half_reload, g.half_reload, g.fast]),
+                        TYPE: exports.bullet,
+                    }, },
+            ],
+        };
+            exports.eCrossGun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Crossbow',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  16,     4,      1,      0,    -1.6,    -25,   0.75,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 17.5,    4,      1,      0,    -2.4,    -10,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {        
+                    POSITION: [  19,     4,      1,      0,     -3,      0,    0.25,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,     4,      1,      0,     1.6,     25,   0.75,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 17.5,    4,      1,      0,     2.4,     10,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {        
+                    POSITION: [  19,     4,      1,      0,      3,      0,    0.25,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [15.75,    8,      1,      8,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+        exports.elite_crossbow = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Crossbow',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   5,     6,     1.5,     6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.low_power, g.double_reload, g.double_reload, g.near_double_size, g.more_speed, g.more_speed, g.more_speed]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 2.5}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 20,
+                        SYNCS_SKILLS: true, 
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     180,    1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.low_power, g.double_reload, g.double_reload, g.near_double_size, g.more_speed, g.more_speed, g.more_speed]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 2.5}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 20,
+                        SYNCS_SKILLS: true, 
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     300,    2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.low_power, g.double_reload, g.double_reload, g.near_double_size, g.more_speed, g.more_speed, g.more_speed]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 2.5}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 20,
+                        SYNCS_SKILLS: true, 
+                    }, },
+            ],
+            AI: { NO_LEAD: true, },
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     8,      0,     30,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,    -30,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,     90,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,    -90,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,    -150,    160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,     150,    160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eCrossGun, { COLOR: 5, } ],
+                    },
+            ],
+        };
+        exports.elite_crossbow2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Crossbow',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   5,     6,     1.5,     6,      0,      60,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.low_power, g.double_reload, g.double_reload, g.near_double_size, g.more_speed, g.more_speed, g.more_speed]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 2.5}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 20,
+                        SYNCS_SKILLS: true, 
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     180,    1/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.low_power, g.double_reload, g.double_reload, g.near_double_size, g.more_speed, g.more_speed, g.more_speed]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 2.5}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 20,
+                        SYNCS_SKILLS: true, 
+                    }, }, {
+                POSITION: [   5,     6,     1.5,     6,      0,     300,    2/3,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over, g.low_power, g.double_reload, g.double_reload, g.near_double_size, g.more_speed, g.more_speed, g.more_speed]),
+                        TYPE: [exports.drone, {INDEPENDENT: true, BODY: {FOV: 2.5}}],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 20,
+                        SYNCS_SKILLS: true, 
+                    }, },
+            ],
+            AI: { NO_LEAD: true, },
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     8,      0,     30,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,    -30,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,     90,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,    -90,     160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,    -150,    160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [   6,     8,      0,     150,    160,   0, ], 
+                    TYPE: exports.eCrossHunt,
+                    }, {
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eCrossGun, { COLOR: 5, } ],
                     },
             ],
         };
