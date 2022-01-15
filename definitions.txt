@@ -633,6 +633,44 @@ exports.bigPentagon = {
     DRAW_HEALTH: true,
     GIVE_KILL_MESSAGE: true,
 };
+exports.decagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 8,
+    },
+    LABEL: 'Decagon',
+    VALUE: 8685,
+    SHAPE: 10,
+    SIZE: 72,
+    COLOR: 6,
+    BODY: {
+        DAMAGE: 9 * basePolygonDamage,
+        DENSITY: 18,
+        HEALTH: 120 * basePolygonHealth,
+        RESIST: 2.5,
+        PENETRATION: 0.6,
+    },
+    DRAW_HEALTH: true,
+};
+exports.nonagon = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 7,
+    },
+    LABEL: 'Nonagon',
+    VALUE: 3510,
+    SHAPE: 9,
+    SIZE: 56,
+    COLOR: 195,
+    BODY: {
+        DAMAGE: 7.5 * basePolygonDamage,
+        DENSITY: 16,
+        HEALTH: 80 * basePolygonHealth,
+        RESIST: 2.25,
+        PENETRATION: 0.7,
+    },
+    DRAW_HEALTH: true,
+};
 exports.octagon = {
     PARENT: [exports.food],
     FOOD: {
