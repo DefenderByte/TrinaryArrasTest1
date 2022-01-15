@@ -7976,9 +7976,9 @@ exports.pentagonQuarsar = {
             BODY: {
                 FOV: 1,
                 SPEED: base.SPEED * 0.1,
-                HEALTH: 1000,
+                HEALTH: 37.5,
             },
-            VALUE: 100000,
+            VALUE: 200000,
         };
         exports.nest_defender2 = { 
             PARENT: [exports.sentry2],
@@ -7991,9 +7991,9 @@ exports.pentagonQuarsar = {
             BODY: {
                 FOV: 1,
                 SPEED: base.SPEED * 0.1,
-                HEALTH: 1000,
+                HEALTH: 37.5,
             },
-            VALUE: 100000,
+            VALUE: 200000,
         };
 exports.krimissile = {
     PARENT: [exports.bullet],
@@ -10422,7 +10422,7 @@ exports.megaCasnuke = {
             BODY: {
                 FOV: 2,
                 SPEED: base.SPEED * 0.01,
-                HEALTH: 1000,
+                HEALTH: 187.5,
                 SHIELD: 0.1,
                 REGEN: 0.0001,
                 DAMAGE: 2,
@@ -10439,7 +10439,7 @@ exports.megaCasnuke = {
             BODY: {
                 FOV: 2,
                 SPEED: base.SPEED * 0.01,
-                HEALTH: 1000,
+                HEALTH: 187.5,
                 SHIELD: 0.1,
                 REGEN: 0.0001,
                 DAMAGE: 2,
@@ -12465,7 +12465,7 @@ exports.backbaseTurret = {
 exports.backbombexplode = {
     PARENT: [exports.bullet],
     LABEL: 'Explosion',
-    BODY: { HEALTH: 1 * wepHealthFactor, ACCELERATION: 10, RANGE: 30, SPEED: 0.001, },
+    BODY: { HEALTH: 1 * wepHealthFactor, ACCELERATION: 0, RANGE: 450, SPEED: 0, },
     MOTION_TYPE: 'ultragrow',
 };
 exports.backbomb = {
@@ -12481,7 +12481,7 @@ exports.backbomb = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   2,     15,     1,      0,      0,      0,      0,  ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.destroy, g.destroy, g.c4]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.destroy, g.destroy]),
                 TYPE: [exports.backbombexplode, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
             }, }, {
