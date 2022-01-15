@@ -283,6 +283,7 @@ very_little_bit_bigger: [1,     1,     1,      1.067,  1,      1,      1,      1
     ceptionist:         [1.2,   1,     1,      1,      1,      1,      1,      0.95,   0.95,   0.95,   1,      1,      1],
     ceptionist_bullet:  [1.2,   1,     1,      1,      0.5,    0.475,  0.5,    0.7,    0.7,    1,      1,      1,      1],
     /***************** RELOAD RECOIL SHUDDER  SIZE   HEALTH  DAMAGE   PEN    SPEED    MAX    RANGE  DENSITY  SPRAY   RESIST  */ // My g.stats
+    no_speed:           [1,     1,     1,      1,      1,      1,      1,      0,      0,      1,      1,      1,      1],
     mega_pierce:        [1,     1,     1,      1,    10000,   0.1,   10000,    1,      1,      1,      1,      0,      1],
     mega_pen:           [1,     1,     1,      1,      1,      1,    10000,    1,      1,      1,      1,      1,      1], 
     ebh:                [1.125, 1,     1,      1,     0.8,    0.75,    2,     1.25,    1,     0.6,     1,     1.2,     1], 
@@ -12489,7 +12490,7 @@ exports.backbomb = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   2,     15,     1,      0,      0,      0,      0,  ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.destroy, g.destroy]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.no_speed]),
                 TYPE: [exports.backbombexplode, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
             }, }, {
@@ -12527,7 +12528,7 @@ exports.backbomb = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Backbone',
                 LABELSWITCH: 'backbone0',
-                DANGER: 7,
+                DANGER: 8,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.75, 
                     FOV: base.FOV * 1.2,
@@ -12551,6 +12552,7 @@ exports.backbomb = {
                 LABEL: '...',
                 LABELSWITCH: ['backbone' + i],
                 RESET_UPGRADES: true,
+                DANGER: 8,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.75, 
                     FOV: base.FOV * 1.2,
@@ -12582,7 +12584,7 @@ exports.backbomb = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Backbone',
                 LABELSWITCH: 'backbone30',
-                DANGER: 7,
+                DANGER: 8,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.75, 
                     FOV: base.FOV * 1.2,
@@ -12627,7 +12629,7 @@ exports.backbomb = {
             exports.ai_backbone = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Backbone',
-                DANGER: 7,
+                DANGER: 8,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.75, 
                     FOV: base.FOV * 1.2,
@@ -12649,7 +12651,7 @@ exports.backbomb = {
             exports.ai_backbone_hammer = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Backbone',
-                DANGER: 7,
+                DANGER: 8,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.75, 
                     FOV: base.FOV * 1.2,
@@ -12688,6 +12690,171 @@ exports.backbomb = {
                             SKIN: 15,
                         }, }, {
                     POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
+                        },
+                ],
+            };
+
+            exports.gttsu0 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Good time to screw up:',
+                LABELSWITCH: 'gttsu0',
+                DANGER: 8,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.nail]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.nail]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ], 
+                        }, {
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150,
+                        }, },
+                ],
+            };
+            for (let i=1; i<=29; i++) exports['gttsu' + i] = {
+                PARENT: [exports.genericTank],
+                LABEL: '...',
+                LABELSWITCH: ['gttsu' + i],
+                RESET_UPGRADES: true,
+                DANGER: 8,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.85, 
+                    FOV: base.FOV * 1.1,
+                    DENSITY: base.DENSITY * 0.8,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [19-(3/30*i), 2+(6/30*i), 1, 0, -2.5+(2.5/30*i), 0+(150/30*i), 0,   ], 
+                        }, {
+                    POSITION: [19-(3/30*i), 2+(6/30*i), 1, 0, 2.5-(2.5/30*i), 0-(150/30*i), 0,   ], 
+                        }, {
+                    POSITION: [0+(18/30*i), 8,   1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [5.5+(5.5/30*i), 8+(7/30*i), -1.8+(-3.11/30*i), 6.5-(4.5/30*i), 0, 0, 0,   ], 
+                        }, {
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150 + i,
+                        }, }, {
+                    POSITION: [0+(15/30*i), 0+(7/30*i), -1.3, 0, 0,     180,     0,   ], 
+                        },
+                ],
+            };
+            exports.gttsu30 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bad time to screw up:',
+                LABELSWITCH: 'gttsu30',
+                DANGER: 8,
+                BODY: {
+                    DENSITY: base.DENSITY * 0.6,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.tri_front]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  5.5,    8,    -1.31,   6.5,     0,     180,     0,   ], 
+                        }, {
+                    POSITION: [13.95,  5.15,     1,      0,      0,     180,     0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150,
+                        }, }, {
+                    POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {
+                    POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {
+                    POSITION: [   2,     2,      1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.jump]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  15,     7,    -1.3,    0,       0,     180,     0,   ], 
+                        },
+                ],
+            };
+            exports.ai_gttsu0 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Good time to screw up:',
+                DANGER: 8,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.nail]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.nail]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ], 
+                        }, {
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150,
+                        }, },
+                ],
+            };
+            exports.ai_gttsu30 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bad time to screw up:',
+                DANGER: 8,
+                BODY: {
+                    DENSITY: base.DENSITY * 0.6,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.tri_front]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  5.5,    8,    -1.31,   6.5,     0,     180,     0,   ], 
+                        }, {
+                    POSITION: [13.95,  5.15,     1,      0,      0,     180,     0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 150,
+                        }, }, {
+                    POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {
+                    POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {
+                    POSITION: [   2,     2,      1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.jump]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  15,     7,    -1.3,    0,       0,     180,     0,   ], 
                         },
                 ],
             };
@@ -12862,7 +13029,7 @@ exports.botT3_E = {
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
             exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2];
 
-            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf];
+            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0];
 
             exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.factory, exports.destroy, exports.builder, exports.artillery, exports.skimmer];
 
