@@ -3317,6 +3317,7 @@ const sockets = (() => {
                         //to add a catalyst all you need to do is copy this, paste it with the others below, and then fill out the necessary parts- 
                         //MakeAnimations(the base labelSwitch of the tanks, the number of total frames, the base label for the tanks, speed with 1 being fast and 100 being normal)
                         MakeAnimations('backbone', 30, 'backbone', 25, false, player.body)
+                        MakeAnimations('gttsu', 30, 'gttsu', 25, false, player.body)
 
                         //the code for these two is provided for reference as to how the animations work as well as how drones and other clear on master upgrade stuff works with the code^
 
