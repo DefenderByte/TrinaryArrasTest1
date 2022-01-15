@@ -10643,7 +10643,7 @@ exports.megaCasnuke = {
                         }, {
                     POSITION: [  15,    12,      1,      5,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.hive, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.double_range, g.no_recoil]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.mini_hive, g.hive, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.double_range, g.no_recoil]),
                             TYPE: exports.hive,
                         }, },
                 ],
@@ -11452,13 +11452,12 @@ exports.artmissile = {
                 BODY: {
                     FOV: 1.25,
                 },
-                INDEPENDENT: true,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  14,    14,     -1.2,    5,      0,      0,      0,   ], 
                         }, {
                     POSITION: [  15,    12,      1,      5,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.hive, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.double_range, g.no_recoil]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.one_third_reload, g.five, g.five, g.five, g.mini_hive, g.hive, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.double_range, g.no_recoil]),
                             TYPE: exports.hive,
                         }, },
                 ],
@@ -11468,7 +11467,7 @@ exports.artmissile = {
             COLOR: 1,
             SHAPE: 5,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [   9,     8,      0,      36,    190, 0], 
+                POSITION: [   9,     8,      0,      36,    180, 0], 
                     TYPE: exports.demswarmer,
                 }, {
                 POSITION: [   9,     8,      0,     108,    180, 0], 
