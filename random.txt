@@ -1756,6 +1756,8 @@ exports.chooseBotName = () => {
         'Lauraceae', // a plant
         'Señor Sassaprophet', // aka Senior Sass- WHAT? - Sassafras JR, 2021
         'case fallen: choice = [[Class.allfallenbosses], 4, \'woomy\', \'rock\']; sockets.broadcast(\'Many had sought for the day when they\'d return... But not in this way...\'); break;',
+        'WE HATE THE SAV CLAN WE NEED HELP',
+        'Lord Sassafras',
     ]);
 };
 
@@ -2994,14 +2996,6 @@ case 'hslcel':
     return exports.chooseN([
         'Haseul', //Sometimes goes by Queen Flame
     ], n) ;
-case 'defbtsarmy':
-    return exports.chooseN([
-        'Artemis',
-        'Odin',
-        'Apollo', // 13
-        'Nyx',
-        'Thor', // z46 says It’s not based off of Avengers. It’s based off of Norse Mythology
-    ], n) ;
     case 'poly': //Influx
     return exports.chooseN([
         'Dobromyl',
@@ -3047,6 +3041,26 @@ case 'defbtsarmy':
         'Hemisphere',
         'Sassaracha', //eh
         'SHINY! [(Omega/Lord) Sassafras appears]', // OMEGA sasasasasas
+        'Sassa Club',
+        'Sentiquet',
+        'Heptone',
+        'Zelena', // is he a SAV Clan Manager?
+        'Emiolis',
+        'Sassafras JR', // aka Sassafras Junior or... something?
+        'Klonen',
+        'Oganesson', // 118
+        'Happyfras', // Happyfras Supreme
+        'Novementha', // ANOTHER ONE?
+        'Sassafrexen', // Spicyfrexen or Sassafrized Hexen
+        'Oculus',
+        'Trinovia',
+        'Derpii', // Find the typo.
+        'Spicyfras',
+        'Hatappy', // Portmanteau of Hat and Happy, or Hatappyfras.
+        'Lauraceae', // a plant
+        'Señor Sassaprophet', // aka Senior Sass- WHAT? - Sassafras JR, 2021
+        'Lord Sassafras',
+        'LORDE BREEZY',
       ], n);
     case 'xyv': //thought it needed more unique names
     return exports.chooseN([
