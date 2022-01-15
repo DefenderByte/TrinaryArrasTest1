@@ -4988,19 +4988,19 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 400, 250, 400, 250, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180)) {
                     case 0: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 1, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 1: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 2, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper], 2, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 2: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 3, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper], 3, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 3: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_trapper], 4, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper], 4, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
