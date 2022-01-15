@@ -2198,7 +2198,7 @@ class Entity {
             this.define(saveMe);
             this.sendMessage('You have upgraded to ' + this.label + '.');
             if (this.labelswitch != null) {
-                this.sendMessage('Press Shift to switch class');
+                this.sendMessage('Press F to switch tiers. NOTE: There is a 1 second cooldown.');
             };
             let ID = this.id;
             entities.forEach(instance => {
@@ -5287,7 +5287,9 @@ var maintainloop = (() => {
                         Class.yaeyasnywbf,
                         Class.steam,
                         Class.ai_backbone,
-                        Class.ai_backbone_hammer
+                        Class.ai_backbone_hammer,
+                        Class.ai_gttsu0,
+                        Class.ai_gttsu30
                       ])
                     );
                     o.name += ran.chooseBotName();
