@@ -5324,6 +5324,8 @@ var maintainloop = (() => {
                 case 4: a = Class.hexagon; break;
                 case 5: a = Class.heptagon; break;
                 case 6: a = Class.octagon; break;
+                case 7: a = Class.nonagon; break;
+                case 8: a = Class.decagon; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
@@ -5446,7 +5448,9 @@ var maintainloop = (() => {
                 [4]: 0, // Hexagon
                 [5]: 0, // Heptagon
                 [6]: 0, // Octagon
-                [7]: 0,
+                [7]: 0, // Nonagon
+                [8]: 0, // Decagon
+                [9]: 0,
                 tank: 0,
                 sum: 0,
             };
@@ -5458,7 +5462,9 @@ var maintainloop = (() => {
                 [4]: 0, // Hexagon
                 [5]: 0, // Heptagon
                 [6]: 0, // Octagon
-                [7]: 0,
+                [7]: 0, // Nonagon
+                [8]: 0, // Decagon
+                [9]: 0,
                 sum: 0,
             };
             // Do the censusNest
