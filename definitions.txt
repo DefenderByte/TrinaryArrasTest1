@@ -12706,12 +12706,12 @@ exports.backbomb = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.nail]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bore]),
                             TYPE: exports.bullet,
                         }, }, {
                     POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.nail]),
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bore]),
                             TYPE: exports.bullet,
                         }, }, {
                     POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ], 
@@ -12764,7 +12764,7 @@ exports.backbomb = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.tri_front]),
                             TYPE: exports.bullet,
                         }, }, {
-                    POSITION: [  5.5,    8,    -1.31,   6.5,     0,      0,      0,   ], 
+                    POSITION: [  11,     15,   -1.31,    2,      0,      0,      0,   ], 
                         }, {
                     POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
                         COLOR_SETTINGS: {
@@ -12786,6 +12786,7 @@ exports.backbomb = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.jump]),
                             TYPE: exports.bullet,
+                            ALT_FIRE: true,
                         }, }, {
                     POSITION: [   5,     8,    -1.6,    8,       0,     180,     0,   ], 
                         },
@@ -12831,9 +12832,9 @@ exports.backbomb = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.tri_front]),
                             TYPE: exports.bullet,
                         }, }, {
-                    POSITION: [  5.5,    8,    -1.31,   6.5,     0,     180,     0,   ], 
+                    POSITION: [  11,     15,   -1.31,    2,      0,      0,      0,   ], 
                         }, {
-                    POSITION: [13.95,  5.15,     1,      0,      0,     180,     0,   ], 
+                    POSITION: [13.95,  5.15,     1,      0,      0,      0,      0,   ], 
                         COLOR_SETTINGS: {
                             COLOR: 180,
                         }, }, {
@@ -12853,6 +12854,7 @@ exports.backbomb = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.jump]),
                             TYPE: exports.bullet,
+                            ALT_FIRE: true,
                         }, }, {
                     POSITION: [   5,     8,    -1.6,    8,       0,     180,     0,   ], 
                         },
