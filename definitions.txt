@@ -1301,6 +1301,22 @@ exports.auto3gun = {
                 }, }
         ],
     };
+    exports.eTrapgun = {
+        PARENT: [exports.genericTank],
+        LABEL: '',
+        BODY: {
+            FOV: 3,
+        },
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        COLOR: 16,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  24,    11,      1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple, g.auto, g.more_speed, g.fast, g.five, g.one_third_reload, g.double_range]),
+                    TYPE: exports.bullet,
+                }, }
+        ],
+    };
     exports.heavy3gun = {
         PARENT: [exports.genericTank],
         LABEL: '',
@@ -1353,6 +1369,52 @@ exports.auto3gun = {
                 },
         ],
     };
+    exports.eTwinGun = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Turret',
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  16,     8,      1,      0,     5.5,     0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.half_reload, g.one_third_reload, g.more_speed, g.fast]),
+                TYPE: exports.bullet,
+            }, }, { /* LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  16,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.half_reload, g.one_third_reload, g.more_speed, g.fast]),
+                TYPE: exports.bullet,
+            }, }, 
+        ],
+    };
+            exports.eTrapTurret = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Turret',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  17,    18,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                    POSITION: [   2,    18,     1.2,     17,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct, g.auto, g.five, g.one_third_reload]),
+                            TYPE: exports.block,
+                        }, }, 
+                ],
+            };
+exports.derogun = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    BODY: {
+        FOV: 3,
+    },
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+    COLOR: 16,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank, g.spam, g.auto, g.five, g.seven]),
+                TYPE: exports.bullet,
+            }, },
+    ],
+};
     exports.turretSnipe = {
         PARENT: [exports.genericTank],
         LABEL: '',
@@ -5652,7 +5714,7 @@ exports.miniboss2 = {
         exports.elite_gunner = {
             PARENT: [exports.elite],
             LABEL: 'Harcadium Gunner',
-            FACING_TYPE: 'looseToTarget',
+            FACING_TYPE: 'toTarget',
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
                     }, {
@@ -5679,7 +5741,7 @@ exports.miniboss2 = {
         exports.elite_gunner2 = {
             PARENT: [exports.elite2],
             LABEL: 'Harcadium Gunner',
-            FACING_TYPE: 'looseToTarget',
+            FACING_TYPE: 'toTarget',
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
                     }, {
@@ -6802,7 +6864,7 @@ exports.miniboss2 = {
             exports.dread = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Dreadnought',
-                FACING_TYPE: 'looseToTarget',
+                FACING_TYPE: 'toTarget',
                 COLOR: 19,
                 SHAPE: 3,
                 SIZE: 12,
@@ -6858,7 +6920,7 @@ exports.miniboss2 = {
             exports.dread2 = {
                 PARENT: [exports.miniboss2],
                 LABEL: 'Dreadnought',
-                FACING_TYPE: 'looseToTarget',
+                FACING_TYPE: 'toTarget',
                 COLOR: 19,
                 SHAPE: 3,
                 SIZE: 12,
@@ -7016,7 +7078,7 @@ exports.miniboss2 = {
             exports.custodian = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Custodian',
-                FACING_TYPE: 'looseToTarget',
+                FACING_TYPE: 'toTarget',
                 COLOR: 2,
                 SHAPE: 3,
                 SIZE: 48,
@@ -7110,7 +7172,7 @@ exports.miniboss2 = {
             exports.custodian2 = {
                 PARENT: [exports.miniboss2],
                 LABEL: 'Custodian',
-                FACING_TYPE: 'looseToTarget',
+                FACING_TYPE: 'toTarget',
                 COLOR: 2,
                 SHAPE: 3,
                 SIZE: 48,
@@ -10354,7 +10416,7 @@ exports.megaCasnuke = {
         exports.mega_cascade = {
             PARENT: [exports.miniboss],
             LABEL: 'Mega Cascade',
-            FACING_TYPE: 'looseToTarget',
+            FACING_TYPE: 'toTarget',
             COLOR: 2,
             SHAPE: 3,
             SIZE: 60,
@@ -10405,7 +10467,7 @@ exports.megaCasnuke = {
         exports.mega_cascade2 = {
             PARENT: [exports.miniboss2],
             LABEL: 'Mega Cascade',
-            FACING_TYPE: 'looseToTarget',
+            FACING_TYPE: 'toTarget',
             COLOR: 2,
             SHAPE: 3,
             SIZE: 60,
@@ -12913,7 +12975,7 @@ exports.sentryMultiSwarm = {
     },
     CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [   7,     14,     0.6,    7,      0,     180,     0,   ], 
+        POSITION: [   7,     14,     0.6,    7,      0,      0,      0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.flank, g.auto]),
                 TYPE: exports.swarm,
@@ -12959,6 +13021,331 @@ exports.sentryMultitool2 = {
                 },
     ],
 };
+
+        exports.elite_twin = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Twin',
+            FACING_TYPE: 'toTarget',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  16,     8,      1,     -7,      7,      0,      0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pound, g.half_reload, g.slow]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  16,     8,      1,     -7,     -7,      0,     0.5,  ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pound, g.half_reload, g.slow]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  11,    12,     1.4,     8,      0,     180,     0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.double_reload, g.one_third_reload, g.tons_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eTwinGun],
+                    },
+            ],
+        };
+        exports.elite_twin2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Twin',
+            FACING_TYPE: 'toTarget',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  16,     8,      1,     -7,      7,      0,      0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pound, g.half_reload, g.slow]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  16,     8,      1,     -7,     -7,      0,     0.5,  ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pound, g.half_reload, g.slow]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  11,    12,     1.4,     8,      0,     180,     0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.double_reload, g.one_third_reload, g.tons_more_recoil]),
+                        TYPE: exports.bullet,
+                    }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  12,     0,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eTwinGun],
+                    },
+            ],
+        };
+
+        exports.elite_trapper = {
+            PARENT: [exports.elite],
+            LABEL: 'Harcadium Trapper',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [ 7.1,     7,      1,      8,      9,     60,      0,   ], 
+                     }, {
+                POSITION: [   3,     7,     1.7,   15.1,     9,     60,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                     }, }, {
+                 POSITION: [ 7.1,     7,      1,      8,     -9,     60,      0,   ], 
+                     }, {
+                 POSITION: [   3,     7,     1.7,   15.1,    -9,     60,     0.5,  ], 
+                     PROPERTIES: {
+                         SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                         TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,      9,     180,     0,   ], 
+                    }, {
+                POSITION: [   3,     7,     1.7,   15.1,     9,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,     -9,     180,     0,   ], 
+                    }, {
+                POSITION: [   3,     7,     1.7,   15.1,    -9,     180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,      9,     300,     0,   ], 
+                    }, {
+                POSITION: [   3,     7,     1.7,   15.1,     9,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,     -9,     300,     0,   ], 
+                     }, {
+                POSITION: [   3,     7,     1.7,   15.1,    -9,     300,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                     }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   3,    13,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eTrapgun],
+                    }, {
+                POSITION: [   3,    13,      0,     120,    360,   1, ], 
+                    TYPE: [exports.eTrapgun],
+                    }, {
+                POSITION: [   3,    13,      0,     240,    360,   1, ], 
+                    TYPE: [exports.eTrapgun],
+                    }, {
+                POSITION: [ 6.75,    0,      0,     180,    360,   1, ], 
+                    TYPE: [exports.eTrapTurret],
+                    },
+            ],
+        };
+        exports.elite_trapper2 = {
+            PARENT: [exports.elite2],
+            LABEL: 'Harcadium Trapper',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [ 7.1,     7,      1,      8,      9,     60,      0,   ], 
+                     }, {
+                POSITION: [   3,     7,     1.7,   15.1,     9,     60,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                     }, }, {
+                 POSITION: [ 7.1,     7,      1,      8,     -9,     60,      0,   ], 
+                     }, {
+                 POSITION: [   3,     7,     1.7,   15.1,    -9,     60,     0.5,  ], 
+                     PROPERTIES: {
+                         SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                         TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,      9,     180,     0,   ], 
+                    }, {
+                POSITION: [   3,     7,     1.7,   15.1,     9,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,     -9,     180,     0,   ], 
+                    }, {
+                POSITION: [   3,     7,     1.7,   15.1,    -9,     180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,      9,     300,     0,   ], 
+                    }, {
+                POSITION: [   3,     7,     1.7,   15.1,     9,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                    }, }, {
+                POSITION: [ 7.1,     7,      1,      8,     -9,     300,     0,   ], 
+                     }, {
+                POSITION: [   3,     7,     1.7,   15.1,    -9,     300,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.ane_third_reload, g.fast]),
+                        TYPE: exports.trap, 
+                     }, },
+            ],
+            TURRETS: [{
+                /*********  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   3,    13,      0,      0,     360,   1, ], 
+                    TYPE: [exports.eTrapgun],
+                    }, {
+                POSITION: [   3,    13,      0,     120,    360,   1, ], 
+                    TYPE: [exports.eTrapgun],
+                    }, {
+                POSITION: [   3,    13,      0,     240,    360,   1, ], 
+                    TYPE: [exports.eTrapgun],
+                    }, {
+                POSITION: [ 6.75,    0,      0,     180,    360,   1, ], 
+                    TYPE: [exports.eTrapTurret],
+                    },
+            ],
+        };
+
+            exports.derogator = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Derogator',
+                COLOR: 2,
+                SHAPE: 0,
+                SIZE: 24,
+                VALUE: 150000,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 150,
+                    SHIELD: 1,
+                    REGEN: 0.01,
+                    DAMAGE: 3,
+                },
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 3.75,   10,      0,      0,     180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    22.5,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      45,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    67.5,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      90,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    112.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,     135,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    157.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,     180,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,   -157.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,     -135,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,   -112.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      270,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    -67.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      -45,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    -22.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [   6,     0,      0,     180,    360,   1, ], 
+                        TYPE: exports.levigun,
+                        },
+                ],
+            };
+            exports.derogator2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Derogator',
+                COLOR: 2,
+                SHAPE: 0,
+                SIZE: 24,
+                VALUE: 150000,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 150,
+                    SHIELD: 1,
+                    REGEN: 0.01,
+                    DAMAGE: 3,
+                },
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 3.75,   10,      0,      0,     180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    22.5,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      45,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    67.5,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      90,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    112.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,     135,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    157.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,     180,    180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,   -157.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,     -135,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,   -112.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      270,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    -67.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,      -45,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [ 3.75,   10,      0,    -22.5,   180,   0, ], 
+                        TYPE: exports.derogun,
+                        }, {
+                    POSITION: [   6,     0,      0,     180,    360,   1, ], 
+                        TYPE: exports.levigun,
+                        },
+                ],
+            };
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
@@ -13123,7 +13510,7 @@ exports.botT3_E = {
             exports.testbed.UPGRADES_TIER_4 = [exports.testbedTanks, exports.testbedRemoved, exports.observer, exports.dev];
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
-            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2];
+            exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.elite_twin2, exports.elite_trapper2, exports.derogator2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
