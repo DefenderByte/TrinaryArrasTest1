@@ -12768,7 +12768,7 @@ exports.backbomb = {
                         }, {
                     POSITION: [13.95,  5.15,     1,      0,      0,     180,     0,   ], 
                         COLOR_SETTINGS: {
-                            COLOR: 150,
+                            COLOR: 180,
                         }, }, {
                     POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
                         PROPERTIES: {
@@ -12835,7 +12835,7 @@ exports.backbomb = {
                         }, {
                     POSITION: [13.95,  5.15,     1,      0,      0,     180,     0,   ], 
                         COLOR_SETTINGS: {
-                            COLOR: 150,
+                            COLOR: 180,
                         }, }, {
                     POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
                         PROPERTIES: {
