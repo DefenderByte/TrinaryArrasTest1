@@ -12435,10 +12435,9 @@ exports.backbaseTurret = {
     ],
 };
         exports.backbase = {
-            PARENT: [exports.trap],
+            PARENT: [exports.drone],
             LABEL: 'Base',
             SHAPE: 8,
-            CONTROLLERS: ['nearestDifferentMaster'],
             INDEPENDENT: true,
             BODY: {
                 SPEED: 1,
@@ -12496,31 +12495,35 @@ exports.backbomb = {
             }, }, {
         POSITION: [   2,     12,     1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.pound]),
+                SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
                 TYPE: [exports.backbase, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
-                STAT_CALCULATOR: gunCalcNames.trap,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
             }, }, {
         POSITION: [   2,     12,     1,      0,      0,      90,     0,  ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.pound]),
+                SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
                 TYPE: [exports.backbase, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
-                STAT_CALCULATOR: gunCalcNames.trap,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
             }, }, {
         POSITION: [   2,     12,     1,      0,      0,     180,     0,  ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.pound]),
+                SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
                 TYPE: [exports.backbase, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
-                STAT_CALCULATOR: gunCalcNames.trap,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
             }, }, {
         POSITION: [   2,     12,     1,      0,      0,     270,     0,  ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.pound]),
+                SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.bigger]),
                 TYPE: [exports.backbase, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
-                STAT_CALCULATOR: gunCalcNames.trap,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
             }, },
     ],
 };
