@@ -14,7 +14,7 @@
   "WIDTH": 6000,
   "HEIGHT": 6000,
   "MODE": "ffa",
-  "RANDOM_COLORS": false,
+  "RANDOM_COLORS": true,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
     [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
