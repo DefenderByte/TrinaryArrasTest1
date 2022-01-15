@@ -1755,7 +1755,7 @@ exports.chooseBotName = () => {
         'Hatappy', // Portmanteau of Hat and Happy, or Hatappyfras.
         'Lauraceae', // a plant
         'Señor Sassaprophet', // aka Senior Sass- WHAT? - Sassafras JR, 2021
-        'case fallen: choice = [[Class.allfallenbosses], 4, 'woomy', 'rock']; sockets.broadcast('Many had sought for the day when they\'d return... But not in this way...'); break;',
+        'case fallen: choice = [[Class.allfallenbosses], 4, \'woomy\', \'rock\']; sockets.broadcast(\'Many had sought for the day when they\'d return... But not in this way...\'); break;',
     ]);
 };
 
