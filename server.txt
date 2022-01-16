@@ -5296,27 +5296,10 @@ var maintainloop = (() => {
                         Class.inceptioner,
                         Class.singleceptioner,
                         Class.twinceptioner,
-                        Class.gunnerceptioner,
-                        Class.machinegunnerceptioner,
-                        Class.nailgunceptioner,
-                        Class.doubleceptioner,
-                        Class.tripleceptioner,
-                        Class.hewn_doubleceptioner,
-                        Class.bentceptioner,
-                        Class.bentdoubleceptioner,
-                        Class.pentaceptioner,
-                        Class.tripletinceptioner,
-                        Class.dualceptioner,
                         Class.snipeceptioner,
-                        Class.assassinceptioner,
-                        Class.rangerceptioner,
-                        Class.huntceptioner,
-                        Class.predaceptioner,
                         Class.machceptioner,
-                        Class.sprayceptioner,
-                        Class.minigunceptioner,
-                        Class.streamceptioner,
-                        Class.spreadshotceptioner
+                        Class.flankceptioner,
+                        Class.pelletceptioner
                       ])
                     );
                     o.name += ran.chooseBotName();
