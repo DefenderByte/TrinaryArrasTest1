@@ -5302,11 +5302,17 @@ var maintainloop = (() => {
                         Class.pelletceptioner,
                         Class.ceptionist,
                         Class.singleceptionist,
+                        Class.singleceptionist2,
                         Class.twinceptionist,
+                        Class.twinceptionist2,
                         Class.snipeceptionist,
+                        Class.snipeceptionist2,
                         Class.machceptionist,
+                        Class.machceptionist2,
                         Class.flankceptionist,
-                        Class.pelletceptionist
+                        Class.flankceptionist2,
+                        Class.pelletceptionist,
+                        Class.pelletceptionist2
                       ])
                     );
                     o.name += ran.chooseBotName();
