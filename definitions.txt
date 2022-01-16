@@ -16655,7 +16655,7 @@ exports.sumDriveDrone = {
                 LABEL: 'Limburgerdrive',
                 SHAPE: 4,
                 COLOR: 13,
-                SIZE: 28,
+                SIZE: 25,
                 VALUE: 250000,
                 STAT_NAMES: statnames.necro,
                 BODY: {
