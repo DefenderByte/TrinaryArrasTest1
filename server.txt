@@ -2533,7 +2533,7 @@ class Entity {
             // If I'm a tank, call me a nameless player
             let name = (this.master.name == '') ?
                 (this.master.type === 'tank') ?
-                    "an unammed player's " + this.label :
+                    "the unammed " + this.label :
                     (this.master.type === 'miniboss') ?
                         "a visiting " + this.label :
                         util.addArticle(this.label) 
@@ -2573,7 +2573,7 @@ class Entity {
                     }
                     // Only if we give messages
                     if (dothISendAText) { 
-                        instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.')); 
+                        instance.sendMessage('You killed ' + name + 'the ' + ((killers.length > 1) ? ' (with some help).' : '.')); 
                     }
                 });
                 // Prepare the next part of the next 
@@ -2584,7 +2584,7 @@ class Entity {
             if (this.settings.broadcastMessage) sockets.broadcast(this.settings.broadcastMessage);
             // Add the implements to the message
             killTools.forEach((instance) => {
-                killText += util.addArticle(instance.label) + ' and ';
+                killText += util.addArticle(instance.label) + ', and ';
             });
             // Prepare it and clear the collision array.
             killText = killText.slice(0, -5);
