@@ -15610,6 +15610,59 @@ exports.ceptionistBullet = {
                         },
                 ],
             };
+exports.singleceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Single',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.singleceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Single Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+            exports.singleceptionist2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Single Ceptionist²',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.single, g.ceptionist]),
+                            TYPE: exports.singleceptionistBullet,
+                        }, }, {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                        },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.singleceptionistMarking,
+                        },
+                ],
+            };
             exports.twinceptionist = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Twin Ceptionist',
@@ -15629,6 +15682,67 @@ exports.ceptionistBullet = {
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  10,     0,      0,      0,      0,  1], 
                         TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+exports.twinceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Twin',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  20,     8,      1,      0,     5.5,     0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  20,     8,      1,      0,    -5.5,     0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.twinceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Twin Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  20,     8,      1,      0,     5.5,     0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+            exports.twinceptionist2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Twin Ceptionist²',
+                DANGER: 8,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,     8,      1,      0,     5.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist]),
+                            TYPE: exports.twinceptionistBullet,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist]),
+                            TYPE: exports.twinceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.twinceptionistMarking,
                         },
                 ],
             };
@@ -15653,6 +15767,53 @@ exports.ceptionistBullet = {
                         },
                 ],
             };
+exports.snipeceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Sniper',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.snipeceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Sniper Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+            exports.snipeceptionist2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sniper Ceptionist²',
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7, 
+                    FOV: base.FOV * 1.2,
+                },
+                DANGER: 8,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.ceptionist]),
+                            TYPE: exports.snipeceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.snipeceptionistMarking,
+                        },
+                ],
+            };
             exports.machceptionist = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Machine Ceptionist',
@@ -15667,6 +15828,49 @@ exports.ceptionistBullet = {
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  10,     0,      0,      0,      0,  1], 
                         TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+exports.machceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Machine',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.machceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Machine Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+            exports.machceptionist2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Machine Ceptionist²',
+                DANGER: 8,
+                GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.ceptionist]),
+                            TYPE: exports.machceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.machceptionistMarking,
                         },
                 ],
             };
@@ -15700,6 +15904,88 @@ exports.ceptionistBullet = {
                         },
                 ],
             };
+exports.flankceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Flank',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  18,     8,      1,      0,      0,     120,     0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  18,     8,      1,      0,      0,     240,     0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.flankceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Flank Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  18,     8,      1,      0,      0,     120,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  18,     8,      1,      0,      0,     240,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+            exports.flankceptionist2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Flank Ceptionist²',
+                DANGER: 7,
+                BODY: {
+                    SPEED: base.SPEED * 1.1,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist]),
+                            TYPE: exports.flankceptionistBullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,     120,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist]),
+                            TYPE: exports.flankceptionistBullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,     240,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist]),
+                            TYPE: exports.flankceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.flankceptionistMarking,
+                        },
+                ],
+            };
             exports.pelletceptionist = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Pelleter Ceptionist',
@@ -15715,12 +16001,88 @@ exports.ceptionistBullet = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist]),
                             TYPE: exports.ceptionistBullet,
                         }, }, {
-                    POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ],
+                    POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ], 
                         },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  10,     0,      0,      0,      0,  1], 
                         TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+exports.pelletceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Pelleter',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  17,     2,      1,      0,     -3,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.pelletceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Pelleter Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, }, {
+        POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+            exports.pelletceptionist2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Pelleter Ceptionist²',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist]),
+                            TYPE: exports.pelletceptionistBullet,
+                        }, }, {
+                    POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist]),
+                            TYPE: exports.pelletceptionistBullet,
+                        }, }, {
+                    POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ], 
+                        },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.pelletceptionistMarking,
                         },
                 ],
             };
@@ -15959,8 +16321,14 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
     exports.inceptioner.UPGRADES_TIER_2 = [exports.ceptionist, exports.singleceptioner, exports.twinceptioner, exports.snipeceptioner, exports.machceptioner, exports.flankceptioner, exports.pelletceptioner];
         exports.ceptionist.UPGRADES_TIER_3 = [exports.singleceptionist, exports.twinceptionist, exports.snipeceptionist, exports.machceptionist, exports.flankceptionist, exports.pelletceptionist];
         exports.singleceptioner.UPGRADES_TIER_3 = [exports.singleceptionist];
+            exports.singleceptionist.UPGRADES_TIER_4 = [exports.singleceptionist2];
         exports.twinceptioner.UPGRADES_TIER_3 = [exports.twinceptionist];
+            exports.twinceptionist.UPGRADES_TIER_4 = [exports.twinceptionist2];
         exports.snipeceptioner.UPGRADES_TIER_3 = [exports.snipeceptionist];
+            exports.snipeceptionist.UPGRADES_TIER_4 = [exports.snipeceptionist2];
         exports.machceptioner.UPGRADES_TIER_3 = [exports.machceptionist];
+            exports.machceptionist.UPGRADES_TIER_4 = [exports.machceptionist2];
         exports.flankceptioner.UPGRADES_TIER_3 = [exports.flankceptionist];
+            exports.flankceptionist.UPGRADES_TIER_4 = [exports.flankceptionist2];
         exports.pelletceptioner.UPGRADES_TIER_3 = [exports.pelletceptionist];
+            exports.pelletceptionist.UPGRADES_TIER_4 = [exports.pelletceptionist2];
