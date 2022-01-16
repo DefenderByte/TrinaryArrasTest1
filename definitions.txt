@@ -16645,7 +16645,7 @@ exports.sumDriveDrone = {
         DRAW_HEALTH: true,
         TURRETS: [{
             /*********  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [  10,     0,      0,      0,      0,  1], 
+            POSITION: [  10,     0,      0,     180,    360, 1], 
                 TYPE: exports.interceptTurret,
             },
         ],
@@ -16668,7 +16668,7 @@ exports.sumDriveDrone = {
                 },
                 MAX_CHILDREN: 28,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [   3,     8,     1.2,     8,      0,     90,      0,   ], 
+                    POSITION: [ 3.5,   8.65,    1.2,     8,      0,     90,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
                             TYPE: exports.sumDriveDrone,
@@ -16677,7 +16677,7 @@ exports.sumDriveDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,     
                         }, }, {
-                    POSITION: [   3,     8,     1.2,     8,      0,     180,     0.25,   ], 
+                    POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
                             TYPE: exports.sumDriveDrone,
@@ -16686,7 +16686,7 @@ exports.sumDriveDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
                         }, }, {
-                    POSITION: [   3,     8,     1.2,     8,      0,     270,     0.5,   ], 
+                    POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,   0.25,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
                             TYPE: exports.sumDriveDrone,
@@ -16695,7 +16695,7 @@ exports.sumDriveDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
                         }, }, { 
-                    POSITION: [   3,     8,     1.2,     8,      0,      0,      0.75,   ], 
+                    POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,    0.75,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
                             TYPE: exports.sumDriveDrone,
