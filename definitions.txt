@@ -1417,6 +1417,24 @@ exports.derogun = {
             }, },
     ],
 };
+    exports.liberatorGun = {
+        PARENT: [exports.genericTank],
+        LABEL: '',
+        COLOR: 16,
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  20,    3.5,     1,      0,     3.65,    0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bore, g.auto]),
+                    TYPE: exports.bullet,
+                }, }, {
+            POSITION: [  20,    3.5,     1,      0,    -3.65,    0,     0.5,  ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bore, g.auto]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
     exports.turretSnipe = {
         PARENT: [exports.genericTank],
         LABEL: '',
@@ -15250,6 +15268,91 @@ exports.eliteLaunchTurret = {
                 ],
             };
 
+            exports.artycruise = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Marauder',
+                DANGER: 8,
+                STAT_NAMES: 6,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  17,     3,      1,      0,     -6,     -7,    0.25,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.flank]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [  17,     3,      1,      0,      6,      7,    0.75,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.flank]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [  19,     12,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.flank]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Heavy',
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      4,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.flank]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,     -4,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.flank]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+            };
+
+            exports.liberator = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Liberator',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.8,
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  27,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.flank, g.tri, g.tri_front]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Assassin',
+                            ALT_FIRE: true,
+                        }, }, {  
+                    POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  18,     8,      1,      0,      0,     180,    0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  11,     10,     0,      90,    180,   0, ], 
+                        TYPE: exports.liberatorGun,
+                        }, {
+                    POSITION: [  11,     10,     0,     270,    180,   0, ], 
+                        TYPE: exports.liberatorGun,
+                        },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -15421,7 +15524,7 @@ exports.botT3_E = {
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
             exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2, exports.sentryMultitool2];
 
-            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0];
+            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0, exports.liberator];
 
             exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.factory, exports.destroy, exports.builder, exports.artillery, exports.skimmer];
 
@@ -15462,6 +15565,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.steam.UPGRADES_TIER_4 = [exports.backbone0];
         exports.artillery.UPGRADES_TIER_3 = [exports.autoarty, exports.mortar];
+            exports.artillery.UPGRADES_TIER_4 = [exports.artycruise];
         exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1];
 
     exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap];
