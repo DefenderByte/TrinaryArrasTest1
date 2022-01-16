@@ -5290,7 +5290,9 @@ var maintainloop = (() => {
                         Class.ai_backbone,
                         Class.ai_backbone_hammer,
                         Class.ai_gttsu0,
-                        Class.ai_gttsu30
+                        Class.ai_gttsu30,
+                        Class.artycruise,
+                        Class.liberator
                       ])
                     );
                     o.name += ran.chooseBotName();
