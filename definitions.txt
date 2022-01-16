@@ -12557,14 +12557,13 @@ exports.backbaseTurret = {
 };
         exports.backbase = {
             PARENT: [exports.drone],
-            LABEL: 'Base',
+            LABEL: 'Megla-Oct',
             SHAPE: 8,
             INDEPENDENT: true,
             BODY: {
                 SPEED: 1,
                 DENSITY: 5,
             },
-            DIE_AT_RANGE: true,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  12,     7,      0,      0,     180,  0],
                     TYPE: exports.octogturret,
@@ -12740,7 +12739,7 @@ exports.backbomb = {
                     POSITION: [  10,     14,    1.01,    16,     0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.backbone]),
-                            TYPE: [exports.bullet, {LABEL: 'Collision', ALPHA: 1}],
+                            TYPE: [exports.bullet, {LABEL: 'Collision'}],
                             AUTOFIRE: true,
                         },
                         COLOR_SETTINGS: {
@@ -15530,12 +15529,12 @@ exports.interceptDecor = {
                 POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.intercept]),
-                        TYPE: exports.bullet,
+                        TYPE: exports.interceptBullet,
                     }, }, {
                 POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.intercept]),
-                        TYPE: exports.bullet,
+                        TYPE: exports.interceptBullet,
                     }, }, {
                 POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ],
                     },
@@ -15549,6 +15548,182 @@ exports.interceptDecor = {
                     },
             ],
         };
+exports.ceptionistMarking = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Basic',
+    COLOR: 17,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+exports.ceptionistBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Ceptionist',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.ceptionist, g.ceptionist_bullet]),
+                TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+                AUTOFIRE: true,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 17,
+            }, },
+    ],
+};
+        exports.ceptionist = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Basic Ceptionist',
+            DANGER: 6,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.ceptionist]),
+                        TYPE: exports.ceptionistBullet,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  10,     0,      0,      0,      0,  1], 
+                    TYPE: exports.ceptionistMarking,
+                    },
+            ],
+        };
+            exports.singleceptionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Single Ceptionist',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.single, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, }, {
+                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                        },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+            exports.twinceptionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Twin Ceptionist',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,     8,      1,      0,     5.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,    -5.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+            exports.snipeceptionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sniper Ceptionist',
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7, 
+                    FOV: base.FOV * 1.2,
+                },
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+            exports.machceptionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Machine Ceptionist',
+                DANGER: 7,
+                GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+            exports.flankceptionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Flank Ceptionist',
+                DANGER: 7,
+                BODY: {
+                    SPEED: base.SPEED * 1.1,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,     120,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,     240,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
+            exports.pelletceptionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Pelleter Ceptionist',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, }, {
+                    POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.ceptionist]),
+                            TYPE: exports.ceptionistBullet,
+                        }, }, {
+                    POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ],
+                        },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,      0,      0,  1], 
+                        TYPE: exports.ceptionistMarking,
+                        },
+                ],
+            };
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
@@ -15781,4 +15956,11 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier];
         exports.bore.UPGRADES_TIER_3 = [exports.nailgun, exports.screw_punt];
 
-    exports.inceptioner.UPGRADES_TIER_2 = [exports.singleceptioner, exports.twinceptioner, exports.snipeceptioner, exports.machceptioner, exports.flankceptioner, exports.pelletceptioner];
+    exports.inceptioner.UPGRADES_TIER_2 = [exports.ceptionist, exports.singleceptioner, exports.twinceptioner, exports.snipeceptioner, exports.machceptioner, exports.flankceptioner, exports.pelletceptioner];
+        exports.ceptionist.UPGRADES_TIER_3 = [exports.singleceptionist, exports.twinceptionist, exports.snipeceptionist, exports.machceptionist, exports.flankceptionist, exports.pelletceptionist];
+        exports.singleceptioner.UPGRADES_TIER_3 = [exports.singleceptionist];
+        exports.twinceptioner.UPGRADES_TIER_3 = [exports.twinceptionist];
+        exports.snipeceptioner.UPGRADES_TIER_3 = [exports.snipeceptionist];
+        exports.machceptioner.UPGRADES_TIER_3 = [exports.machceptionist];
+        exports.flankceptioner.UPGRADES_TIER_3 = [exports.flankceptionist];
+        exports.pelletceptioner.UPGRADES_TIER_3 = [exports.pelletceptionist];
