@@ -5299,7 +5299,14 @@ var maintainloop = (() => {
                         Class.snipeceptioner,
                         Class.machceptioner,
                         Class.flankceptioner,
-                        Class.pelletceptioner
+                        Class.pelletceptioner,
+                        Class.ceptionist,
+                        Class.singleceptionist,
+                        Class.twinceptionist,
+                        Class.snipeceptionist,
+                        Class.machceptionist,
+                        Class.flankceptionist,
+                        Class.pelletceptionist
                       ])
                     );
                     o.name += ran.chooseBotName();
