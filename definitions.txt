@@ -15432,7 +15432,7 @@ exports.interceptDecor = {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.intercept]),
                         TYPE: exports.interceptBullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,     0,      0,   ], 
+                POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.intercept]),
                         TYPE: exports.interceptBullet,
@@ -15620,7 +15620,7 @@ exports.ceptionistBullet = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist]),
                             TYPE: exports.ceptionistBullet,
                         }, }, {
-                    POSITION: [  20,     8,      1,      0,    -5.5,     0,      0,   ], 
+                    POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.ceptionist]),
                             TYPE: exports.ceptionistBullet,
