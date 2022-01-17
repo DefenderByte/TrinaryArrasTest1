@@ -1758,6 +1758,13 @@ exports.chooseBotName = () => {
         'case fallen: choice = [[Class.allfallenbosses], 4, \'woomy\', \'rock\']; sockets.broadcast(\'Many had sought for the day when they\'d return... But not in this way...\'); break;',
         'WE HATE THE SAV CLAN WE NEED HELP',
         'Lord Sassafras',
+        'Fan of Alkaios',
+        'Lukey',
+        'https://diepio.fandom.com/wiki/File:Horascewyyddlera-HumanOC.png',
+        'Okay, why Themis is copying a robotic version of Horascewyyddlera?',
+        'That\'s how he loves all Square bosses!',
+        'He hates being taken a photo of (means "screenshotted"). (WHY)',
+        'Fan of Lord Sassafras',
     ]);
 };
 
