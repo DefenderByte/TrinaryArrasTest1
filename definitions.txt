@@ -16639,6 +16639,10 @@ exports.sumDriveDrone = {
             BLIND: true,
             FARMER: true,
         },
+        BODY: {
+            HEALTH: 1.25,
+            DAMAGE: 1.6,
+        },
         DRAW_HEALTH: true,
         TURRETS: [{
             /*********  SIZE     X       Y     ANGLE    ARC */
