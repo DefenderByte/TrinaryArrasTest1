@@ -2597,13 +2597,13 @@ class Entity {
                     usurptText += ' has been usurped by';
                     killers.forEach(instance => {
                         usurptText += ' ';
-                        usurptText += (instance.name === '') ? 'an unnamed tank' : instance.name;
+                        usurptText += (instance.name === '') ? 'an unnamed player' : instance.name;
                         usurptText += ' and';
                     });
                     usurptText = usurptText.slice(0, -4);
                     usurptText += '!';
                 } else {
-                    usurptText += ' fought a ' + instance.label + ', and the ' + instance.label + ' won.';
+                    usurptText += ' fought a polygon, and the polygon won.';
                 }
                 sockets.broadcast(usurptText);
             }
