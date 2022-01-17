@@ -8086,7 +8086,7 @@ exports.penta_sentry2 = {
 };
 exports.pentagonQuarsar = {
     PARENT: [exports.sentry],
-    LABEL: 'Quintogen',
+    LABEL: 'Quarsar',
     COLOR: 14,
     SIZE: 16,
     SHAPE: 'M 1 0 L -0.1 0.8 L 0.1 0 L -0.1 -0.8 z M -0.1 0 L -0.25 0.3 L -1.2 0 L -0.25 -0.3 z',
@@ -14600,7 +14600,7 @@ exports.eTwistMissile = {
         };
 exports.eCyGun = {
     PARENT: [exports.genericTank],
-    LABEL: 'Auto Turret',
+    LABEL: 'Turret',
     BODY: {FOV: 2.5},
     CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -14608,7 +14608,7 @@ exports.eCyGun = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.auto, g.five, g.triple, g.morespeed, g.fast]),
                 TYPE: exports.bullet,
-            }, }
+            }, },
     ],
 };
         exports.eCycloneTurret = {
@@ -16632,12 +16632,9 @@ exports.eCropTrap = makeAuto(exports.trap, 'Trapbox', { type: exports.eCropTrapb
             }; 
 exports.sumDriveDrone = {
         PARENT: [exports.drone],
-        LABEL: 'Spongebob Squarepants', // <-- for fun
+        LABEL: 'Limburger Crasher Drone', // <-- for fun
         SHAPE: 4,
         HITS_OWN_TYPE: 'hard',
-        BODY: {
-            FOV: 0.5,
-        },
         AI: {
             BLIND: true,
             FARMER: true,
@@ -16657,7 +16654,7 @@ exports.sumDriveDrone = {
                 COLOR: 13,
                 SIZE: 25,
                 VALUE: 250000,
-                STAT_NAMES: statnames.necro,
+                STAT_NAMES: statnames.drone,
                 BODY: {
                     FOV: 1.5,
                     SPEED: base.SPEED * 0.2,
@@ -16666,11 +16663,11 @@ exports.sumDriveDrone = {
                     REGEN: 0.1,
                     DAMAGE: 3,
                 },
-                MAX_CHILDREN: 28,
+                MAX_CHILDREN: 32,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     90,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon, g.intercept]),
                             TYPE: exports.sumDriveDrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -16679,7 +16676,7 @@ exports.sumDriveDrone = {
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.5,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon, g.intercept]),
                             TYPE: exports.sumDriveDrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -16688,7 +16685,7 @@ exports.sumDriveDrone = {
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,   0.25,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon, g.intercept]),
                             TYPE: exports.sumDriveDrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -16697,7 +16694,7 @@ exports.sumDriveDrone = {
                         }, }, { 
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,    0.75,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon, g.intercept]),
                             TYPE: exports.sumDriveDrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
