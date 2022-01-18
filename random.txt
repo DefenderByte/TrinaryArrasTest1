@@ -1541,6 +1541,7 @@ exports.chooseBotName = () => {
         'https://m.youtube.com/channel/UCwkgmOCxfkFWVDdeFRYbQuA <=== is this Oca?', 
         'Is that Ocas channel? => https://m.youtube.com/channel/UCwkgmOCxfkFWVDdeFRYbQuA <= Is that Ocas channel?',
         'Ads?', 
+        'HOW DARE YOU, YOU USED 100% OF THE CORRUPTION\'S ENERGY!!!',
         // Arras.io Russia Jokes by Cveas
         'In Russia, BULLET SHOOTS TANK', 'Tank shoots bullet',
         'In Russia, YOU PROTECT TEAM BASE', 'Team Base protect you',
@@ -1739,7 +1740,7 @@ exports.chooseBotName = () => {
         'OH HELL NO z46 IS HERE',
         'Sassa Club',
         'Sentiquet',
-        'Heptone',
+        'Heptone', // Heptagon + Tone = ???
         'Zelena', // is he a SAV Clan Manager?
         'Emiolis',
         'Sassafras JR', // aka Sassafras Junior or... something?
@@ -1765,6 +1766,13 @@ exports.chooseBotName = () => {
         'That\'s how he loves all Square bosses!',
         'He hates being taken a photo of (means "screenshotted"). (WHY)',
         'Fan of Lord Sassafras',
+        'I\'m Seventry LMFAO', // Portmanteau of Seven & Sentry.
+        'I\'m Combostrum LMFAO',
+        'I\'m Meltdown LMFAO',
+        'Introducing Seventry\'s ultimate weapon, SEVENTRON!!!',
+        'What\'s the portmanteau of Seven & Sentry?',
+        'Destroid - Annihilate',
+        'I\'m not a sus!!! No!!! Don\'t game in!!!',
     ]);
 };
 
