@@ -4986,7 +4986,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 250, 400, 250, 400, 250, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
