@@ -17130,7 +17130,7 @@ exports.sumDriveDrone = {
                     POSITION: [   4,     10,     0,  -180/7*2,  180,   0, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
+                    POSITION: [   7,     0,      0,     180,    360,   1, ], 
                         TYPE: [exports.seventronVulc],
                         },
                 ],
@@ -17237,7 +17237,7 @@ exports.sumDriveDrone = {
                     POSITION: [   4,     10,     0,  -180/7*2,  180,   0, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
+                    POSITION: [   7,     0,      0,     180,    360,   1, ], 
                         TYPE: [exports.seventronVulc],
                         },
                 ],
