@@ -5004,51 +5004,51 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[Class.palisade, Class.skimboss], 1, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[Class.palisade, Class.skimboss], 2, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[Class.palisade, Class.skimboss], 3, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[Class.palisade, Class.skimboss], 4, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 4, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
-                        choice = [[Class.dread, Class.octog, Class.derogator], 1, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 1, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 9: 
-                        choice = [[Class.dread, Class.octog, Class.derogator], 2, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 2, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 10: 
-                        choice = [[Class.dread, Class.octog, Class.derogator], 3, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 3, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 11: 
-                        choice = [[Class.dread, Class.octog, Class.derogator], 4, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 4, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 1, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 1, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 13: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 2, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 2, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 14: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 3, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 3, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 15: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian])], 4, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 4, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 16: 
@@ -5312,7 +5312,8 @@ var maintainloop = (() => {
                         Class.flankceptionist,
                         Class.flankceptionist2,
                         Class.pelletceptionist,
-                        Class.pelletceptionist2
+                        Class.pelletceptionist2,
+                        Class.vulc
                       ])
                     );
                     o.name += ran.chooseBotName();
