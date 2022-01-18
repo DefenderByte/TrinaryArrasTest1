@@ -1302,6 +1302,22 @@ exports.auto3gun = {
                 }, }
         ],
     };
+    exports.implosionistgun = {
+        PARENT: [exports.genericTank],
+        LABEL: '',
+        BODY: {
+            FOV: 3,
+        },
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        COLOR: 16,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  22,     10,     1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound, g.double_reload, g.double_reload, g.double_reload, g.twin, g.double, g.triplet, g.five, g.auto, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.no_recoil]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
     exports.eTrapgun = {
         PARENT: [exports.genericTank],
         LABEL: '',
@@ -16258,7 +16274,7 @@ exports.pelletceptionistBullet = {
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [  24,    11,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.lowpower, g.double, g.halfreload, g.threequartersrof, g.norecoil]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.low_power, g.double, g.half_reload, g.one_third_reload, g.no_recoil]),
                     TYPE: exports.bullet,
                 }, }
         ],
@@ -16488,7 +16504,7 @@ exports.eCropTrap = makeAuto(exports.trap, 'Trapbox', { type: exports.eCropTrapb
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true, 
                             WAIT_TO_CYCLE: true,       
-                            MAX_CHILDREN: 5,
+                            MAX_CHILDREN: 6,
                         }, }, {                        
                     POSITION: [   4,     14,      1,      8,      0,      0,      0,   ], 
                     }
@@ -16783,6 +16799,739 @@ exports.sumDriveDrone = {
             ],
         };
 
+            exports.vulc = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Vulcan',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  30,    1.5,     1,      0,    -4.5,     0,     0.4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,    -4.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     4.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     4.5,     0,     0.9,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,    -2.5,     0,     0.3,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     2.5,     0,     0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     2.5,     0,     0.8,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,    -2.5,     0,     0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,      0,      0,     0.2,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,      0,      0,     0.7,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    16,      1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   5,    16,      1,      20,     0,      0,      0,   ], 
+                        },
+                ],
+            };
+
+        exports.heptagonBoss = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Heptashot',
+            COLOR: 219,
+            SHAPE: 7,
+            SIZE: 32,
+            VALUE: 350000,
+            BODY: {
+                FOV: 2.5,
+                SPEED: base.SPEED * 0.25,
+                HEALTH: 25,
+                SHIELD: 1,
+                REGEN: 0.1,
+                DAMAGE: 3,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 2.5,     10,     0,    180/7,   180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,   180/7*3,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,   180/7*5,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,     180,    180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,   -180/7,   180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,  -180/7*3,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,  -180/7*5,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        },
+            ],
+        };
+        exports.heptagonBoss2 = {
+            PARENT: [exports.miniboss2],
+            LABEL: 'Heptashot',
+            COLOR: 219,
+            SHAPE: 7,
+            SIZE: 32,
+            VALUE: 350000,
+            BODY: {
+                FOV: 2.5,
+                SPEED: base.SPEED * 0.25,
+                HEALTH: 25,
+                SHIELD: 1,
+                REGEN: 0.1,
+                DAMAGE: 3,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 2.5,     10,     0,    180/7,   180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,   180/7*3,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,   180/7*5,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,     180,    180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,   -180/7,   180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,  -180/7*3,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        }, {
+                POSITION: [ 2.5,     10,     0,  -180/7*5,  180,  0], 
+                    TYPE: exports.autoTurret,
+                        },
+            ],
+        };
+    exports.seventrone = {
+        PARENT: [exports.drone],
+        LABEL: 'Trapezoid',
+        SHAPE: 138,
+    };
+    exports.seventronDecor = {
+        COLOR: 6,
+    };
+    exports.seventronTurret = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Turret',
+        COLOR: 16,
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.flank, g.auto, g.five, g.seven]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
+            exports.seventronVulc = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Vulcan',
+                DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  30,    1.5,     1,      0,    -4.5,     0,     0.4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,    -4.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     4.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     4.5,     0,     0.9,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,    -2.5,     0,     0.3,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     2.5,     0,     0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,     2.5,     0,     0.8,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,    -2.5,     0,     0.6,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,      0,      0,     0.2,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  30,    1.5,     1,      0,      0,      0,     0.7,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    16,      1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   5,    16,      1,      20,     0,      0,      0,   ], 
+                        },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  12,     0,      0,      0,      0,    1, ], 
+                        TYPE: [exports.seventronDecor],
+                        },
+                ],
+            };
+            exports.seventron = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Seventron',
+                SIZE: 48,
+                COLOR: 216,
+                VALUE: 700000,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.5,
+                    HEALTH: 37.5,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*3,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*5,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,   -180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*3,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*5,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [   4,     10,     0,      0,     180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,   180/7*2,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,   180/7*4,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,   180/7*6,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,  -180/7*6,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,  -180/7*4,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,  -180/7*2,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
+                        TYPE: [exports.seventronVulc],
+                        },
+                ],
+            };
+            exports.seventron2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Seventron',
+                SIZE: 48,
+                COLOR: 216,
+                VALUE: 700000,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.5,
+                    HEALTH: 37.5,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*3,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,   180/7*5,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,   -180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*3,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,  -180/7*5,   0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.double_reload, g.slow, g.triplet, g.no_recoil]),
+                            TYPE: exports.seventrone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 3,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [   4,     10,     0,      0,     180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,   180/7*2,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,   180/7*4,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,   180/7*6,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,  -180/7*6,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,  -180/7*4,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [   4,     10,     0,  -180/7*2,  180,   0, ], 
+                        TYPE: [exports.seventronTurret],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
+                        TYPE: [exports.seventronVulc],
+                        },
+                ],
+            };
+
+            exports.hexadecagor = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Hexadecagor',
+                SIZE: 30,
+                COLOR: 2,
+                VALUE: 300000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 37.5,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,      0,      0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    22.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    22.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,      45,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      45,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    67.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    67.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,      90,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    112.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    112.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     135,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     135,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    157.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    157.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     180,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -157.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -157.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    -135,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    -135,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -112.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -112.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     270,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -67.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -67.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     -45,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     -45,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -22.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -22.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
+                        TYPE: [exports.levigun],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     90,     360,   1, ], 
+                        TYPE: [exports.levigun],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     180,    360,   1, ], 
+                        TYPE: [exports.levigun],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
+                        TYPE: [exports.levigun],
+                        },
+                ],
+            };
+            exports.hexadecagor2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Hexadecagor',
+                SIZE: 30,
+                COLOR: 2,
+                VALUE: 300000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 37.5,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,      0,      0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    22.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    22.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,      45,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      45,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    67.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    67.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,      90,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    112.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    112.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     135,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     135,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    157.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    157.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     180,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -157.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -157.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,    -135,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    -135,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -112.5,    0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -112.5,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     270,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -67.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -67.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,     -45,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     -45,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, }, {
+                    POSITION: [ 2.2,   2.25,     1,      9,      0,   -22.5,     0,   ], 
+                        }, {   
+                    POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -22.5,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            TYPE: exports.trap,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
+                        TYPE: [exports.levigun],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     90,     360,   1, ], 
+                        TYPE: [exports.levigun],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     180,    360,   1, ], 
+                        TYPE: [exports.levigun],
+                        }, {
+                    POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
+                        TYPE: [exports.levigun],
+                        },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -16947,7 +17696,8 @@ exports.botT3_E = {
             exports.dev.UPGRADES_TIER_4 = [exports.devBosses, exports.devDominators, exports.devMisc, exports.devSentries, exports.devXK, exports.devOverdone, exports.devShapes, exports.devACs, exports.eventDev, exports.testbed];
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
             exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.elite_twin2, exports.elite_auto2, exports.elite_sidewinder2, exports.elite_predator2, exports.elite_streamliner2, exports.elite_trapper2, exports.elite_ceptionist2, exports.devBosses3];
-            exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2];
+            exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.seventron2, exports.devBosses4];
+            exports.devBosses4.UPGRADES_TIER_4 = [exports.hexadecagor2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
@@ -16975,7 +17725,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship];
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
-        exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane];
+        exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc];
 
     exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.bore, exports.snipeceptioner];
         exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
