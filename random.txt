@@ -1702,6 +1702,7 @@ exports.chooseBotName = () => {
         'Ill get you, get you, get you, Now youll beg me, please',
         'Now I stay away, you were never meant to save me',
         'Now I stay away, I wont hear you say youre sorry',
+        
         // My suggested names
         'In Russia, PUMMELER UPGRADES FROM SMASHER/MAULER/AUTO-PUMMELER/MINIMINE/DASHER/CLIPPER/PUMMELER CEPTION/SCANNER/GLASS PUMMELER/MINI BONKER/PUNCHER/NUKER BOI/ARMED DIRECTOR',
         'In Russia, DO NOT STEAL OR DIE',
@@ -1773,6 +1774,21 @@ exports.chooseBotName = () => {
         'What\'s the portmanteau of Seven & Sentry?',
         'Destroid - Annihilate',
         'I\'m not a sus!!! No!!! Don\'t game in!!!',
+        'GET SAVELLA\'D LOL', //wtf
+        'Get Savella\'d lol',
+        'get savella\'d lol',
+        'get SAVELLA\'d lol',
+        'GeT SaVeLLa\'D LoL',
+        'gEt sAvEllA\'d lOl',
+        'i got savella\'d oof',
+        'oh no i got savella\'d',
+        'ahhhh i got savella\'d',
+        'reeee i got savella\'d',
+        'i got savella\'d ahhhh',
+        'i got savella\'d reeee',
+        'UmM cAn I gEt BeTa TeStEr In ArRaS?',
+        'UmM cAn I gEt BeTa TeStEr In WoOmY?',
+        'UmM cAn I gEt BeTa TeStEr In OxYrEx?',
     ]);
 };
 
@@ -3346,6 +3362,174 @@ case 'hslcel':
         'Seulgi', 
         'Irene', 
         ], n);
+    case 'izDisCocaCola': //wtf iz dat
+    return exports.chooseN([
+        'Akilina',
+        'Pepsilina',
+        'ɐuᴉʅᴉʞ∀',
+        'Aki Boomer',
+        'ı>=<Ø Akilina Ø>=<ı',
+    ], n);
+    case 'teliPortFanClub': //TeliPort's best friend, the Elite Battleship!
+    return exports.chooseN([
+        'Some Random TeliPort Fan',
+        'TeliPorts BestFriend',
+        'im TeliPort\'s gf lol',
+        'Fav boss of TeliPort',
+        'Literally TeliPorts Homie',
+        'TeliPortL <3 Me',
+        'I forgor TeliPort loved me lol',         
+    ], n);
+      case 'Inverto': // The darkside of mystery box 17
+      return exports.chooseN([
+        'Inverto',
+      ], n);
+      case 'stellatednestkeeper':
+      return exports.chooseN([
+        'Stellato',
+        'Stellutine',
+        'Stellesker',
+        'Stelliphera',
+        'Stellone',
+      ], n);
+      case 'wigglyhands':
+      return exports.chooseN([
+        'Wigglo',
+        'Jigglo',
+        'Wavilo',
+        'Ticklo',
+        'Wavascript', //best programming language ever
+        '~~~~~~~~~~',
+        'The1whoForgor',
+      ], n);
+      case 'scaryhadof': // I like to be creepy
+      return exports.chooseN([
+        'HadifTheHadofman',
+      ], n);
+      case 'colorsplitter': //Not x-k-x boss but kind of
+      return exports.chooseN([
+        'Chlorobenzylidenemalononitrile',
+      ], n);
+      case 'death': //Ded
+      return exports.chooseN([
+        'Death',
+      ], n);
+      case 'XGRBoss': //@Azgr made your boss spawn from mystery boxes so this is unused now.
+      return exports.chooseN([
+        'Azgr',
+        'The noobiest noob ever',
+        'OMG BEST SCORE EVER',
+        'TheRealNoob',
+        'Im noob',
+        'UNDERSEER BEST TANK',
+        'Elite Underseer',
+        'you is sooo pro', // thats a name btw lol
+        'Noob',
+        'TheBrazilianNoob',
+        'Stop using necro lol',
+        'I forgor to say OMG BEST SCORE OVER',
+      ], n); 
+case 'whatisthissupposedtobe': 
+    return exports.chooseN([
+        'Hatsumi Rou',
+        'lil peanda',
+        'Cutie Pun Pin',
+        'Pastel Clouds', 
+        'itzAngiee',
+        'LoliTheNekoCat',
+        'IkumiWolf',
+        'MellieMellow',
+    ], n);
+    case 'cursed':
+    return exports.chooseN([ //copy-pasted the names from Oca's profile
+        '⊱༺🩸ડᎯᏉ🌒༻👑ↇɛℓᎥ⚠️방문자🎧⊰', '⊱༺🩸ડᎯᏉ🌒༻👑ↇɛℓᎥ⚠️방문자🎧⊰', '⊱༺🩸ડᎯᏉ🌒༻👑ↇɛℓᎥ⚠️방문자🎧⊰',
+        '༺╣👑⊰ડᎯᏉ⊱🩸ↇɛℓᎥ🌒방문자🎧╠༻', '༺╣👑⊰ડᎯᏉ⊱🩸ↇɛℓᎥ🌒방문자🎧╠༻', '༺╣👑⊰ડᎯᏉ⊱🩸ↇɛℓᎥ🌒방문자🎧╠༻',
+        '⊰🩸ↇɛℓᎥ방문자🎧👑🎧༺ડᎯᏉ༻🌒⊱', '⊰🩸ↇɛℓᎥ방문자🎧👑🎧༺ડᎯᏉ༻🌒⊱', '⊰🩸ↇɛℓᎥ방문자🎧👑🎧༺ડᎯᏉ༻🌒⊱',
+        '⊰ડᎯᏉ🎧༺🩸ↇɛ👑ℓᎥ🌒༻🎧방문자⊱', '⊰ડᎯᏉ🎧༺🩸ↇɛ👑ℓᎥ🌒༻🎧방문자⊱', '⊰ડᎯᏉ🎧༺🩸ↇɛ👑ℓᎥ🌒༻🎧방문자⊱',
+        '༺🩸⊰ડᎯᏉ⊱👑ↇɛℓᎥ🎧방문자🌒༻', '༺🩸⊰ડᎯᏉ⊱👑ↇɛℓᎥ🎧방문자🌒༻', '༺🩸⊰ડᎯᏉ⊱👑ↇɛℓᎥ🎧방문자🌒༻',
+        '⊱🌘ડᎯᏉ🩸༺ↇɛℓᎥ༻🩸방문자🌒⊰', '⊱🌘ડᎯᏉ🩸༺ↇɛℓᎥ༻🩸방문자🌒⊰', '⊱🌘ડᎯᏉ🩸༺ↇɛℓᎥ༻🩸방문자🌒⊰',
+        '༺⊱ડᎯᏉ🩸🌒ↇɛℓᎥ👑방문자⊰༻', '༺⊱ડᎯᏉ🩸🌒ↇɛℓᎥ👑방문자⊰༻', '༺⊱ડᎯᏉ🩸🌒ↇɛℓᎥ👑방문자⊰༻',
+        '༺🌘방문객🩸⊱⸻⊰༺⚠️༻⊱⸻⊰🎧ડᎯᏉ🎧⊱⸻༺👑방문객👑༻⸻⊰🌘ડᎯᏉ🩸⊱༺𝓞𝓰𝓪𝓲 𝓢𝓮𝓵𝓲𝓷𝓪 𝓐𝓷𝓭𝓻𝓮𝓮𝓿𝓷𝓪༻⊰🩸ડᎯᏉ🌒⊱⸻༺👑방문객👑༻⸻⊰🎧ડᎯᏉ🎧⊱⸻⊰༺⚠️༻⊱⸻⊰🩸방문객🌒༻',
+    ], n);
+case 'unnamed': //Unnamed
+    return exports.chooseN([
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+    ], n);
+case 'healref':
+    return exports.chooseN([
+        'Asclepius',
+        'Nemesis',
+        'Rhamnousia',
+        'Algea',
+        'Algos',
+    ], n);
+case 'seventron': // Rings & Heptagons
+    return exports.chooseN([
+    'Akali that girl, \'kali go grr, \'Kali don\'t stop, \'kali don\'t skrrt\', Kali got a job, \'kali go to work, 뜨거워 언제나, don\'t get burnt, 넘쳐 흘러 more than a buffet, 죽여 주잖아 like I\'m buffy, 누가 감히 on my huffy, 거, 문열지마 that\'s a rough day (woo), I\'m givin\' you more \'cause I\'m greater than, 필요없는 시험들, 답은 이미, But all of my numbers are talkin\', babe, 블루마블 Mrs. 모노폴리 (ooh), 너는 종이 돈이 나는 real money (hey), 필요 없대 너네들이 많은 돈들, Go get it, go get it, go get it, the mission, 눈을못떼 모두 그래 너도 그래 (oh), \'Cause I got it different',
+        '                                                                                                    if you see this go right                                                                                          HelloThere',
+        'HelloThere                                                                                          if you see this go left                                                                                                    ',
+        'FUCK SCRIPTERS',
+        'scripter',
+        'spread scripter',
+        'were no strangers to love, you know the rules and so do i',
+        'a full commitments what im thinking of, you wouldnt get this from any other guy',
+        'i just wanna tell you how im feeling, gotta make you understand',
+        'never gonna give you up, never gonna let you down, never gonna run around and desert you',
+        'never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you',
+        'Tohsaka Rin',
+        '북을 울려라 pa-rum-pum-pum-pum-pum-pum (oh, yeah, oh, yeah)',
+        '노랠 불러라 tra-na-na-na-na-na-na (oh, yeah, oh, yeah)',
+        '등장부터 좀 거칠게 갈 테니까 깜짝 놀라지 마, 입에서 입으로 전해져 난, 방금 스친 애 보통 아니라고',
+        '깊은 이 정글도 나에겐 짜릿한 놀이터, Alright, 난 골랐어 (na-na-na-na-na-na), 너의 그 심장에 내 이름 하나를 남길래, So, you had better run',
+        'Youre so done, Done-done-done, done-done-done-done, done-done, done-done-done-done',
+        'If all of the kings had their queens on their throne, we would pop champagne and raise a toast',
+        'To all of the queens who are fighting alone, baby youre not dancing on your own',
+        'cant live without me, you wanna, but you cant nonono',
+        'think its funny, but honey, cant run this show on your own',
+        'i can feel my body shake, theres only so much i can take',
+        'ill show how a real queen behaves',
+        'Savage Beauty',
+        'pretty savage',
+        'all ill ever now is life up on a throne',
+        'i always feel like somebodys watching me',
+        'you better run (as fast as you can), you better run (faster than i am), you better run (as fast as you can), you better run (faster than i am)',
+        'I just wanna know that this is gonna end really bad',
+        'i dont recognize whos in my bed, i know i used to love him but i cant pretend, all we do is scream and fight...',
+        'GET READY TO GET FUCKED UP',
+        'Ninja: Sha sha sha-sha-sha, sha sha sha-sha-sha, sha sha sha-sha-sha, EVERYBODY!!!',
+        '_nap_',
+        'ItsNicky',
+        'Ruby Rose',
+        'im sorry but you must die I got this tank by luck',
+        'Broke into pieces I fall, When I collect myself, you better run like hell',
+        'Stalking the flames of mine tall, When im out of my cell, you better pray for help',
+        'Welcome to my evolutiol, Leveling up, leveling up',
+        'Simzara - Verano',
+    ], n);
   default: return 'ꜰꜰꜰ';
     }
 };
