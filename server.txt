@@ -4986,7 +4986,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5004,19 +5004,19 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 1, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 2, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 3, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[Class.palisade, Class.skimboss, Class.seventron], 4, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss], 4, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
@@ -5115,6 +5115,11 @@ var maintainloop = (() => {
                     case 30: 
                         choice = [[Class.fallen_booster], 4, 'woomy', 'rock']; 
                         sockets.broadcast('Many had sought for the day when they\'d return... But not in this way...');
+                        break;
+                    case 31: 
+                        choice = [[Class.seventron], 1, 'seventron', 'nest']; 
+                        sockets.broadcast('...Time to abandon ship!');
+                        sockets.broadcast('All Heptashots are now engaging...');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
