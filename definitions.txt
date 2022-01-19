@@ -17107,25 +17107,25 @@ exports.sumDriveDrone = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,      0,     360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,   180/7*2,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,   180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,   180/7*4,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,   180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,   180/7*6,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,   180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,  -180/7*6,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,  -180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,  -180/7*4,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,  -180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,  -180/7*2,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,  -180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
                     POSITION: [   7,     0,      0,     180,    360,   1, ], 
@@ -17214,25 +17214,25 @@ exports.sumDriveDrone = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,      0,     360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,   180/7*2,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,   180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,   180/7*4,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,   180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,   180/7*6,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,   180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,  -180/7*6,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,  -180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,  -180/7*4,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,  -180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [ 4.85,   6.5,     0,  -180/7*2,  360,   1, ], 
+                    POSITION: [ 4.85,    7,      0,  -180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
                     POSITION: [   7,     0,      0,     180,    360,   1, ], 
