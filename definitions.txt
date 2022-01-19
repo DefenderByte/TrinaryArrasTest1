@@ -14693,7 +14693,7 @@ exports.eCyGun = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [    5,    3.2,    -2,     6,      0,     180,     0,   ], 
                     PROPERTIES: {
-                      SHOOT_SETTINGS: combineStats([g.swarm, g.halfreload, g.doublesize, g.fast, g.triple, g.triple]),
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
                       TYPE: exports.autoswarm,
                       STAT_CALCULATOR: gunCalcNames.swarm, 
                     }, }, {
@@ -14777,7 +14777,7 @@ exports.eCyGun = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [    5,    3.2,    -2,     6,      0,     180,     0,   ], 
                     PROPERTIES: {
-                      SHOOT_SETTINGS: combineStats([g.swarm, g.halfreload, g.doublesize, g.fast, g.triple, g.triple]),
+                      SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.fast, g.triplet, g.triplet]),
                       TYPE: exports.autoswarm,
                       STAT_CALCULATOR: gunCalcNames.swarm, 
                     }, }, {
@@ -17259,113 +17259,129 @@ exports.sumDriveDrone = {
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    22.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    22.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,      45,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      45,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    67.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    67.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,      90,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      90,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    112.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    112.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     135,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     135,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    157.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    157.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     180,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     180,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -157.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -157.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    -135,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    -135,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -112.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -112.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     270,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     270,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -67.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -67.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     -45,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     -45,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -22.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -22.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                 ],
                 TURRETS: [{
@@ -17403,113 +17419,129 @@ exports.sumDriveDrone = {
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    22.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    22.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,      45,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      45,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    67.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    67.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,      90,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,      90,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    112.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    112.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     135,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     135,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    157.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    157.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     180,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     180,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -157.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -157.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,    -135,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,    -135,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -112.5,    0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -112.5,    0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     270,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     270,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -67.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -67.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,     -45,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,     -45,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, }, {
                     POSITION: [ 2.2,   2.25,     1,      9,      0,   -22.5,     0,   ], 
                         }, {   
                     POSITION: [ 0.5,   2.25,    1.7,   11.5,     0,   -22.5,     0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.weak]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
                             TYPE: exports.trap,
+                            STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                 ],
                 TURRETS: [{
