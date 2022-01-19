@@ -16941,7 +16941,7 @@ exports.sumDriveDrone = {
     };
     exports.seventronTurret = {
         PARENT: [exports.genericTank],
-        LABEL: 'Turret',
+        LABEL: 'Ringed Turret',
         COLOR: 16,
         CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -16951,10 +16951,16 @@ exports.sumDriveDrone = {
                     TYPE: exports.bullet,
                 }, },
         ],
+        TURRETS: [{
+            /*********  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [  12,     0,      0,      0,      0,    1, ], 
+                TYPE: [exports.seventronDecor],
+                },
+        ],
     };
             exports.seventronVulc = {
                 PARENT: [exports.genericTank],
-                LABEL: 'Vulcan',
+                LABEL: 'Ringed Vulcan',
                 DANGER: 7,
                 CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -17024,7 +17030,7 @@ exports.sumDriveDrone = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Seventron',
                 SIZE: 48,
-                COLOR: 216,
+                COLOR: 219,
                 VALUE: 700000,
                 BODY: {
                     FOV: 1.5,
@@ -17101,25 +17107,25 @@ exports.sumDriveDrone = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   4,     10,     0,      0,     180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,   180/7*2,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,   180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,   180/7*4,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,   180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,   180/7*6,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,   180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,  -180/7*6,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,  -180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,  -180/7*4,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,  -180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,  -180/7*2,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,  -180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
                     POSITION: [   7,     0,      0,     180,    360,   1, ], 
@@ -17131,7 +17137,7 @@ exports.sumDriveDrone = {
                 PARENT: [exports.miniboss2],
                 LABEL: 'Seventron',
                 SIZE: 48,
-                COLOR: 216,
+                COLOR: 219,
                 VALUE: 700000,
                 BODY: {
                     FOV: 1.5,
@@ -17208,25 +17214,25 @@ exports.sumDriveDrone = {
                 ],
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   4,     10,     0,      0,     180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,   180/7*2,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,   180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,   180/7*4,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,   180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,   180/7*6,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,   180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,  -180/7*6,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,  -180/7*6,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,  -180/7*4,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,  -180/7*4,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
-                    POSITION: [   4,     10,     0,  -180/7*2,  180,   0, ], 
+                    POSITION: [ 4.85,   6.5,     0,  -180/7*2,  360,   1, ], 
                         TYPE: [exports.seventronTurret],
                         }, {
                     POSITION: [   7,     0,      0,     180,    360,   1, ], 
@@ -17234,7 +17240,6 @@ exports.sumDriveDrone = {
                         },
                 ],
             };
-
             exports.hexadecagor = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Hexadecagor',
