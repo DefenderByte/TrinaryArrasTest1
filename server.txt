@@ -2366,8 +2366,8 @@ class Entity {
             this.facing -= 0.1 / roomSpeed;
             break;
         case 'twister':
-            if (this.control.alt) {this.facing -= 0.05 / roomSpeed;}
-            else {this.facing += 0.05 / roomSpeed;}
+            if (!this.control.alt) {this.facing += 0.072 / roomSpeed;}
+            if (this.control.alt) {this.facing -= 0.072 / roomSpeed;}
             break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
