@@ -1413,7 +1413,7 @@ class Gun {
             out.PENETRATION = Math.max(1, shoot.pen * (0.5 * (sk.pen - 1) + 1));
             out.HEALTH = (shoot.health * sk.str + sizeFactor) / Math.pow(sk.pen, 0.8);
             out.DAMAGE = shoot.damage * sk.dam * Math.sqrt(sizeFactor) * shoot.pen * sk.pen;
-            out.RANGE = shoot.range * Math.sqrt(sizeFactor);
+            out.RANGE = shoot.range * Math.sqrt(sizeFactor);\ud83d\udc80
             break;
         }
         // Go through and make sure we respect its natural properties
@@ -5101,24 +5101,24 @@ var maintainloop = (() => {
                         sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
                         break;
                     case 27: 
-                        choice = [[Class.fallen_booster], 1, 'woomy', 'rock']; 
+                        choice = [[Class.fallen_booster, Class.fallen_fighter, Class.ai_fallen_overlord], 1, 'woomy', 'rock']; 
                         sockets.broadcast('Many had sought for the day when they\'d return... But not in this way...');
                         break;
                     case 28: 
-                        choice = [[Class.fallen_booster], 2, 'woomy', 'rock']; 
+                        choice = [[Class.fallen_booster, Class.fallen_fighter, Class.ai_fallen_overlord], 2, 'woomy', 'rock']; 
                         sockets.broadcast('Many had sought for the day when they\'d return... But not in this way...');
                         break;
                     case 29: 
-                        choice = [[Class.fallen_booster], 3, 'woomy', 'rock']; 
+                        choice = [[Class.fallen_booster, Class.fallen_fighter, Class.ai_fallen_overlord], 3, 'woomy', 'rock']; 
                         sockets.broadcast('Many had sought for the day when they\'d return... But not in this way...');
                         break;
                     case 30: 
-                        choice = [[Class.fallen_booster], 4, 'woomy', 'rock']; 
+                        choice = [[Class.fallen_booster, Class.fallen_fighter, Class.ai_fallen_overlord], 4, 'woomy', 'rock']; 
                         sockets.broadcast('Many had sought for the day when they\'d return... But not in this way...');
                         break;
                     case 31: 
                         choice = [[Class.seventron], 1, 'seventron', 'nest']; 
-                        sockets.broadcast('...Time to abandon ship!');
+                        sockets.broadcast('...FEAR NOT HESPERIANS, SEVENTRON IS HERE!');
                         sockets.broadcast('All Heptashots are now engaging...');
                         break;
                 }
