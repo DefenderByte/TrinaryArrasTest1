@@ -1413,7 +1413,7 @@ class Gun {
             out.PENETRATION = Math.max(1, shoot.pen * (0.5 * (sk.pen - 1) + 1));
             out.HEALTH = (shoot.health * sk.str + sizeFactor) / Math.pow(sk.pen, 0.8);
             out.DAMAGE = shoot.damage * sk.dam * Math.sqrt(sizeFactor) * shoot.pen * sk.pen;
-            out.RANGE = shoot.range * Math.sqrt(sizeFactor);\ud83d\udc80
+            out.RANGE = shoot.range * Math.sqrt(sizeFactor);
             break;
         }
         // Go through and make sure we respect its natural properties
