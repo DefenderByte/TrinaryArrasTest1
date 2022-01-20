@@ -1,0 +1,11 @@
+// Unused Layouts
+    // FFA
+    /* [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "roid", "norm", "norm", "rock", "norm", "norm", "roid", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
+    [ "norm", "rock", "norm", "nest", "nest", "nest", "norm", "rock", "norm" ],
+    [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "roid", "norm", "norm", "rock", "norm", "norm", "roid", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ] */
