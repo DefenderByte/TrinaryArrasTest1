@@ -2365,10 +2365,6 @@ class Entity {
         case 'fastestreverseautospin':
             this.facing -= 0.1 / roomSpeed;
             break;
-        case 'djspin':
-            if (!this.control.alt) {this.facing += 0.02 / roomSpeed;}
-            if (this.control.alt) {this.facing -= 0.02 / roomSpeed;}
-            break;
         case 'twister':
             if (!this.master.control.alt) {this.facing += 0.1 / roomSpeed;}
             if (this.master.control.alt) {this.facing -= 0.1 / roomSpeed;}
