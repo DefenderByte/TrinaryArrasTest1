@@ -18044,7 +18044,7 @@ exports.djMarking = {
                 PARENT: [exports.genericTank],
                 LABEL: 'DJ',
                 DANGER: 7,
-                FACING_TYPE: 'reverseautospin',
+                FACING_TYPE: 'fastautospin',
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  11,     8,      0,      0,     190, 0], 
                         TYPE: exports.auto3gun,
