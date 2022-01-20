@@ -17872,6 +17872,62 @@ exports.sumDriveDrone = {
                 ],
             };
 
+exports.rotomissile = {
+    PARENT: [exports.missile],
+    LABEL: 'Roto Missile',
+    FACING_TYPE: 'twister',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,     6,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,      90,     0,  ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,    
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,     180,     0,  ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,    
+            }, }, {
+        POSITION: [  14,     6,      1,      0,      0,     270,     0,  ], 
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
+                TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                STAT_CALCULATOR: gunCalcNames.thruster,    
+            }, },
+    ],
+};
+            exports.demoman = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Demoman',
+                DANGER: 8,
+                BODY: {
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    10,     -0.5,    9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  20,    12,      1,      0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.arty, g.skim, g.demoman]),
+                            TYPE: exports.rotomissile,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  11,    12,    -1.5,     3,      0,      0,      0,  ], 
+                        },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -18088,6 +18144,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.steam.UPGRADES_TIER_4 = [exports.backbone0];
         exports.artillery.UPGRADES_TIER_3 = [exports.autoarty, exports.mortar, exports.gunnary];
             exports.artillery.UPGRADES_TIER_4 = [exports.artycruise];
+            exports.skimmer.UPGRADES_TIER_4 = [exports.demoman];
         exports.spray.UPGRADES_TIER_3 = [exports.volcano];
         exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1];
 
