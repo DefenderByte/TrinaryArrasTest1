@@ -877,7 +877,7 @@ exports.obstacle = {
         SIZE: 100,
         COLOR: 16,
         VARIES_IN_SIZE: false,
-        GIVE_KILL_MESSAGE: true,
+        GIVE_KILL_MESSAGE: false,
         ACCEPTS_SCORE: false,
     };
 
@@ -18038,12 +18038,12 @@ exports.rotomissile = {
 
 exports.djMarking = {
     SHAPE: [[0.4,0.8],[0.4,1],[0.2,1.25],[-0.2,1.25],[-0.4,1],[-0.8,0.8],[-1.1,0.4],[-1.2,0],[-1.1,-0.4],[-0.8,-0.8],[-0.4,-1],[-0.2,-1.25],[0.2,-1.25],[0.4,-1],[0.4,-0.8],[-0.4,-0.8],[-0.8,-0.4],[-0.9,0],[-0.8,0.4],[-0.4,0.8]],
-    COLOR: 235,
+    COLOR: 237,
 };
         exports.djTurret1 = {
             PARENT: [exports.genericTank],
             LABEL: '👑ↇɛℓᎥ방문자🎧',
-            COLOR: 235,
+            COLOR: 19,
             DANGER: 6,
             CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
             BODY: {
@@ -18056,7 +18056,7 @@ exports.djMarking = {
                         TYPE: exports.bullet,
                     },
                     COLOR_SETTINGS: {
-                        COLOR: 235,
+                        COLOR: 19,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
                     PROPERTIES: {
@@ -18064,7 +18064,7 @@ exports.djMarking = {
                         TYPE: exports.bullet,
                     },
                     COLOR_SETTINGS: {
-                        COLOR: 235,
+                        COLOR: 19,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
@@ -18072,7 +18072,7 @@ exports.djMarking = {
                         TYPE: exports.bullet,
                     },
                     COLOR_SETTINGS: {
-                        COLOR: 235,
+                        COLOR: 19,
                     }, }, {
                 POSITION: [   6,     12,     1.2,    8,      0,      0,      0,   ], 
                     PROPERTIES: {
@@ -18084,7 +18084,7 @@ exports.djMarking = {
                         MAX_CHILDREN: 3,
                     },
                     COLOR_SETTINGS: {
-                        COLOR: 235,
+                        COLOR: 19,
                     }, },
             ],
         };
@@ -18093,13 +18093,13 @@ exports.djTurret2 = {
     BODY: {
         FOV: base.FOV * 2,
     },
-    COLOR: 235,
+    COLOR: 2,
     CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
     LABEL: '𝔸𝕝𝕜𝕒𝕚𝕠𝕤',
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  10,    14,    -0.5,     9,      0,      0,      0,  ], 
             COLOR_SETTINGS: {
-                COLOR: 235,
+                COLOR: 2,
             }, }, {
         POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
             PROPERTIES: {
@@ -18107,7 +18107,7 @@ exports.djTurret2 = {
                 TYPE: exports.hypermissile,
             },
             COLOR_SETTINGS: {
-                COLOR: 235,
+                COLOR: 2,
             }, },
     ],
 };
@@ -18142,7 +18142,7 @@ exports.djTurret2 = {
             };
             exports.dj = {
                 PARENT: [exports.genericTank],
-                LABEL: 'DJ',
+                LABEL: 'DJ Amalgamation Tissue',
                 DANGER: 8,
                 FACING_TYPE: 'autospin',
                 STAT_NAMES: statnames.generic,
