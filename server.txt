@@ -2365,6 +2365,10 @@ class Entity {
         case 'fastestreverseautospin':
             this.facing -= 0.1 / roomSpeed;
             break;
+        case 'twister':
+            if (!this.control.alt) {this.facing -= 0.05 / roomSpeed;}
+            else {this.facing += 0.05 / roomSpeed;}
+            break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
             break;
@@ -5318,7 +5322,12 @@ var maintainloop = (() => {
                         Class.flankceptionist2,
                         Class.pelletceptionist,
                         Class.pelletceptionist2,
-                        Class.vulc
+                        Class.vulc,
+                        Class.shift,
+                        Class.gunnary,
+                        Class.twinSnipe,
+                        Class.volcano,
+                        Class.demoman
                       ])
                     );
                     o.name += ran.chooseBotName();
