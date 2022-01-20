@@ -2365,13 +2365,13 @@ class Entity {
         case 'fastestreverseautospin':
             this.facing -= 0.1 / roomSpeed;
             break;
-        case 'reversion':
+        case 'djspin':
             if (!this.control.alt) {this.facing += 0.02 / roomSpeed;}
             if (this.control.alt) {this.facing -= 0.02 / roomSpeed;}
             break;
         case 'twister':
-            if (!this.master.control.alt) {this.facing += 0.072 / roomSpeed;}
-            if (this.master.control.alt) {this.facing -= 0.072 / roomSpeed;}
+            if (!this.master.control.alt) {this.facing += 0.1 / roomSpeed;}
+            if (this.master.control.alt) {this.facing -= 0.1 / roomSpeed;}
             break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
@@ -5012,35 +5012,35 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[Class.palisade, Class.skimboss], 1, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.levi], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[Class.palisade, Class.skimboss], 2, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.levi], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[Class.palisade, Class.skimboss], 3, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.levi], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[Class.palisade, Class.skimboss], 4, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.skimboss, Class.levi], 4, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 1, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 1, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 9: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 2, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 2, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 10: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 3, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 3, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 11: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor], 4, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 4, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
@@ -5331,7 +5331,9 @@ var maintainloop = (() => {
                         Class.gunnary,
                         Class.twinSnipe,
                         Class.volcano,
-                        Class.demoman
+                        Class.demoman,
+                        Class.dj,
+                        Class.hotshot
                       ])
                     );
                     o.name += ran.chooseBotName();
