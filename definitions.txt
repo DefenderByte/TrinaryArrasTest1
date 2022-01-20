@@ -18157,7 +18157,7 @@ exports.djTurret2 = {
                     POSITION: [  11,     8,      0,     240,    190, 0], 
                         TYPE: exports.djTurret3,
                             }, {
-                    POSITION: [  25,     0,      0,      0,      90, 1], 
+                    POSITION: [  25,     0,      0,      90,    360, 1], 
                         TYPE: exports.djMarking,
                             },
                 ],
