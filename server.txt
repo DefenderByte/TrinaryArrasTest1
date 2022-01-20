@@ -2365,9 +2365,13 @@ class Entity {
         case 'fastestreverseautospin':
             this.facing -= 0.1 / roomSpeed;
             break;
+        case 'reversion':
+            if (!this.control.alt) {this.facing += 0.02 / roomSpeed;}
+            if (this.control.alt) {this.facing -= 0.02 / roomSpeed;}
+            break;
         case 'twister':
-            if (!this.control.alt) {this.facing += 0.072 / roomSpeed;}
-            else {if (this.control.alt) {this.facing -= 0.072 / roomSpeed;}}
+            if (!this.master.control.alt) {this.facing += 0.072 / roomSpeed;}
+            if (this.master.control.alt) {this.facing -= 0.072 / roomSpeed;}
             break;
         case 'turnWithSpeed':
             this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
