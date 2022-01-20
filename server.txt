@@ -800,6 +800,21 @@ class io_dontTurn extends IO {
         };        
     }
 }
+class io_dj_facing extends IO {
+    constructor(b) {
+        super(b);
+    }
+    
+    think(input) {
+        return {
+            target: {
+                x: 1,
+                y: 90,
+            },  
+            main: true,
+        };        
+    }
+}
 class io_fleeAtLowHealth extends IO {
     constructor(b) {
         super(b);
