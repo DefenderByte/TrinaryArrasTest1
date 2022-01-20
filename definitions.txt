@@ -1781,7 +1781,7 @@ exports.dominationBody = {
     LABEL: '',
     CONTROLLERS: ['dontTurn'], 
     COLOR: 9,
-    SHAPE: 6,
+    SHAPE: 135,
     INDEPENDENT: true,
 };
     exports.baseSwarmTurret = {
@@ -18039,6 +18039,7 @@ exports.rotomissile = {
 exports.djMarking = {
     SHAPE: [[0.4,0.8],[0.4,1],[0.2,1.25],[-0.2,1.25],[-0.4,1],[-0.8,0.8],[-1.1,0.4],[-1.2,0],[-1.1,-0.4],[-0.8,-0.8],[-0.4,-1],[-0.2,-1.25],[0.2,-1.25],[0.4,-1],[0.4,-0.8],[-0.4,-0.8],[-0.8,-0.4],[-0.9,0],[-0.8,0.4],[-0.4,0.8]],
     COLOR: 237,
+    CONTROLLERS: ['dontTurn'],
 };
         exports.djTurret1 = {
             PARENT: [exports.genericTank],
@@ -18156,7 +18157,7 @@ exports.djTurret2 = {
                     POSITION: [  11,     8,      0,     240,    190, 0], 
                         TYPE: exports.djTurret3,
                             }, {
-                    POSITION: [  25,     0,      0,      0,      0,  1], 
+                    POSITION: [  25,     0,      0,      0,      90, 1], 
                         TYPE: exports.djMarking,
                             },
                 ],
