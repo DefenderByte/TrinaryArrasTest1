@@ -73,6 +73,7 @@ const room = {
     room.findType('bas4');
     room.findType('roid');
     room.findType('rock');
+    room.findType('maze');
     room.nestFoodAmount = 1.5 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
         return {
@@ -4936,6 +4937,21 @@ var maintainloop = (() => {
         util.log('Placing ' + count + ' obstacles!');
     }
     placeRoids();
+    let placeWalls = () => {
+        let count = 0
+        for (let loc of room['maze']) {
+            let o = new Entity(loc)
+            o.define(Class.mazeObstacle)
+            o.SIZE = (room.xgridWidth + room.ygridHeight) / 4
+            o.team = -101
+            o.protect()
+            o.life()
+            count++;
+        }
+      
+        util.log('Placing ' + count + ' regular walls!')
+    }
+    placeWalls()
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 0;
