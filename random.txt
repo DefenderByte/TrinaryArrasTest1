@@ -3508,7 +3508,7 @@ case 'healref':
         'Algea',
         'Algos',
     ], n);
-case 'seventron': // Rings & Heptagons
+case 'seventron': // copy-pasted the names from Diepmon's profile
     return exports.chooseN([
         'Diepmon',
         'Thriplerex',
