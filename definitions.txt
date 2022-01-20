@@ -18039,7 +18039,7 @@ exports.rotomissile = {
 exports.djMarking = {
     SHAPE: [[0.4,0.8],[0.4,1],[0.2,1.25],[-0.2,1.25],[-0.4,1],[-0.8,0.8],[-1.1,0.4],[-1.2,0],[-1.1,-0.4],[-0.8,-0.8],[-0.4,-1],[-0.2,-1.25],[0.2,-1.25],[0.4,-1],[0.4,-0.8],[-0.4,-0.8],[-0.8,-0.4],[-0.9,0],[-0.8,0.4],[-0.4,0.8]],
     COLOR: 237,
-    CONTROLLERS: ['dontTurn'],
+    CONTROLLERS: ['dj_facing'],
 };
         exports.djTurret1 = {
             PARENT: [exports.genericTank],
