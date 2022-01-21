@@ -1773,7 +1773,7 @@ exports.dominationBody = {
 };
 exports.jumpBody = {
     LABEL: '',
-    CONTROLLERS: ['dontTurn'], 
+    CONTROLLERS: ['spin'], 
     COLOR: 9,
     SHAPE: -8,
     INDEPENDENT: true,
@@ -20086,6 +20086,1240 @@ exports.witherstormtentacle = {
             ],
         };
 
+        exports.bloodbent = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Bent',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     -2,    -20,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.double, g.triplet, g.gunner, g.more_speed, g.fast]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.double, g.triplet, g.gunner, g.more_speed, g.fast]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.double, g.triplet, g.gunner, g.more_speed, g.fast]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, },
+            ],
+        };
+    exports.bloodmoonmissile = {
+        PARENT: [exports.missile],
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  14,     6,      1,      0,     -2,     150,     0,   ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double, g.triplet, g.slow, g.half_recoil, g.double_range]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                    STAT_CALCULATOR: gunCalcNames.thruster,
+                }, }, {
+            POSITION: [  14,     6,      1,      0,      2,     210,     0,   ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double, g.triplet, g.slow, g.half_recoil, g.double_range]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                    STAT_CALCULATOR: gunCalcNames.thruster,
+                }, }, {        
+            POSITION: [  14,     6,      1,      0,     -2,      90,    0.5,  ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double, g.triplet, g.slow, g.half_recoil, g.double_range]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                }, }, {
+            POSITION: [  14,     6,      1,      0,      2,     270,    0.5,  ],  
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double, g.triplet, g.slow, g.half_recoil, g.double_range]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                }, },
+        ],
+    };
+exports.bloodmoongun = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  10,    14,    -0.5,     9,      0,      0,      0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.more_speed, g.fast, g.double, g.triplet, g.arty, g.arty, g.skim, g.half_range, g.no_recoil, g.one_third_reload]),
+                TYPE: exports.bloodmoonmissile,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 237,
+            }, }, {
+        POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
+            COLOR_SETTINGS: {
+                COLOR: 237,
+            }, },
+    ],
+};
+        exports.bloodmoontissue = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Blood Moon Tissue',
+            COLOR: 19,
+            SHAPE: 108,
+            SIZE: 26,
+            VALUE: 950000,
+            BODY: {
+                FOV: 1.75,
+                SPEED: base.SPEED * 0.085,
+                HEALTH: 137.5,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 6.5,    6.5,     0,      0,     360,  1], 
+                    TYPE: [ exports.bloodbent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [ 6.5,    6.5,     0,     120,    360,  1], 
+                    TYPE: [ exports.bloodbent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [ 6.5,    6.5,     0,    -120,    360,  1], 
+                    TYPE: [ exports.bloodbent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [  6,      4,      0,     60,     150,  0], 
+                    TYPE: [ exports.bloodmoongun, { COLOR: 237, } ],
+                        }, {
+                POSITION: [  6,      4,      0,    -60,     150,  0], 
+                    TYPE: [ exports.bloodmoongun, { COLOR: 237, } ],
+                        }, {
+                POSITION: [  6,      4,      0,    180,     150,  0], 
+                    TYPE: [ exports.bloodmoongun, { COLOR: 237, } ],
+                        },
+            ],
+          GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y    ANGLE    DELAY */
+              POSITION: [  3,      4,     1.2,     6,     -4,     40,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,      4,    -40,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,     -4,    160,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,      4,   -160,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,     -4,    280,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,      4,   -280,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, },
+            ],
+        };
+        exports.bloodmoontissue2 = {
+            PARENT: [exports.miniboss2],
+            LABEL: 'Blood Moon Tissue',
+            COLOR: 19,
+            SHAPE: 108,
+            SIZE: 26,
+            VALUE: 950000,
+            BODY: {
+                FOV: 1.75,
+                SPEED: base.SPEED * 0.085,
+                HEALTH: 137.5,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 6.5,    6.5,     0,      0,     360,  1], 
+                    TYPE: [ exports.bloodbent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [ 6.5,    6.5,     0,     120,    360,  1], 
+                    TYPE: [ exports.bloodbent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [ 6.5,    6.5,     0,    -120,    360,  1], 
+                    TYPE: [ exports.bloodbent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [  6,      4,      0,     60,     150,  0], 
+                    TYPE: [ exports.bloodmoongun, { COLOR: 237, } ],
+                        }, {
+                POSITION: [  6,      4,      0,    -60,     150,  0], 
+                    TYPE: [ exports.bloodmoongun, { COLOR: 237, } ],
+                        }, {
+                POSITION: [  6,      4,      0,    180,     150,  0], 
+                    TYPE: [ exports.bloodmoongun, { COLOR: 237, } ],
+                        },
+            ],
+          GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y    ANGLE    DELAY */
+              POSITION: [  3,      4,     1.2,     6,     -4,     40,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,      4,    -40,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,     -4,    160,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,      4,   -160,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,     -4,    280,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [  3,      4,     1.2,     6,      4,   -280,      0,  ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.half_reload, g.half_reload, g.half_recoil, g.slow]),
+                      TYPE: exports.drone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 3,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, },
+            ],
+        };
+    exports.tissuemissile = {
+        PARENT: [exports.missile],
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  14,     6,      1,      0,     -2,     150,     0,   ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.half_range, g.low_power]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                    STAT_CALCULATOR: gunCalcNames.thruster,
+                }, }, {
+            POSITION: [  14,     6,      1,      0,      2,     210,     0,   ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.half_range, g.low_power]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                    STAT_CALCULATOR: gunCalcNames.thruster,
+                }, }, {        
+            POSITION: [  14,     6,      1,      0,     -2,      90,    0.5,  ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.half_range, g.low_power]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                }, }, {
+            POSITION: [  14,     6,      1,      0,      2,     270,    0.5,  ],  
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.more_recoil, g.half_range, g.low_power]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                }, },
+        ],
+    };
+exports.vietboomerang = {
+        LABEL: 'Boomerang',
+        PARENT: [exports.boomerang],
+        MOTION_TYPE: 'motor',  
+        HITS_OWN_TYPE: 'never',
+        SHAPE: -5,
+        BODY: {
+            SPEED: 3.2,
+            RANGE: 180,
+        },
+    };
+        exports.bentgun = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Bent',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     -2,    -20,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.gunner, g.double, g.triplet, g.more_speed, g.fast, g.half_reload]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.gunner, g.double, g.triplet, g.more_speed, g.fast, g.half_reload]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.gunner, g.double, g.triplet, g.more_speed, g.fast, g.half_reload]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, },
+            ],
+        };
+        exports.vietphotissue = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Viet Pho Tissue',
+            FACING_TYPE: 'toTarget',
+            COLOR: 19,
+            SHAPE: 114,
+            SIZE: 70,
+            VALUE: 850000,
+            BODY: {
+                FOV: 1.6,
+                SPEED: base.SPEED * 0.2,
+                HEALTH: 125,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  1,      2,      1,      3,      0,     180,     0,   ],
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  3,      2,    -1.5,     0,      0,     180,     0,   ],
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  1,      2,     1.5,     4,      0,     180,     0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.pound, g.no_recoil, g.slow]),
+                        TYPE: exports.vietboomerang, 
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  1,      3,     1.25,    4,      0,      0,      0,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.more_speed, g.no_recoil]),
+                        TYPE: exports.tissuemissile,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  4,      4,      1,      0,      0,      0,      0,  ], 
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  2,      1,     0.8,     9,      0,     140,    0,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
+                        TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  2,      1,     0.8,     9,      0,    -140,    0,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
+                        TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],       
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 2.35,    0,     -4,     -90,    360,  1], 
+                    TYPE: [ exports.bentgun, { COLOR: 235, } ],
+                        }, {
+                POSITION: [ 2.35,    0,      4,      90,    360,  1], 
+                    TYPE: [ exports.bentgun, { COLOR: 235, } ],
+                        },
+            ],
+            BROADCAST_MESSAGE: 'Một vị khách đã rời đi!',
+        };
+        exports.vietphotissue2 = {
+            PARENT: [exports.miniboss2],
+            LABEL: 'Viet Pho Tissue',
+            FACING_TYPE: 'toTarget',
+            COLOR: 19,
+            SHAPE: 114,
+            SIZE: 70,
+            VALUE: 850000,
+            BODY: {
+                FOV: 1.6,
+                SPEED: base.SPEED * 0.2,
+                HEALTH: 125,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  1,      2,      1,      3,      0,     180,     0,   ],
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  3,      2,    -1.5,     0,      0,     180,     0,   ],
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  1,      2,     1.5,     4,      0,     180,     0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.pound, g.no_recoil, g.slow]),
+                        TYPE: exports.vietboomerang, 
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  1,      3,     1.25,    4,      0,      0,      0,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.more_speed, g.no_recoil]),
+                        TYPE: exports.tissuemissile,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  4,      4,      1,      0,      0,      0,      0,  ], 
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  2,      1,     0.8,     9,      0,     140,    0,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
+                        TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, }, {
+                POSITION: [  2,      1,     0.8,     9,      0,    -140,    0,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
+                        TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],       
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 237,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 2.35,    0,     -4,     -90,    360,  1], 
+                    TYPE: [ exports.bentgun, { COLOR: 235, } ],
+                        }, {
+                POSITION: [ 2.35,    0,      4,      90,    360,  1], 
+                    TYPE: [ exports.bentgun, { COLOR: 235, } ],
+                        },
+            ],
+            BROADCAST_MESSAGE: 'Một vị khách đã rời đi!',
+        };
+exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurret, });
+        exports.atlanticlunartissue = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Atlantic Lunar Tissue',
+            FACING_TYPE: 'toTarget',
+            COLOR: 19,
+            SHAPE: 107,
+            SIZE: 28,
+            VALUE: 900000,
+            BODY: {
+                FOV: 1.6,
+                SPEED: base.SPEED * 0.125,
+                HEALTH: 125,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+          GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+              POSITION: [   4,     6,     1.25,    5,      1,    25.5,     0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
+                      TYPE: exports.altDrone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 10,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   4,     6,     1.25,    5,     -1,    334.5,   0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
+                      TYPE: exports.altDrone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 10,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   3,     5,      1,      2,      7,    154.5,  0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      4,      7,    154.5,  0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   2,     7,     1.3,     5,      7,    154.5,  0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
+                      TYPE: exports.pillbox,        
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      1,      7,    154.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   3,     5,      1,      2,     -7,    205.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      4,     -7,    205.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   2,     7,     1.3,     5,     -7,    205.5, 0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
+                      TYPE: exports.pillbox,        
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      1,     -7,    205.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 4.5,    6.5,     0,      0,     360,  1], 
+                    TYPE: exports.bentgun,
+                        }, {
+                POSITION: [ 4.5,    6.5,     3,      45,    360,  1], 
+                    TYPE: exports.bentgun,
+                        }, {
+                POSITION: [ 4.5,    6.5,    -3,     -45,    360,  1], 
+                    TYPE: exports.bentgun,
+                        },
+            ],
+        };
+        exports.atlanticlunartissue2 = {
+            PARENT: [exports.miniboss2],
+            LABEL: 'Atlantic Lunar Tissue',
+            FACING_TYPE: 'toTarget',
+            COLOR: 19,
+            SHAPE: 107,
+            SIZE: 28,
+            VALUE: 900000,
+            BODY: {
+                FOV: 1.6,
+                SPEED: base.SPEED * 0.125,
+                HEALTH: 125,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+          GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+              POSITION: [   4,     6,     1.25,    5,      1,    25.5,     0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
+                      TYPE: exports.altDrone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 10,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   4,     6,     1.25,    5,     -1,    334.5,   0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
+                      TYPE: exports.altDrone,
+                      AUTOFIRE: true,
+                      SYNCS_SKILLS: true,
+                      MAX_CHILDREN: 10,
+                      STAT_CALCULATOR: gunCalcNames.drone,
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   3,     5,      1,      2,      7,    154.5,  0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      4,      7,    154.5,  0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   2,     7,     1.3,     5,      7,    154.5,  0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
+                      TYPE: exports.pillbox,        
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      1,      7,    154.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   3,     5,      1,      2,     -7,    205.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      4,     -7,    205.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   2,     7,     1.3,     5,     -7,    205.5, 0,   ], 
+                  PROPERTIES: {
+                      SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
+                      TYPE: exports.pillbox,        
+                  },
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, }, {
+              POSITION: [   1,     7,      1,      1,     -7,    205.5, 0,   ], 
+                  COLOR_SETTINGS: {
+                      COLOR: 237,
+                  }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [ 4.5,    6.5,     0,      0,     360,  1], 
+                    TYPE: exports.bentgun,
+                        }, {
+                POSITION: [ 4.5,    6.5,     3,      45,    360,  1], 
+                    TYPE: exports.bentgun,
+                        }, {
+                POSITION: [ 4.5,    6.5,    -3,     -45,    360,  1], 
+                    TYPE: exports.bentgun,
+                        },
+            ],
+        };
+    exports.cannonmissile = {
+        PARENT: [exports.missile],
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  14,     6,      1,      0,     -2,     150,     0,   ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                    STAT_CALCULATOR: gunCalcNames.thruster,
+                }, }, {
+            POSITION: [  14,     6,      1,      0,      2,     210,     0,   ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                    STAT_CALCULATOR: gunCalcNames.thruster,
+                }, }, {        
+            POSITION: [  14,     6,      1,      0,     -2,      90,    0.5,  ], 
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                }, }, {
+            POSITION: [  14,     6,      1,      0,      2,     270,    0.5,  ],  
+                PROPERTIES: {
+                    AUTOFIRE: true,
+                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
+                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                }, },
+        ],
+    };
+
+        exports.whatthebent = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Bent',
+            BODY: {
+                FOV: base.FOV * 1.6,
+            },
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     -2,    -20,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.more_speed, g.flank, g.triplet, g.one_third_reload, g.half_range]),
+                        TYPE: exports.bullet,
+                    },
+                    
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.more_speed, g.flank, g.triplet, g.one_third_reload, g.half_range]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.more_speed, g.flank, g.triplet, g.one_third_reload, g.half_range]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, },
+            ],
+        };
+        exports.waterf = {
+            PARENT: [exports.genericTank],
+            LABEL: 'What The Fuck',
+            BODY: {
+                FOV: base.FOV * 2.5,
+            },
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,     -2,    -20,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.pound, g.half_reload, g.half_reload, g.one_third_reload, g.more_speed]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  19,     8,      1,      0,      2,     20,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.pound, g.half_reload, g.half_reload, g.one_third_reload, g.more_speed]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.pound, g.half_reload, g.half_reload, g.one_third_reload, g.more_speed]),
+                        TYPE: exports.bullet,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   5,    10,      1,     13,     0,     180,     0,   ],
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   6,    10,    -1.5,     7,     0,     180,     0,   ],
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,    10,     1.3,    18,     0,     180,     0,   ],
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.destroy, g.destroy, g.more_speed, g.more_speed, g.more_speed, g.one_third_reload, g.fast, g.five, g.double_reload, g.double_range, g.no_recoil]),
+                        TYPE: exports.boomerang,
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, },
+            ],
+        };
+
+        exports.wtf = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Weird Tissue Factory',
+            COLOR: 19,
+            SHAPE: 5,
+            SIZE: 36,
+            VALUE: 750000,
+            BODY: {
+                FOV: 1.2,
+                SPEED: 0.1,
+                HEALTH: 112.5,
+                SHIELD: 1,
+                REGEN: 0.1,
+                DAMAGE: 3,
+            },
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   3,      3,      1,      10,     0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,      180,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,     108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,     108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,     108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,      108,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,    -108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,    -108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,    -108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,     -36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,     -36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,     -36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,      36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,      36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,      36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,       36,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,      36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 3,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   8,     9,      0,      0,     150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,      72,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,     144,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,    -144,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,     -72,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360,  1], 
+                    TYPE: [exports.waterf, { COLOR: 235, }],
+                        },
+            ],
+        };
+        exports.wtf2 = {
+            PARENT: [exports.miniboss],
+            LABEL: 'Weird Tissue Factory',
+            COLOR: 19,
+            SHAPE: 5,
+            SIZE: 36,
+            VALUE: 750000,
+            BODY: {
+                FOV: 1.2,
+                SPEED: 0.1,
+                HEALTH: 112.5,
+                SHIELD: 1,
+                REGEN: 0.1,
+                DAMAGE: 3,
+            },
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   3,      3,      1,      10,     0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,     180,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,      180,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,     108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,     108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,     108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,      108,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,    -108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,    -108,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,    -108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,     -36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,     -36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,     -36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   3,      3,      1,      10,     0,      36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   1,      5,      1,      12,     0,      36,     0,   ], 
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [   2,      5,     1.3,     13,     0,      36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
+                        TYPE: exports.pillbox,        
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {                            
+                POSITION: [   5,      5,      1,      6,     0,       36,     0,   ]
+                    COLOR_SETTINGS: {
+                        COLOR: 235,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,      36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 3,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
+                        TYPE: exports.altDrone,
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    },
+                    COLOR_SETTINGS: {
+                        COLOR: 5,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   8,     9,      0,      0,     150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,      72,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,     144,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,    -144,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   8,     9,      0,     -72,    150,  0], 
+                    TYPE: [exports.whatthebent, { COLOR: 235, } ],
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360,  1], 
+                    TYPE: [exports.waterf, { COLOR: 235, }],
+                        },
+            ],
+        };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -20251,7 +21485,8 @@ exports.botT3_E = {
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
             exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.fallen_fighter2, exports.elite_twin2, exports.elite_auto2, exports.elite_sidewinder2, exports.elite_predator2, exports.elite_streamliner2, exports.elite_trapper2, exports.devBosses3];
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
-            exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.witherstorm];
+            exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.witherstorm, exports.bloodmoontissue2, exports.vietphotissue2, exports.atlanticlunartissue2, exports.devBosses5];
+            exports.devBosses5.UPGRADES_TIER_4 = [exports.wtf2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
