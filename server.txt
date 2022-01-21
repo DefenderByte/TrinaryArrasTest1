@@ -5360,7 +5360,12 @@ var maintainloop = (() => {
                         Class.volcano,
                         Class.demoman,
                         Class.dj,
-                        Class.hotshot
+                        Class.hotshot,
+                        Class.stalker,
+                        Class.minimine,
+                        Class.landmine,
+                        Class.manager,
+                        Class.manageseer
                       ])
                     );
                     o.name += ran.chooseBotName();
@@ -5383,19 +5388,25 @@ var maintainloop = (() => {
     let makefood = (() => {
         let food = [], foodSpawners = [];
         // The two essential functions
-        function getFoodClass(level) {
-            let a = { };
-            switch (level) {
-                case 0: a = Class.egg; break;
-                case 1: a = Class.square; break;
-                case 2: a = Class.triangle; break;
-                case 3: a = Class.pentagon; break;
-                case 4: a = Class.hexagon; break;
-                case 5: a = Class.heptagon; break;
-                case 6: a = Class.octagon; break;
-                case 7: a = Class.nonagon; break;
-                case 8: a = Class.decagon; break;
-                default: throw('bad food level');
+        function getFoodClass(foodID, upgrading = false) {
+            let a = {};
+            if (foodID < 0) throw ('bad food level');
+            let foodBranch = false,
+                percal = 0;
+            for (let i = 1; i < c.FOODPATHS[foodID.toString()].length; i++) percal += 5 ** c.FOODPATHS[foodID.toString()][i][0];
+            let selected = Math.floor(Math.random() * percal);
+            percal = 0;
+            for (let i = 1; i < c.FOODPATHS[foodID.toString()].length; i++) {
+                percal += 5 ** c.FOODPATHS[foodID.toString()][i][0];
+                if (selected < percal) {
+                    foodBranch = i;
+                    break;
+                }
+            }
+            if (upgrading) {
+                a = Class[c.FOODPATHS[foodID.toString()][foodBranch][1]];
+            } else {
+                a = Class[c.FOODPATHS[foodID.toString()][0][2]];
             }
             if (a !== {}) {
                 a.BODY.ACCELERATION = 0.015 / (a.FOOD.LEVEL + 1);
@@ -5519,7 +5530,15 @@ var maintainloop = (() => {
                 [6]: 0, // Octagon
                 [7]: 0, // Nonagon
                 [8]: 0, // Decagon
-                [9]: 0,
+                [9]: 0, // Gem
+                [10]: 0, // Green Square
+                [11]: 0, // Green Triangle
+                [12]: 0, // Green Pentagon
+                [13]: 0, // Green Beta Pentagon
+                [14]: 0, // Orange Square
+                [15]: 0, // Orange Triangle
+                [16]: 0, // Orange Pentagon
+                [17]: 0,
                 tank: 0,
                 sum: 0,
             };
@@ -5533,7 +5552,15 @@ var maintainloop = (() => {
                 [6]: 0, // Octagon
                 [7]: 0, // Nonagon
                 [8]: 0, // Decagon
-                [9]: 0,
+                [9]: 0, // Gem
+                [10]: 0, // Green Square
+                [11]: 0, // Green Triangle
+                [12]: 0, // Green Pentagon
+                [13]: 0, // Green Beta Pentagon
+                [14]: 0, // Orange Square
+                [15]: 0, // Orange Triangle
+                [16]: 0, // Orange Pentagon
+                [17]: 0,
                 sum: 0,
             };
             // Do the censusNest
@@ -5578,11 +5605,11 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                    let proportions = c.FOOD,
+                    let proportions = c.FOODPATHS[o.foodLevel.toString()][0][0],
                         cens = census,
                         amount = foodAmount;
                     if (room.isIn('nest', o)) {
-                        proportions = c.FOOD_NEST;
+                        proportions = c.FOODPATHS[o.foodLevel.toString()][1][0],
                         cens = censusNest;
                         amount = nestFoodAmount;
                     }
@@ -5601,8 +5628,8 @@ var maintainloop = (() => {
     // Define food and food spawning
     return () => {
         // Do stuff
-        makenpcs();      
-        makefood(); 
+        makenpcs();
+        makefood();
         // Regen health and update the grid
         entities.forEach(instance => {
             if (instance.shield.max) {
