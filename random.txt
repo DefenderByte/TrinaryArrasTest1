@@ -1807,6 +1807,17 @@ exports.chooseBotName = () => {
         'HAAANK!!!',
         'DefBt',
         'Real DefenderByte',
+        'Tatical Iradiated Kiosk v25',
+        'Overpowered Battlecarrier P-19-S.I-3.2.M.16-S',
+        'ｲﾑｲﾉᄃﾑﾚ ﾉ尺ﾑりﾉﾑｲ乇り ズﾉの丂ズ √25',
+        '𝙊𝙫𝙚𝙧𝙥𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙖𝙩𝙩𝙡𝙚𝙘𝙖𝙧𝙧𝙞𝙚𝙧 𝙋-19-𝙎.𝙄-3.2.𝙈.16-𝙎',
+        'Allah-Aqua-Boom',
+        'Added nothing because y\'all are ungrateful pieces of shit, fuck you',
+        'We added nothing because y\'all are ungrateful pieces of shit, fuck you',
+        'Y\'all are ungrateful pieces of shit, fuck you',
+        'Ungrateful pieces of shit',
+        'An Ungrateful piece of shit',
+        'The Ungrateful piece of shit',
     ]);
 };
 
