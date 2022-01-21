@@ -20502,7 +20502,6 @@ exports.vietboomerang = {
                         COLOR: 237,
                     }, }, {
                 POSITION: [  4,      4,      1,      0,      0,      0,      0,  ], 
-                    },
                     COLOR_SETTINGS: {
                         COLOR: 237,
                     }, }, {
@@ -20575,7 +20574,6 @@ exports.vietboomerang = {
                         COLOR: 237,
                     }, }, {
                 POSITION: [  4,      4,      1,      0,      0,      0,      0,  ], 
-                    },
                     COLOR_SETTINGS: {
                         COLOR: 237,
                     }, }, {
@@ -20945,7 +20943,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,      180,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,      180,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -20965,7 +20963,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,      108,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,      108,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -20985,7 +20983,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21005,7 +21003,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21025,7 +21023,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,       36,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,       36,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21148,7 +21146,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,      180,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,      180,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21168,7 +21166,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,      108,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,      108,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21188,7 +21186,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21208,7 +21206,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
@@ -21228,7 +21226,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {                            
-                POSITION: [   5,      5,      1,      6,     0,       36,     0,   ]
+                POSITION: [   5,      5,      1,      6,     0,       36,     0,   ],
                     COLOR_SETTINGS: {
                         COLOR: 235,
                     }, }, {
