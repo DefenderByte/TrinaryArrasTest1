@@ -418,7 +418,7 @@ const basePolygonHealth = 2;
 exports.orangepentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 3,
+        LEVEL: 16,
     },
     LABEL: 'Orange Pentagon',
     VALUE: 19500,
@@ -437,7 +437,7 @@ exports.orangepentagon = {
 exports.orangetriangle = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 2,
+        LEVEL: 15,
     },
     LABEL: 'Orange Triangle',
     VALUE: 7500,
@@ -456,7 +456,7 @@ exports.orangetriangle = {
 exports.orangesquare = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 1,
+        LEVEL: 14,
     },
     LABEL: 'Orange Square',
     VALUE: 1500,
@@ -476,7 +476,7 @@ exports.orangesquare = {
 exports.greenbigPentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 4,
+        LEVEL: 13,
     },
     LABEL: 'Green Beta Pentagon',
     VALUE: 25000,
@@ -494,29 +494,10 @@ exports.greenbigPentagon = {
     DRAW_HEALTH: true,
     GIVE_KILL_MESSAGE: true,
 };
-exports.greenhexagon = {
-    PARENT: [exports.food],
-    FOOD: {
-        LEVEL: 4,
-    },
-    LABEL: 'Green Hexagon',
-    VALUE: 45000,
-    SHAPE: 6,
-    SIZE: 28,
-    COLOR: 31,
-    BODY: {
-        DAMAGE: 2 * basePolygonDamage,
-        DENSITY: 10,
-        HEALTH: 400,
-        RESIST: 1.45,
-        PENETRATION: 1,
-    },
-    DRAW_HEALTH: true,
-};
 exports.greenpentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 3,
+        LEVEL: 12,
     },
     LABEL: 'Green Pentagon',
     VALUE: 30000,
@@ -535,7 +516,7 @@ exports.greenpentagon = {
 exports.greentriangle = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 2,
+        LEVEL: 11,
     },
     LABEL: 'Green Triangle',
     VALUE: 7000,
@@ -554,7 +535,7 @@ exports.greentriangle = {
 exports.greensquare = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 1,
+        LEVEL: 10,
     },
     LABEL: 'Green Square',
     VALUE: 2000,
@@ -574,7 +555,7 @@ exports.greensquare = {
 exports.gem = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 0,
+        LEVEL: 9,
     },
     LABEL: 'Gem',
     VALUE: 2000,
@@ -1758,6 +1739,12 @@ exports.smasherBody = {
     SHAPE: 6,
     INDEPENDENT: true,
 };
+exports.landmineBody = {
+    CONTROLLERS: ['fastspin'],
+    COLOR: 'landmine',
+    SHAPE: 6,
+    INDEPENDENT: true,
+};
 exports.spikeBody = {
     CONTROLLERS: ['spin'],
     COLOR: 9,
@@ -2851,7 +2838,7 @@ exports.basic = {
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.drone]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.over]),
                     TYPE: exports.drone,
                     AUTOFIRE: true,
                     SYNCS_SKILLS: true,
@@ -18562,6 +18549,131 @@ exports.djTurret2 = {
                 ],
             };
 
+            exports.stalker = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Stalker',
+                DANGER: 7,
+                INVISIBLE: [0.1, 0.01, 0.01],
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.6,
+                    SPEED: base.SPEED * 0.85,
+                    FOV: base.FOV * 1.4,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  25,    8.5,   -1.75,    0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, },
+                ],
+            };
+        exports.minimine = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Minimine',
+            DANGER: 7,
+            INVISIBLE: [0.05, 0.003, 0.01],
+            BODY: {
+                DENSITY: base.DENSITY * 1.5,
+            },
+            IS_SMASHER: true,
+            SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+            STAT_NAMES: statnames.smasher,
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  20,     0,      0,      0,     360, 0], 
+                    TYPE: [exports.smasherBody, {COLOR: 'landmine'}],
+                    }, {
+                POSITION: [  20,     0,      0,      90,    360, 0], 
+                    TYPE: exports.landmineBody,
+                    },
+            ],
+        };
+            exports.landmine = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Landmine',
+                DANGER: 7,
+                INVISIBLE: [0.05, 0.003, 0.01],
+                BODY: {
+                    FOV: base.FOV * 1.05,
+                    DENSITY: base.DENSITY * 2,
+                },
+                IS_SMASHER: true,
+                SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+                STAT_NAMES: statnames.smasher,
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 21.5,    0,      0,      0,     360, 0], 
+                        TYPE: [exports.smasherBody, {COLOR: 'landmine'}],
+                        }, {
+                    POSITION: [ 21.5,    0,      0,      90,    360, 0], 
+                        TYPE: exports.landmineBody,
+                        },
+                ],
+            };
+        exports.manager = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Manager',
+            DANGER: 6,
+            STAT_NAMES: statnames.drone,
+            BODY: {
+                ACCELERATION: base.ACCEL * 0.75,
+                FOV: base.FOV * 1.1,
+            },
+            MAX_CHILDREN: 5,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                        TYPE: exports.drone,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                    }, },
+                    COLOR_SETTINGS: {
+                        COLOR_UNMIX: 2,
+                    }, },
+            ],
+        };
+            exports.manageseer = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Manageseer',
+                DANGER: 7,
+                STAT_NAMES: statnames.drone,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75,
+                    SPEED: base.SPEED * 0.9,
+                    FOV: base.FOV * 1.1,
+                },
+                MAX_CHILDREN: 8,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   6,     12,    1.2,     8,      0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                        }, },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, }, {
+                    POSITION: [   6,     12,    1.2,     8,      0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                        }, },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -18746,10 +18858,11 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
 
     exports.single.UPGRADES_TIER_2 = [exports.singleceptioner];
 
-    exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler];
-        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash];
+    exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler, exports.minimine];
+        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine];
         exports.mauler.UPGRADES_TIER_3 = [exports.spike];
         exports.autopummeler.UPGRADES_TIER_3 = [exports.autosmash];
+        exports.minimine.UPGRADES_TIER_3 = [exports.landmine];
 
     exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe];
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship];
@@ -18759,17 +18872,18 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
 
     exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.bore, exports.snipeceptioner, exports.twinSnipe];
         exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
-        exports.assassin.UPGRADES_TIER_3 = [exports.autoass, exports.ranger];
+        exports.assassin.UPGRADES_TIER_3 = [exports.autoass, exports.ranger, exports.stalker];
             exports.assassin.UPGRADES_TIER_4 = [exports.falcon];
             exports.ranger.UPGRADES_TIER_4 = [exports.underranger];
         exports.hunter.UPGRADES_TIER_3 = [exports.dual, exports.preda, exports.poach, exports.shift];
         exports.builder.UPGRADES_TIER_3 = [exports.engineer, exports.construct, exports.autobuilder, exports.boomer, exports.twinbuilder];
             exports.boomer.UPGRADES_TIER_4 = [exports.bentboomer];
 
-    exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.master, exports.overtrap, exports.autoover, exports.overgunner, exports.battleship];  
+    exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.manager];
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.master, exports.overtrap, exports.autoover, exports.overgunner, exports.battleship, exports.manageseer];
         exports.underseer.UPGRADES_TIER_3 = [exports.autounderseer, exports.necromancer];
         exports.cruiser.UPGRADES_TIER_3 = [exports.autocruiser, exports.battleship, exports.carrier, exports.fortress];
+        exports.manager.UPGRADES_TIER_3 = [exports.manageseer];
 
     exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini, exports.machceptioner];
         exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam];
