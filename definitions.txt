@@ -20025,14 +20025,9 @@ exports.bloodmoongun = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.more_speed, g.fast, g.double, g.triplet, g.arty, g.arty, g.skim, g.half_range, g.no_recoil, g.one_third_reload]),
                 TYPE: exports.bloodmoonmissile,
-            },
-            COLOR_SETTINGS: {
-                COLOR: 237,
             }, }, {
         POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
-            COLOR_SETTINGS: {
-                COLOR: 237,
-            }, },
+            },
     ],
 };
         exports.bloodmoontissue = {
@@ -20079,9 +20074,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,      4,    -40,      0,  ], 
                   PROPERTIES: {
@@ -20091,9 +20083,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,     -4,    160,      0,  ], 
                   PROPERTIES: {
@@ -20103,9 +20092,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,      4,   -160,      0,  ], 
                   PROPERTIES: {
@@ -20115,9 +20101,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,     -4,    280,      0,  ], 
                   PROPERTIES: {
@@ -20127,9 +20110,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,      4,   -280,      0,  ], 
                   PROPERTIES: {
@@ -20139,9 +20119,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, },
             ],
         };
@@ -20189,9 +20166,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,      4,    -40,      0,  ], 
                   PROPERTIES: {
@@ -20201,9 +20175,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,     -4,    160,      0,  ], 
                   PROPERTIES: {
@@ -20213,9 +20184,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,      4,   -160,      0,  ], 
                   PROPERTIES: {
@@ -20225,9 +20193,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,     -4,    280,      0,  ], 
                   PROPERTIES: {
@@ -20237,9 +20202,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [  3,      4,     1.2,     6,      4,   -280,      0,  ], 
                   PROPERTIES: {
@@ -20249,9 +20211,6 @@ exports.bloodmoongun = {
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 3,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, },
             ],
         };
@@ -20306,25 +20265,16 @@ exports.vietboomerang = {
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.gunner, g.double, g.triplet, g.more_speed, g.fast, g.half_reload]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.gunner, g.double, g.triplet, g.more_speed, g.fast, g.half_reload]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.gunner, g.double, g.triplet, g.more_speed, g.fast, g.half_reload]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, },
             ],
         };
@@ -20346,48 +20296,30 @@ exports.vietboomerang = {
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  1,      2,      1,      3,      0,     180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
-                    }, }, {
+                    }, {
                 POSITION: [  3,      2,    -1.5,     0,      0,     180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
-                    }, }, {
+                    }, {
                 POSITION: [  1,      2,     1.5,     4,      0,     180,     0,   ],
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.pound, g.no_recoil, g.slow]),
                         TYPE: exports.vietboomerang, 
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, }, {
                 POSITION: [  1,      3,     1.25,    4,      0,      0,      0,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.more_speed, g.no_recoil]),
                         TYPE: exports.tissuemissile,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, }, {
                 POSITION: [  4,      4,      1,      0,      0,      0,      0,  ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
-                    }, }, {
+                    }, {
                 POSITION: [  2,      1,     0.8,     9,      0,     140,    0,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
                         TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, }, {
                 POSITION: [  2,      1,     0.8,     9,      0,    -140,    0,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
                         TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],       
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, },
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -20418,48 +20350,30 @@ exports.vietboomerang = {
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  1,      2,      1,      3,      0,     180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
-                    }, }, {
+                    }, {
                 POSITION: [  3,      2,    -1.5,     0,      0,     180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
-                    }, }, {
+                    }, {
                 POSITION: [  1,      2,     1.5,     4,      0,     180,     0,   ],
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.pound, g.no_recoil, g.slow]),
                         TYPE: exports.vietboomerang, 
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, }, {
                 POSITION: [  1,      3,     1.25,    4,      0,      0,      0,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.more_speed, g.no_recoil]),
                         TYPE: exports.tissuemissile,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, }, {
                 POSITION: [  4,      4,      1,      0,      0,      0,      0,  ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
-                    }, }, {
+                    }, {
                 POSITION: [  2,      1,     0.8,     9,      0,     140,    0,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
                         TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, }, {
                 POSITION: [  2,      1,     0.8,     9,      0,    -140,    0,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.swarm, g.twin, g.double_range, g.double_range, g.slow, g.double_size, g.mach, g.mach, g.mach, g.half_reload, g.half_reload, g.pound, g.no_recoil]),
                         TYPE: [ exports.autoswarm, { LABEL: 'Noodle', BODY: { FOV: base.FOV * 3 }, } ],       
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 237,
                     }, },
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -20472,7 +20386,7 @@ exports.vietboomerang = {
             ],
             BROADCAST_MESSAGE: 'Một vị khách đã rời đi!',
         };
-exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurret, });
+exports.tissueDrone = makeAuto(exports.drone, 'Drone', { type: exports.autoTurret, });
         exports.atlanticlunartissue = {
             PARENT: [exports.miniboss],
             LABEL: 'Atlantic Lunar Tissue',
@@ -20493,67 +20407,43 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
               POSITION: [   4,     6,     1.25,    5,      1,    25.5,     0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.atlanticlunarDrone,
+                      TYPE: exports.tissueDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   4,     6,     1.25,    5,     -1,    334.5,   0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.atlanticlunarDrone,
+                      TYPE: exports.tissueDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   3,     5,      1,      2,      7,    154.5,  0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   1,     7,      1,      4,      7,    154.5,  0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   2,     7,     1.3,     5,      7,    154.5,  0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
                       TYPE: exports.pillbox,        
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   1,     7,      1,      1,      7,    154.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   3,     5,      1,      2,     -7,    205.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   1,     7,      1,      4,     -7,    205.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   2,     7,     1.3,     5,     -7,    205.5, 0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
                       TYPE: exports.pillbox,        
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   1,     7,      1,      1,     -7,    205.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, },
+                  },
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [ 4.5,    6.5,     0,      0,     360,  1], 
@@ -20587,67 +20477,43 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
               POSITION: [   4,     6,     1.25,    5,      1,    25.5,     0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.atlanticlunarDrone,
+                      TYPE: exports.tissueDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   4,     6,     1.25,    5,     -1,    334.5,   0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.atlanticlunarDrone,
+                      TYPE: exports.tissueDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
                       STAT_CALCULATOR: gunCalcNames.drone,
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   3,     5,      1,      2,      7,    154.5,  0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   1,     7,      1,      4,      7,    154.5,  0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   2,     7,     1.3,     5,      7,    154.5,  0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
                       TYPE: exports.pillbox,        
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   1,     7,      1,      1,      7,    154.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   3,     5,      1,      2,     -7,    205.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   1,     7,      1,      4,     -7,    205.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, }, {
+                  }, {
               POSITION: [   2,     7,     1.3,     5,     -7,    205.5, 0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.trap, g.block, g.destroy, g.five, g.slow, g.no_recoil]),
                       TYPE: exports.pillbox,        
-                  },
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
                   }, }, {
               POSITION: [   1,     7,      1,      1,     -7,    205.5, 0,   ], 
-                  COLOR_SETTINGS: {
-                      COLOR: 237,
-                  }, },
+                  },
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [ 4.5,    6.5,     0,      0,     360,  1], 
@@ -20673,26 +20539,16 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.more_speed, g.flank, g.triplet, g.one_third_reload, g.half_range]),
                         TYPE: exports.bullet,
-                    },
-                    
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.more_speed, g.flank, g.triplet, g.one_third_reload, g.half_range]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.half_reload, g.more_speed, g.flank, g.triplet, g.one_third_reload, g.half_range]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, },
             ],
         };
@@ -20708,41 +20564,25 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.pound, g.half_reload, g.half_reload, g.one_third_reload, g.more_speed]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [  19,     8,      1,      0,      2,     20,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.pound, g.half_reload, g.half_reload, g.one_third_reload, g.more_speed]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.pound, g.half_reload, g.half_reload, g.one_third_reload, g.more_speed]),
                         TYPE: exports.bullet,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {
                 POSITION: [   5,    10,      1,     13,     0,     180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   6,    10,    -1.5,     7,     0,     180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,    10,     1.3,    18,     0,     180,     0,   ],
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.destroy, g.destroy, g.more_speed, g.more_speed, g.more_speed, g.one_third_reload, g.fast, g.five, g.double_reload, g.double_range, g.no_recoil]),
                         TYPE: exports.boomerang,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, },
             ],
         };
@@ -20763,105 +20603,60 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
             },
             GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   3,      3,      1,      10,     0,     180,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,     180,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,     180,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,      180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,     108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,     108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,     108,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,      108,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,    -108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,    -108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,    -108,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,     -36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,     -36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,     -36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,      36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,      36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,      36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,       36,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
@@ -20871,9 +20666,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
                     PROPERTIES: {
@@ -20884,9 +20676,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,      36,     0,   ], 
                     PROPERTIES: {
@@ -20897,9 +20686,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
                     PROPERTIES: {
@@ -20910,9 +20696,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 3,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
                     PROPERTIES: {
@@ -20923,9 +20706,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, },
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -20966,105 +20746,60 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
             },
             GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   3,      3,      1,      10,     0,     180,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,     180,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,     180,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,      180,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,     108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,     108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,     108,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,      108,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,    -108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,    -108,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,    -108,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,     -108,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,     -36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,     -36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,     -36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,      -36,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   3,      3,      1,      10,     0,      36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   1,      5,      1,      12,     0,      36,     0,   ], 
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [   2,      5,     1.3,     13,     0,      36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.trap, g.block, g.pound, g.half_reload, g.one_third_reload, g.no_recoil, g.slow, g.half_range]),
                         TYPE: exports.pillbox,        
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
                     }, }, {                            
                 POSITION: [   5,      5,      1,      6,     0,       36,     0,   ],
-                    COLOR_SETTINGS: {
-                        COLOR: 235,
-                    }, }, {
+                    }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
@@ -21074,9 +20809,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
                     PROPERTIES: {
@@ -21087,9 +20819,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,      36,     0,   ], 
                     PROPERTIES: {
@@ -21100,9 +20829,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
                     PROPERTIES: {
@@ -21113,9 +20839,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 3,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, }, {
                 POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
                     PROPERTIES: {
@@ -21126,9 +20849,6 @@ exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pi
                         MAX_CHILDREN: 2,
                         SYNCS_SKILLS: true, 
                         WAIT_TO_CYCLE: true,  
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR: 5,
                     }, },
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
