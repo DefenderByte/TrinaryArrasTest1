@@ -19853,14 +19853,101 @@ exports.ebsGun = {
                         }, },
                 ],
             };
-    exports.nestkeeper = {
+        exports.nestkeeper = {
             PARENT: [exports.miniboss],
             LABEL: 'Salt Cassowary',
             COLOR: 14,
             SHAPE: 5,
             SIZE: 30,
             VALUE: 300000,
-            //DANGER: 6,
+            BODY: {
+                FOV: 1.45,
+                SPEED: base.SPEED * 0.1,
+                HEALTH: 16,
+                SHIELD: 1,
+                REGEN: 0.1,
+                DAMAGE: 3,
+            },
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.pound, g.one_third_reload, g.half_recoil, g.more_speed, g.more_speed]),
+                        TYPE: [ exports.drone, { BODY: { FOV: 2 }, INDEPENDENT: true }, ],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 5,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.pound, g.one_third_reload, g.half_recoil, g.more_speed, g.more_speed]),
+                        TYPE: [ exports.drone, { BODY: { FOV: 2 }, INDEPENDENT: true }, ],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 5,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.pound, g.one_third_reload, g.half_recoil, g.more_speed, g.more_speed]),
+                        TYPE: [ exports.drone, { BODY: { FOV: 2 }, INDEPENDENT: true }, ],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 5,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.pound, g.one_third_reload, g.half_recoil, g.more_speed, g.more_speed]),
+                        TYPE: [ exports.drone, { BODY: { FOV: 2 }, INDEPENDENT: true }, ],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 5,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, }, {
+                POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.pound, g.one_third_reload, g.half_recoil, g.more_speed, g.more_speed]),
+                        TYPE: [ exports.drone, { BODY: { FOV: 2 }, INDEPENDENT: true }, ],
+                        STAT_CALCULATOR: gunCalcNames.drone,                        
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 5,
+                        SYNCS_SKILLS: true, 
+                        WAIT_TO_CYCLE: true,  
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   8,     9,      0,      0,     150,  0], 
+                    TYPE: [exports.nestGun, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 14, }],
+                        }, {
+                POSITION: [   8,     9,      0,      72,    150,  0], 
+                    TYPE: [exports.nestGun, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 14, }],
+                        }, {
+                POSITION: [   8,     9,      0,     144,    150,  0], 
+                    TYPE: [exports.nestGun, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 14, }],
+                        }, {
+                POSITION: [   8,     9,      0,    -144,    150,  0], 
+                    TYPE: [exports.nestGun, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 14, }],
+                        }, {
+                POSITION: [   8,     9,      0,     -72,    150,  0], 
+                    TYPE: [exports.nestGun, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 14, }],
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360,  1], 
+                    TYPE: [exports.nestboomer, { SKILL: skillSet({ rld: 0, dam: 1, pen: 1, str: 1, spd: 1, atk: 1, hlt: 1, shi: 1, rgn: 1, mob: 1, }), COLOR: 14, }],
+                        },
+            ],
+        };
+        exports.nestkeeper2 = {
+            PARENT: [exports.miniboss2],
+            LABEL: 'Salt Cassowary',
+            COLOR: 14,
+            SHAPE: 5,
+            SIZE: 30,
+            VALUE: 300000,
             BODY: {
                 FOV: 1.45,
                 SPEED: base.SPEED * 0.1,
