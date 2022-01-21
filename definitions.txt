@@ -2001,7 +2001,7 @@ exports.demolishSpawnerDecor = {
     SHAPE: 277,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [ 17.5,  107.5,   1.4,   33.5,     0,      0,      0,   ], 
+        POSITION: [ 17.5,  107.5,   1.4,   33.75,    0,      0,      0,   ], 
             },
     ],
 };
