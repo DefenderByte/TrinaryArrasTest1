@@ -5365,7 +5365,10 @@ var maintainloop = (() => {
                         Class.minimine,
                         Class.landmine,
                         Class.manager,
-                        Class.manageseer
+                        Class.manageseer,
+                        Class.sunburst,
+                        Class.irritate,
+                        Class.jump
                       ])
                     );
                     o.name += ran.chooseBotName();
