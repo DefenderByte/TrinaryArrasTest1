@@ -1741,7 +1741,7 @@ exports.smasherBody = {
 };
 exports.landmineBody = {
     CONTROLLERS: ['fastspin'],
-    COLOR: 'landmine',
+    COLOR: 9,
     SHAPE: 6,
     INDEPENDENT: true,
 };
@@ -18583,7 +18583,7 @@ exports.djTurret2 = {
             STAT_NAMES: statnames.smasher,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  20,     0,      0,      0,     360, 0], 
-                    TYPE: [exports.smasherBody, {COLOR: 'landmine'}],
+                    TYPE: exports.smasherBody,
                     }, {
                 POSITION: [  20,     0,      0,      90,    360, 0], 
                     TYPE: exports.landmineBody,
@@ -18604,7 +18604,7 @@ exports.djTurret2 = {
                 STAT_NAMES: statnames.smasher,
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [ 21.5,    0,      0,      0,     360, 0], 
-                        TYPE: [exports.smasherBody, {COLOR: 'landmine'}],
+                        TYPE: exports.smasherBody,
                         }, {
                     POSITION: [ 21.5,    0,      0,      90,    360, 0], 
                         TYPE: exports.landmineBody,
