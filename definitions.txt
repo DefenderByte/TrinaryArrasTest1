@@ -18629,7 +18629,7 @@ exports.djTurret2 = {
                         AUTOFIRE: true,
                         SYNCS_SKILLS: true,
                         STAT_CALCULATOR: gunCalcNames.drone,
-                    }, },
+                    },
                     COLOR_SETTINGS: {
                         COLOR_UNMIX: 2,
                     }, },
@@ -18655,7 +18655,7 @@ exports.djTurret2 = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                        }, },
+                        },
                         COLOR_SETTINGS: {
                             COLOR_UNMIX: 2,
                         }, }, {
@@ -18667,7 +18667,7 @@ exports.djTurret2 = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
-                        }, },
+                        },
                         COLOR_SETTINGS: {
                             COLOR_UNMIX: 2,
                         }, },
