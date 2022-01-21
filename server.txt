@@ -5025,7 +5025,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 0, 0, 0, 0)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5159,6 +5159,22 @@ var maintainloop = (() => {
                         choice = [[Class.seventron], 1, 'seventron', 'nest']; 
                         sockets.broadcast('...FEAR NOT HESPERIANS, SEVENTRON IS HERE!');
                         sockets.broadcast('All Heptashots are now engaging...');
+                        break;
+                    case 32: 
+                        choice = [[Class.bloodmoontissue, Class.vietphotissue, Class.atlanticlunartissue, Class.wtf], 1, 'tissue', 'roid']; 
+                        sockets.broadcast('The blood moon is rising...');
+                        break;
+                    case 33: 
+                        choice = [[Class.bloodmoontissue, Class.vietphotissue, Class.atlanticlunartissue, Class.wtf], 2, 'tissue', 'roid']; 
+                        sockets.broadcast('The blood moon is rising...');
+                        break;
+                    case 34: 
+                        choice = [[Class.bloodmoontissue, Class.vietphotissue, Class.atlanticlunartissue, Class.wtf], 3, 'tissue', 'roid']; 
+                        sockets.broadcast('The blood moon is rising...');
+                        break;
+                    case 35: 
+                        choice = [[Class.bloodmoontissue, Class.vietphotissue, Class.atlanticlunartissue, Class.wtf], 4, 'tissue', 'roid']; 
+                        sockets.broadcast('The blood moon is rising...');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
