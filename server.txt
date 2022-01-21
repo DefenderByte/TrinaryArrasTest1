@@ -5039,19 +5039,19 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[Class.palisade, Class.skimboss, Class.levi], 1, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[Class.palisade, Class.skimboss, Class.levi], 2, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[Class.palisade, Class.skimboss, Class.levi], 3, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[Class.palisade, Class.skimboss, Class.levi], 4, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 4, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
@@ -5368,7 +5368,11 @@ var maintainloop = (() => {
                         Class.manageseer,
                         Class.sunburst,
                         Class.irritate,
-                        Class.jump
+                        Class.jump,
+                        Class.spawn,
+                        Class.snipeFact,
+                        Class.bulwark,
+                        Class.machineFact
                       ])
                     );
                     o.name += ran.chooseBotName();
