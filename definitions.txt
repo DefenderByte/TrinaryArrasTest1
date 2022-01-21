@@ -19954,138 +19954,6 @@ exports.fastboomerang = {
             ],
         };
 
-    exports.witherstormSnake = {
-        PARENT: [exports.bullet],
-        LABEL: 'Snake',
-        INDEPENDENT: true,
-        BODY: {
-            RANGE: 120,
-        },  
-        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [   6,    12,     1.4,     8,      0,     180,    0,   ], 
-                PROPERTIES: {
-                    AUTOFIRE: true,
-                    STAT_CALCULATOR: gunCalcNames.thruster,
-                    SHOOT_SETTINGS: combineStats([
-                        g.basic, g.sniper, g.hunter, g.hunter2, g.snake, g.snake_skin,
-                    ]),
-                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
-                }, }, {
-            POSITION: [  10,    12,     0.8,     8,      0,     180,   0.5,  ], 
-                PROPERTIES: {
-                    AUTOFIRE: true,
-                    NEGATIVE_RECOIL: true,
-                    STAT_CALCULATOR: gunCalcNames.thruster,
-                    SHOOT_SETTINGS: combineStats([
-                        g.basic, g.sniper, g.hunter, g.hunter2, g.snake,
-                    ]),
-                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
-                }, },
-        ],
-    };
-            exports.witherstormhead = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Head',
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  25,     8,      1,      0,      0,      0,      0,  ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream, g.low_power, g.low_power, g.fast, g.fast, g.fast, g.fast, g.fast]),
-                            TYPE: [ exports.bullet, { COLOR: 5, } ],
-                        }, }, { 
-                    POSITION: [  23,     8,      1,      0,      0,      0,     0.2, ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream, g.low_power, g.low_power, g.fast, g.fast, g.fast, g.fast, g.fast]),
-                            TYPE: [ exports.bullet, { COLOR: 5, } ],
-                        }, }, { 
-                    POSITION: [  21,     8,      1,      0,      0,      0,     0.4, ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream, g.low_power, g.low_power, g.fast, g.fast, g.fast, g.fast, g.fast]),
-                            TYPE: [ exports.bullet, { COLOR: 5, } ],
-                        }, }, { 
-                    POSITION: [  19,     8,      1,      0,      0,      0,     0.6, ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream, g.low_power, g.low_power, g.fast, g.fast, g.fast, g.fast, g.fast]),
-                            TYPE: [ exports.bullet, { COLOR: 5, } ],
-                        }, },  { 
-                    POSITION: [  17,     8,      1,      0,      0,      0,     0.8, ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.stream, g.low_power, g.low_power, g.fast, g.fast, g.fast, g.fast, g.fast]),
-                            TYPE: [ exports.bullet, { COLOR: 5, } ],
-                        }, }, {
-                    POSITION: [  10,    11,    -0.5,    14,      0,      0,      0,  ], 
-                        }, {
-                    POSITION: [  21,    12,    -1.1,     0,      0,      0,      0,  ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.sidewind, g.pound, g.half_reload, g.one_third_reload]),
-                            TYPE: [ exports.witherstormSnake, { COLOR: 2, } ],
-                            STAT_CALCULATOR: gunCalcNames.sustained,
-                        }, },
-                ],
-            };
-exports.witherstormtentacle = {
-    PARENT: [exports.genericTank],
-    LABEL: '',
-    COLOR: 16,
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  20,    16,      1,      0,      0,      0,      0,   ], 
-        }, {
-        POSITION: [   2,    16,     1.1,     20,     0,      0,      0,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.block, g.low_power, g.low_power, g.fast, g.fast]),
-                TYPE: exports.block,
-            }, },
-    ],
-};
-        exports.witherstorm = {
-            PARENT: [exports.miniboss2],
-            LABEL: 'Wither Storm',
-            FACING_TYPE: 'toTarget',
-            COLOR: 19,
-            SHAPE: 5,
-            SIZE: 50,
-            VALUE: 625000,
-            BODY: {
-                FOV: 2.25,
-                SPEED: base.SPEED * 0.1,
-                HEALTH: 15,
-                SHIELD: 1,
-                REGEN: 0.1,
-                DAMAGE: 1,
-            },
-            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  10,    10,      0,      72,     0,  1], 
-                    TYPE: [exports.egg, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [  10,    10,      0,     -72,     0,  1], 
-                    TYPE: [exports.egg, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,    10,      0,      0,     180,  0], 
-                    TYPE: [exports.witherstormhead, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,    10,     -10,    -15,    180,  0], 
-                    TYPE: [exports.witherstormhead, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,    10,      10,     15,    180,  0], 
-                    TYPE: [exports.witherstormhead, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,     8,      0,     180,     0,   0], 
-                    TYPE: [exports.witherstormtentacle, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,     8,      0,      30,     0,   0], 
-                    TYPE: [exports.witherstormtentacle, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,     8,      0,     -30,     0,   0], 
-                    TYPE: [exports.witherstormtentacle, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,     5,     -10,    160,     0,   0], 
-                    TYPE: [exports.witherstormtentacle, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, {
-                POSITION: [   5,     5,      10,    200,     0,   0], 
-                    TYPE: [exports.witherstormtentacle, { SKILL: skillSet({ rld: 0, dam: 0, pen: 0, str: 0, spd: 0, atk: 0, hlt: 0, shi: 0, rgn: 0, mob: 0, }), COLOR: 19, }],
-                        }, 
-            ],
-        };
-
         exports.bloodbent = {
             PARENT: [exports.genericTank],
             LABEL: 'Bent',
@@ -20604,7 +20472,7 @@ exports.vietboomerang = {
             ],
             BROADCAST_MESSAGE: 'Một vị khách đã rời đi!',
         };
-exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurret, });
+exports.atlanticlunarDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurret, });
         exports.atlanticlunartissue = {
             PARENT: [exports.miniboss],
             LABEL: 'Atlantic Lunar Tissue',
@@ -20625,7 +20493,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
               POSITION: [   4,     6,     1.25,    5,      1,    25.5,     0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.altDrone,
+                      TYPE: exports.atlanticlunarDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
@@ -20637,7 +20505,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
               POSITION: [   4,     6,     1.25,    5,     -1,    334.5,   0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.altDrone,
+                      TYPE: exports.atlanticlunarDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
@@ -20719,7 +20587,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
               POSITION: [   4,     6,     1.25,    5,      1,    25.5,     0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.altDrone,
+                      TYPE: exports.atlanticlunarDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
@@ -20731,7 +20599,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
               POSITION: [   4,     6,     1.25,    5,     -1,    334.5,   0,   ], 
                   PROPERTIES: {
                       SHOOT_SETTINGS: combineStats([g.drone, g.over, g.pound, g.pound, g.one_third_reload, g.five, g.double_reload, g.fast, g.no_recoil]),
-                      TYPE: exports.altDrone,
+                      TYPE: exports.atlanticlunarDrone,
                       AUTOFIRE: true,
                       SYNCS_SKILLS: true,
                       MAX_CHILDREN: 10,
@@ -20793,38 +20661,6 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                         },
             ],
         };
-    exports.cannonmissile = {
-        PARENT: [exports.missile],
-        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  14,     6,      1,      0,     -2,     150,     0,   ], 
-                PROPERTIES: {
-                    AUTOFIRE: true,
-                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
-                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
-                    STAT_CALCULATOR: gunCalcNames.thruster,
-                }, }, {
-            POSITION: [  14,     6,      1,      0,      2,     210,     0,   ], 
-                PROPERTIES: {
-                    AUTOFIRE: true,
-                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
-                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
-                    STAT_CALCULATOR: gunCalcNames.thruster,
-                }, }, {        
-            POSITION: [  14,     6,      1,      0,     -2,      90,    0.5,  ], 
-                PROPERTIES: {
-                    AUTOFIRE: true,
-                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
-                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
-                }, }, {
-            POSITION: [  14,     6,      1,      0,      2,     270,    0.5,  ],  
-                PROPERTIES: {
-                    AUTOFIRE: true,
-                    SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.more_speed, g.more_speed, g.more_speed, g.more_recoil, g.half_range, g.low_power, g.double]),
-                    TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
-                }, },
-        ],
-    };
-
         exports.whatthebent = {
             PARENT: [exports.genericTank],
             LABEL: 'Bent',
@@ -20910,7 +20746,6 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                     }, },
             ],
         };
-
         exports.wtf = {
             PARENT: [exports.miniboss],
             LABEL: 'Weird Tissue Factory',
@@ -21030,7 +20865,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21043,7 +20878,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21056,7 +20891,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,      36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21069,7 +20904,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 3,
@@ -21082,7 +20917,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21233,7 +21068,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,     180,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21246,7 +21081,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,     108,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21259,7 +21094,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,      36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21272,7 +21107,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,    -108,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 3,
@@ -21285,7 +21120,7 @@ exports.altDrone = makeAuto(exports.drone, 'Drone', { type: exports.pillboxTurre
                 POSITION: [  11.5,    5,     1.6,     0,      0,     -36,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.destroy, g.half_reload, g.half_reload, g.no_recoil, g.slow]),
-                        TYPE: exports.altDrone,
+                        TYPE: exports.atlanticlunarDrone,
                         STAT_CALCULATOR: gunCalcNames.drone,                        
                         AUTOFIRE: true,
                         MAX_CHILDREN: 2,
@@ -21483,8 +21318,8 @@ exports.botT3_E = {
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
             exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.fallen_fighter2, exports.elite_twin2, exports.elite_auto2, exports.elite_sidewinder2, exports.elite_predator2, exports.elite_streamliner2, exports.elite_trapper2, exports.devBosses3];
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
-            exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.witherstorm, exports.bloodmoontissue2, exports.vietphotissue2, exports.atlanticlunartissue2, exports.devBosses5];
-            exports.devBosses5.UPGRADES_TIER_4 = [exports.wtf2];
+            exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.bloodmoontissue2, exports.vietphotissue2, exports.atlanticlunartissue2, exports.exports.wtf2, exports.devBosses5];
+            exports.devBosses5.UPGRADES_TIER_4 = [];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
