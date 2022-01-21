@@ -1771,6 +1771,13 @@ exports.dominationBody = {
     SHAPE: 135,
     INDEPENDENT: true,
 };
+exports.jumpBody = {
+    LABEL: '',
+    CONTROLLERS: ['dontTurn'], 
+    COLOR: 9,
+    SHAPE: -8,
+    INDEPENDENT: true,
+};
     exports.baseSwarmTurret = {
         PARENT: [exports.genericTank],
         LABEL: 'Protector',
@@ -18674,6 +18681,96 @@ exports.djTurret2 = {
                 ],
             };
 
+            exports.sunburst = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sunburst',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     3,      1,      0,     -2,    -20,     1/4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     3,      1,      0,      2,    -20,     3/4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     3,      1,      0,     -2,     20,     1/4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     3,      1,      0,      2,     20,     3/4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     3,      1,      0,     -2,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     3,      1,      0,      2,      0,     2/4,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.bent]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+
+            exports.irritate = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Irritationist',
+                DANGER: 6,
+                BODY: {
+                    DENSITY: base.DENSITY * 1.5,
+                },
+                IS_SMASHER: true,
+                SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+                STAT_NAMES: statnames.smasher,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   2,     2,       1,     0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.jump, g.bit_less_recoil]),
+                            TYPE: exports.bullet,
+                            ALT_FIRE: true,
+                            STAT_CALCULATOR: gunCalcNames.thruster,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 22.5,    0,      0,      0,     360, 0], 
+                        TYPE: exports.jumpBody,
+                        },
+                ],
+            };
+            exports.jump = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Jump Smasher',
+                DANGER: 7,
+                BODY: {
+                    FOV: base.FOV * 1.05,
+                    DENSITY: base.DENSITY * 2,
+                },
+                IS_SMASHER: true,
+                SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+                STAT_NAMES: 9,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   2,     2,       1,     0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.jump]),
+                            TYPE: exports.bullet,
+                            ALT_FIRE: true,
+                            STAT_CALCULATOR: gunCalcNames.thruster,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  24,     0,      0,      0,     360, 0], 
+                        TYPE: exports.jumpBody,
+                        },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -18858,15 +18955,16 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
 
     exports.single.UPGRADES_TIER_2 = [exports.singleceptioner];
 
-    exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler, exports.minimine];
-        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine];
+    exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler, exports.minimine, exports.irritate];
+        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine, exports.jump];
         exports.mauler.UPGRADES_TIER_3 = [exports.spike];
         exports.autopummeler.UPGRADES_TIER_3 = [exports.autosmash];
         exports.minimine.UPGRADES_TIER_3 = [exports.landmine];
+        exports.irritate.UPGRADES_TIER_3 = [exports.jump];
 
     exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe];
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship];
-        exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming];
+        exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
         exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc];
 
@@ -18907,7 +19005,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
 
     exports.pellet.UPGRADES_TIER_2 = [exports.gunner, exports.cruiser, exports.hewn_pellet, exports.sail, exports.bore, exports.punt, exports.pelletceptioner];
-        exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier];
+        exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier, exports.sunburst];
         exports.bore.UPGRADES_TIER_3 = [exports.nailgun, exports.screw_punt];
 
     exports.inceptioner.UPGRADES_TIER_2 = [exports.ceptionist, exports.singleceptioner, exports.twinceptioner, exports.snipeceptioner, exports.machceptioner, exports.flankceptioner, exports.pelletceptioner];
