@@ -2263,6 +2263,10 @@ class Entity {
             this.maxSpeed = this.topSpeed;
             this.damp = -0.3;
             break;
+        case 'charge':
+            this.maxSpeed += 1;
+            this.DAMAGE += 1;
+            break;
         case "grow":
             this.SIZE += 1;
             this.maxSpeed = this.topSpeed;
@@ -5023,19 +5027,19 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25)) {
                     case 0: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer], 1, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 1: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer], 2, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 2, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 2: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer], 3, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 3, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 3: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer], 4, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 4, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
@@ -5071,19 +5075,19 @@ var maintainloop = (() => {
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 1, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive])]), Class.nestkeeper], 1, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 13: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 2, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive])]), Class.nestkeeper], 2, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 14: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 3, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive])]), Class.nestkeeper], 3, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 15: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.custodian]), Class.heptagonBoss], 4, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive])]), Class.nestkeeper], 4, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 16: 
@@ -5372,7 +5376,13 @@ var maintainloop = (() => {
                         Class.spawn,
                         Class.snipeFact,
                         Class.bulwark,
-                        Class.machineFact
+                        Class.machineFact,
+                        Class.hexaDestroy,
+                        Class.blast,
+                        Class.bentBlast,
+                        Class.gatling,
+                        Class.charge,
+                        Class.dualBlast
                       ])
                     );
                     o.name += ran.chooseBotName();
