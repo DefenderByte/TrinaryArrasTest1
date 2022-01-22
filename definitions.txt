@@ -22377,6 +22377,222 @@ exports.sentryHoming2 = makeAuto(exports.sentry2, 'Sentry', { type: exports.turr
             ],
         };
 
+exports.invertoribbon = {
+  PARENT: [exports.genericTank],
+  SHAPE: [[1, 0.1],[1, -0.1],[-1, -0.1],[-1, 0.1]],
+  COLOR: 236,
+}
+exports.invertobutton = {
+  PARENT: [exports.obstacle],
+  COLOR: 191,
+}
+exports.invertoTurret = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    COLOR: 191,
+    BODY: {
+        FOV: 3,
+    },
+    CONTROLLERS: ['reversespin'],
+    INDEPEDENT: true,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,     10,     1,      0,      0,      0,      0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank, g.minion, g.turret, g.power, g.auto]),
+                TYPE: exports.bullet,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 236,
+            }, }, {
+        POSITION: [  22,     10,     1,      0,      0,      90,     0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank, g.minion, g.turret, g.power, g.auto]),
+                TYPE: exports.bullet,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 236,
+            }, }, {
+        POSITION: [  22,     10,     1,      0,      0,     180,     0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank, g.minion, g.turret, g.power, g.auto]),
+                TYPE: exports.bullet,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 236,
+            }, }, {
+        POSITION: [  22,     10,     1,      0,      0,     270,     0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank, g.minion, g.turret, g.power, g.auto]),
+                TYPE: exports.bullet,
+            },
+            COLOR_SETTINGS: {
+                COLOR: 236,
+            }, },
+    ],
+};
+exports.real_inverto = {
+    PARENT: [exports.miniboss],
+    SHAPE: 4,
+    COLOR: 237,
+    SIZE: 35,
+    LABEL: 'True Inverto',
+    BODY: {
+        FOV: 1.25,
+        SPEED: base.SPEED * 0.5,
+        HEALTH: 100,
+        SHIELD: 1,
+        REGEN: 0.01,
+        DAMAGE: 3,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,      0,     180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [  14,     8,      0,      90,    180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [  14,     8,      0,     180,    180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [  14,     8,      0,     270,    180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [ 21.5,    0,      0,      0,      0,  1], 
+            TYPE: exports.invertoribbon,
+            }, {
+        POSITION: [ 21.5,    0,      0,      90,     0,  1], 
+            TYPE: exports.invertoribbon,
+            }, {
+        POSITION: [   7,     0,      0,      0,      0,  1], 
+            TYPE: exports.invertoTurret,
+            },
+    ],
+    BROADCAST_MESSAGE: 'They avenged me! My army have... AVENGED ME!... ...THE DARK SIDE is FAR GREATER THAN NONE. I\'ll make you cry! --- DESTROY THEM!...',
+};
+exports.real_inverto2 = {
+    PARENT: [exports.miniboss2],
+    SHAPE: 4,
+    COLOR: 237,
+    SIZE: 35,
+    LABEL: 'True Inverto',
+    BODY: {
+        FOV: 1.25,
+        SPEED: base.SPEED * 0.5,
+        HEALTH: 100,
+        SHIELD: 1,
+        REGEN: 0.01,
+        DAMAGE: 3,
+    },
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,      0,     180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [  14,     8,      0,      90,    180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [  14,     8,      0,     180,    180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [  14,     8,      0,     270,    180, 0], 
+            TYPE: exports.domiGunnerTurret,
+            }, {
+        POSITION: [ 21.5,    0,      0,      0,      0,  1], 
+            TYPE: exports.invertoribbon,
+            }, {
+        POSITION: [ 21.5,    0,      0,      90,     0,  1], 
+            TYPE: exports.invertoribbon,
+            }, {
+        POSITION: [   7,     0,      0,      0,      0,  1], 
+            TYPE: exports.invertoTurret,
+            },
+    ],
+    BROADCAST_MESSAGE: 'They avenged me! My army have... AVENGED ME!... ...THE DARK SIDE is FAR GREATER THAN NONE. I\'ll make you cry! --- DESTROY THEM!...',
+};
+exports.inverto = {
+  PARENT: [exports.miniboss],
+  SHAPE: 4,
+  COLOR: 237,
+  SIZE: 35,
+  FACING_TYPE: 'autospin',
+  LABEL: 'Inverto',
+  BODY: {
+    SPEED: base.SPEED * 0.5,
+    HEALTH: 50,
+    SHIELD: 1,
+    REGEN: 0.01,
+    DAMAGE: 3,
+    FOV: 1.25,
+    RESIST: base.RESIST * 25,
+    PUSHABILITY: 0,
+  },
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.invertoribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.invertoribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.invertobutton,
+  }, 
+],
+  BROADCAST_MESSAGE: 'You may have beaten me, but i will find you for eternity! MUAHAHAHAHA',
+}
+exports.inverto2 = {
+  PARENT: [exports.miniboss2],
+  SHAPE: 4,
+  COLOR: 237,
+  SIZE: 35,
+  FACING_TYPE: 'autospin',
+  LABEL: 'Inverto',
+  BODY: {
+    SPEED: base.SPEED * 0.5,
+    HEALTH: 50,
+    SHIELD: 1,
+    REGEN: 0.01,
+    DAMAGE: 3,
+    FOV: 1.25,
+    RESIST: base.RESIST * 25,
+    PUSHABILITY: 0,
+  },
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.invertoribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.invertoribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.invertobutton,
+  }, 
+],
+}
+exports.boxspawn_inverto = {
+  PARENT: [exports.genericTank],
+  SHAPE: [[0,0]],
+  FRAG: [exports.inverto, {NAME: 'Inverto',}],
+  COLOR: 237,
+  BROADCAST_MESSAGE: 'GRRRRRRR! YOU HAVE MADE ME MAD! I WILL UNLEASH MY DARKSIDE!',
+}
+exports.mysterybox9 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_inverto,
+  }, ],
+}
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -22543,7 +22759,7 @@ exports.botT3_E = {
             exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.fallen_fighter2, exports.elite_twin2, exports.elite_auto2, exports.elite_sidewinder2, exports.elite_predator2, exports.elite_streamliner2, exports.elite_trapper2, exports.devBosses3];
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
-            exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2];
+            exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
