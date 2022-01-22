@@ -5025,7 +5025,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5159,6 +5159,42 @@ var maintainloop = (() => {
                         choice = [[Class.seventron], 1, 'seventron', 'nest']; 
                         sockets.broadcast('...FEAR NOT HESPERIANS, SEVENTRON IS HERE!');
                         sockets.broadcast('All Heptashots are now engaging...');
+                        break;
+                    case 32: 
+                        choice = [[Class.wendigo], 1, 'noice', 'rock']; 
+                        sockets.broadcast('Amalgalich 90\'s trash ideas incoming...');
+                        break;
+                    case 33: 
+                        choice = [[Class.wendigo], 2, 'noice', 'rock']; 
+                        sockets.broadcast('Amalgalich 90\'s trash ideas incoming...');
+                        break;
+                    case 34: 
+                        choice = [[Class.wendigo], 3, 'noice', 'rock']; 
+                        sockets.broadcast('Amalgalich 90\'s trash ideas incoming...');
+                        break;
+                    case 35: 
+                        choice = [[Class.wendigo], 4, 'noice', 'rock']; 
+                        sockets.broadcast('Amalgalich 90\'s trash ideas incoming...');
+                        break;
+                    case 36:
+                        choice = [[Class.amalgalich], 1, "amalgalich", "rock"];
+                        sockets.broadcast("A sudden darkness falls as an Amalgalich is approaching!");
+                        sockets.broadcast("RUN!");
+                        break;
+                    case 37:
+                        choice = [[Class.amalgalich], 2, "amalgalich", "rock"];
+                        sockets.broadcast("A sudden darkness falls as Amalgaliches are approaching!");
+                        sockets.broadcast("RUN!");
+                        break;
+                    case 38:
+                        choice = [[Class.amalgalich], 3, "amalgalich", "rock"];
+                        sockets.broadcast("A sudden darkness falls as Amalgaliches are approaching!");
+                        sockets.broadcast("RUN!");
+                        break;
+                    case 39:
+                        choice = [[Class.amalgalich], 4, "amalgalich", "rock"];
+                        sockets.broadcast("A sudden darkness falls as Amalgaliches are approaching!");
+                        sockets.broadcast("RUN!");
                         break;
                 }
                 boss.prepareToSpawn(...choice);
@@ -5382,7 +5418,10 @@ var maintainloop = (() => {
                         Class.bentBlast,
                         Class.gatling,
                         Class.charge,
-                        Class.dualBlast
+                        Class.dualBlast,
+                        Class.cvsTrsh,
+                        Class.pentaWTF,
+                        Class.penIsShot
                       ])
                     );
                     o.name += ran.chooseBotName();
