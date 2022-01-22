@@ -5028,19 +5028,19 @@ var maintainloop = (() => {
                 let choice = [];
                 switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16)) {
                     case 0: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 1, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 1: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 2, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser], 2, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 2: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 3, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser], 3, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 3: 
-                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship], 4, 'a', 'nest'];
+                        choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser], 4, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
@@ -5103,7 +5103,7 @@ var maintainloop = (() => {
                         break;
                     case 18: 
                         choice = [[Class.defendOfShinies], 1, 'tetcel', 'nest']; 
-                        sockets.broadcast('Tethys: I\'d rather be shiny... and I AM! WAIT WHAT THE POLYGON IS THAT');
+                        sockets.broadcast('Tethys: I\'d rather be shiny... and I AM!... WAIT WHAT THE POLYGON IS THAT');
                         sockets.broadcast('Prepare for a dazzling display of shininess! He has detected for some imbalance!');
                         break;
                     case 19: 
@@ -5163,7 +5163,7 @@ var maintainloop = (() => {
                         break;
                     case 32: 
                         choice = [[Class.wendigo], 1, 'noice', 'rock']; 
-                        sockets.broadcast('Amalgalich 90\'s trash ideas incoming...');
+                        sockets.broadcast('An Amalgalich 90\'s trash idea is coming...');
                         break;
                     case 33: 
                         choice = [[Class.wendigo], 2, 'noice', 'rock']; 
@@ -5209,7 +5209,7 @@ var maintainloop = (() => {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
             let nest_defender = (ran.dice(100)) ? ran.choose([Class.nestdefend_krios, Class.nestdefend_tethys, Class.nestdefend_mnemosyne]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.baby_leviathan, Class.penta_sentry, Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.defend_lite, Class.triangleCascade]);
-            let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.pentagonQuarsar]);
+            let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, Class.sentryHoming, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.pentagonQuarsar]);
             let mystBox = (ran.dice(1000)) ? ran.choose([Class.mysterybox1, Class.mysterybox2, Class.mysterybox3, Class.mysterybox4, Class.mysterybox5, Class.mysterybox6, Class.mysterybox7, Class.mysterybox8, Class.mysterybox9, Class.mysterybox10, Class.mysterybox11, Class.mysterybox12, Class.mysterybox13]) : type;
             let o = new Entity(spot);
                 o.define(mystBox);
