@@ -22436,6 +22436,7 @@ exports.real_inverto = {
     COLOR: 237,
     SIZE: 35,
     LABEL: 'True Inverto',
+    VALUE: 350000,
     BODY: {
         FOV: 1.25,
         SPEED: base.SPEED * 0.5,
@@ -22464,7 +22465,7 @@ exports.real_inverto = {
         POSITION: [ 21.5,    0,      0,      90,     0,  1], 
             TYPE: exports.invertoribbon,
             }, {
-        POSITION: [   7,     0,      0,      0,     360, 1], 
+        POSITION: [   7,     0,      0,      0,      0,  1], 
             TYPE: exports.invertoTurret,
             },
     ],
@@ -22476,6 +22477,7 @@ exports.real_inverto2 = {
     COLOR: 237,
     SIZE: 35,
     LABEL: 'True Inverto',
+    VALUE: 350000,
     BODY: {
         FOV: 1.25,
         SPEED: base.SPEED * 0.5,
@@ -22504,7 +22506,7 @@ exports.real_inverto2 = {
         POSITION: [ 21.5,    0,      0,      90,     0,  1], 
             TYPE: exports.invertoribbon,
             }, {
-        POSITION: [   7,     0,      0,      0,     360, 1], 
+        POSITION: [   7,     0,      0,      0,      0,  1], 
             TYPE: exports.invertoTurret,
             },
     ],
@@ -22516,6 +22518,7 @@ exports.inverto = {
   SIZE: 35,
   FACING_TYPE: 'autospin',
   LABEL: 'Inverto',
+  VALUE: 350000,
   BODY: {
     SPEED: base.SPEED * 0.5,
     HEALTH: 50,
@@ -22546,6 +22549,7 @@ exports.inverto2 = {
   SIZE: 35,
   FACING_TYPE: 'autospin',
   LABEL: 'Inverto',
+  VALUE: 350000,
   BODY: {
     SPEED: base.SPEED * 0.5,
     HEALTH: 50,
