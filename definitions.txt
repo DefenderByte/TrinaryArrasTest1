@@ -426,6 +426,7 @@ exports.orangepentagon = {
     SIZE: 16,
     COLOR: 207,
     BODY: {
+        ACCELERATION: 0.015/6,
         DAMAGE: 3,
         DENSITY: 8,
         HEALTH: 100,
@@ -445,6 +446,7 @@ exports.orangetriangle = {
     SIZE: 9,
     COLOR: 207,
     BODY: {
+        ACCELERATION: 0.015/5,
         DAMAGE: 1,
         DENSITY: 6,
         HEALTH: 30,
@@ -464,6 +466,7 @@ exports.orangesquare = {
     SIZE: 10,
     COLOR: 207,
     BODY: {
+        ACCELERATION: 0.015/4,
         DAMAGE: 0.5,
         DENSITY: 4,
         HEALTH: 20,
@@ -484,6 +487,7 @@ exports.greenbigPentagon = {
     SIZE: 30,
     COLOR: 31,
     BODY: {
+        ACCELERATION: 0.015/6,
         DAMAGE: 2 * basePolygonDamage,
         DENSITY: 30,
         HEALTH: 125 * basePolygonHealth,
@@ -505,6 +509,7 @@ exports.greenpentagon = {
     SIZE: 16,
     COLOR: 31,
     BODY: {
+        ACCELERATION: 0.015/5,
         DAMAGE: 3,
         DENSITY: 8,
         HEALTH: 200,
@@ -524,6 +529,7 @@ exports.greentriangle = {
     SIZE: 9,
     COLOR: 31,
     BODY: {
+        ACCELERATION: 0.015/4,
         DAMAGE: 1,
         DENSITY: 6,
         HEALTH: 60,
@@ -543,6 +549,7 @@ exports.greensquare = {
     SIZE: 10,
     COLOR: 31,
     BODY: {
+        ACCELERATION: 0.005,
         DAMAGE: 0.5,
         DENSITY: 4,
         HEALTH: 20,
@@ -563,6 +570,7 @@ exports.gem = {
     SIZE: 5,
     COLOR: 0,
     BODY: {
+        ACCELERATION: 0.0075,
         DAMAGE: basePolygonDamage/4,
         DENSITY: 5,
         HEALTH: 10,
@@ -584,6 +592,7 @@ exports.hugeDecagon = {
     SIZE: 114,
     COLOR: 6,
     BODY: {
+        ACCELERATION: 0.015/11,
         DAMAGE: 12 * basePolygonDamage,
         DENSITY: 180,
         HEALTH: 3600 * basePolygonHealth,
@@ -605,6 +614,7 @@ exports.hugeNonagon = {
     SIZE: 98,
     COLOR: 195,
     BODY: {
+        ACCELERATION: 0.015/10,
         DAMAGE: 10 * basePolygonDamage,
         DENSITY: 160,
         HEALTH: 2400 * basePolygonHealth,
@@ -626,6 +636,7 @@ exports.hugeOctagon = {
     SIZE: 82,
     COLOR: 229,
     BODY: {
+        ACCELERATION: 0.015/9,
         DAMAGE: 8 * basePolygonDamage,
         DENSITY: 140,
         HEALTH: 1350 * basePolygonHealth,
@@ -647,6 +658,7 @@ exports.hugeHeptagon = {
     SIZE: 74,
     COLOR: 26,
     BODY: {
+        ACCELERATION: 0.015/8,
         DAMAGE: 6 * basePolygonDamage,
         DENSITY: 120,
         HEALTH: 750 * basePolygonHealth,
@@ -668,6 +680,7 @@ exports.hugeHexagon = {
     SIZE: 66,
     COLOR: 21,
     BODY: {
+        ACCELERATION: 0.015/7,
         DAMAGE: 4 * basePolygonDamage,
         DENSITY: 100,
         HEALTH: 450 * basePolygonHealth,
@@ -689,6 +702,7 @@ exports.hugePentagon = {
     SIZE: 58,
     COLOR: 14,
     BODY: {
+        ACCELERATION: 0.015/6,
         DAMAGE: 2 * basePolygonDamage,
         DENSITY: 80,
         HEALTH: 300 * basePolygonHealth,
@@ -710,6 +724,7 @@ exports.hugeTriangle = {
     SIZE: 51,
     COLOR: 2,
     BODY: {
+        ACCELERATION: 0.015/5,
         DAMAGE: 1.5 * basePolygonDamage,
         DENSITY: 60,
         HEALTH: 90 * basePolygonHealth,
@@ -731,6 +746,7 @@ exports.hugeSquare = {
     SIZE: 52,
     COLOR: 13,
     BODY: {
+        ACCELERATION: 0.015/4,
         DAMAGE: 1.5 * basePolygonDamage,
         DENSITY: 40,
         HEALTH: 30 * basePolygonHealth,
@@ -752,6 +768,7 @@ exports.bigDecagon = {
     SIZE: 86,
     COLOR: 6,
     BODY: {
+        ACCELERATION: 0.015/10,
         DAMAGE: 12 * basePolygonDamage,
         DENSITY: 80,
         HEALTH: 600 * basePolygonHealth,
@@ -772,6 +789,7 @@ exports.bigNonagon = {
     SIZE: 70,
     COLOR: 195,
     BODY: {
+        ACCELERATION: 0.015/9,
         DAMAGE: 10 * basePolygonDamage,
         DENSITY: 70,
         HEALTH: 400 * basePolygonHealth,
@@ -792,6 +810,7 @@ exports.bigOctagon = {
     SIZE: 54,
     COLOR: 229,
     BODY: {
+        ACCELERATION: 0.015/8,
         DAMAGE: 8 * basePolygonDamage,
         DENSITY: 60,
         HEALTH: 225 * basePolygonHealth,
@@ -813,6 +832,7 @@ exports.bigHeptagon = {
     SIZE: 46,
     COLOR: 26,
     BODY: {
+        ACCELERATION: 0.015/7,
         DAMAGE: 6 * basePolygonDamage,
         DENSITY: 50,
         HEALTH: 125 * basePolygonHealth,
@@ -834,6 +854,7 @@ exports.bigHexagon = {
     SIZE: 38,
     COLOR: 21,
     BODY: {
+        ACCELERATION: 0.015/6,
         DAMAGE: 4 * basePolygonDamage,
         DENSITY: 40,
         HEALTH: 75 * basePolygonHealth,
@@ -855,6 +876,7 @@ exports.bigPentagon = {
     SIZE: 30,
     COLOR: 14,
     BODY: {
+        ACCELERATION: 0.015/5,
         DAMAGE: 2 * basePolygonDamage,
         DENSITY: 30,
         HEALTH: 50 * basePolygonHealth,
@@ -876,6 +898,7 @@ exports.bigTriangle = {
     SIZE: 23,
     COLOR: 2,
     BODY: {
+        ACCELERATION: 0.015/4,
         DAMAGE: 1.5 * basePolygonDamage,
         DENSITY: 20,
         HEALTH: 15 * basePolygonHealth,
@@ -896,6 +919,7 @@ exports.bigSquare = {
     SIZE: 24,
     COLOR: 13,
     BODY: {
+        ACCELERATION: 0.005,
         DAMAGE: 1.5 * basePolygonDamage,
         DENSITY: 15,
         HEALTH: 5 * basePolygonHealth,
@@ -918,6 +942,7 @@ exports.decagon = {
     SIZE: 72,
     COLOR: 6,
     BODY: {
+        ACCELERATION: 0.015/9,
         DAMAGE: 9 * basePolygonDamage,
         DENSITY: 18,
         HEALTH: 120 * basePolygonHealth,
@@ -937,6 +962,7 @@ exports.nonagon = {
     SIZE: 56,
     COLOR: 195,
     BODY: {
+        ACCELERATION: 0.015/8,
         DAMAGE: 7.5 * basePolygonDamage,
         DENSITY: 16,
         HEALTH: 80 * basePolygonHealth,
@@ -956,6 +982,7 @@ exports.octagon = {
     SIZE: 40,
     COLOR: 229,
     BODY: {
+        ACCELERATION: 0.015/7,
         DAMAGE: 6 * basePolygonDamage,
         DENSITY: 14,
         HEALTH: 45 * basePolygonHealth,
@@ -975,6 +1002,7 @@ exports.heptagon = {
     SIZE: 32,
     COLOR: 26,
     BODY: {
+        ACCELERATION: 0.015/6,
         DAMAGE: 4.5 * basePolygonDamage,
         DENSITY: 12,
         HEALTH: 25 * basePolygonHealth,
@@ -994,6 +1022,7 @@ exports.hexagon = {
     SIZE: 24,
     COLOR: 21,
     BODY: {
+        ACCELERATION: 0.015/5,
         DAMAGE: 3 * basePolygonDamage,
         DENSITY: 10,
         HEALTH: 15 * basePolygonHealth,
@@ -1013,6 +1042,7 @@ exports.pentagon = {
     SIZE: 16,
     COLOR: 14,
     BODY: {
+        ACCELERATION: 0.015/4,
         DAMAGE: 1.5 * basePolygonDamage,
         DENSITY: 8,
         HEALTH: 10 * basePolygonHealth,
@@ -1032,6 +1062,7 @@ exports.triangle = {
     SIZE: 9,
     COLOR: 2,
     BODY: {
+        ACCELERATION: 0.005,
         DAMAGE: basePolygonDamage,
         DENSITY: 6,
         HEALTH: 3 * basePolygonHealth,
@@ -1051,6 +1082,7 @@ exports.square = {
     SIZE: 10,
     COLOR: 13,
     BODY: {
+        ACCELERATION: 0.0075,
         DAMAGE: basePolygonDamage,
         DENSITY: 4,
         HEALTH: basePolygonHealth,
@@ -1071,6 +1103,7 @@ exports.egg = {
     COLOR: 6,
     INTANGIBLE: true,
     BODY: {
+        ACCELERATION: 0.015,
         DAMAGE: 0,
         DENSITY: 2,
         HEALTH: 0.0011,
