@@ -17683,6 +17683,7 @@ exports.sumDriveDrone = {
                 LABEL: 'Seventron',
                 SIZE: 48,
                 COLOR: 26,
+                SHAPE: 7,
                 VALUE: 700000,
                 BODY: {
                     FOV: 1.5,
@@ -17790,6 +17791,7 @@ exports.sumDriveDrone = {
                 LABEL: 'Seventron',
                 SIZE: 48,
                 COLOR: 26,
+                SHAPE: 7,
                 VALUE: 700000,
                 BODY: {
                     FOV: 1.5,
