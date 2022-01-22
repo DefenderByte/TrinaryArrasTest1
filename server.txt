@@ -5026,7 +5026,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5197,6 +5197,16 @@ var maintainloop = (() => {
                         sockets.broadcast("A sudden darkness falls as Amalgaliches are approaching!");
                         sockets.broadcast("RUN!");
                         break;
+                    case 40:
+                        choice = [[Class.inverto], 1, "Inverto", "nest"];
+                        sockets.broadcast('...you made him mad, now he seeks revenge!');
+                        sockets.broadcast('First living in a box, before becomes a nightmare...');
+                        break;
+                    case 41:
+                        choice = [[Class.real_inverto], 1, "Inverto", "nest"];
+                        sockets.broadcast('...Therefore, I can and will vanquish you pathetic beings! AH HAW HAW HAW!');
+                        sockets.broadcast('Inverto has seeking for his revenge...');
+                        break;
                 }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
@@ -5210,7 +5220,7 @@ var maintainloop = (() => {
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
             let nest_defender = (ran.dice(100)) ? ran.choose([Class.nestdefend_krios, Class.nestdefend_tethys, Class.nestdefend_mnemosyne]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.baby_leviathan, Class.penta_sentry, Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.defend_lite, Class.triangleCascade]);
             let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, Class.sentryHoming, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.pentagonQuarsar]);
-            let mystBox = (ran.dice(1000)) ? ran.choose([Class.mysterybox1, Class.mysterybox2, Class.mysterybox3, Class.mysterybox4, Class.mysterybox5, Class.mysterybox6, Class.mysterybox7, Class.mysterybox8]) : type;
+            let mystBox = (ran.dice(1000)) ? ran.choose([Class.mysterybox1, Class.mysterybox2, Class.mysterybox3, Class.mysterybox4, Class.mysterybox5, Class.mysterybox6, Class.mysterybox7, Class.mysterybox8, Class.mysterybox9]) : type;
             let o = new Entity(spot);
                 o.define(mystBox);
                 o.team = -100;
