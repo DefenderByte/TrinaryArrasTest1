@@ -21179,16 +21179,16 @@ exports.amalgahand = {
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  12,    10,      0,     180,     0,   0], 
-                    TYPE: [ exports.amalgatail1, { COLOR: 32 } ],
+                    TYPE: [ exports.amalgatail1, { COLOR: 237 } ],
                 }, {
                 POSITION: [  10,    10,      0,      20,     0,   0], 
-                    TYPE: [ exports.amalgahand, { COLOR: 32 } ],
+                    TYPE: [ exports.amalgahand, { COLOR: 237 } ],
                 }, {
                 POSITION: [  10,    10,      0,     -20,     0,   0], 
-                    TYPE: [ exports.amalgahand, { COLOR: 32 } ],
+                    TYPE: [ exports.amalgahand, { COLOR: 237 } ],
                 }, {
                 POSITION: [  10,    10,      0,      0,     90,   0], 
-                    TYPE: [ exports.amalgahead, { COLOR: 32, CONTROLLERS: ['onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 5, }, } ],
+                    TYPE: [ exports.amalgahead, { COLOR: 237, CONTROLLERS: ['onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 5, }, } ],
                 }, 
             ],
             BROADCAST_MESSAGE: 'Amalgalich has been killed!',
@@ -21243,19 +21243,18 @@ exports.amalgahand = {
             ],
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  12,    10,      0,     180,     0,   0], 
-                    TYPE: [ exports.amalgatail1, { COLOR: 32 } ],
+                    TYPE: [ exports.amalgatail1, { COLOR: 237 } ],
                 }, {
                 POSITION: [  10,    10,      0,      20,     0,   0], 
-                    TYPE: [ exports.amalgahand, { COLOR: 32 } ],
+                    TYPE: [ exports.amalgahand, { COLOR: 237 } ],
                 }, {
                 POSITION: [  10,    10,      0,     -20,     0,   0], 
-                    TYPE: [ exports.amalgahand, { COLOR: 32 } ],
+                    TYPE: [ exports.amalgahand, { COLOR: 237 } ],
                 }, {
                 POSITION: [  10,    10,      0,      0,     90,   0], 
-                    TYPE: [ exports.amalgahead, { COLOR: 32, CONTROLLERS: ['onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 5, }, } ],
+                    TYPE: [ exports.amalgahead, { COLOR: 237, CONTROLLERS: ['onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 5, }, } ],
                 }, 
             ],
-            BROADCAST_MESSAGE: 'Amalgalich has been killed!',
         };
 
 exports.mysteryboxribbon = {
@@ -21670,7 +21669,6 @@ exports.evergunner2 = {
         ACCELERATION: base.ACCEL * 0.42069,
     },
     VALUE: 500000,
-    BROADCAST_MESSAGE: 'An Evergunner has been defeated!',
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
             }, {
@@ -21796,7 +21794,6 @@ exports.teliPortGf2 = {
         DAMAGE: 3,
     },
     VALUE: 2000000,
-  BROADCAST_MESSAGE: 'TeliPort\'s girlfriend has been killed!',
 }
 exports.boxspawn_teliPortsGf = {
   PARENT: [exports.genericTank],
