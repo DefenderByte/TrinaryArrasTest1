@@ -22786,16 +22786,16 @@ exports.mysterybox13 = {
             LABEL: 'Releaser',
             DANGER: 6,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  20,     8,      1,      0,     5.5,    -25,     0,   ], 
+                POSITION: [  20,     8,      1,      0,     5.5,     25,     0,   ], 
                     }, {
-                POSITION: [   3,     11,    1.01,    17,    5.5,    -25,     0,   ], 
+                POSITION: [   3,     11,    1.01,    17,    5.5,     25,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
-                POSITION: [  20,     8,      1,      0,    -5.5,     25,     0,   ], 
+                POSITION: [  20,     8,      1,      0,    -5.5,    -25,     0,   ], 
                     }, {
-                POSITION: [   3,     11,    1.01,    17,   -5.5,     25,    0.5,  ], 
+                POSITION: [   3,     11,    1.01,    17,   -5.5,    -25,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
                         TYPE: exports.bentHomingBullet,
@@ -22809,7 +22809,7 @@ exports.mysterybox13 = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ], 
                     }, {
-                POSITION: [   3,     13,    1.01,    17,     0,      0,      0,   ], 
+                POSITION: [   3,     17,    1.01,    17,     0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
                         TYPE: exports.bentHomingBullet,
@@ -22852,16 +22852,16 @@ exports.mysterybox13 = {
             LABEL: 'Center Releaser',
             DANGER: 7,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  14,    6.4,    1.38,    6,     5.7,    -25,     0,   ], 
+                POSITION: [  14,    6.4,    1.38,    6,     5.7,     25,     0,   ], 
                     }, {
-                POSITION: [   3,    9.4,    1.01,    17,    5.7,    -25,     0,   ], 
+                POSITION: [   3,   13.2,    1.01,    17,    5.7,     25,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.mach]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
-                POSITION: [  14,    6.4,    1.38,    6,    -5.7,     25,     0,   ], 
+                POSITION: [  14,    6.4,    1.38,    6,    -5.7,    -25,     0,   ], 
                     }, {
-                POSITION: [   3,    9.4,    1.01,    17,   -5.7,     25,    0.5,  ], 
+                POSITION: [   3,   13.2,    1.01,    17,   -5.7,    -25,    0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.mach]),
                         TYPE: exports.bentHomingBullet,
@@ -22875,21 +22875,21 @@ exports.mysterybox13 = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ], 
                     }, {
-                POSITION: [   3,     13,    1.01,    17,     0,      0,      0,   ], 
+                POSITION: [   3,     17,    1.01,    17,     0,      0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.mach]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  12,     10,     1.4,    8,      0,     120,     0,   ], 
                     }, {
-                POSITION: [   3,     13,    1.01,    17,     0,     120,     0,   ], 
+                POSITION: [   3,     17,    1.01,    17,     0,     120,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.mach]),
                         TYPE: exports.bentHomingBullet,
                     }, }, {
                 POSITION: [  12,     10,     1.4,    8,      0,     240,     0,   ], 
                     }, {
-                POSITION: [   3,     13,    1.01,    17,     0,     240,     0,   ], 
+                POSITION: [   3,     17,    1.01,    17,     0,     240,     0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.mach]),
                         TYPE: exports.bentHomingBullet,
