@@ -4816,6 +4816,7 @@ var gameloop = (() => {
                 case 'hard': firmcollide(instance, other); break;
                 case 'hardWithBuffer': firmcollide(instance, other, 30); break;
                 case 'repel': simplecollide(instance, other); break;
+                case 'withEffects': advancedcollide(instance, other, false, true, undefined, true); break;
                 }
             }     
         };
