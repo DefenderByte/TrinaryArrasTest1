@@ -21160,6 +21160,1381 @@ exports.amalgahand = {
             BROADCAST_MESSAGE: 'Amalgalich has been killed!',
         };
 
+exports.mysteryboxribbon = {
+  PARENT: [exports.genericTank],
+  SHAPE: [[1, 0.1],[1, -0.1],[-1, -0.1],[-1, 0.1]],
+  COLOR: 237,
+}
+exports.mysteryboxbutton = {
+  PARENT: [exports.obstacle],
+  COLOR: 240,
+}
+
+exports.mysteryboxNothing = {
+  PARENT: [exports.genericTank],
+  NAME: '',
+  LABEL: 'Mystery Box',
+  GIVE_KILL_MESSAGE: false,
+  SHAPE: 4,
+  COLOR: 236,
+  SIZE: 35,
+  FACING_TYPE: 'turnWithSpeed',
+  CAN_BE_ON_LEADERBOARD: false,
+  ACCEPTS_SCORE: false,
+  DANGER: 100,
+  BODY: {
+    SPEED: base.SPEED * 0.375,
+    HEALTH: base.HEALTH * 30,
+    DAMAGE: 0,
+    SHIELD: 0,
+    REGEN: 0,
+    RESIST: base.RESIST * 25,
+    PUSHABILITY: 0,
+  }, 
+  BROADCAST_MESSAGE: 'A mystery box has opened!',
+}
+
+exports.boxspawn_eDestroy = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.elite_destroyer]
+}
+exports.boxspawn_eGunner = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.elite_gunner]
+}
+exports.boxspawn_eSpray = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.elite_sprayer]
+}
+exports.boxspawn_eBattle = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.elite_battleship]
+}
+exports.mysterybox1 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 1, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_eDestroy,
+  }, {
+    POSITION: [1, 1, 0, 0, 90, 0,],
+    TYPE: exports.boxspawn_eGunner,
+  }, {
+    POSITION: [1, 1, 0, 0, 180, 0,],
+    TYPE: exports.boxspawn_eSpray,
+  }, {
+    POSITION: [1, 1, 0, 0, 270, 0,],
+    TYPE: exports.boxspawn_eBattle,
+  }, ],
+}
+
+exports.boxspawn_crasher = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.crasher]
+}
+exports.boxspawn_senGun = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.sentryGun]
+}
+exports.boxspawn_senTra = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.sentryTrap]
+}
+exports.boxspawn_senSwa = {
+  PARENT: [exports.genericTank],
+  COLOR: 5,
+  SHAPE: [[0,0]],
+  FRAG: [exports.sentrySwarm]
+}
+exports.mysterybox2 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_crasher,
+  }, {
+    POSITION: [1, 1, 0, 0, 60, 0,],
+    TYPE: exports.boxspawn_senGun,
+  }, {
+    POSITION: [1, 1, 0, 0, -60, 0,],
+    TYPE: exports.boxspawn_senGun,
+  }, {
+    POSITION: [1, 1, 0, 0, 180, 0,],
+    TYPE: exports.boxspawn_senGun,
+  }, {
+    POSITION: [1, 1, 0, 0, 60, 0,],
+    TYPE: exports.boxspawn_senSwa,
+  }, {
+    POSITION: [1, 1, 0, 0, -60, 0,],
+    TYPE: exports.boxspawn_senSwa,
+  }, {
+    POSITION: [1, 1, 0, 0, 180, 0,],
+    TYPE: exports.boxspawn_senSwa,
+  }, {
+    POSITION: [1, 1, 0, 0, 60, 0,],
+    TYPE: exports.boxspawn_senTra,
+  }, {
+    POSITION: [1, 1, 0, 0, -60, 0,],
+    TYPE: exports.boxspawn_senTra,
+  }, {
+    POSITION: [1, 1, 0, 0, 180, 0,],
+    TYPE: exports.boxspawn_senTra,
+  }, ],
+}
+
+exports.boxspawn_alphapen = {
+  PARENT: [exports.genericTank],
+  COLOR: 14,
+  SHAPE: [[0,0]],
+  FRAG: [exports.hugePentagon]
+}
+exports.mysterybox3 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 1, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_alphapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 90, 0,],
+    TYPE: exports.boxspawn_alphapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -90, 0,],
+    TYPE: exports.boxspawn_alphapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 180, 0,],
+    TYPE: exports.boxspawn_alphapen,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_alphapen,
+  }, ],
+}
+
+exports.boxspawn_pali = {
+  PARENT: [exports.genericTank],
+  COLOR: 17,
+  SHAPE: [[0,0]],
+  FRAG: [exports.palisade]
+}
+exports.boxspawn_summ = {
+  PARENT: [exports.genericTank],
+  COLOR: 13,
+  SHAPE: [[0,0]],
+  FRAG: [exports.summon]
+}
+exports.boxspawn_skim = {
+  PARENT: [exports.genericTank],
+  COLOR: 2,
+  SHAPE: [[0,0]],
+  FRAG: [exports.skimboss]
+}
+exports.boxspawn_nest = {
+  PARENT: [exports.genericTank],
+  COLOR: 14,
+  SHAPE: [[0,0]],
+  FRAG: [exports.nestkeeper]
+}
+exports.mysterybox4 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 1, 0, 0, 45, 0,],
+    TYPE: exports.boxspawn_pali,
+  }, {
+    POSITION: [1, 1, 0, 0, -45, 0,],
+    TYPE: exports.boxspawn_summ,
+  }, {
+    POSITION: [1, 1, 0, 0, 135, 0,],
+    TYPE: exports.boxspawn_skim,
+  }, {
+    POSITION: [1, 1, 0, 0, -135, 0,],
+    TYPE: exports.boxspawn_nest,
+  }, ],
+}
+
+exports.greenSummon = {
+    PARENT: [exports.summon],
+    COLOR: 31,
+    LABEL: 'Green Summoner',
+    BODY: {
+        FOV: 2.25,
+        SPEED: base.SPEED * 0.5,
+        HEALTH: 37.5,
+        SHIELD: 1,
+        REGEN: 0.1,
+        DAMAGE: 3,
+    },
+    VALUE: 400000,
+}
+exports.greenSummon2 = {
+    PARENT: [exports.summon2],
+    COLOR: 31,
+    LABEL: 'Green Summoner',
+    BODY: {
+        FOV: 2.25,
+        SPEED: base.SPEED * 0.5,
+        HEALTH: 37.5,
+        SHIELD: 1,
+        REGEN: 0.1,
+        DAMAGE: 3,
+    },
+    VALUE: 400000,
+}
+exports.boxspawn_greenSummon = {
+  PARENT: [exports.genericTank],
+  COLOR: 31,
+  SHAPE: [[0,0]],
+  FRAG: [exports.greenSummon]
+}
+exports.mysterybox5 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_greenSummon,
+  }, ],
+}
+
+    exports.evertwin = {
+        PARENT: [exports.genericTank],
+        LABEL: '',
+        COLOR: 16,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  16,     4,      1,      0,    -3.5,     0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.twin, g.triplet, g.power, g.slow, g.five, g.flank, g.no_recoil]),
+                    TYPE: exports.bullet,
+                }, }, {
+            POSITION: [  16,     4,      1,      0,     3.5,     0,     0.5,  ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.twin, g.triplet, g.power, g.slow, g.five, g.flank, g.no_recoil]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
+exports.evergunner = {
+    PARENT: [exports.elite_gunner],
+    NAME: 'Everglow',
+    LABEL: 'Dun Dun (Ardii Remix)',
+    COLOR: 'rainbow',
+    BODY: {
+        FOV: 2.5,
+        SPEED: base.SPEED * 1.35,
+        HEALTH: 33.3, //<== Azgr will like this
+        SHIELD: 1, // yes
+        REGEN: 0.01,
+        DAMAGE: 5,
+        ACCELERATION: base.ACCEL * 0.42069,
+    },
+    VALUE: 500000,
+    BROADCAST_MESSAGE: 'An Evergunner has been defeated!',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+            }, {
+        POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.block, g.more_speed, g.tons_more_recoil, g.much_more_recoil]),
+                TYPE: [exports.pillbox, { INDEPENDENT: true, BODY: {SPEED: 3.75,} }],
+            }, }, {                
+        POSITION: [   6,    14,     -2,      2,      0,      60,     0,   ],
+            }, {                
+        POSITION: [   6,    14,     -2,      2,      0,     300,     0,   ],
+            }
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,     60,     180,   0, ], 
+            TYPE: [exports.evertwin, {COLOR: 19}],
+            }, {
+        POSITION: [  14,     8,      0,     300,    180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 19}],
+            }, {
+        POSITION: [  12,     8,      0,     60,     180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 16}],
+            }, {
+        POSITION: [  12,     8,      0,     300,    180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 16}],
+            }, {
+        POSITION: [  10,     8,      0,     60,     180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 'rainbow'}],
+            }, {
+        POSITION: [  10,     8,      0,     300,    180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 'rainbow'}],
+    }],
+}
+exports.evergunner2 = {
+    PARENT: [exports.elite_gunner2],
+    LABEL: 'Dun Dun (Ardii Remix)',
+    COLOR: 'rainbow',
+    BODY: {
+        FOV: 2.5,
+        SPEED: base.SPEED * 1.35,
+        HEALTH: 33.3, //<== Azgr will like this
+        SHIELD: 1, // yes
+        REGEN: 0.01,
+        DAMAGE: 5,
+        ACCELERATION: base.ACCEL * 0.42069,
+    },
+    VALUE: 500000,
+    BROADCAST_MESSAGE: 'An Evergunner has been defeated!',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+            }, {
+        POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.block, g.more_speed, g.tons_more_recoil, g.much_more_recoil]),
+                TYPE: [exports.pillbox, { INDEPENDENT: true, BODY: {SPEED: 3.75,} }],
+            }, }, {                
+        POSITION: [   6,    14,     -2,      2,      0,      60,     0,   ],
+            }, {                
+        POSITION: [   6,    14,     -2,      2,      0,     300,     0,   ],
+            }
+    ],
+    TURRETS: [{
+        /*********  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  14,     8,      0,     60,     180,   0, ], 
+            TYPE: [exports.evertwin, {COLOR: 19}],
+            }, {
+        POSITION: [  14,     8,      0,     300,    180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 19}],
+            }, {
+        POSITION: [  12,     8,      0,     60,     180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 16}],
+            }, {
+        POSITION: [  12,     8,      0,     300,    180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 16}],
+            }, {
+        POSITION: [  10,     8,      0,     60,     180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 'rainbow'}],
+            }, {
+        POSITION: [  10,     8,      0,     300,    180,   0, ],
+            TYPE: [exports.evertwin, {COLOR: 'rainbow'}],
+    }],
+}
+exports.boxspawn_dundunGunner = {
+  PARENT: [exports.genericTank],
+  COLOR: 'rainbow',
+  SHAPE: [[0,0]],
+  FRAG: [exports.evergunner],
+  BROADCAST_MESSAGE: 'An Evergunner has struck!',
+}
+exports.mysterybox6 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_dundunGunner,
+  }, ],
+}
+
+exports.retrokeeper = {
+    PARENT: [exports.nestkeeper],
+    NAME: 'HUGEL',
+    LABEL: 'WTF (RetroVision Remix)',
+    ALPHA: 0.25,
+    VALUE: 500000,
+    COLOR: 14,
+}
+exports.retrokeeper2 = {
+    PARENT: [exports.nestkeeper2],
+    LABEL: 'WTF (RetroVision Remix)',
+    ALPHA: 0.25,
+    VALUE: 500000,
+    COLOR: 14,
+}
+exports.boxspawn_retroHugel = {
+  PARENT: [exports.genericTank],
+  COLOR: 14,
+  SHAPE: [[0,0]],
+  FRAG: [exports.retrokeeper]
+}
+exports.mysterybox7 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_retroHugel,
+  }, ],
+}
+
+exports.teliPortGf = {
+    PARENT: [exports.elite_battleship],
+    NAME: 'Dallia',
+    LABEL: 'TeliPortL\'s Girlfriend',
+    COLOR: 235,
+    BODY: {
+        FOV: 1.8,
+        SPEED: base.SPEED * 0.675,
+        HEALTH: 40,
+        SHIELD: 1,
+        REGEN: 0.01,
+        DAMAGE: 3,
+    },
+    VALUE: 2000000,
+  BROADCAST_MESSAGE: 'TeliPort\'s girlfriend has been killed!',
+}
+exports.teliPortGf2 = {
+    PARENT: [exports.elite_battleship2],
+    LABEL: 'TeliPortL\'s Girlfriend',
+    COLOR: 235,
+    BODY: {
+        FOV: 1.8,
+        SPEED: base.SPEED * 0.675,
+        HEALTH: 40,
+        SHIELD: 1,
+        REGEN: 0.01,
+        DAMAGE: 3,
+    },
+    VALUE: 2000000,
+  BROADCAST_MESSAGE: 'TeliPort\'s girlfriend has been killed!',
+}
+exports.boxspawn_teliPortsGf = {
+  PARENT: [exports.genericTank],
+  COLOR: 235,
+  SHAPE: [[0,0]],
+  FRAG: [exports.teliPortGf],
+  BROADCAST_MESSAGE: 'TeliPort\'s girlfriend has spawned!',
+}
+exports.mysterybox8 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_teliPortsGf,
+  }, ],
+}
+
+exports.boxspawn_betapen = {
+  PARENT: [exports.genericTank],
+  COLOR: 14,
+  SHAPE: [[0,0]],
+  FRAG: [exports.bigPentagon],
+}
+exports.mysterybox9 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 1, 0, 0, 45, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 45, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 45, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -45, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -45, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -45, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 135, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 135, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, 135, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -135, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -135, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 1, 0, 0, -135, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_betapen,
+  }, ],
+}
+exports.boxspawn_pentagon = {
+  PARENT: [exports.genericTank],
+  COLOR: 14,
+  SHAPE: [[0,0]],
+  FRAG: [exports.pentagon],
+}
+exports.mysterybox10 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_pentagon,
+  }, ],
+}
+
+exports.boxspawn_triangle = {
+  PARENT: [exports.genericTank],
+  COLOR: 2,
+  SHAPE: [[0,0]],
+  FRAG: [exports.tirangle],
+}
+exports.mysterybox11 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_triangle,
+  }, ],
+}
+
+exports.boxspawn_square = {
+  PARENT: [exports.genericTank],
+  COLOR: 13,
+  SHAPE: [[0,0]],
+  FRAG: [exports.square],
+}
+exports.mysterybox12 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_square,
+  }, ],
+}
+        exports.ai_name_markKlele29 = {
+            PARENT: [exports.miniboss],
+            NAME: 'Mark.Klele29',
+            LABEL: 'Klelesade v2.9',
+            COLOR: 18,
+            SHAPE: 6,
+            SIZE: 28,
+            VALUE: 250000,
+            BODY: {
+                FOV: 1.35,
+                SPEED: base.SPEED * 0.1,
+                HEALTH: 50,
+                SHIELD: 1,
+                REGEN: 0.01,
+                DAMAGE: 3,
+            },
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   4,      6,    -1.6,     8,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.meta, g.half_reload, g.half_reload]),
+                        TYPE: exports.markGunMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,     8,      0,     60,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.meta, g.half_reload, g.half_reload]),
+                        TYPE: exports.markGunMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,     8,      0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.meta, g.half_reload, g.half_reload]),
+                        TYPE: exports.markGunMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,     8,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.meta, g.half_reload, g.half_reload]),
+                        TYPE: exports.markGunMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,     8,      0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.meta, g.half_reload, g.half_reload]),
+                        TYPE: exports.markGunMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, }, {
+                POSITION: [   4,      6,    -1.6,     8,      0,     300,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.meta, g.half_reload, g.half_reload]),
+                        TYPE: exports.markGunMin,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        AUTOFIRE: true,
+                        MAX_CHILDREN: 2,
+                        SYNCS_SKILLS: true,
+                        WAIT_TO_CYCLE: true,
+                    }, },
+            ],
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   5,    10,      0,      30,     0,  0], 
+                    TYPE: exports.bulMark,
+                        }, {
+                POSITION: [   5,    10,      0,      90,     0,  0], 
+                    TYPE: exports.bulMark,
+                        }, {
+                POSITION: [   5,    10,      0,     150,     0,  0], 
+                    TYPE: exports.bulMark,
+                        }, {
+                POSITION: [   5,    10,      0,     210,     0,  0], 
+                    TYPE: exports.bulMark,
+                        }, {
+                POSITION: [   5,    10,      0,     270,     0,  0], 
+                    TYPE: exports.bulMark,
+                        }, {
+                POSITION: [   5,    10,      0,     330,     0,  0], 
+                    TYPE: exports.bulMark,
+                        }, {
+                POSITION: [   3,     8,      0,      30,    120, 1], 
+                    TYPE: exports.marWark,
+                        }, {
+                POSITION: [   3,     8,      0,      90,    120, 1], 
+                    TYPE: exports.marWark,
+                        }, {
+                POSITION: [   3,     8,      0,     150,    120, 1], 
+                    TYPE: exports.marWark,
+                        }, {
+                POSITION: [   3,     8,      0,     210,    120, 1], 
+                    TYPE: exports.marWark,
+                        }, {
+                POSITION: [   3,     8,      0,     270,    120, 1], 
+                    TYPE: exports.marWark,
+                        }, {
+                POSITION: [   3,     8,      0,     330,    120, 1], 
+                    TYPE: exports.marWark,
+                        }, {
+                POSITION: [   8,     0,      0,      0,     360, 1], 
+                    TYPE: exports.mortark,
+                        },
+            ],
+        };
+exports.boxspawn_mark = {
+  PARENT: [exports.genericTank],
+  COLOR: 18,
+  SHAPE: [[0,0]],
+  FRAG: [exports.ai_name_markKlele29],
+}
+exports.mysterybox13 = {
+  PARENT: [exports.mysteryboxNothing],
+  TURRETS: [{
+    POSITION: [21.5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [21.5, 0, 0, 90, 0, 1,],
+    TYPE: exports.mysteryboxribbon,
+  }, {
+    POSITION: [5, 0, 0, 0, 0, 1,],
+    TYPE: exports.mysteryboxbutton,
+  }, {
+    POSITION: [1, 0, 0, 0, 0, 0,],
+    TYPE: exports.boxspawn_mark,
+  }, ],
+}
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -21325,8 +22700,8 @@ exports.botT3_E = {
             exports.devBosses.UPGRADES_TIER_4 = [exports.elite_sprayer_nonauto, exports.elite_gunner2, exports.elite_destroyer2, exports.palisade2, exports.dread2, exports.defend2, exports.custodian2, exports.octog2, exports.skimboss2, exports.krios_saucer2, exports.krisaucephase2, exports.defendOfShinies2, exports.defendOfShiniesPhase2, exports.mega_cascade2, exports.devBosses2];
             exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.fallen_fighter2, exports.elite_twin2, exports.elite_auto2, exports.elite_sidewinder2, exports.elite_predator2, exports.elite_streamliner2, exports.elite_trapper2, exports.devBosses3];
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
-            exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.devBosses5];
-            exports.devBosses5.UPGRADES_TIER_4 = [];
+            exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
+            exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
