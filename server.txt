@@ -5423,7 +5423,10 @@ var maintainloop = (() => {
                         Class.dualBlast,
                         Class.cvsTrsh,
                         Class.pentaWTF,
-                        Class.penIsShot
+                        Class.penIsShot,
+                        Class.huntAss,
+                        Class.splitPellet,
+                        Class.shuriken
                       ])
                     );
                     o.name += ran.chooseBotName();
