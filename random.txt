@@ -1830,6 +1830,8 @@ exports.chooseBotName = () => {
         '₥₳Ɽ₭.₭ⱠɆⱠɆ29',
         'ᗰᗩᖇK.KᒪEᒪE29',
         'During a time of ungrateful pieces of shit & printer sounds, shits must strike & printers must print.',
+        'Suggesting Hexagon Drone',
+        '"Names with the word LAG, no fonts"',
     ]);
 };
 
