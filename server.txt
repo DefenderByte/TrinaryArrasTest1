@@ -5426,7 +5426,14 @@ var maintainloop = (() => {
                         Class.penIsShot,
                         Class.huntAss,
                         Class.splitPellet,
-                        Class.shuriken
+                        Class.shuriken,
+                        Class.homing,
+                        Class.homingSingle,
+                        Class.twinHoming,
+                        Class.machHoming,
+                        Class.flankHoming,
+                        Class.twinmachHoming,
+                        Class.flankmachHoming
                       ])
                     );
                     o.name += ran.chooseBotName();
