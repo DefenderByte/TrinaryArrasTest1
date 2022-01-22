@@ -22464,7 +22464,7 @@ exports.real_inverto = {
         POSITION: [ 21.5,    0,      0,      90,     0,  1], 
             TYPE: exports.invertoribbon,
             }, {
-        POSITION: [   7,     0,      0,      0,      0,  1], 
+        POSITION: [   7,     0,      0,      0,     360, 1], 
             TYPE: exports.invertoTurret,
             },
     ],
@@ -22504,11 +22504,10 @@ exports.real_inverto2 = {
         POSITION: [ 21.5,    0,      0,      90,     0,  1], 
             TYPE: exports.invertoribbon,
             }, {
-        POSITION: [   7,     0,      0,      0,      0,  1], 
+        POSITION: [   7,     0,      0,      0,     360, 1], 
             TYPE: exports.invertoTurret,
             },
     ],
-    BROADCAST_MESSAGE: 'They avenged me! My army have... AVENGED ME!... ...THE DARK SIDE is FAR GREATER THAN NONE. I\'ll make you cry! --- DESTROY THEM!...',
 };
 exports.inverto = {
   PARENT: [exports.miniboss],
