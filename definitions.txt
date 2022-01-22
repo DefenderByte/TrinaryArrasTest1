@@ -22633,6 +22633,124 @@ exports.mysterybox13 = {
   }, ],
 }
 
+            exports.huntAss = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Carnivore',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    SPEED: base.SPEED * 0.9,
+                    FOV: base.FOV * 1.4,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  26,     7,      1,      4,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.hunter, g.hunter2]),
+                            TYPE: exports.bullet,
+                        }, }, { 
+                    POSITION: [  23,    11,      1,      4,      0,      0,    0.15,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.hunter]),
+                            TYPE: exports.bullet,
+                        }, }, { 
+                    POSITION: [ 8.1,    11,     -1.6,   4.9,     0,      0,      0,   ], 
+                        },
+                ],
+            };
+            exports.splitPellet = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Split',
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  17,    2.5,     1,      0,      2,      10,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,    2.5,     1,      0,     -3,      10,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   5,     9,     -1.6,    7,      0,      10,     0,   ], 
+                        }, {
+                    POSITION: [  17,    2.5,     1,      0,      3,     -10,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,    2.5,     1,      0,     -2,     -10,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   5,     9,     -1.6,    7,      0,     -10,     0,   ], 
+                        }, {
+                    POSITION: [  17,    2.5,     1,      0,      3,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,    2.5,     1,      0,     -3,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  18,     5,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.hewn, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   5,     9,     -1.6,    7,      0,      0,      0,   ],
+                        },
+                ],
+            };
+            exports.shuriken = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Shuriken',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.5,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.1,
+                },
+                FACING_TYPE: 'autospin',
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     8,      0,      0,     180, 0], 
+                        TYPE: exports.bansheegun,
+                            }, {
+                    POSITION: [  10,     8,      0,     120,    180, 0], 
+                        TYPE: exports.bansheegun,
+                            }, {
+                    POSITION: [  10,     8,      0,     240,    180, 0], 
+                        TYPE: exports.bansheegun,
+                            },
+                ],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,     9,      1,      0,      0,     60,      0,   ],
+                        }, {
+                    POSITION: [   4,     9,     1.5,    14,      0,     60,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, {                            
+                    POSITION: [  14,     9,      1,      0,      0,     180,     0,   ],
+                        }, {
+                    POSITION: [   4,     9,     1.5,    14,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, {                            
+                    POSITION: [  14,     9,      1,      0,      0,     300,     0,   ],
+                        }, {
+                    POSITION: [   4,     9,     1.5,    14,      0,     300,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -22831,13 +22949,14 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst, exports.bentBlast];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
         exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc];
+        exports.twinSnipe.UPGRADES_TIER_3 = [exports.dual];
 
     exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.bore, exports.snipeceptioner, exports.twinSnipe, exports.gatling];
         exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
-        exports.assassin.UPGRADES_TIER_3 = [exports.autoass, exports.ranger, exports.stalker];
+        exports.assassin.UPGRADES_TIER_3 = [exports.autoass, exports.ranger, exports.stalker, exports.huntAss];
             exports.assassin.UPGRADES_TIER_4 = [exports.falcon];
             exports.ranger.UPGRADES_TIER_4 = [exports.underranger];
-        exports.hunter.UPGRADES_TIER_3 = [exports.dual, exports.preda, exports.poach, exports.shift];
+        exports.hunter.UPGRADES_TIER_3 = [exports.dual, exports.preda, exports.poach, exports.shift, exports.huntAss];
         exports.builder.UPGRADES_TIER_3 = [exports.engineer, exports.construct, exports.autobuilder, exports.boomer, exports.twinbuilder];
             exports.boomer.UPGRADES_TIER_4 = [exports.bentboomer];
 
@@ -22866,13 +22985,13 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.tri.UPGRADES_TIER_3 = [exports.booster, exports.fighter, exports.surfer, exports.bomber, exports.autotri];
         exports.hexa.UPGRADES_TIER_3 = [exports.autohexa, exports.octo, exports.hexatrap, exports.auto5, exports.hurricane];
             exports.hexatrap.UPGRADES_TIER_4 = [exports.quadtrapper];
-        exports.auto3.UPGRADES_TIER_3 = [exports.banshee, exports.auto5, exports.heavy3, exports.sniper3, exports.machine3, exports.auto4, exports.dj];
+        exports.auto3.UPGRADES_TIER_3 = [exports.banshee, exports.auto5, exports.heavy3, exports.sniper3, exports.machine3, exports.auto4, exports.dj, exports.shuriken];
             exports.heavy3.UPGRADES_TIER_4 = [exports.builder3];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.fortress, exports.bomber, exports.guntrap, exports.bushwhack, exports.hybridflanktrap, exports.bulwark];
             exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
 
     exports.pellet.UPGRADES_TIER_2 = [exports.gunner, exports.cruiser, exports.hewn_pellet, exports.sail, exports.bore, exports.punt, exports.pelletceptioner];
-        exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier, exports.sunburst];
+        exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier, exports.sunburst, exports.splitPellet];
         exports.bore.UPGRADES_TIER_3 = [exports.nailgun, exports.screw_punt];
 
     exports.inceptioner.UPGRADES_TIER_2 = [exports.ceptionist, exports.singleceptioner, exports.twinceptioner, exports.snipeceptioner, exports.machceptioner, exports.flankceptioner, exports.pelletceptioner];
