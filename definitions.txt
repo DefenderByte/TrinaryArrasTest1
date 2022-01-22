@@ -20048,7 +20048,7 @@ exports.djTurret2 = {
 
         exports.dualBlast = {
             PARENT: [exports.genericTank],
-            LABEL: 'Dual Blaster',
+            LABEL: 'Diesel Engine',
             DANGER: 6,
             BODY: {
                 ACCELERATION: base.ACCEL * 0.8, 
@@ -22751,6 +22751,152 @@ exports.mysterybox13 = {
                 ],
             };
 
+        exports.homing = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Missiler',
+            DANGER: 5,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    15,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+        exports.homingSingle = {
+            PARENT: [exports.genericTank],
+            LABEL: 'S-Missiler',
+            DANGER: 6,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    16,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
+                    },
+            ],
+        };
+        exports.twinHoming = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Releaser',
+            DANGER: 6,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  20,     8,      1,      0,     5.5,    -25,     0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    17,    5.5,    -25,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,     25,     0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    17,   -5.5,     25,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+        exports.machHoming = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Center Tracker',
+            DANGER: 6,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   3,     13,    1.01,    17,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+        exports.flankHoming = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Flank Missiler',
+            DANGER: 6,
+            BODY: {
+                SPEED: base.SPEED * 1.1,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    15,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  18,     8,      1,      0,      0,     120,     0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    15,     0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  18,     8,      1,      0,      0,     240,     0,   ], 
+                    }, {
+                POSITION: [   3,     11,    1.01,    15,     0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+        exports.twinmachHoming = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Center Releaser',
+            DANGER: 7,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  14,    6.4,    1.38,    6,     5.7,    -25,     0,   ], 
+                    }, {
+                POSITION: [   3,    9.4,    1.01,    17,    5.7,    -25,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.mach]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  14,    6.4,    1.38,    6,    -5.7,     25,     0,   ], 
+                    }, {
+                POSITION: [   3,    9.4,    1.01,    17,   -5.7,     25,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.mach]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+        exports.flankmachHoming = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Center Flank',
+            DANGER: 7,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  12,     10,     1.4,    8,      0,      0,      0,   ], 
+                    }, {
+                POSITION: [   3,     13,    1.01,    17,     0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.mach]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  12,     10,     1.4,    8,      0,     120,     0,   ], 
+                    }, {
+                POSITION: [   3,     13,    1.01,    17,     0,     120,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.mach]),
+                        TYPE: exports.bentHomingBullet,
+                    }, }, {
+                POSITION: [  12,     10,     1.4,    8,      0,     240,     0,   ], 
+                    }, {
+                POSITION: [   3,     13,    1.01,    17,     0,     240,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.mach]),
+                        TYPE: exports.bentHomingBullet,
+                    }, },
+            ],
+        };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -22933,9 +23079,9 @@ exports.botT3_E = {
 
             exports.devACs.UPGRADES_TIER_4 = [exports.arenaCloser2, exports.devACs2];
 
-exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin, exports.sniper, exports.director, exports.machine, exports.flank, exports.pellet, exports.inceptioner];
+exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin, exports.sniper, exports.director, exports.machine, exports.flank, exports.pellet, exports.inceptioner, exports.homing];
 
-    exports.single.UPGRADES_TIER_2 = [exports.singleceptioner];
+    exports.single.UPGRADES_TIER_2 = [exports.singleceptioner, exports.homingSingle];
 
     exports.pummeler.UPGRADES_TIER_2 = [exports.smash, exports.mauler, exports.autopummeler, exports.minimine, exports.irritate];
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine, exports.jump];
@@ -22944,7 +23090,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.minimine.UPGRADES_TIER_3 = [exports.landmine];
         exports.irritate.UPGRADES_TIER_3 = [exports.jump];
 
-    exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe];
+    exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe, exports.twinHoming];
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship, exports.bulwark];
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst, exports.bentBlast];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
@@ -22967,7 +23113,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.manager.UPGRADES_TIER_3 = [exports.manageseer];
         exports.spawn.UPGRADES_TIER_3 = [exports.factory, exports.snipeFact, exports.machineFact];
 
-    exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini, exports.machceptioner, exports.blast, exports.gatling];
+    exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini, exports.machceptioner, exports.blast, exports.gatling, exports.machHoming];
         exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam];
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
@@ -22980,7 +23126,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.blast.UPGRADES_TIER_3 = [exports.bentBlast, exports.dualBlast];
         exports.gatling.UPGRADES_TIER_3 = [exports.charge];
 
-    exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.flankceptioner];
+    exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.flankceptioner, exports.flankHoming];
         exports.flank.UPGRADES_TIER_3 = [exports.tripletwin];
         exports.tri.UPGRADES_TIER_3 = [exports.booster, exports.fighter, exports.surfer, exports.bomber, exports.autotri];
         exports.hexa.UPGRADES_TIER_3 = [exports.autohexa, exports.octo, exports.hexatrap, exports.auto5, exports.hurricane];
@@ -23008,3 +23154,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.flankceptionist.UPGRADES_TIER_4 = [exports.flankceptionist2];
         exports.pelletceptioner.UPGRADES_TIER_3 = [exports.pelletceptionist];
             exports.pelletceptionist.UPGRADES_TIER_4 = [exports.pelletceptionist2];
+            
+    exports.homing.UPGRADES_TIER_2 = [exports.homingSingle, exports.twinHoming, exports.machHoming, exports.flankHoming];
+        exports.twinHoming.UPGRADES_TIER_3 = [exports.twinmachHoming];
+        exports.machHoming.UPGRADES_TIER_3 = [exports.twinmachHoming, exports.flankmachHoming];
+        exports.flankHoming.UPGRADES_TIER_3 = [exports.flankmachHoming];
