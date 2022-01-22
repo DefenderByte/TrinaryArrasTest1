@@ -21275,10 +21275,7 @@ exports.mysteryboxNothing = {
   SHAPE: 4,
   COLOR: 236,
   SIZE: 35,
-  FACING_TYPE: 'turnWithSpeed',
-  CAN_BE_ON_LEADERBOARD: false,
-  ACCEPTS_SCORE: false,
-  DANGER: 100,
+  FACING_TYPE: 'autospin',
   BODY: {
     SPEED: base.SPEED * 0.375,
     HEALTH: base.HEALTH * 30,
@@ -22003,7 +22000,7 @@ exports.boxspawn_triangle = {
   PARENT: [exports.genericTank],
   COLOR: 2,
   SHAPE: [[0,0]],
-  FRAG: [exports.tirangle],
+  FRAG: [exports.triangle],
 }
 exports.mysterybox11 = {
   PARENT: [exports.mysteryboxNothing],
