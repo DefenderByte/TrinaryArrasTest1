@@ -22785,13 +22785,13 @@ exports.mysterybox9 = {
                     FOV: base.FOV * 1.2,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [   9,     12,    0.6,     5,     4.5,     25,     0,   ], 
+                    POSITION: [   9,     12,    0.6,     5,      4,      25,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.pound]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                         }, }, {
-                    POSITION: [   9,     12,    0.6,     5,    -4.5,    -25,     0,   ], 
+                    POSITION: [   9,     12,    0.6,     5,     -4,     -25,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.pound]),
                             TYPE: exports.swarm,
