@@ -23375,19 +23375,19 @@ exports.mysterybox9 = {
 
     exports.growBullet = {
         PARENT: [exports.bullet],
-        MOTION_TYPE: 'grow',
+        MOTION_TYPE: 'ultragrow',
     };
         exports.dissuate = {
             PARENT: [exports.genericTank],
             LABEL: 'Dissuator',
-            DANGER: 6,
+            DANGER: 7,
             BODY: {
                 ACCELERATION: base.ACCEL * 0.8,
             },
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   3,    18,     -1.2,    14,     0,      0,      0, ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.blast, g.decelerate, g.botan]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.blast, g.decelerate, g.grower]),
                         TYPE: exports.growBullet,
                     }, }, {
                 POSITION: [   7,    14,     1.85,    7,      0,      0,      0, ], 
