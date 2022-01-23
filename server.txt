@@ -2264,8 +2264,8 @@ class Entity {
             this.damp = -0.3;
             break;
         case 'charge':
-            this.maxSpeed += 1;
-            this.DAMAGE += 1;
+            this.maxSpeed += 10;
+            this.DAMAGE += 10;
             break;
         case "grow":
             this.SIZE += 1;
