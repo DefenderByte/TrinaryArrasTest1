@@ -3273,7 +3273,7 @@ const sockets = (() => {
                 case 'L': { // level up cheat
                     if (m.length !== 0) { socket.kick('Ill-sized level-up request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (player.body.skill.level < c.SKILL_CHEAT_CAP || ((socket.key === process.env.SECRET) && player.body.skill.level < 45)) {
+                    if (player.body != null) { if (player.body.skill.level < c.SKILL_CHEAT_CAP || ((socket.key === process.env.SECRET) && player.body.skill.level < 60)) {
                         player.body.skill.score += player.body.skill.levelScore;
                         player.body.skill.maintain();
                         player.body.refreshBodyAttributes();
@@ -3727,8 +3727,15 @@ const sockets = (() => {
                     socket.camera.x = body.x; socket.camera.y = body.y; socket.camera.fov = 2000;
                     // Mark it as spawned
                     socket.status.hasSpawned = true;
-                    body.sendMessage('You have spawned! Welcome to the game.');
-                    body.sendMessage('You will be invulnerable until you move or shoot.');
+                    body.sendMessage('And so... much... more!');
+                    body.sendMessage('A unique and powerful upgrade tree, both temporary and permanent.');
+                    body.sendMessage('Over 10 new enemies to slay and catalog in a new Bestiary feature.');
+                    body.sendMessage('Play the tens of new tanks and branches added, including the expansive Pummeler branch, and more!');
+                    body.sendMessage('Learn the new meaning of pain by inflicting and receiving potent status effects!');
+                    body.sendMessage('20+ new bosses to overcome and take down with friends!');
+                    body.sendMessage('Hundreds of new Achievements to earn!');
+                    body.sendMessage('↓ Trinon.io content goes here ↓');
+                    body.sendMessage('Welcome to Trinon.io!');
                     // Move the client camera
                     socket.talk('c', socket.camera.x, socket.camera.y, socket.camera.fov);
                     return player;
