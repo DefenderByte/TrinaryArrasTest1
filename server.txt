@@ -5044,35 +5044,35 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 1, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 2, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 3, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi], 4, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 4, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 1, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate], 1, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 9: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 2, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate], 2, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 10: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 3, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate], 3, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 11: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher], 4, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate], 4, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
@@ -5443,7 +5443,13 @@ var maintainloop = (() => {
                         Class.machHoming,
                         Class.flankHoming,
                         Class.twinmachHoming,
-                        Class.flankmachHoming
+                        Class.flankmachHoming,
+                        Class.shell,
+                        Class.battery,
+                        Class.musketeer,
+                        Class.assassswarm,
+                        Class.megaCruise,
+                        Class.halfNHalf
                       ])
                     );
                     o.name += ran.chooseBotName();
