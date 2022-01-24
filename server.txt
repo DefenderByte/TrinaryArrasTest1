@@ -5033,7 +5033,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2, 15, 15, 15, 10)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser, Class.elite_sniper], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5214,6 +5214,22 @@ var maintainloop = (() => {
                         sockets.broadcast('...Therefore, I can and will vanquish you pathetic beings! AH HAW HAW HAW!');
                         sockets.broadcast('Inverto has seeking for his revenge...');
                         break;
+                    case 42: 
+                        choice = [[Class.celestial_dahyun], 1, 'dahcel', 'nest'];
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 43: 
+                        choice = [[Class.celestial_yabuki], 1, 'yabcel', 'nest'];
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 44: 
+                        choice = [[Class.celestial_chaeyeon], 1, 'chycel', 'nest'];
+                        sockets.broadcast('The world tremors as the coke cassowaries reborn anew!');
+                        break;
+                    case 45: 
+                        choice = [[Class.obsceles_soyeon], 1, 'syncel', 'nest'];
+                        sockets.broadcast('The sentries have called out for special reinforcement!');
+                        break;
                 }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
@@ -5226,7 +5242,7 @@ var maintainloop = (() => {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
             let nest_defender = (ran.dice(100)) ? ran.choose([Class.nestdefend_krios, Class.nestdefend_tethys, Class.nestdefend_mnemosyne]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.baby_leviathan, Class.penta_sentry, Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.defend_lite, Class.triangleCascade]);
-            let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, Class.sentryHoming, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.pentagonQuarsar]);
+            let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, Class.sentryHoming, Class.dummy, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, Class.crasher, ran.choose([Class.pentagonQuarsar])]);
             let mystBox = (ran.dice(100)) ? ran.choose([Class.mysterybox1, Class.mysterybox2, Class.mysterybox3, Class.mysterybox4, Class.mysterybox5, Class.mysterybox6, Class.mysterybox7, Class.mysterybox8, Class.mysterybox9, Class.mysterybox10]) : type;
             let o = new Entity(spot);
                 o.define(mystBox);
