@@ -23877,6 +23877,1037 @@ exports.corBomb = {
                 ],
             };
 
+            exports.dummy = {
+                PARENT: [exports.genericTank],
+                NAME: 'An unnamed tank',
+                LABEL: 'Practice Dummy',
+                COLOR: 3,
+                SIZE: 12,
+                SKILL: skillSet({
+                    rld: 1,
+                    dam: 0.2,
+                    pen: 0.5,
+                    str: 0.3,
+                    spd: 1,
+                    atk: 0,
+                    hlt: 0,
+                    shi: 0,
+                    rgn: 0,
+                    mob: 0,
+                }),
+                BODY: {
+                    SPEED: base.SPEED * 0.1,
+                    FOV: base.FOV * 1.25,
+                    HEALTH: base.HEALTH * 0.5,
+                    DAMAGE: base.DAMAGE * 0.45,
+                    SHIELD: base.SHIELD * 0.32,
+                    REGEN: base.REGEN * 0.01,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
+                        COLOR_SETTINGS: {
+                            COLOR: 3,
+                        }, },
+                ],
+            };
+
+exports.dahTrt = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 1.5,
+    },
+    INDEPENDENT: true,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+    COLOR: 16,
+    AI: {
+        SKYNET: true,
+        FULL_VIEW: true,
+    },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  16,    14,      1,      0,      0,      0,      0,   ],
+            }, {
+        POSITION: [   4,    14,     1.8,    16,      0,      0,     0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.twin, g.double, g.triplet, g.auto, g.more_speed, g.fast, g.one_third_reload, g.half_range, g.bit_less_range, g.no_recoil]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+            }, },
+    ],
+};
+exports.dahDrone = makeAuto(exports.drone, 'Sentry', { type: exports.dahTrt, size: 12, });
+exports.dahBullet = makeAuto(exports.bullet, 'Sentry', { type: exports.dahTrt, size: 12, });
+exports.dahBullet.SHAPE = 3;
+    exports.dahsep = {
+        LABEL: 'Dahyun',
+        CONTROLLERS: ['reversespin'], 
+        COLOR: 19,
+        MAX_CHILDREN: 14,
+        SHAPE: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*3,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*5,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7,   0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*3, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*5, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.dahDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, },
+                ]
+    };
+            exports.dahgun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: 1.6,
+                },
+                LABEL: 'Launched',
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,     6,     2/3,     9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,     8,     1.5,     0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.half_reload, g.one_third_reload, g.fast, g.slow, g.double_range, g.double_range, g.one_and_half_size]),
+                            TYPE: [exports.dahBullet, {DRAW_HEALTH: true}],
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+            };
+    exports.dahpen = {
+        LABEL: 'Dayhun',
+        CONTROLLERS: ['spin'], 
+        COLOR: 236,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     8,      0,      36,    120, 0], 
+                TYPE: [ exports.dahgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     108,    120, 0], 
+                TYPE: [ exports.dahgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     180,    120, 0], 
+                TYPE: [ exports.dahgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -108,    120, 0], 
+                TYPE: [ exports.dahgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -36,     120, 0], 
+                TYPE: [ exports.dahgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, 
+        ],
+    };
+        exports.celestial_dahyun = { 
+            PARENT: [exports.celestial],
+            NAME: 'Dahyun',
+            COLOR: 5,
+            BODY: {
+                SPEED: base.SPEED * 0.075,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.dahsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.dahpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_dahyun2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 5,
+            BODY: {
+                SPEED: base.SPEED * 0.075,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.dahsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.dahpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+    exports.yabTrt = {
+        PARENT: [exports.genericTank],
+        LABEL: '',
+        BODY: {
+            FOV: 3,
+        },
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        COLOR: 16,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  22,    14,      1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.half_reload, g.double, g.auto, g.five, g.more_speed, g.fast, g.no_recoil]),
+                    TYPE: exports.bullet,
+                }, }
+        ],
+    };
+exports.yabDrone = makeAuto(exports.drone, 'Sentry', { type: exports.yabTrt, size: 12, });
+exports.yabBullet = makeAuto(exports.bullet, 'Sentry', { type: exports.yabTrt, size: 12, });
+exports.yabBullet.SHAPE = 3;
+    exports.yabsep = {
+        LABEL: 'Yabuki',
+        CONTROLLERS: ['reversespin'], 
+        COLOR: 19,
+        MAX_CHILDREN: 14,
+        SHAPE: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*3,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180/7*5,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    180,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7,   0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*3, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [   4,    6.5,     1.2,   7.5,     0,    -180/7*5, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.more_speed]),
+                            TYPE: [exports.yabDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, },
+                ]
+    };
+            exports.yabgun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: 1.6,
+                },
+                LABEL: 'Launched',
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,     6,     2/3,     9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,     8,     1.5,     0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.half_reload, g.one_third_reload, g.fast, g.slow, g.double_range, g.double_range, g.one_and_half_size]),
+                            TYPE: [exports.yabBullet, {DRAW_HEALTH: true}],
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+            };
+    exports.yabpen = {
+        LABEL: 'Yabuki',
+        CONTROLLERS: ['spin'], 
+        COLOR: 237,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     8,      0,      36,    120, 0], 
+                TYPE: [ exports.yabgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     108,    120, 0], 
+                TYPE: [ exports.yabgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     180,    120, 0], 
+                TYPE: [ exports.yabgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -108,    120, 0], 
+                TYPE: [ exports.yabgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -36,     120, 0], 
+                TYPE: [ exports.yabgun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, 
+        ],
+    };
+        exports.celestial_yabuki = { 
+            PARENT: [exports.celestial],
+            NAME: 'Yabuki',
+            COLOR: 5,
+            BODY: {
+                SPEED: base.SPEED * 0.075,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.yabsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.yabpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_yabuki2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 5,
+            BODY: {
+                SPEED: base.SPEED * 0.075,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.yabsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.yabpen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+exports.chyDrone = {
+    PARENT: [exports.drone],
+    LABEL: 'Sentry',
+    GUNS: [{
+        POSITION: [    7,    14,    0.6,     7,     0,    180,     0,  ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.more_speed, g.fast, g.bit_less_range, g.no_recoil]),
+            TYPE: [exports.autoswarm, {BODY: {FOV: 4.5, ACCELERATION: 10}}],
+            STAT_CALCULATOR: gunCalcNames.swarm,   
+            AUTOFIRE: true,
+        }, },
+    ],
+};
+exports.chyBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'Sentry', SHAPE: 3,
+    GUNS: [{
+        POSITION: [    7,    14,    0.6,     7,     0,    180,     0,  ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.more_speed, g.fast, g.double_range, g.bit_less_range, g.no_recoil]),
+            TYPE: [exports.autoswarm, {BODY: {FOV: 4.5, ACCELERATION: 10}}],
+            STAT_CALCULATOR: gunCalcNames.swarm,   
+            AUTOFIRE: true,
+        }, },
+    ],
+};
+    exports.chysep = {
+        LABEL: 'Chaeyeon',
+        CONTROLLERS: ['reversespin'], 
+        COLOR: 19,
+        MAX_CHILDREN: 14,
+        SHAPE: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    180/7,    0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    180/7*3,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    180/7*5,  0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    180,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    -180/7,   0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    -180/7*3, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, }, {
+                    POSITION: [  3.5,    6,     1.2,     8,      0,    -180/7*5, 0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.halfreload, g.halfreload, g.morespeed]),
+                            TYPE: [exports.chyDrone, {BODY: {FOV: 1.35, ACCELERATION: 1}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                            AUTOFIRE: true, SYNCS_SKILLS: true,
+                            LABEL: 'Spawned', WAIT_TO_CYCLE: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, },
+                ]
+    };
+            exports.chygun = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: 1.6,
+                },
+                LABEL: 'Launched',
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,     6,     2/3,     9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,     8,     1.5,     0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.half_reload, g.one_third_reload, g.fast, g.slow, g.double_range, g.double_range, g.one_and_half_size]),
+                            TYPE: [exports.chyBullet, {DRAW_HEALTH: true}],
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+            };
+    exports.chypen = {
+        LABEL: 'Chaeyeon',
+        CONTROLLERS: ['spin'], 
+        COLOR: 239,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     8,      0,      36,    120, 0], 
+                TYPE: [ exports.chygun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     108,    120, 0], 
+                TYPE: [ exports.chygun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     180,    120, 0], 
+                TYPE: [ exports.chygun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -108,    120, 0], 
+                TYPE: [ exports.chygun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -36,     120, 0], 
+                TYPE: [ exports.chygun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, 
+        ],
+    };
+        exports.celestial_chaeyeon = { 
+            PARENT: [exports.celestial],
+            NAME: 'Chaeyeon',
+            COLOR: 5,
+            BODY: {
+                SPEED: base.SPEED * 0.075,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.chysep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.chypen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+        exports.celestial_chaeyeon2 = { 
+            PARENT: [exports.celestial],
+            NAME: 'Chaeyeon',
+            COLOR: 5,
+            BODY: {
+                SPEED: base.SPEED * 0.075,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.chysep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.chypen,
+                        }, {
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        },
+            ],
+        };
+    exports.soyeonGunner = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Gunner',
+        BODY: {
+            FOV: 1.6,
+        },
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        COLOR: 9,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  16,     4,      1,      0,    -3.5,     0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.triplet, g.gunner, g.power, g.double_range, g.half_reload, g.half_reload, g.smaller]),
+                    TYPE: exports.bullet,
+                }, }, {
+            POSITION: [  16,     4,      1,      0,     3.5,     0,     0.5,  ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double, g.triplet, g.gunner, g.power, g.double_range, g.half_reload, g.half_reload, g.smaller]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
+    exports.synRing = {
+        LABEL: 'Soyeon',
+        COLOR: 8,
+        SHAPE: [[0,0]],
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   2,     9,      0,      20,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,      60,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,     100,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,     140,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,     180,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,    -140,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,    -100,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,     -60,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, {
+            POSITION: [   2,     9,      0,     -20,    120, 1], 
+                TYPE: [ exports.soyeonGunner, { BODY: { FOV: base.FOV * 2, }, }, ],
+            }, 
+        ],
+    };
+    exports.synRingR = {
+        PARENT: [exports.synRing],
+        CONTROLLERS: ['spin']
+    };
+    exports.synRingL = {
+        PARENT: [exports.synRing],
+        CONTROLLERS: ['reversespin']
+    };
+
+        exports.spwnGun = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Spawned',
+            COLOR: 9,
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  4.5,    10,      1,     10.5,    0,      0,      0,   ], 
+                }, {
+                POSITION: [   1,     12,      1,      15,     0,      0,      0,   ], 
+                PROPERTIES: {          
+                    MAX_CHILDREN: 1,
+                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.half_reload, g.double_size, g.double_size, g.more_speed]),
+                    TYPE: [exports.dahDrone, {BODY: {FOV: 2}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                    STAT_CALCULATOR: gunCalcNames.drone,                        
+                    AUTOFIRE: true, WAIT_TO_CYCLE: true,
+                    SYNCS_SKILLS: true,  
+                }, }, {                        
+                    POSITION: [  3.5,    12,      1,      8,      0,      0,      0,   ], 
+                }
+            ],
+        };
+        exports.spwnTrap = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Spawned',
+            COLOR: 9,
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  4.5,    10,      1,     10.5,    0,      0,      0,   ], 
+                }, {
+                POSITION: [   1,     12,      1,      15,     0,      0,      0,   ], 
+                PROPERTIES: {          
+                    MAX_CHILDREN: 1,
+                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.half_reload, g.double_size, g.double_size, g.more_speed]),
+                    TYPE: [exports.yabDrone, {BODY: {FOV: 2}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                    STAT_CALCULATOR: gunCalcNames.drone,                        
+                    AUTOFIRE: true, WAIT_TO_CYCLE: true,
+                    SYNCS_SKILLS: true,  
+                }, }, {                        
+                    POSITION: [  3.5,    12,      1,      8,      0,      0,      0,   ], 
+                }
+            ],
+        };
+        exports.spwnSwarm = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Spawned',
+            COLOR: 9,
+            GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  4.5,    10,      1,     10.5,    0,      0,      0,   ], 
+                }, {
+                POSITION: [   1,     12,      1,      15,     0,      0,      0,   ], 
+                PROPERTIES: {          
+                    MAX_CHILDREN: 1,
+                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.half_reload, g.double_size, g.double_size, g.more_speed]),
+                    TYPE: [exports.chyDrone, {BODY: {FOV: 2}, INDEPENDENT: true, DRAW_HEALTH: true}],
+                    STAT_CALCULATOR: gunCalcNames.drone,                        
+                    AUTOFIRE: true, WAIT_TO_CYCLE: true,
+                    SYNCS_SKILLS: true,  
+                }, }, {                        
+                    POSITION: [  3.5,    12,      1,      8,      0,      0,      0,   ], 
+                }
+            ],
+        };
+    exports.synsep = {
+        LABEL: 'Soyeon',
+        CONTROLLERS: ['reversespin'], 
+        COLOR: 18,
+        SHAPE: 7,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   3,    10,      3,    180/7,    0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,    180/7,    0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,    180/7,    0,  0], 
+                TYPE: exports.spwnSwarm,
+            }, {
+            POSITION: [   3,    10,      3,    180/7*3,  0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,    180/7*3,  0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,    180/7*3,  0,  0], 
+                TYPE: exports.spwnSwarm,
+            }, {
+            POSITION: [   3,    10,      3,    180/7*5,  0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,    180/7*5,  0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,    180/7*5,  0,  0], 
+                TYPE: exports.spwnSwarm,
+            }, {
+            POSITION: [   3,    10,      3,     180,     0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,     180,     0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,     180,     0,  0], 
+                TYPE: exports.spwnSwarm,
+            }, {
+            POSITION: [   3,    10,      3,   -180/7*5,  0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,   -180/7*5,  0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,   -180/7*5,  0,  0], 
+                TYPE: exports.spwnSwarm,
+            }, {
+            POSITION: [   3,    10,      3,   -180/7*3,  0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,   -180/7*3,  0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,   -180/7*3,  0,  0], 
+                TYPE: exports.spwnSwarm,
+            }, {
+            POSITION: [   3,    10,      3,   -180/7,    0,  0], 
+                TYPE: exports.spwnGun,
+            }, {
+            POSITION: [   3,    10,     -3,   -180/7,    0,  0], 
+                TYPE: exports.spwnTrap,
+            }, {
+            POSITION: [   3,    10,      0,   -180/7,    0,  0], 
+                TYPE: exports.spwnSwarm,
+            },
+        ],
+    };
+    exports.synRang = {
+        LABEL: 'Boomerang',
+        PARENT: [exports.bullet],
+        TYPE: 'trap',
+        CONTROLLERS: ['boomerang'],
+        MOTION_TYPE: 'swarm',
+        FACING_TYPE: 'turnWithSpeed',
+        HITS_OWN_TYPE: 'never',
+        SHAPE: 104,
+        BODY: {
+            SPEED: 5,
+            RANGE: 180,
+            ACCELERATION: 15,
+            HEALTH: 1.5 * wepHealthFactor,
+            DAMAGE: 2 * wepDamageFactor,
+            DENSITY: 2.5,
+            RESIST: 2.5,
+        },
+    };
+            exports.synGun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Giga Trapperang',
+                STAT_NAMES: statnames.trap,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
+                    POSITION: [   4,   19.5,    1.25,    14,     0,      0,      0, ], 
+                            }, {
+                    POSITION: [ 7.5,   19.5,    -1.5,    7,      0,      0,      0, ], 
+                            }, {
+                    POSITION: [   2,   21.5,     1.3,   20.5,    0,      0,      0, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.boomerang, g.pound, g.pound, g.destroy, g.more_speed, g.more_speed, g.more_speed, g.double_size, g.no_recoil]),
+                            TYPE: exports.synRang, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                ],
+            };
+    exports.synpen = {
+        LABEL: 'Soyeon',
+        CONTROLLERS: ['spin'], 
+        COLOR: 19,
+        SHAPE: 5,
+        TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+            POSITION: [   9,     8,      0,      36,    180, 0], 
+                TYPE: [ exports.synGun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     108,    180, 0], 
+                TYPE: [ exports.synGun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     180,    180, 0], 
+                TYPE: [ exports.synGun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,    -108,    180, 0], 
+                TYPE: [ exports.synGun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, {
+            POSITION: [   9,     8,      0,     -36,    180, 0], 
+                TYPE: [ exports.synGun, { CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], BODY: { FOV: base.FOV * 2.5, }, }, ],
+            }, 
+        ],
+    };
+        exports.obsceles_soyeon = { 
+            PARENT: [exports.celestial],
+            COLOR: 5,
+            NAME: 'Soyeon',
+            LABEL: 'Observer Coke Cassowary',
+            VALUE: 2000000,
+            BODY: {
+                SPEED: base.SPEED * 0.1,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [  30,     0,      0,      0,     360, 0], 
+                    TYPE: exports.synRingL,
+                        }, {
+                POSITION: [  30,     0,      0,      0,     360, 0], 
+                    TYPE: exports.synRingR,
+                        }, {
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.synsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.synpen,
+                        },
+            ],
+        };
+        exports.obsceles_soyeon2 = { 
+            PARENT: [exports.celestial2],
+            COLOR: 5,
+            LABEL: 'Observer Coke Cassowary',
+            VALUE: 2000000,
+            BODY: {
+                SPEED: base.SPEED * 0.1,
+            },
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [   6,     9,      0,      20,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,      60,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     100,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     140,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     180,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     220,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     260,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     300,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [   6,     9,      0,     340,     45, 0], 
+                    TYPE: exports.trapTurret,
+                        }, {
+                POSITION: [  30,     0,      0,      0,     360, 0], 
+                    TYPE: exports.synRingL,
+                        }, {
+                POSITION: [  30,     0,      0,      0,     360, 0], 
+                    TYPE: exports.synRingR,
+                        }, {
+                POSITION: [  15,     0,      0,      0,     360, 1], 
+                    TYPE: exports.synsep,
+                        }, {
+                POSITION: [   9,     0,      0,      0,     360, 1], 
+                    TYPE: exports.synpen,
+                        },
+            ],
+        };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -24043,7 +25074,7 @@ exports.botT3_E = {
             exports.devBosses2.UPGRADES_TIER_4 = [exports.celestial_paladin2, exports.celestial_freyja2, exports.celestial_zaphkiel2, exports.celestial_artemis2, exports.celestial_demeter2, exports.celestial_odin2, exports.fallen_booster2, exports.fallen_fighter2, exports.elite_twin2, exports.elite_auto2, exports.elite_sidewinder2, exports.elite_predator2, exports.elite_streamliner2, exports.elite_trapper2, exports.devBosses3];
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
-            exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222];
+            exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222, exports.celestial_dahyun2, exports.celestial_yabuki2, exports.celestial_chaeyeon2, exports.obsceles_soyeon2, exports.devBosses6];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
