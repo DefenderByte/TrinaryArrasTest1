@@ -5461,7 +5461,11 @@ var maintainloop = (() => {
                         Class.flankPound,
                         Class.flankArty,
                         Class.quadPound,
-                        Class.dissuate
+                        Class.dissuate,
+                        Class.clover,
+                        Class.corrode,
+                        Class.miniassass,
+                        Class.flankDestroy
                       ])
                     );
                     o.name += ran.chooseBotName();
