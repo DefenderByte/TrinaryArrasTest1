@@ -22785,13 +22785,13 @@ exports.mysterybox9 = {
                     FOV: base.FOV * 1.2,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [   9,     12,    0.6,     5,      4,      25,     0,   ], 
+                    POSITION: [   9,     12,    0.6,     7,     2.5,     25,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.pound]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                         }, }, {
-                    POSITION: [   9,     12,    0.6,     5,     -4,     -25,     0,   ], 
+                    POSITION: [   9,     12,    0.6,     7,    -2.5,    -25,    0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.pound]),
                             TYPE: exports.swarm,
@@ -24627,7 +24627,7 @@ exports.chyBullet = {
                 POSITION: [   1,     12,      1,      15,     0,      0,      0,   ], 
                 PROPERTIES: {          
                     MAX_CHILDREN: 1,
-                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.half_reload, g.double_size, g.double_size, g.more_speed]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.double_size, g.double_size, g.more_speed]),
                     TYPE: [exports.dahDrone, {BODY: {FOV: 2}, INDEPENDENT: true, DRAW_HEALTH: true}],
                     STAT_CALCULATOR: gunCalcNames.drone,                        
                     AUTOFIRE: true, WAIT_TO_CYCLE: true,
@@ -24647,7 +24647,7 @@ exports.chyBullet = {
                 POSITION: [   1,     12,      1,      15,     0,      0,      0,   ], 
                 PROPERTIES: {          
                     MAX_CHILDREN: 1,
-                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.half_reload, g.double_size, g.double_size, g.more_speed]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.double_size, g.double_size, g.more_speed]),
                     TYPE: [exports.yabDrone, {BODY: {FOV: 2}, INDEPENDENT: true, DRAW_HEALTH: true}],
                     STAT_CALCULATOR: gunCalcNames.drone,                        
                     AUTOFIRE: true, WAIT_TO_CYCLE: true,
@@ -24667,7 +24667,7 @@ exports.chyBullet = {
                 POSITION: [   1,     12,      1,      15,     0,      0,      0,   ], 
                 PROPERTIES: {          
                     MAX_CHILDREN: 1,
-                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.half_reload, g.half_reload, g.half_reload, g.double_size, g.double_size, g.more_speed]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.double_size, g.double_size, g.more_speed]),
                     TYPE: [exports.chyDrone, {BODY: {FOV: 2}, INDEPENDENT: true, DRAW_HEALTH: true}],
                     STAT_CALCULATOR: gunCalcNames.drone,                        
                     AUTOFIRE: true, WAIT_TO_CYCLE: true,
@@ -24908,6 +24908,115 @@ exports.chyBullet = {
             ],
         };
 
+            exports.sandstormGun = {
+                PARENT: [exports.genericTank],
+                LABEL: '',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                DANGER: 5,
+                BODY: {
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.auto]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+            };
+            exports.sandstorm = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sandstorm',
+                DANGER: 8,
+                STAT_NAMES: statnames.swarm,
+                FACING_TYPE: 'autospin',
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75,
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.sandstormGun,
+                            },
+                ],
+            };
+            exports.triplecruise = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Tri-Cruiser',
+                DANGER: 8,
+                STAT_NAMES: statnames.swarm,
+                FACING_TYPE: 'locksFacing',
+                BODY: {
+                    ACCELERATION: base.ACCEL,
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   7,    7.5,    0.6,     7,      4,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,     -4,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      4,     120,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,     -4,     120,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      4,     240,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,     -4,     240,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -25103,6 +25212,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
 
     exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe, exports.twinHoming];
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship, exports.bulwark];
+            exports.tripletwin.UPGRADES_TIER_4 = [exports.triplecruise];
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst, exports.bentBlast];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
         exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc, exports.battery];
@@ -25119,6 +25229,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.master, exports.overtrap, exports.autoover, exports.overgunner, exports.battleship, exports.manageseer];
         exports.underseer.UPGRADES_TIER_3 = [exports.autounderseer, exports.necromancer];
         exports.cruiser.UPGRADES_TIER_3 = [exports.autocruiser, exports.battleship, exports.carrier, exports.fortress, exports.megaCruise];
+            exports.autocruiser.UPGRADES_TIER_4 = [exports.sandstorm];
+            exports.battleship.UPGRADES_TIER_4 = [exports.sandstorm, exports.triplecruise];
         exports.manager.UPGRADES_TIER_3 = [exports.manageseer];
         exports.spawn.UPGRADES_TIER_3 = [exports.factory, exports.snipeFact, exports.machineFact];
 
