@@ -5481,7 +5481,9 @@ var maintainloop = (() => {
                         Class.clover,
                         Class.corrode,
                         Class.miniassass,
-                        Class.flankDestroy
+                        Class.flankDestroy,
+                        Class.sandstorm,
+                        Class.triplecruise
                       ])
                     );
                     o.name += ran.chooseBotName();
