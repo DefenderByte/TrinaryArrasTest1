@@ -25147,7 +25147,7 @@ exports.greenRunner = {
     LABEL: 'Green Runner',
     COLOR: 11,
     SHAPE: [[-0.6,0.8],[0,0],[-0.6,-0.8],[0.4,-0.8],[1,0],[0.4,0.8]],
-    SIZE: 5,
+    SIZE: 10,
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     AI: { NO_LEAD: true, },
     BODY: {
@@ -25172,7 +25172,7 @@ exports.bigGreenRunner = {
     LABEL: 'Green Runner',
     COLOR: 11,
     SHAPE: [[-0.6,0.8],[0,0],[-0.6,-0.8],[0.4,-0.8],[1,0],[0.4,0.8]],
-    SIZE: 10,
+    SIZE: 20,
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     AI: { NO_LEAD: true, },
     BODY: {
@@ -25197,7 +25197,7 @@ exports.trapezoid = {
     LABEL: 'Trapezoid',
     COLOR: 216,
     SHAPE: 138,
-    SIZE: 12,
+    SIZE: 24,
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
     AI: { NO_LEAD: true, },
     BODY: {
