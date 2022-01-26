@@ -1145,6 +1145,10 @@ class Gun {
                 false : info.PROPERTIES.NEGATIVE_RECOIL;
             this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?
                 false : info.PROPERTIES.SHOOT_ON_DEATH;
+            this.isDefender = (info.PROPERTIES.IS_DEFENDER == null) ?
+                false : info.PROPERTIES.IS_DEFENDER;
+            this.isSummon = (info.PROPERTIES.IS_SUMMONER == null) ?
+                false : info.PROPERTIES.IS_SUMMONER;
         }
         if (info.COLOR_SETTINGS != null) {
             if (info.COLOR_SETTINGS.COLOR != null && info.COLOR_SETTINGS != null) {
@@ -1335,7 +1339,15 @@ class Gun {
             SIZE: this.body.size * this.width * this.settings.size / 2 ,
             LABEL: this.master.label + ((this.label) ? ' ' + this.label : '') + ' ' + o.label,
         });            
-        o.color = this.body.master.color;
+        if (this.isDefender) {
+            o.color = 13;
+        }
+        if (this.isSummon) {
+            o.color = 3;
+        }
+        if (!this.isDefender || !this.isSummon) {
+            o.color = this.body.master.color;
+        }
         // Keep track of it and give it the function it needs to deutil.log itself upon death
         if (this.countsOwnKids) {
             o.parent = this;
