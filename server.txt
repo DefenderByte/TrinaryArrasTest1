@@ -1341,16 +1341,16 @@ class Gun {
             SIZE: this.body.size * this.width * this.settings.size / 2 ,
             LABEL: this.master.label + ((this.label) ? ' ' + this.label : '') + ' ' + o.label,
         });            
-        if (this.isDefender) {
+        if (this.body.isDefender) {
             o.color = 13;
         }
-        if (this.isSummon) {
+        if (this.body.isSummon) {
             o.color = 3;
         }
-        if (this.shootCrashers) {
+        if (this.body.shootCrashers) {
             o.color = 5;
         }
-        if (!this.isDefender || !this.isSummon || !this.shootCrashers) {
+        if (!this.body.isDefender || !this.body.isSummon || !this.body.shootCrashers) {
             o.color = this.body.master.color;
         }
         // Keep track of it and give it the function it needs to deutil.log itself upon death
