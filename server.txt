@@ -5050,7 +5050,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2, 15, 15, 15, 10)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2, 15, 15, 15, 10, 50)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser, Class.elite_sniper], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5068,19 +5068,19 @@ var maintainloop = (() => {
                         sockets.broadcast('A stirring in the distance...');
                         break;
                     case 4: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 1, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer, Class.hexaswarmer], 1, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 5: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 2, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer, Class.hexaswarmer], 2, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 6: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 3, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer, Class.hexaswarmer], 3, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 7: 
-                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer], 4, 'castle', 'norm']; 
+                        choice = [[ran.choose([Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, Class.palisade, ran.choose([Class.ai_markKlele29])]), Class.skimboss, Class.levi, Class.nailer, Class.hexaswarmer], 4, 'castle', 'norm']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
@@ -5246,6 +5246,10 @@ var maintainloop = (() => {
                     case 45: 
                         choice = [[Class.obsceles_soyeon], 1, 'syncel', 'nest'];
                         sockets.broadcast('The sentries have called out for special reinforcement!');
+                        break;
+                    case 46: 
+                        choice = [[Class.legendary_crasher], 1, 'a', 'nest']; 
+                        sockets.broadcast('The Harcadium Pigs have called out the almighty crasher!');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
