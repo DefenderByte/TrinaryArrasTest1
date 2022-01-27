@@ -1718,6 +1718,7 @@ exports.auto3gun = {
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.auto, g.defend_auto]),
                     TYPE: exports.bullet,
+                    IS_DEFENDER: true,
                 }, }
         ],
     };
@@ -1734,6 +1735,7 @@ exports.auto3gun = {
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.pound, g.double_reload, g.double_reload, g.double_reload, g.twin, g.double, g.triplet, g.five, g.auto, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.more_speed, g.no_recoil]),
                     TYPE: exports.bullet,
+                    IS_DEFENDER: true,
                 }, },
         ],
     };
@@ -7612,6 +7614,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
                         }, {
@@ -7619,6 +7622,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
                         }, {
@@ -7626,6 +7630,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -7663,6 +7668,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
                         }, {
@@ -7670,6 +7676,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
                         }, {
@@ -7677,6 +7684,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -7715,6 +7723,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      5,      70,     0,   ], 
                         }, {
@@ -7722,6 +7731,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      0,      60,     0,   ], 
                         }, {
@@ -7729,6 +7739,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,     -5,     170,     0,   ], 
                         }, {
@@ -7736,6 +7747,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      5,     190,     0,   ], 
                         }, {
@@ -7743,6 +7755,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      0,     180,     0,   ], 
                         }, {
@@ -7750,6 +7763,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,     -5,     290,     0,   ], 
                         }, {
@@ -7757,6 +7771,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      5,     310,     0,   ], 
                         }, {
@@ -7764,6 +7779,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      0,     300,     0,   ], 
                         }, {
@@ -7771,6 +7787,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -7809,6 +7826,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      5,      70,     0,   ], 
                         }, {
@@ -7816,6 +7834,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      0,      60,     0,   ], 
                         }, {
@@ -7823,6 +7842,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,     -5,     170,     0,   ], 
                         }, {
@@ -7830,6 +7850,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      5,     190,     0,   ], 
                         }, {
@@ -7837,6 +7858,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      0,     180,     0,   ], 
                         }, {
@@ -7844,6 +7866,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,     -5,     290,     0,   ], 
                         }, {
@@ -7851,6 +7874,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      5,     310,     0,   ], 
                         }, {
@@ -7858,6 +7882,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,      0,      0,     300,     0,   ], 
                         }, {
@@ -7865,6 +7890,7 @@ exports.miniboss2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -8507,6 +8533,7 @@ exports.caltrop_fighter2 = {
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret, g.heavy3, g.giga3, g.levi]),
                     TYPE: exports.bullet,
+                    IS_DEFENDER: true,
                 }, },
         ],
     };
@@ -8531,30 +8558,35 @@ exports.caltrop_fighter2 = {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -8584,30 +8616,35 @@ exports.caltrop_fighter2 = {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -8870,12 +8907,14 @@ exports.krisaucemissile = {
                 AUTOFIRE: true,
                 SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
                 TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                IS_DEFENDER: true,
             }, }, {
         POSITION: [  14,     6,      1,      0,      0,     180,     0,  ], 
             PROPERTIES: {
                 AUTOFIRE: true,
                 SHOOT_SETTINGS: combineStats([g.basic, g.skim, g.double_reload, g.low_power, g.more_speed, g.more_speed]),
                 TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                IS_DEFENDER: true,
             }, },
     ],
 };
@@ -8895,6 +8934,7 @@ exports.krisaucemissile = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.fast_launch, g.levi]),
                             TYPE: exports.krisaucemissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  11,    14,   -1.35,     0,      0,      0,      0,  ], 
                         },
@@ -8913,6 +8953,7 @@ exports.krisaucemissile = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.mini_hive, g.hive, g.levi]),
                             TYPE: exports.hive,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  14,    12,     -0.5,   2.5,     0,      0,      0,   ], 
                         }, {
@@ -8921,6 +8962,7 @@ exports.krisaucemissile = {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.arty, g.skim, g.fast_launch, g.very_fast_launch, g.demoman, g.levi]),
                             TYPE: exports.krisaucemissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  11,    14,   -1.35,     0,      0,      0,      0,  ], 
                         COLOR_SETTINGS: {
@@ -9170,6 +9212,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
@@ -9180,6 +9223,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
@@ -9190,6 +9234,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
@@ -9200,6 +9245,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
@@ -9210,6 +9256,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -9275,6 +9322,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
@@ -9285,6 +9333,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
@@ -9295,6 +9344,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
@@ -9305,6 +9355,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
@@ -9315,6 +9366,7 @@ exports.pentaQuarsarDrone = {
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
                             MAX_CHILDREN: 6,
+                            CAN_SUMMON_CRASHERS: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -10617,6 +10669,7 @@ exports.defendOfShiniesP2Eye = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
                         }, {
@@ -10624,6 +10677,7 @@ exports.defendOfShiniesP2Eye = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
                         }, {
@@ -10631,6 +10685,7 @@ exports.defendOfShiniesP2Eye = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -10660,6 +10715,7 @@ exports.defendOfShiniesP2Eye = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     180,     0,   ], 
                         }, {
@@ -10667,6 +10723,7 @@ exports.defendOfShiniesP2Eye = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  15,     7,      1,     -2,      0,     300,     0,   ], 
                         }, {
@@ -10674,6 +10731,7 @@ exports.defendOfShiniesP2Eye = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.defend]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -10706,6 +10764,7 @@ exports.triangleCascade = {
                 STAT_CALCULATOR: gunCalcNames.drone,
                 WAIT_TO_CYCLE: true,
                 MAX_CHILDREN: 15,
+                IS_DEFENDER: true,
             }, },
     ],
     TURRETS: [{
@@ -10741,6 +10800,7 @@ exports.triangleCascade2 = {
                 STAT_CALCULATOR: gunCalcNames.drone,
                 WAIT_TO_CYCLE: true,
                 MAX_CHILDREN: 15,
+                IS_DEFENDER: true,
             }, },
     ],
     TURRETS: [{
@@ -10880,6 +10940,7 @@ exports.mneBullet = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                      }, },
                 ],
             };
@@ -10971,24 +11032,28 @@ exports.megaCasnuke = {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
                 TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
                 SHOOT_ON_DEATH: true,
+                IS_DEFENDER: true,
             }, }, {
         POSITION: [   1,     6,      1,      0,      0,      90,     0,  ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
                 TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
                 SHOOT_ON_DEATH: true,
+                IS_DEFENDER: true,
             }, }, {
         POSITION: [   1,     6,      1,      0,      0,     180,     0,  ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
                 TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
                 SHOOT_ON_DEATH: true,
+                IS_DEFENDER: true,
             }, }, {
         POSITION: [   1,     6,      1,      0,      0,     270,     0,  ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.destroy, g.one_third_reload, g.no_recoil]),
                 TYPE: [exports.megaCasbullet, {PERSISTS_AFTER_DEATH: true}],
                 SHOOT_ON_DEATH: true,
+                IS_DEFENDER: true,
             }, },
     ],
     TURRETS: [{
@@ -11011,6 +11076,7 @@ exports.megaCasnuke = {
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
                         TYPE: exports.megaCasnuke,
+                        IS_DEFENDER: true,
                     },
                     COLOR_SETTINGS: {
                         COLOR: 189,
@@ -17348,6 +17414,7 @@ exports.sumDriveDrone = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,     
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.5,  ], 
                         PROPERTIES: {
@@ -17357,6 +17424,7 @@ exports.sumDriveDrone = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,   0.25,  ], 
                         PROPERTIES: {
@@ -17366,6 +17434,7 @@ exports.sumDriveDrone = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
+                            IS_SUMMONER: true,
                         }, }, { 
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,    0.75,  ], 
                         PROPERTIES: {
@@ -17375,6 +17444,7 @@ exports.sumDriveDrone = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
+                            IS_SUMMONER: true,
                         }, },
                 ],
                 TURRETS: [{
@@ -17612,6 +17682,7 @@ exports.sumDriveDrone = {
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.flank, g.auto, g.five, g.seven]),
                     TYPE: exports.bullet,
+                    IS_DEFENDER: true,
                 }, },
         ],
         TURRETS: [{
@@ -17631,51 +17702,61 @@ exports.sumDriveDrone = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,    -4.5,     0,     0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,     4.5,     0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,     4.5,     0,     0.9,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,    -2.5,     0,     0.3,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,     2.5,     0,     0.1,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,     2.5,     0,     0.8,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,    -2.5,     0,     0.6,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,      0,      0,     0.2,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  30,    1.5,     1,      0,      0,      0,     0.7,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner, g.vulc]),
                             TYPE: exports.bullet,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [  12,    16,      1,      0,      0,      0,      0,   ], 
                         }, {
@@ -18705,6 +18786,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,     -4,      0,      0,  ], 
                         }, { 
@@ -18712,6 +18794,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,      4,     120,     0,  ], 
                         }, { 
@@ -18719,6 +18802,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,     -4,     120,     0,  ], 
                         }, { 
@@ -18726,6 +18810,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,      4,     240,     0,  ], 
                         }, { 
@@ -18733,6 +18818,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,     -4,     240,     0,  ], 
                         }, { 
@@ -18740,6 +18826,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -18797,6 +18884,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,     -4,      0,      0,  ], 
                         }, { 
@@ -18804,6 +18892,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,      4,     120,     0,  ], 
                         }, { 
@@ -18811,6 +18900,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,     -4,     120,     0,  ], 
                         }, { 
@@ -18818,6 +18908,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,      4,     240,     0,  ], 
                         }, { 
@@ -18825,6 +18916,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, }, {
                     POSITION: [   4,    2.5,     1,      7,     -4,     240,     0,  ], 
                         }, { 
@@ -18832,6 +18924,7 @@ exports.djTurret2 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap, g.flank, g.twin, g.double, g.pound, g.one_third_reload]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            IS_DEFENDER: true,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -18880,6 +18973,7 @@ exports.djTurret2 = {
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.auto, g.five, g.levi, g.levi_five]),
                     TYPE: exports.bullet,
+                    IS_DEFENDER: true,
                 }, },
         ],
     };
@@ -18901,33 +18995,38 @@ exports.djTurret2 = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -18969,33 +19068,38 @@ exports.djTurret2 = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
+                            CAN_SUMMON_CRASHERS: true,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -19917,6 +20021,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
@@ -19925,6 +20030,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
@@ -19933,6 +20039,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
@@ -19941,6 +20048,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, },
                 ],
             };
@@ -19969,6 +20077,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
@@ -19977,6 +20086,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
@@ -19985,6 +20095,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
@@ -19993,6 +20104,7 @@ exports.djTurret2 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
+                            IS_SUMMONER: true,
                         }, },
                 ],
             };
@@ -20022,6 +20134,7 @@ exports.djTurret2 = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,     
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.5,  ], 
                         PROPERTIES: {
@@ -20031,6 +20144,7 @@ exports.djTurret2 = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
+                            IS_SUMMONER: true,
                         }, }, {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,   0.25,  ], 
                         PROPERTIES: {
@@ -20040,6 +20154,7 @@ exports.djTurret2 = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
+                            IS_SUMMONER: true,
                         }, }, { 
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,    0.75,  ], 
                         PROPERTIES: {
@@ -20049,6 +20164,7 @@ exports.djTurret2 = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true, 
+                            IS_SUMMONER: true,
                         }, },
                 ],
                 TURRETS: [{
