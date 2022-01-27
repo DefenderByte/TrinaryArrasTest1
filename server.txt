@@ -1149,6 +1149,8 @@ class Gun {
                 false : info.PROPERTIES.IS_DEFENDER;
             this.isSummon = (info.PROPERTIES.IS_SUMMONER == null) ?
                 false : info.PROPERTIES.IS_SUMMONER;
+            this.shootCrashers = (info.PROPERTIES.CAN_SUMMON_CRASHERS == null) ?
+                false : info.PROPERTIES.CAN_SUMMON_CRASHERS;
         }
         if (info.COLOR_SETTINGS != null) {
             if (info.COLOR_SETTINGS.COLOR != null && info.COLOR_SETTINGS != null) {
@@ -1345,7 +1347,10 @@ class Gun {
         if (this.isSummon) {
             o.color = 3;
         }
-        if (!this.isDefender || !this.isSummon) {
+        if (this.shootCrashers) {
+            o.color = 5;
+        }
+        if (!this.isDefender || !this.isSummon || !this.shootCrashers) {
             o.color = this.body.master.color;
         }
         // Keep track of it and give it the function it needs to deutil.log itself upon death
