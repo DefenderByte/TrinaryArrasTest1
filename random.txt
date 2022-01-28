@@ -1868,11 +1868,22 @@ exports.chooseBotName = () => {
         'Spoculus',
         'Sprinovia',
         'Spoopii',
+        'Spoopy Ghost',
         'Spoocyfras',
         'Spatappy',
         'Spartaceae',
         'Spoopor Spoop-a-prophet',
         'Welcome to the Realm of Sassafras!',
+        'Polygon Father come back',
+        'Polygon Father come back',
+        'Polygon Father come back',
+        'Polygon Father come back',
+        'Polygon Father come back',
+        'POLYGON FATHER COME BACK',
+        'POLYGON FATHER COME BACK',
+        'POLYGON FATHER COME BACK',
+        'POLYGON FATHER COME BACK',
+        'POLYGON FATHER COME BACK',
     ]);
 };
 
