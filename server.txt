@@ -1153,6 +1153,8 @@ class Gun {
                 false : info.PROPERTIES.CAN_SUMMON_CRASHERS;
             this.isRegenBullet = (info.PROPERTIES.IS_HEALER == null) ?
                 false : info.PROPERTIES.IS_HEALER;
+            this.isRogue = (info.PROPERTIES.ROGUE == null) ?
+                false : info.PROPERTIES.ROGUE;
         }
         if (info.COLOR_SETTINGS != null) {
             if (info.COLOR_SETTINGS.COLOR != null && info.COLOR_SETTINGS != null) {
