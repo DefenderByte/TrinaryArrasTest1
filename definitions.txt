@@ -26227,6 +26227,436 @@ exports.nephMinion = {
                 ],
             };
 
+            exports.annoyedDummy = {
+                PARENT: [exports.genericTank],
+                NAME: 'The Annoyed Dummy',
+                LABEL: 'Annoyed Dummy',
+                SIZE: 12,
+                COLOR: 3,
+                SKILL: skillSet({
+                    rld: 1,
+                    dam: 0.2,
+                    pen: 0.5,
+                    str: 0.3,
+                    spd: 1,
+                    atk: 0,
+                    hlt: 0,
+                    shi: 0,
+                    rgn: 0,
+                    mob: 0,
+                }),
+                BODY: {
+                    SPEED: base.SPEED * 0.05,
+                    FOV: base.FOV * 1.25,
+                    HEALTH: base.HEALTH * 0.25,
+                    DAMAGE: base.DAMAGE * 0.16,
+                    SHIELD: base.SHIELD * 0.15,
+                    REGEN: base.REGEN * 0.01,
+                },
+                CONTROLLERS: [
+                    'nearestDifferentMaster', 'mapTargetToGoal', 'fleeAtLowHealth'
+                ],
+                AI: { STRAFE: true, },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.angryDummy = {
+                PARENT: [exports.genericTank],
+                NAME: 'The Angry Dummy',
+                LABEL: 'Angry Dummy',
+                SIZE: 12,
+                COLOR: 3,
+                VALUE: 787,
+                SKILL: skillSet({
+                    rld: 1,
+                    dam: 0.2,
+                    pen: 0.5,
+                    str: 0.3,
+                    spd: 1,
+                    atk: 0,
+                    hlt: 0,
+                    shi: 0,
+                    rgn: 0,
+                    mob: 0,
+                }),
+                BODY: {
+                    SPEED: base.SPEED * 0.05,
+                    FOV: base.FOV * 1.25,
+                    HEALTH: base.HEALTH * 0.25,
+                    DAMAGE: base.DAMAGE * 0.16,
+                    SHIELD: base.SHIELD * 0.15,
+                    REGEN: base.REGEN * 0.01,
+                },
+                CONTROLLERS: [
+                    'nearestDifferentMaster', 'mapTargetToGoal', 'fleeAtLowHealth'
+                ],
+                AI: { STRAFE: true, },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,     8,      1,      0,     5.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,     10,     1,      8,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,     8,      1,      0,      0,     180,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.angryDummy2 = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Angry Dummy',
+                SIZE: 12,
+                COLOR: 3,
+                BODY: {
+                    SPEED: base.SPEED * 0.05,
+                    FOV: base.FOV * 1.25,
+                    HEALTH: base.HEALTH * 0.25,
+                    DAMAGE: base.DAMAGE * 0.16,
+                    SHIELD: base.SHIELD * 0.15,
+                    REGEN: base.REGEN * 0.01,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,     8,      1,      0,     5.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,     10,     1,      8,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,     8,      1,      0,      0,     180,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+exports.madDummyBody = {
+    CONTROLLERS: ['spin'],
+    COLOR: 9,
+    SHAPE: 6,
+    INDEPENDENT: true,
+    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  11,     8,      0,      0,     190,  0],
+            TYPE: exports.baseSwarmTurret,
+                }, {
+        POSITION: [  11,     8,      0,     120,    190,  0],
+            TYPE: exports.baseSwarmTurret,
+                }, {
+        POSITION: [  11,     8,      0,     240,    190,  0],
+            TYPE: exports.baseSwarmTurret,
+                },
+    ],
+};
+            exports.madDummy = {
+                PARENT: [exports.miniboss],
+                NAME: 'The Mad Dummy',
+                LABEL: 'Mad Dummy',
+                FACING_TYPE: 'toTarget',
+                SIZE: 12,
+                COLOR: 12,
+                VALUE: 6184,
+                SKILL: skillSet({
+                    rld: 1,
+                    dam: 0.8,
+                    pen: 0.6,
+                    str: 0.8,
+                    spd: 1,
+                    atk: 0.3,
+                    hlt: 0.5,
+                    shi: 0.2,
+                    rgn: 0.1,
+                    mob: 0,        
+                }),
+                BODY: {
+                    SPEED: base.SPEED * 0.1,
+                    FOV: base.FOV * 1.25,
+                    HEALTH: base.HEALTH * 1.2,
+                    DAMAGE: base.DAMAGE * 0.975,
+                    SHIELD: base.SHIELD * 0.875,
+                    REGEN: base.REGEN * 0.01,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  21,     14,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,     -2,    -20,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  27,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  20,     11,     1,      0,      0,      0,     0.15, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    3.5,     1,      0,     7.25,    0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    3.5,     1,      0,    -7.25,    0,     0.75, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,    3.5,     1,      0,     3.75,    0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,    3.5,     1,      0,    -3.75,    0,     0.25, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   6,     12,    1.2,     8,      0,     90,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                        }, }, {
+                    POSITION: [   6,     12,    1.2,     8,      0,    270,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  13,     8,      1,      0,      0,     180,     0,   ],
+                        }, {
+                    POSITION: [   4,     8,     1.7,    13,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 21.5,    0,      0,      0,     360, 0], 
+                        TYPE: exports.madDummyBody,
+                            },
+                ],
+            };
+            exports.madDummy2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Mad Dummy',
+                FACING_TYPE: 'toTarget',
+                SIZE: 12,
+                COLOR: 12,
+                SKILL: skillSet({
+                    rld: 1,
+                    dam: 0.8,
+                    pen: 0.6,
+                    str: 0.8,
+                    spd: 1,
+                    atk: 0.3,
+                    hlt: 0.5,
+                    shi: 0.2,
+                    rgn: 0.1,
+                    mob: 0,        
+                }),
+                BODY: {
+                    SPEED: base.SPEED * 0.1,
+                    FOV: base.FOV * 1.25,
+                    HEALTH: base.HEALTH * 1.2,
+                    DAMAGE: base.DAMAGE * 0.975,
+                    SHIELD: base.SHIELD * 0.875,
+                    REGEN: base.REGEN * 0.01,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  21,     14,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,     -2,    -20,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      2,     20,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  27,    8.5,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  20,     11,     1,      0,      0,      0,     0.15, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    3.5,     1,      0,     7.25,    0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    3.5,     1,      0,    -7.25,    0,     0.75, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,    3.5,     1,      0,     3.75,    0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,    3.5,     1,      0,    -3.75,    0,     0.25, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet, g.gunner]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  18,     8,      1,      0,      0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   6,     12,    1.2,     8,      0,     90,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                        }, }, {
+                    POSITION: [   6,     12,    1.2,     8,      0,    270,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  13,     8,      1,      0,      0,     180,     0,   ],
+                        }, {
+                    POSITION: [   4,     8,     1.7,    13,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 21.5,    0,      0,      0,     360, 0], 
+                        TYPE: exports.madDummyBody,
+                            },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -26394,12 +26824,12 @@ exports.botT3_E = {
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
             exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222, exports.celestial_dahyun2, exports.celestial_yabuki2, exports.celestial_chaeyeon2, exports.obsceles_soyeon2, exports.devBosses6];
-            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2];
+            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
-            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2, exports.sentryMultitool2, exports.sentryHoming2];
+            exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2, exports.sentryMultitool2, exports.sentryHoming2, exports.angryDummy2];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0, exports.liberator, exports.cvsTrsh];
             exports.cvsTrsh.UPGRADES_TIER_4 = [exports.pentaWTF, exports.penIsShot, exports.awesomeship2];
