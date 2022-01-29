@@ -26372,13 +26372,13 @@ exports.madDummyBody = {
     INDEPENDENT: true,
     TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  11,     8,      0,      0,     190,  0],
-            TYPE: exports.baseSwarmTurret,
+            TYPE: exports.auto3gun,
                 }, {
         POSITION: [  11,     8,      0,     120,    190,  0],
-            TYPE: exports.baseSwarmTurret,
+            TYPE: exports.auto3gun,
                 }, {
         POSITION: [  11,     8,      0,     240,    190,  0],
-            TYPE: exports.baseSwarmTurret,
+            TYPE: exports.auto3gun,
                 },
     ],
 };
@@ -26474,6 +26474,7 @@ exports.madDummyBody = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 4,
                         }, }, {
                     POSITION: [   6,     12,    1.2,     8,      0,    270,      0,   ], 
                         PROPERTIES: {
@@ -26483,6 +26484,7 @@ exports.madDummyBody = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 4,
                         }, }, {
                     POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
                         PROPERTIES: {
@@ -26610,6 +26612,7 @@ exports.madDummyBody = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 4,
                         }, }, {
                     POSITION: [   6,     12,    1.2,     8,      0,    270,      0,   ], 
                         PROPERTIES: {
@@ -26619,6 +26622,7 @@ exports.madDummyBody = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 4,
                         }, }, {
                     POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
                         PROPERTIES: {
