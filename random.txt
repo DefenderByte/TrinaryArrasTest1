@@ -1884,6 +1884,12 @@ exports.chooseBotName = () => {
         'POLYGON FATHER COME BACK',
         'POLYGON FATHER COME BACK',
         'POLYGON FATHER COME BACK',
+        'Only Add Tourmalenes',
+        'AMOGUS (1973) Episode 11 The Cursing Camera',
+        'AMOGUS (1973) Episode 29 Weird Robot Car',
+        'Undertale Music Megalovania Song (Sans Boss Battle)',
+        'AMOGUS (1973) - Episode 52 Goodbye AMOGUS',
+        'Big Fat Meanie POO POO',
     ]);
 };
 
