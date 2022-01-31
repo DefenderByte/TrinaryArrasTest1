@@ -1782,8 +1782,9 @@ exports.auto3gun = {
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [ 4.5,     14,     1,      10,     0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret, g.heavy3, g.giga3, g.levi]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.five, g.fast, g.more_speed, g.one_third_reload, g.twin, g.double, g.triplet, g.double_range, g.levi]),
                     TYPE: exports.bullet,
+                    IS_DEFENDER: true,
                 }, }, {
             POSITION: [  11,     14,   -1.35,    0,      0,      0,      0,   ], 
                 },
@@ -1800,7 +1801,7 @@ exports.auto3gun = {
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [ 4.5,     14,     1,      10,     0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret, g.heavy3, g.giga3]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.five, g.fast, g.more_speed, g.one_third_reload, g.twin, g.double, g.triplet, g.double_range]),
                     TYPE: exports.bullet,
                 }, }, {
             POSITION: [  11,     14,   -1.35,    0,      0,      0,      0,   ], 
@@ -8673,7 +8674,7 @@ exports.penta_sentry = {
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  10,     0,      0,     180,    360,   1, ], 
-            TYPE: [exports.autoTurret],
+            TYPE: [exports.implosionistgun],
             }, {
         POSITION: [ 21.5,    0,      0,      0,     360,   0, ], 
             TYPE: [exports.pentaSentryBody],
@@ -8694,7 +8695,7 @@ exports.penta_sentry2 = {
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  10,     0,      0,     180,    360,   1, ], 
-            TYPE: [exports.autoTurret],
+            TYPE: [exports.implosionistgun],
             }, {
         POSITION: [ 21.5,    0,      0,      0,     360,   0, ], 
             TYPE: [exports.pentaSentryBody],
@@ -10770,10 +10771,10 @@ exports.triangleCascade = {
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  14,     8,      0,      60,    180,   0, ], 
-            TYPE: [exports.autoTurret],
+            TYPE: [exports.implosionistgun],
             }, {
         POSITION: [  14,     8,      0,     300,    180,   0, ], 
-            TYPE: [exports.autoTurret],
+            TYPE: [exports.implosionistgun],
             },
     ],
 };
@@ -10806,10 +10807,10 @@ exports.triangleCascade2 = {
     TURRETS: [{
         /*********  SIZE     X       Y     ANGLE    ARC */
         POSITION: [  14,     8,      0,      60,    180,   0, ], 
-            TYPE: [exports.autoTurret],
+            TYPE: [exports.implosionistgun],
             }, {
         POSITION: [  14,     8,      0,     300,    180,   0, ], 
-            TYPE: [exports.autoTurret],
+            TYPE: [exports.implosionistgun],
             },
     ],
 };
@@ -15946,7 +15947,7 @@ exports.eliteLaunchTurret = {
                         TYPE: exports.derogun,
                         }, {
                     POSITION: [   6,     0,      0,     180,    360,   1, ], 
-                        TYPE: exports.levigun,
+                        TYPE: exports.octogturret,
                         },
                 ],
             };
@@ -16016,7 +16017,7 @@ exports.eliteLaunchTurret = {
                         TYPE: exports.derogun,
                         }, {
                     POSITION: [   6,     0,      0,     180,    360,   1, ], 
-                        TYPE: exports.levigun,
+                        TYPE: exports.octogturret,
                         },
                 ],
             };
@@ -17603,25 +17604,25 @@ exports.sumDriveDrone = {
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [ 2.5,     10,     0,    180/7,   180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,   180/7*3,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,   180/7*5,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,     180,    180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,   -180/7,   180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,  -180/7*3,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,  -180/7*5,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         },
             ],
         };
@@ -17642,25 +17643,25 @@ exports.sumDriveDrone = {
             },
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [ 2.5,     10,     0,    180/7,   180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,   180/7*3,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,   180/7*5,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,     180,    180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,   -180/7,   180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,  -180/7*3,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         }, {
                 POSITION: [ 2.5,     10,     0,  -180/7*5,  180,  0], 
-                    TYPE: exports.autoTurret,
+                    TYPE: exports.implosionistgun,
                         },
             ],
         };
@@ -18133,16 +18134,16 @@ exports.sumDriveDrone = {
                 TURRETS: [{
                     /*********  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [ 4.85,   6.5,     0,      0,     360,   1, ], 
-                        TYPE: [exports.levigun],
+                        TYPE: [exports.octogturret],
                         }, {
                     POSITION: [ 4.85,   6.5,     0,     90,     360,   1, ], 
-                        TYPE: [exports.levigun],
+                        TYPE: [exports.octogturret],
                         }, {
                     POSITION: [ 4.85,   6.5,     0,     180,    360,   1, ], 
-                        TYPE: [exports.levigun],
+                        TYPE: [exports.octogturret],
                         }, {
                     POSITION: [ 4.85,   6.5,     0,     270,    360,   1, ], 
-                        TYPE: [exports.levigun],
+                        TYPE: [exports.octogturret],
                         },
                 ],
             };
@@ -18995,35 +18996,35 @@ exports.djTurret2 = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
@@ -19068,35 +19069,35 @@ exports.djTurret2 = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   3,    8.9,    1.05,    8,      0,      36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     180,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,    -108,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
                         }, }, {
                     POSITION: [   3,    8.9,    1.05,    8,      0,     -36,     0,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.swarm, g.guardian]),
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.one_third_reload, g.twin, g.double, g.triplet]),
                             TYPE: exports.swarm,
                             STAT_CALCULATOR: gunCalcNames.swarm,
                             CAN_SUMMON_CRASHERS: true,
@@ -19996,6 +19997,11 @@ exports.djTurret2 = {
                         }, },
                 ],
             };
+        exports.summondrone = {
+            PARENT: [exports.drone],
+            LABEL: 'Summoner Square',
+            SHAPE: 4,
+        };
             exports.summon = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Limburger Cassowary',
@@ -20017,7 +20023,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     90,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20026,7 +20032,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20035,7 +20041,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20044,7 +20050,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20073,7 +20079,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     90,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20082,7 +20088,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20091,7 +20097,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
@@ -20100,7 +20106,7 @@ exports.djTurret2 = {
                     POSITION: [ 3.5,   8.65,    1.2,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.summon]),
-                            TYPE: [exports.drone, { SHAPE: 4, }],
+                            TYPE: exports.summondrone,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
