@@ -25192,7 +25192,7 @@ exports.hugeCrasher = {
 exports.summonSquare = {
     TYPE: 'crasher',
     LABEL: 'Limburger Square',
-    COLOR: 3,
+    COLOR: 32,
     SHAPE: 4,
     SIZE: 10,
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
@@ -25217,7 +25217,7 @@ exports.summonSquare = {
 exports.swarmSquare = {
     TYPE: 'crasher',
     LABEL: 'Swarm Square',
-    COLOR: 3,
+    COLOR: 32,
     SHAPE: 4,
     SIZE: 5,
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
