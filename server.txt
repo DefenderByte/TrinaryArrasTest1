@@ -1352,7 +1352,7 @@ class Gun {
             o.color = 13;
         }
         if (this.isSummon) {
-            o.color = 3;
+            o.color = 32;
         }
         if (this.shootCrashers) {
             o.color = 5;
