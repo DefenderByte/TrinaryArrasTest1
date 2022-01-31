@@ -25317,7 +25317,7 @@ exports.bigGreenRunner = {
 exports.trapezoid = {
     TYPE: 'crasher',
     LABEL: 'Trapezoid',
-    COLOR: 216,
+    COLOR: 215,
     SHAPE: 138,
     SIZE: 24,
     CONTROLLERS: ['nearestDifferentMaster', 'mapTargetToGoal'],
