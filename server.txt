@@ -5269,13 +5269,13 @@ var maintainloop = (() => {
         };
     })();
     let spawnCrasher = census => {
-        if (ran.chance(1 -  0.9875 * census.crasher / room.maxFood / room.nestFoodAmount)) {
+        if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
-            let nest_defender = (ran.dice(100)) ? ran.choose([Class.nestdefend_krios, Class.nestdefend_tethys, Class.nestdefend_mnemosyne, Class.angryDummy]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.baby_leviathan, Class.penta_sentry, Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.defend_lite, Class.triangleCascade]);
-            let type2 = (ran.dice(100)) ? ran.choose([Class.annoyedDummy, Class.pentagonQuarsar]) : ran.choose([Class.hugeCrasher, Class.bigGreenRunner]);
-            let type = (ran.dice(100)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, Class.sentryHoming, Class.dummy, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.bigCrasher, Class.bigCrasher, Class.swarmSquare, Class.swarmSeeker, Class.summonSquare, Class.greenRunner, Class.trapezoid, type2]);
-            let mystBox = (ran.dice(1000)) ? ran.choose([Class.mysterybox1, Class.mysterybox2, Class.mysterybox3, Class.mysterybox4, Class.mysterybox5, Class.mysterybox6, Class.mysterybox7, Class.mysterybox8, Class.mysterybox9, Class.mysterybox10]) : type;
+            let nest_defender = (ran.dice(80)) ? ran.choose([Class.nestdefend_krios, Class.nestdefend_tethys, Class.nestdefend_mnemosyne, Class.angryDummy]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.baby_leviathan, Class.penta_sentry, Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.defend_lite, Class.triangleCascade]);
+            let type2 = (ran.dice(80)) ? ran.choose([Class.annoyedDummy, Class.pentagonQuarsar]) : ran.choose([Class.hugeCrasher, Class.bigGreenRunner]);
+            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentrySnipe, Class.eDestroyLite, Class.eGunnerLite, Class.sentryMultitool, Class.sentryHoming, Class.dummy, nest_defender]) : ran.choose([Class.crasher, Class.crasher, Class.bigCrasher, Class.bigCrasher, Class.swarmSquare, Class.swarmSeeker, Class.summonSquare, Class.greenRunner, Class.trapezoid, type2]);
+            let mystBox = (ran.dice(800)) ? ran.choose([Class.mysterybox1, Class.mysterybox2, Class.mysterybox3, Class.mysterybox4, Class.mysterybox5, Class.mysterybox6, Class.mysterybox7, Class.mysterybox8, Class.mysterybox9, Class.mysterybox10]) : type;
             let o = new Entity(spot);
                 o.define(mystBox);
                 o.team = -100;
