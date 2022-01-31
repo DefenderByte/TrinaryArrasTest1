@@ -1344,7 +1344,10 @@ class Gun {
             SKILL: this.getSkillRaw(),
             SIZE: this.body.size * this.width * this.settings.size / 2 ,
             LABEL: this.master.label + ((this.label) ? ' ' + this.label : '') + ' ' + o.label,
-        });            
+        });
+        if (!this.isDefender || !this.isSummon || !this.shootCrashers || !this.isRegenBullet || !this.isRogue) {
+            o.color = this.body.master.color;
+        }
         if (this.isDefender) {
             o.color = 13;
         }
@@ -1359,9 +1362,6 @@ class Gun {
         }
         if (this.isRogue) {
             o.color = 8;
-        }
-        else {
-            o.color = this.body.master.color;
         }
         // Keep track of it and give it the function it needs to deutil.log itself upon death
         if (this.countsOwnKids) {
