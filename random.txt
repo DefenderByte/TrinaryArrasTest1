@@ -2054,7 +2054,7 @@ exports.chooseBotName = () => {
         'Big Fat Meanie POO POO',
         'Is this the Obama Prism? --> https://www.youtube.com/watch?v=F2XzU1esuFY',
         'Only Add Obama Prisms',
-        'you into grillby's.',
+        'you into grillby\'s.',
         'Wide Putin walking(Video)',
         'undertale stuff go here',
         'tale of diep stuff go here',
