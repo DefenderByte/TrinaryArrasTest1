@@ -5269,7 +5269,7 @@ var maintainloop = (() => {
         };
     })();
     let spawnCrasher = census => {
-        if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
+        if (ran.chance(1 -  0.9875 * census.crasher / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
             let nest_defender = (ran.dice(50)) ? ran.choose([Class.nestdefend_krios, Class.nestdefend_tethys, Class.nestdefend_mnemosyne, Class.angryDummy]) : ran.choose([Class.guardian_lite, Class.crasher_dasher, Class.crash_fighter, Class.caltrop_fighter, Class.baby_leviathan, Class.penta_sentry, Class.rareSentrySwarm, Class.rareSentryGun, Class.rareSentryTrap, Class.defend_lite, Class.triangleCascade]);
