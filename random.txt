@@ -2059,6 +2059,16 @@ exports.chooseBotName = () => {
         'undertale stuff go here',
         'tale of diep stuff go here',
         'SAV stuff go here',
+        'Secret Names have a chance of 1/1000',
+        'We have finally found Oca is killing the Implosionist using a Twisted Hybrid',
+        'DroidekaDoge is DefBt's Evil Side',
+        'We set Sassahats on fire',
+        '#killallsassahats',
+        'Sassahat is EWWW!!',
+        'THAT\'S IT!',
+        'MAW IS ANGRY',
+        'You are banned sassahat',
+        'NO',
     ]);
 };
 
@@ -3021,15 +3031,6 @@ case 'frecel':
 case 'zapcel':
     return exports.chooseN([
         'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Zaphkiel', //Beer Casso on Steroids
-        'Santa', //Beer Casso on Steroids
     ], n);
 case 'kricel':
     return exports.chooseN([
@@ -3150,15 +3151,6 @@ case 'ragcel':
 case 'krocel':
     return exports.chooseN([
         'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Kronos', //First Eternal
-        'Krampus', //First Eternal
     ], n) ;
 case 'selcel':
     return exports.chooseN([
