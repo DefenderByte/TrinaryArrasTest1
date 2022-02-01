@@ -2279,6 +2279,10 @@ exports.jumpBody = {
                 },
         ],
     };
+    exports.octagronBody = {
+        PARENT: [exports.genericTank],
+        INDEPENDENT: true,
+    };
         exports.baseProtector = {
             PARENT: [exports.genericTank],
             LABEL: 'Base',
@@ -26799,6 +26803,439 @@ exports.madDummyBody2 = {
                 ],
             };
 
+            exports.minispread = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Spreadling',
+                DANGER: 6,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  16,     4,      1,      0,     -1,     -45,    3/4,    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [ 17.5,    4,      1,      0,   -1.75,    -30,    2/4,    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [  19,     4,      1,      0,     -2,     -15,    1/4,    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [  16,     4,      1,      0,      1,      45,    3/4,    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [ 17.5,    4,      1,      0,    1.75,     30,    2/4,    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [  19,     4,      1,      0,      2,      15,    1/4,    ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Secondary',
+                        }, }, {
+                    POSITION: [  13,    8.5,    1.25,    8,      0,      0,      0,     ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.spreadmain, g.spread]),
+                            TYPE: exports.bullet,
+                            LABEL: 'Primary',
+                        }, },
+                ],
+            };
+            exports.autospread = makeAuto(exports.minispread, "Autoling");
+
+            exports.clockPellet = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Pelleter',
+                DANGER: 5,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  17,     2,      1,      0,      3,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,     2,      1,      0,     -3,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pellet]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 4.5,    8.5,    -1.6,   7.5,     0,      0,      0,   ],
+                        },
+                ],
+            };
+            exports.clockAutoPellet = makeAuto(exports.clockPellet);
+        exports.clockMarauder = {
+            PARENT: [exports.genericTank],
+            DANGER: 8,
+            LABEL: 'Marauder',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  17,     3,      1,      0,     -6,     -7,     0.25,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Secondary',
+                    }, }, {
+                POSITION: [  17,     3,      1,      0,      6,      7,     0.75,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Secondary',
+                    }, }, {
+                POSITION: [  19,     12,     1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Heavy',
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,      4,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm]),
+                        TYPE: exports.autoswarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,               
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,     180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm]),
+                        TYPE: exports.autoswarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, },
+            ],
+        };
+        exports.clocruiser = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Cruiser',
+            DANGER: 6,
+            BODY: {
+                FOV: base.FOV * 1.2,
+            },
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   7,    7.5,    0.6,     7,      4,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,               
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,      0,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, },
+            ],
+        };
+        exports.clockArty = {
+            PARENT: [exports.genericTank],
+            DANGER: 6,
+            LABEL: 'Artillery',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  17,     3,      1,      0,     -6,     -7,     0.25,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Secondary',
+                    }, }, {
+                POSITION: [  17,     3,      1,      0,      6,      7,     0.75,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Secondary',
+                    }, }, {
+                POSITION: [  19,     12,     1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty]),
+                        TYPE: exports.bullet,
+                        LABEL: 'Heavy',
+                    }, },
+            ],
+        };
+    exports.clockPound = {
+        PARENT: [exports.genericTank],
+        DANGER: 5,
+        LABEL: 'Pounder',
+        CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  20,    12,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound]),
+                TYPE: exports.bullet,
+            }, },
+        ],
+    };
+        exports.clockPiston = {
+            PARENT: [exports.genericTank],
+            DANGER: 7,
+            LABEL: 'Piston',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   7,    7.5,    0.6,     7,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,               
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,      4,     205,    0.25, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.halfreload]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,     155,    0.75, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.halfreload]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, }, {
+                POSITION: [  14,     9,      1,      0,      0,     180,     0,   ],
+                    }, {
+                POSITION: [   4,     9,     1.5,    14,      0,     180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.slow]),
+                        TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                    }, },
+            ],
+        };
+        exports.clockPistonWithoutFront = {
+            PARENT: [exports.genericTank],
+            DANGER: 7,
+            LABEL: 'Piston',
+            CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   7,    7.5,    0.6,     7,      4,      25,    0.25, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, }, {
+                POSITION: [   7,    7.5,    0.6,     7,     -4,     335,    0.75, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload]),
+                        TYPE: exports.swarm,
+                        STAT_CALCULATOR: gunCalcNames.swarm,         
+                    }, }, {
+                POSITION: [  14,     9,      1,      0,      0,      0,      0,   ],
+                    }, {
+                POSITION: [   4,     9,     1.5,    14,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.trap, g.pound, g.slow]),
+                        TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                    }, },
+            ],
+        };
+            exports.clock = {
+                PARENT: [exports.miniboss],
+                LABEL: 'C.L.O.C.K.',
+                COLOR: 2,
+                SHAPE: 12,
+                SIZE: 48,
+                VALUE: 500000,
+                STAT_NAMES: 6,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.5,
+                    HEALTH: 50,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  13,     2,      1,      0,      0,     -30,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  13,     2,      1,      0,      0,    -210,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.flank]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 4.5,     0,      0,      0,     360, 1], 
+                        TYPE: exports.kGun,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,      15,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     105,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     195,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     285,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,      45,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     135,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     225,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     315,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,      75,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     165,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     255,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     345,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      30,    180, 0], 
+                        TYPE: exports.clockPound,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     210,    180, 0], 
+                        TYPE: exports.clockPound,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      90,    180, 0], 
+                        TYPE: exports.clocruiser,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     270,    180, 0], 
+                        TYPE: exports.clocruiser,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     120,    180, 0], 
+                        TYPE: exports.clockPellet,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     300,    180, 0], 
+                        TYPE: exports.clockPellet,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      0,     180, 0], 
+                        TYPE: exports.clockArty,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     180,    180, 0], 
+                        TYPE: exports.clockArty,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      60,    180, 0], 
+                        TYPE: exports.clockPistonWithoutFront,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     240,    180, 0], 
+                        TYPE: exports.clockPistonWithoutFront,
+                            },
+                ],
+            };
+            exports.clock2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'C.L.O.C.K.',
+                COLOR: 2,
+                SHAPE: 12,
+                SIZE: 48,
+                VALUE: 500000,
+                STAT_NAMES: 6,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.5,
+                    HEALTH: 50,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  13,     2,      1,      0,      0,     -30,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  13,     2,      1,      0,      0,    -210,     0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.flank]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 4.5,     0,      0,      0,     360, 1], 
+                        TYPE: exports.kGun,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,      15,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     105,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     195,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     285,    360, 1], 
+                        TYPE: exports.clockMarauder,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,      45,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     135,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     225,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     315,    360, 1], 
+                        TYPE: exports.clockAutoPellet,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,      75,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     165,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     255,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.1,    8.5,     0,     345,    360, 1], 
+                        TYPE: exports.clockPiston,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      30,    180, 0], 
+                        TYPE: exports.clockPound,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     210,    180, 0], 
+                        TYPE: exports.clockPound,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      90,    180, 0], 
+                        TYPE: exports.clocruiser,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     270,    180, 0], 
+                        TYPE: exports.clocruiser,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     120,    180, 0], 
+                        TYPE: exports.clockPellet,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     300,    180, 0], 
+                        TYPE: exports.clockPellet,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      0,     180, 0], 
+                        TYPE: exports.clockArty,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     180,    180, 0], 
+                        TYPE: exports.clockArty,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,      60,    180, 0], 
+                        TYPE: exports.clockPistonWithoutFront,
+                            }, {
+                    POSITION: [ 3.15,  10.1,     0,     240,    180, 0], 
+                        TYPE: exports.clockPistonWithoutFront,
+                            },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -26966,7 +27403,7 @@ exports.botT3_E = {
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
             exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222, exports.celestial_dahyun2, exports.celestial_yabuki2, exports.celestial_chaeyeon2, exports.obsceles_soyeon2, exports.devBosses6];
-            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2];
+            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
@@ -27057,7 +27494,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.machHoming.UPGRADES_TIER_3 = [exports.twinmachHoming, exports.flankmachHoming];
         exports.flankHoming.UPGRADES_TIER_3 = [exports.flankmachHoming];
 
-    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound];
+    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread];
         exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam, exports.shell, exports.flankDestroy];
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
@@ -27068,5 +27505,6 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.artillery.UPGRADES_TIER_4 = [exports.artycruise];
             exports.skimmer.UPGRADES_TIER_4 = [exports.demoman];
         exports.flankPound.UPGRADES_TIER_3 = [exports.flankArty, exports.quadPound, exports.flankDestroy];
-            exports.quadPound.UPGRADES_TIER_3 = [exports.hexaDestroy];
-            exports.flankDestroy.UPGRADES_TIER_3 = [exports.hexaDestroy];
+            exports.quadPound.UPGRADES_TIER_4 = [exports.hexaDestroy];
+            exports.flankDestroy.UPGRADES_TIER_4 = [exports.hexaDestroy];
+        exports.minispread.UPGRADES_TIER_3 = [exports.spread, exports.splitPellet, exports.autospread];
