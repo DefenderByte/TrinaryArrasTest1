@@ -2061,7 +2061,7 @@ exports.chooseBotName = () => {
         'SAV stuff go here',
         'Secret Names have a chance of 1/1000',
         'We have finally found Oca is killing the Implosionist using a Twisted Hybrid',
-        'DroidekaDoge is DefBt's Evil Side',
+        'DroidekaDoge is DefBt\'s Evil Side',
         'We set Sassahats on fire',
         '#killallsassahats',
         'Sassahat is EWWW!!',
