@@ -2068,8 +2068,8 @@ exports.chooseBotName = () => {
         'You are banned sassahat',
         'NO',
         '念阿彌陀佛',
-        'Diep.io's china',
-        'Diep.io's china be like: 念阿彌陀佛',
+        'Diep.io\'s china',
+        'Diep.io\'s china be like: 念阿彌陀佛',
     ]);
 };
 
