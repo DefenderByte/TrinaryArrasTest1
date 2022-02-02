@@ -1542,7 +1542,6 @@ exports.chooseBotName = () => {
         'Is that Ocas channel? => https://m.youtube.com/channel/UCwkgmOCxfkFWVDdeFRYbQuA <= Is that Ocas channel?',
         'Ads?', 
         'HOW DARE YOU, YOU USED 100% OF THE CORRUPTION\'S ENERGY!!!',
-        // Arras.io Russia Jokes by Cveas
         'In Russia, BULLET SHOOTS TANK', 'Tank shoots bullet',
         'In Russia, YOU PROTECT TEAM BASE', 'Team Base protect you',
         'In Russia dominator, YOU\'RE CONTESTED', 'A Dominator has been contested',
@@ -1583,7 +1582,6 @@ exports.chooseBotName = () => {
         'In Russia, PINK TRIANGLE BATTLESHIPS LIKE TELIPORTL',
         'In Russia, UP GETS YOU AND BED GOES TO YOU',
         'In Russia, OVERLORD IS SUPERIOR TO NECROMANCER', 'In Russia, EVERYTHING IS SUPERIOR TO CONQ & SKIMMER',
-        // Real Life Russia Jokes
         'In Russia, CAR DRIVES YOU',
         'In Russia, PHOTOS TAKE YOU',
         'In Russia, BURGER KING EATS YOU', 'In Russia, YOU SUPERSIZES MCDONALDS',
@@ -2069,6 +2067,9 @@ exports.chooseBotName = () => {
         'MAW IS ANGRY',
         'You are banned sassahat',
         'NO',
+        '念阿彌陀佛',
+        'Diep.io's china',
+        'Diep.io's china be like: 念阿彌陀佛',
     ]);
 };
 
