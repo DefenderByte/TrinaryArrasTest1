@@ -1592,9 +1592,9 @@ exports.chooseBotName = () => {
         'In Russia, MOUSE TRAPS YOU',
         'In Russia, DEERS HUNT YOU',
         'In Russia, MONKEY SPANKS YOU', 'How to SPANK a monkey?',
-        'In Russia, A SPOON BENDS YOU',
+        'In Russia, SPOON BENDS YOU',
         'In Russia, ICE CREAM TRUCK CHASES KIDS',
-        'In Russia, SANDWHICH MAKES YOU FOR DINNER',
+        'In Russia, SANDWICH MAKES YOU FOR DINNER',
         'In Russia, DOG WALKS YOU',
         'In Russia, VIDEO GAMES PLAY YOU',
         'In Russia, YOU ARREST POLICE',
@@ -1955,7 +1955,6 @@ exports.chooseBotName = () => {
         'Lauraceae', // a plant
         'Señor Sassaprophet', // aka Senior Sass- WHAT? - Sassafras JR, 2021
         'case fallen: choice = [[Class.allfallenbosses], 4, \'woomy\', \'rock\']; sockets.broadcast(\'Many had sought for the day when they\'d return... But not in this way...\'); break;',
-        'WE HATE THE SAV CLAN WE NEED HELP',
         'Lord Sassafras',
         'Fan of Alkaios',
         'Lukey',
@@ -2070,6 +2069,7 @@ exports.chooseBotName = () => {
         '念阿彌陀佛',
         'Diep.io\'s china',
         'Diep.io\'s china be like: 念阿彌陀佛',
+        'nolvl24u',
     ]);
 };
 
