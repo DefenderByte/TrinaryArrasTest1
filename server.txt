@@ -2306,10 +2306,6 @@ class Entity {
             this.SIZE += 300;
             this.maxSpeed = this.topSpeed;
             break;
-        case "ied":
-            this.SIZE -= 10;
-            this.maxSpeed = this.topSpeed;
-            break;
         case 'glide':
             this.maxSpeed = this.topSpeed
             this.damp = 0.05;
