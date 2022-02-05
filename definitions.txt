@@ -189,7 +189,7 @@ const g = { // Gun info here
     dem_minion:         [1.35,  0.95,  1.85,   0.9,    0.4,    0.35,   0.4,    0.5,    1,      0.75,   1,      1.85,   1],
     more_speed:         [1,     1,     1,      1,      1,      1,      1,      1.3,    1.3,    1,      1,      1,      1], 
     double_speed:       [1,     1,     1,      1,      1,      1,      1,      2,      2,      1,      1,      1,      1],
-    fast:               [1,     1,     1,      1,      1,      1,      1,      1.2,    1,      1,      1,      1,      1],
+    fast:               [1,     1,     1,      1,      1,      1,      1,      1.2,    1.2,    1,      1,      1,      1],
     faster:             [1,     1,     1,      1,      1,      1,      1,      1.1,    1.1,    1,      1,      1,      1],
     very_bit_slow:      [1,     1,     1,      1,      1,      1,      1,      0.95,   0.95,   1,      1,      1,      1],
     bit_slow:           [1,     1,     1,      1,      1,      1,      1,      0.9,    0.9,    1,      1,      1,      1],
@@ -27236,6 +27236,221 @@ exports.madDummyBody2 = {
                 ],
             };
 
+            exports.nokiaBent = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bent Turret',
+                COLOR: 17,
+                DANGER: 6,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,     -2,     -20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed, g.less_power]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      2,      20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed, g.less_power]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed, g.less_power]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+exports.nokiaMachexplode = {
+    PARENT: [exports.bullet],
+    LABEL: 'Explosion',
+    MOTION_TYPE: 'ied',
+    BODY: {
+        PENETRATION: 10,
+        SPEED: 0,
+        RANGE: 90,
+        DENSITY: 0.1,
+        HEALTH: 2 * wepHealthFactor,
+        DAMAGE: 1.5 * wepDamageFactor,
+        PUSHABILITY: 0,
+    },
+};
+exports.nokiaMachBullet = {
+    PARENT: [exports.bullet],
+    LABEL: 'IED',
+    SHAPE: 'M 0.35 -0.9 L 0.4 -0.465 L 0.33 0.925 C 0.1 0.975 -0.1 0.975 -0.33 0.925 L -0.4 -0.465 L -0.35 -0.9 C -0.1 -0.985 0.1 -0.985 0.35 -0.9 Z',
+    INDEPENDENT: true,
+    BODY: {
+        RANGE: 120,
+    },  
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [   0,     10,     1,      0,      0,      0,      0,   ],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.double_size, g.double_size, g.double_size, g.no_speed]),
+                TYPE: [exports.nokiaMachexplode, { PERSISTS_AFTER_DEATH: true, }],
+                SHOOT_ON_DEATH: true,
+            }, },
+            COLOR_SETTINGS: {
+                SKIN: 15,
+            }, },
+    ],
+};
+            exports.nokiaMachIED = {
+                PARENT: [exports.genericTank],
+                BODY: {
+                    FOV: base.FOV * 1.15,
+                },
+                LABEL: 'IED',
+                DANGER: 8,
+                COLOR: 17,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  15,    14,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.less_reload]),
+                            TYPE: exports.nokiaMachBullet,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  18,    12,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.less_reload, g.no_health, g.no_recoil]),
+                            TYPE: exports.nokiaMachBullet,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 0,
+                        }, },
+                ],
+            };
+            exports.nokiaTurret = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Turret',
+                COLOR: 17,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  22,     10,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.turret, g.less_damage]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.nokiaMachine = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Nokia Machine',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  11,     16,     1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.more_recoil]),
+                            TYPE: exports.nokiaMachBullet,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  14,     14,     1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.no_health, g.no_recoil]),
+                            TYPE: exports.nokiaMachBullet,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 0,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.nokiaMachIED,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.nokiaMachIED,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.nokiaBent,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.nokiaBent,
+                            }, {
+                    POSITION: [ 2.5,     7,      2,     120,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            }, {
+                    POSITION: [ 2.5,     7,     -2,     120,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            }, {
+                    POSITION: [ 2.5,     7,      2,     240,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            }, {
+                    POSITION: [ 2.5,     7,     -2,     240,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            },
+                ],
+            };
+            exports.nokiaMachine2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Nokia Machine',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  11,     16,     1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.more_recoil]),
+                            TYPE: exports.nokiaMachBullet,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  14,     14,     1,      0,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.no_health, g.no_recoil]),
+                            TYPE: exports.nokiaMachBullet,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR: 0,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.nokiaMachIED,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.nokiaMachIED,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.nokiaBent,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.nokiaBent,
+                            }, {
+                    POSITION: [ 2.5,     7,      2,     120,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            }, {
+                    POSITION: [ 2.5,     7,     -2,     120,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            }, {
+                    POSITION: [ 2.5,     7,      2,     240,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            }, {
+                    POSITION: [ 2.5,     7,     -2,     240,    360, 1], 
+                        TYPE: exports.nokiaTurret,
+                            },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -27403,7 +27618,7 @@ exports.botT3_E = {
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
             exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222, exports.celestial_dahyun2, exports.celestial_yabuki2, exports.celestial_chaeyeon2, exports.obsceles_soyeon2, exports.devBosses6];
-            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2];
+            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2, exports.nokiaMachine2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
