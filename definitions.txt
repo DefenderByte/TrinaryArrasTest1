@@ -27262,14 +27262,14 @@ exports.madDummyBody2 = {
 exports.nokiaMachexplode = {
     PARENT: [exports.bullet],
     LABEL: 'Explosion',
-    MOTION_TYPE: 'ied',
+    MOTION_TYPE: 'ultragrow',
     BODY: {
         PENETRATION: 10,
         SPEED: 0,
         RANGE: 90,
         DENSITY: 0.1,
         HEALTH: 2 * wepHealthFactor,
-        DAMAGE: 1.5 * wepDamageFactor,
+        DAMAGE: 3 * wepDamageFactor,
         PUSHABILITY: 0,
     },
 };
@@ -27283,7 +27283,7 @@ exports.nokiaMachBullet = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   0,     10,     1,      0,      0,      0,      0,   ],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.double_size, g.double_size, g.double_size, g.double_size, g.no_speed]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.no_speed]),
                 TYPE: [exports.nokiaMachexplode, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
             },
@@ -27332,6 +27332,7 @@ exports.nokiaMachBullet = {
             exports.nokiaMachine = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Nokia Machine',
+                FACING_TYPE: 'toTarget',
                 COLOR: 19,
                 SHAPE: 3,
                 SIZE: 20,
@@ -27386,6 +27387,7 @@ exports.nokiaMachBullet = {
             exports.nokiaMachine2 = {
                 PARENT: [exports.miniboss2],
                 LABEL: 'Nokia Machine',
+                FACING_TYPE: 'toTarget',
                 COLOR: 19,
                 SHAPE: 3,
                 SIZE: 20,
@@ -27421,9 +27423,6 @@ exports.nokiaMachBullet = {
                             }, {
                     POSITION: [  14,     8,      0,     300,    180, 0], 
                         TYPE: exports.nokiaMachIED,
-                            }, {
-                    POSITION: [  10,     0,      0,     180,    360, 1], 
-                        TYPE: exports.nokiaBent,
                             }, {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
                         TYPE: exports.nokiaBent,
