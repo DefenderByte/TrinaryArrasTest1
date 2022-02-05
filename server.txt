@@ -5060,7 +5060,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
-                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2, 15, 15, 15, 10, 25, 15)) {
+                switch (ran.chooseChance(500, 450, 400, 350, 400, 360, 320, 280, 300, 200, 100, 50, 250, 150, 50, 25, 25, 40, 25, 40, 25, 20, 20, 20, 20, 20, 20, 240, 220, 200, 180, 25, 200, 180, 160, 140, 40, 32, 24, 16, 40, 2, 15, 15, 15, 10, 25, 15, 80, 60, 40, 20, 19, 18, 15, 12, 6, 3)) {
                     case 0: 
                         choice = [[Class.elite_sprayer, Class.elite_destroyer, Class.elite_gunner, Class.elite_twin, Class.elite_auto, Class.elite_sidewinder, Class.elite_predator, Class.elite_streamliner, Class.elite_trapper, Class.elite_ceptionist, Class.elite_twister, Class.elite_poacher, Class.elite_assassin, Class.elite_cyclone, Class.elite_launcher, Class.elite_crossbow, Class.elite_machine, Class.elite_cropDuster, Class.elite_spawner, Class.elite_borer, Class.elite_battleship, Class.elite_center_releaser, Class.elite_sniper], 1, 'a', 'nest'];
                         sockets.broadcast('A stirring in the distance...');
@@ -5268,6 +5268,46 @@ var maintainloop = (() => {
                         sockets.broadcast('...');
                         sockets.broadcast('...tick...');
                         sockets.broadcast('DEFUSE THE CLOCK!');
+                        break;
+                    case 48: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 1, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 49: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 2, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 50: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 3, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 51: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 4, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 52: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 5, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 53: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 6, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 54: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 7, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 55: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 8, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 56: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 9, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
+                        break;
+                    case 57: 
+                        choice = [[Class.nokiaMachine, Class.skimGuard, Class.savantHybent, Class.moonwalkist, Class.karmaDirectistA, Class.streamSniper, Class.fieldTremblist], 10, 'tissue', 'nest']; 
+                        sockets.broadcast('The moon suddenly turns red...');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
