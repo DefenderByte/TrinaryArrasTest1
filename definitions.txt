@@ -27276,18 +27276,17 @@ exports.nokiaMachexplode = {
 exports.nokiaMachBullet = {
     PARENT: [exports.bullet],
     LABEL: 'IED',
-    SHAPE: 'M 0.35 -0.9 L 0.4 -0.465 L 0.33 0.925 C 0.1 0.975 -0.1 0.975 -0.33 0.925 L -0.4 -0.465 L -0.35 -0.9 C -0.1 -0.985 0.1 -0.985 0.35 -0.9 Z',
     INDEPENDENT: true,
     BODY: {
         RANGE: 120,
-    },  
+    },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [   0,     10,     1,      0,      0,      0,      0,   ],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.double_size, g.double_size, g.double_size, g.no_speed]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.double_size, g.double_size, g.double_size, g.double_size, g.no_speed]),
                 TYPE: [exports.nokiaMachexplode, { PERSISTS_AFTER_DEATH: true, }],
                 SHOOT_ON_DEATH: true,
-            }, },
+            },
             COLOR_SETTINGS: {
                 SKIN: 15,
             }, },
@@ -27306,13 +27305,11 @@ exports.nokiaMachBullet = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.less_reload]),
                             TYPE: exports.nokiaMachBullet,
-                            STAT_CALCULATOR: gunCalcNames.sustained,
                         }, }, {
                     POSITION: [  18,    12,      1,      0,      0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.less_reload, g.no_health, g.no_recoil]),
                             TYPE: exports.nokiaMachBullet,
-                            STAT_CALCULATOR: gunCalcNames.sustained,
                         },
                         COLOR_SETTINGS: {
                             COLOR: 0,
@@ -27352,13 +27349,11 @@ exports.nokiaMachBullet = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.more_recoil]),
                             TYPE: exports.nokiaMachBullet,
-                            STAT_CALCULATOR: gunCalcNames.sustained,
                         }, }, {
                     POSITION: [  14,     14,     1,      0,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.no_health, g.no_recoil]),
                             TYPE: exports.nokiaMachBullet,
-                            STAT_CALCULATOR: gunCalcNames.sustained,
                         },
                         COLOR_SETTINGS: {
                             COLOR: 0,
@@ -27374,19 +27369,16 @@ exports.nokiaMachBullet = {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
                         TYPE: exports.nokiaBent,
                             }, {
-                    POSITION: [  10,     0,      0,     180,    360, 1], 
-                        TYPE: exports.nokiaBent,
-                            }, {
-                    POSITION: [ 2.5,     7,      2,     120,    360, 1], 
+                    POSITION: [ 2.5,     8,      2,     120,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             }, {
-                    POSITION: [ 2.5,     7,     -2,     120,    360, 1], 
+                    POSITION: [ 2.5,     8,     -2,     120,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             }, {
-                    POSITION: [ 2.5,     7,      2,     240,    360, 1], 
+                    POSITION: [ 2.5,     8,      2,     240,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             }, {
-                    POSITION: [ 2.5,     7,     -2,     240,    360, 1], 
+                    POSITION: [ 2.5,     8,     -2,     240,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             },
                 ],
@@ -27436,16 +27428,16 @@ exports.nokiaMachBullet = {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
                         TYPE: exports.nokiaBent,
                             }, {
-                    POSITION: [ 2.5,     7,      2,     120,    360, 1], 
+                    POSITION: [2.425,    10,    1.5,    120,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             }, {
-                    POSITION: [ 2.5,     7,     -2,     120,    360, 1], 
+                    POSITION: [2.425,    10,   -1.5,    120,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             }, {
-                    POSITION: [ 2.5,     7,      2,     240,    360, 1], 
+                    POSITION: [2.425,    10,    1.5,    240,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             }, {
-                    POSITION: [ 2.5,     7,     -2,     240,    360, 1], 
+                    POSITION: [2.425,    10,   -1.5,    240,    360, 1], 
                         TYPE: exports.nokiaTurret,
                             },
                 ],
