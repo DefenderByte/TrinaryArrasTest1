@@ -14940,16 +14940,14 @@ exports.eTwistMissile = {
                 DANGER: 7,
                 CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  14,    10,     -0.5,    9,      0,      0,      0,  ], 
+                    POSITION: [  10,    13,     -0.5,    9,      0,      0,      0,  ], 
                         }, {
-                    POSITION: [  20,    12,      1,      0,      0,      0,      0,  ], 
+                    POSITION: [  17,    14,     -1.4,    0,      0,      0,      0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.half_reload, g.half_reload, g.more_speed, g.fast, g.five, g.no_recoil]),
                             TYPE: exports.eTwistMissile,
                             STAT_CALCULATOR: gunCalcNames.sustained,
-                        }, }, {
-                    POSITION: [  11,    12,    -1.5,     3,      0,      0,      0,  ], 
-                        },
+                        }, },
                 ],
             };
         exports.elite_twister = {
@@ -25025,7 +25023,7 @@ exports.chyBullet = {
                     FOV: base.FOV * 1.2,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  13,   12.5,    0.6,     7,      0,      0,      0,   ], 
+                    POSITION: [  12,   12.5,    0.6,     7,      0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.auto]),
                             TYPE: exports.swarm,
@@ -27259,6 +27257,7 @@ exports.nokiaMachexplode = {
 exports.nokiaMachBullet = {
     PARENT: [exports.bullet],
     LABEL: 'IED',
+    FACING_TYPE: 'fastautospin',
     SHAPE: 'M 0.35 -0.9 L 0.4 -0.465 L 0.33 0.925 C 0.1 0.975 -0.1 0.975 -0.33 0.925 L -0.4 -0.465 L -0.35 -0.9 C -0.1 -0.985 0.1 -0.985 0.35 -0.9 Z',
     INDEPENDENT: true,
     BODY: {
@@ -27639,7 +27638,7 @@ exports.skimguardturret = {
                     FOV: base.FOV * 1.2,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  13,   12.5,    0.6,     7,      0,      0,      0,   ], 
+                    POSITION: [  12,   12.5,    0.6,     7,      0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.half_reload, g.double_size, g.more_speed, g.fast]),
                             TYPE: [exports.autoswarm, {BODY: {FOV: 1.4}}],
@@ -27784,7 +27783,7 @@ exports.skimguardturret = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed]),
                             TYPE: exports.bullet,
-                        }, },
+                        }, }, {
                     POSITION: [   6,    12,     1.2,     8,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.over, g.weak]),
@@ -27903,6 +27902,585 @@ exports.skimguardturret = {
                             }, {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
                         TYPE: exports.moonwalkHybrid,
+                            },
+                ],
+            };
+            exports.bentDirectistA = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bent Turret',
+                COLOR: 17,
+                DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,     -2,     -20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed, g.less_power]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      2,      20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed, g.less_power]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.more_reload, g.more_speed, g.less_power]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.karmaCruiserA = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Cruiser',
+                COLOR: 17,
+                DANGER: 6,
+                STAT_NAMES: statnames.swarm,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                BODY: {
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   7,    7.5,    0.6,     7,      4,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.fast, g.more_damage]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,     -4,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.fast, g.more_damage]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+            };
+exports.karmaMinion = {
+    PARENT: [exports.minion],
+    LABEL: 'Minion', 
+    HITS_OWN_TYPE: 'never',
+    FACING_TYPE: 'smoothToTarget',
+    DIE_AT_RANGE: true,
+    CONTROLLERS: [
+        'nearestDifferentMaster', 'mapAltToFire', 'minion', 'hangOutNearMaster'
+    ],
+    BODY: {
+        RANGE: 200,
+        ACCELERATION: 0.1,
+    },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.minion]),
+            WAIT_TO_CYCLE: true,
+            TYPE: [ exports.bullet, { PERSISTS_AFTER_DEATH: true, } ],
+        }, }, 
+    ],
+};
+            exports.karmaProductionist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Productionist',
+                COLOR: 17,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                DANGER: 7,
+                BODY: {
+                    FOV: base.FOV * 1.6,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  12,   12.5,    0.6,     7,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   2,   12.5,     1,      19,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.pound, g.one_third_reload, g.meta, g.fast, g.mini]),
+                            TYPE: [exports.karmaMinion, {INDEPENDENT: true, BODY: {FOV: 1.6}}],
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                            SYNCS_SKILLS: true,
+                        }, },
+                ],
+            };
+            exports.karmaDirectistA = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Karma Directist-A',
+                FACING_TYPE: 'toTarget',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.35,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,      0,     200,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.less_recoil, g.stronger, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      0,     160,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.less_recoil, g.stronger, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,     180,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.less_recoil, g.stronger, g.fast]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.karmaCruiserA,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.karmaCruiserA,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     120,    360, 1], 
+                        TYPE: exports.karmaProductionist,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     240,    360, 1], 
+                        TYPE: exports.karmaProductionist,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.bentDirectistA,
+                            },
+                ],
+            };
+            exports.karmaDirectistA2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Karma Directist-A',
+                FACING_TYPE: 'toTarget',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.35,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,      0,     200,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.less_recoil, g.stronger, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      0,     160,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.less_recoil, g.stronger, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,     180,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.less_recoil, g.stronger, g.fast]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.karmaCruiserA,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.karmaCruiserA,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     120,    360, 1], 
+                        TYPE: exports.karmaProductionist,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     240,    360, 1], 
+                        TYPE: exports.karmaProductionist,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.bentDirectistA,
+                            },
+                ],
+            };
+            exports.streamSniperBent = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bent Turret',
+                COLOR: 17,
+                DANGER: 6,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,     -2,     -20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      2,      20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.triplet]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+exports.blowLunistMissile = {
+    PARENT: [exports.bullet],
+    LABEL: 'Battleship',
+    INDEPENDENT: true,
+    BODY: {
+        RANGE: 150,
+    },
+    FACING_TYPE: 'fastautospin',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [   7,    7.5,    0.6,     7,      4,      90,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.fast, g.more_damage, g.weak]),
+                TYPE: exports.swarm,
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            }, }, {
+        POSITION: [   7,    7.5,    0.6,     7,     -4,      90,    0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.fast, g.more_damage, g.weak]),
+                TYPE: exports.swarm,
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            }, }, {
+        POSITION: [   7,    7.5,    0.6,     7,      4,     270,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.fast, g.more_damage, g.weak]),
+                TYPE: exports.swarm,
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            }, }, {
+        POSITION: [   7,    7.5,    0.6,     7,     -4,     270,    0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.fast, g.more_damage, g.weak]),
+                TYPE: exports.swarm,
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            }, },
+    ],
+};
+            exports.blowCrossLunist = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Crossbow',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  16,     4,      1,      0,    -1.6,    -25,   0.75,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 17.5,    4,      1,      0,    -2.4,    -10,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {        
+                    POSITION: [  19,     4,      1,      0,     -3,      0,    0.25,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,     4,      1,      0,     1.6,     25,   0.75,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 17.5,    4,      1,      0,     2.4,     10,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {        
+                    POSITION: [  19,     4,      1,      0,      3,      0,    0.25,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload, g.double, g.triplet, g.slow]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [15.75,    8,      1,      8,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, g.half_reload, g.one_third_reload]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+            exports.blowDirect = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Director',
+                COLOR: 17,
+                DANGER: 5,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                SKILL: skillSet({
+                    rld: 1,
+                    dam: 1,
+                    pen: 1,
+                    str: 1,
+                    spd: 1,
+                    atk: 0,
+                    hlt: 0,
+                    shi: 0,
+                    rgn: 0,
+                    mob: 0,       
+                }),
+                BODY: {
+                    FOV: 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   6,    12,     1.2,     8,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,
+                            MAX_CHILDREN: 5,
+                        }, },
+                ],
+            };
+            exports.streamSniper = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Stream Sniper',
+                FACING_TYPE: 'toTarget',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.35,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,    13,     -0.5,    9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,    14,     -1.4,    0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.sniper, g.demoman]),
+                            TYPE: exports.blowLunistMissile,
+                            LABEL: 'Deployed',
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.blowCrossLunist,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.blowCrossLunist,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     120,    360, 1], 
+                        TYPE: exports.blowDirect,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     240,    360, 1], 
+                        TYPE: exports.blowDirect,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.streamSniperBent,
+                            },
+                ],
+            };
+            exports.streamSniper2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Stream Sniper',
+                FACING_TYPE: 'toTarget',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.35,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  10,    13,     -0.5,    9,      0,      0,      0,  ], 
+                        }, {
+                    POSITION: [  17,    14,     -1.4,    0,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.sniper, g.demoman]),
+                            TYPE: exports.blowLunistMissile,
+                            LABEL: 'Deployed',
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.blowCrossLunist,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.blowCrossLunist,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     120,    360, 1], 
+                        TYPE: exports.blowDirect,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     240,    360, 1], 
+                        TYPE: exports.blowDirect,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.streamSniperBent,
+                            },
+                ],
+            };
+            exports.taserLunistBent = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Bent Turret',
+                COLOR: 17,
+                DANGER: 6,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,      1,      0,     -2,     -20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.rifle, g.more_reload]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     8,      1,      0,      2,      20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.rifle, g.more_reload]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  22,     8,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.rifle, g.more_reload]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+exports.taserPillbox = {
+    LABEL: 'Pillbox',
+    PARENT: [exports.trap],
+    SHAPE: -4,
+    MOTION_TYPE: 'motor',    
+    CONTROLLERS: ['goToMasterTarget', 'nearestDifferentMaster'],
+    INDEPENDENT: true,
+    BODY: {
+        SPEED: 1,
+        DENSITY: 5,
+    },
+    DIE_AT_RANGE: true, 
+    TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+        POSITION: [  11,     8,      0,      0,     180,  0], 
+            TYPE: exports.pillboxTurret,
+            }, {
+        POSITION: [  11,     8,      0,      90,    180,  0], 
+            TYPE: exports.pillboxTurret,
+            }, {
+        POSITION: [  11,     8,      0,     180,    180,  0], 
+            TYPE: exports.pillboxTurret,
+            }, {
+        POSITION: [  11,     8,      0,     270,    180,  0], 
+            TYPE: exports.pillboxTurret,
+            },
+    ],
+};
+exports.taserLunistTurret = {
+    PARENT: [exports.genericTank],
+    BODY: {
+        FOV: base.FOV * 2,
+    },
+    COLOR: 17,
+    LABEL: '',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  10,    14,    -0.5,     9,      0,      0,      0,  ], 
+            }, {
+        POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.arty, g.skim, g.skimboss, g.slow]),
+                TYPE: exports.hypermissile,
+            }, },
+    ],
+};
+            exports.fieldTremblist = {
+                PARENT: [exports.miniboss],
+                LABEL: 'Field Tremblist',
+                FACING_TYPE: 'toTarget',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.15,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+                        }, {
+                    POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: [exports.taserPillbox, { INDEPENDENT: true, }],
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.taserLunistTurret,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.taserLunistTurret,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     120,    360, 1], 
+                        TYPE: exports.auto4gun,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     240,    360, 1], 
+                        TYPE: exports.auto4gun,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.taserLunistBent,
+                            },
+                ],
+            };
+            exports.fieldTremblist2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Field Tremblist',
+                FACING_TYPE: 'toTarget',
+                COLOR: 19,
+                SHAPE: 3,
+                SIZE: 20,
+                VALUE: 500000,
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.15,
+                    HEALTH: 50,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: 10,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,    16,      1,      0,      0,     180,     0,   ],
+                        }, {
+                    POSITION: [   4,    16,     1.5,    14,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: [exports.taserPillbox, { INDEPENDENT: true, }],
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  14,     8,      0,      60,    180, 0], 
+                        TYPE: exports.taserLunistTurret,
+                            }, {
+                    POSITION: [  14,     8,      0,     300,    180, 0], 
+                        TYPE: exports.taserLunistTurret,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     120,    360, 1], 
+                        TYPE: exports.auto4gun,
+                            }, {
+                    POSITION: [ 4.85,    10,     0,     240,    360, 1], 
+                        TYPE: exports.auto4gun,
+                            }, {
+                    POSITION: [  10,     0,      0,     180,    360, 1], 
+                        TYPE: exports.taserLunistBent,
                             },
                 ],
             };
@@ -28074,7 +28652,7 @@ exports.botT3_E = {
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
             exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222, exports.celestial_dahyun2, exports.celestial_yabuki2, exports.celestial_chaeyeon2, exports.obsceles_soyeon2, exports.devBosses6];
-            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2, exports.nokiaMachine2, exports.skimGuard2, exports.savantHybent2, exports.moonwalkist2];
+            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2, exports.nokiaMachine2, exports.skimGuard2, exports.savantHybent2, exports.moonwalkist2, exports.karmaDirectistA2, exports.streamSniper2, exports.fieldTremblist2];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
