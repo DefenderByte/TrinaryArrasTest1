@@ -27259,6 +27259,7 @@ exports.nokiaMachexplode = {
 exports.nokiaMachBullet = {
     PARENT: [exports.bullet],
     LABEL: 'IED',
+    SHAPE: 'M 0.35 -0.9 L 0.4 -0.465 L 0.33 0.925 C 0.1 0.975 -0.1 0.975 -0.33 0.925 L -0.4 -0.465 L -0.35 -0.9 C -0.1 -0.985 0.1 -0.985 0.35 -0.9 Z',
     INDEPENDENT: true,
     BODY: {
         RANGE: 120,
@@ -27338,7 +27339,7 @@ exports.nokiaMachBullet = {
                     POSITION: [  14,     14,     1,      0,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.no_health, g.no_recoil]),
-                            TYPE: exports.nokiaMachBullet,
+                            TYPE: exports.bullet,
                         },
                         COLOR_SETTINGS: {
                             COLOR: 0,
@@ -27394,7 +27395,7 @@ exports.nokiaMachBullet = {
                     POSITION: [  14,     14,     1,      0,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.no_health, g.no_recoil]),
-                            TYPE: exports.nokiaMachBullet,
+                            TYPE: exports.bullet,
                             STAT_CALCULATOR: gunCalcNames.sustained,
                         },
                         COLOR_SETTINGS: {
@@ -27535,16 +27536,16 @@ exports.skimguardturret = {
                     DAMAGE: 10,
                 },
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   7,     6,      5,      60,    120, 0], 
+                    POSITION: [   7,     6,      11,     60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -5,      60,    120, 0], 
+                    POSITION: [   7,     6,     -11,     60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,      5,     300,    120, 0], 
+                    POSITION: [   7,     6,      11,    300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -5,     300,    120, 0], 
+                    POSITION: [   7,     6,     -11,    300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
                     POSITION: [  14,     6,      0,      60,    190, 0], 
@@ -27578,16 +27579,16 @@ exports.skimguardturret = {
                     DAMAGE: 10,
                 },
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   7,     6,      5,      60,    120, 0], 
+                    POSITION: [   7,     6,      11,     60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -5,      60,    120, 0], 
+                    POSITION: [   7,     6,     -11,     60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,      5,     300,    120, 0], 
+                    POSITION: [   7,     6,      11,    300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -5,     300,    120, 0], 
+                    POSITION: [   7,     6,     -11,    300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
                     POSITION: [  14,     6,      0,      60,    190, 0], 
