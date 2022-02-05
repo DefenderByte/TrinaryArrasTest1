@@ -27535,25 +27535,25 @@ exports.skimguardturret = {
                     DAMAGE: 10,
                 },
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   7,     6,      11,     60,    120, 0], 
+                    POSITION: [   7,     8,     -7,      60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -11,     60,    120, 0], 
+                    POSITION: [   7,     8,      7,      60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,      11,    300,    120, 0], 
+                    POSITION: [   7,     8,     -7,     300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -11,    300,    120, 0], 
+                    POSITION: [   7,     8,      7,     300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [  14,     6,      0,      60,    190, 0], 
+                    POSITION: [   9,     8,      0,      60,    190, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [  14,     6,      0,     300,    190, 0], 
+                    POSITION: [   9,     8,      0,     300,    190, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [  14,     6,      0,     180,     0,  0], 
+                    POSITION: [   9,     8,      0,     180,     0,  0], 
                         TYPE: exports.skimguardturret,
                             }, {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
@@ -27578,25 +27578,25 @@ exports.skimguardturret = {
                     DAMAGE: 10,
                 },
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [   7,     6,      11,     60,    120, 0], 
+                    POSITION: [   7,     8,     -7,      60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -11,     60,    120, 0], 
+                    POSITION: [   7,     8,      7,      60,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,      11,    300,    120, 0], 
+                    POSITION: [   7,     8,     -7,     300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [   7,     6,     -11,    300,    120, 0], 
+                    POSITION: [   7,     8,      7,     300,    120, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [  14,     6,      0,      60,    190, 0], 
+                    POSITION: [   9,     8,      0,      60,    190, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [  14,     6,      0,     300,    190, 0], 
+                    POSITION: [   9,     8,      0,     300,    190, 0], 
                         TYPE: exports.skimguardSpray,
                             }, {
-                    POSITION: [  14,     6,      0,     180,     0,  0], 
+                    POSITION: [   9,     8,      0,     180,     0,  0], 
                         TYPE: exports.skimguardturret,
                             }, {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
@@ -28253,9 +28253,9 @@ exports.blowLunistMissile = {
                     DAMAGE: 10,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  10,    13,     -0.5,    9,      0,      0,      0,  ], 
+                    POSITION: [  10,    13,     -0.5,    9,      0,     180,     0,  ], 
                         }, {
-                    POSITION: [  17,    14,     -1.4,    0,      0,      0,      0,  ], 
+                    POSITION: [  17,    14,     -1.4,    0,      0,     180,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.sniper, g.demoman]),
                             TYPE: exports.blowLunistMissile,
@@ -28299,9 +28299,9 @@ exports.blowLunistMissile = {
                     DAMAGE: 10,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  10,    13,     -0.5,    9,      0,      0,      0,  ], 
+                    POSITION: [  10,    13,     -0.5,    9,      0,     180,     0,  ], 
                         }, {
-                    POSITION: [  17,    14,     -1.4,    0,      0,      0,      0,  ], 
+                    POSITION: [  17,    14,     -1.4,    0,      0,     180,     0,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.pound, g.destroy, g.sniper, g.demoman]),
                             TYPE: exports.blowLunistMissile,
@@ -28430,10 +28430,10 @@ exports.taserLunistTurret = {
                         TYPE: exports.taserLunistTurret,
                             }, {
                     POSITION: [ 4.85,    10,     0,     120,    360, 1], 
-                        TYPE: exports.auto4gun,
+                        TYPE: [exports.auto4gun, {COLOR: 17}],
                             }, {
                     POSITION: [ 4.85,    10,     0,     240,    360, 1], 
-                        TYPE: exports.auto4gun,
+                        TYPE: [exports.auto4gun, {COLOR: 17}],
                             }, {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
                         TYPE: exports.taserLunistBent,
@@ -28474,10 +28474,10 @@ exports.taserLunistTurret = {
                         TYPE: exports.taserLunistTurret,
                             }, {
                     POSITION: [ 4.85,    10,     0,     120,    360, 1], 
-                        TYPE: exports.auto4gun,
+                        TYPE: [exports.auto4gun, {COLOR: 17}],
                             }, {
                     POSITION: [ 4.85,    10,     0,     240,    360, 1], 
-                        TYPE: exports.auto4gun,
+                        TYPE: [exports.auto4gun, {COLOR: 17}],
                             }, {
                     POSITION: [  10,     0,      0,     180,    360, 1], 
                         TYPE: exports.taserLunistBent,
