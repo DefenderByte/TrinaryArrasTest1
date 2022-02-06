@@ -5094,19 +5094,19 @@ var maintainloop = (() => {
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 8: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter], 1, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter, Class.octagron], 1, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 9: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter], 2, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter, Class.octagron], 2, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 10: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter], 3, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter, Class.octagron], 3, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 11: 
-                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter], 4, 'poly', 'rock']; 
+                        choice = [[Class.dread, Class.octog, Class.derogator, Class.hexadecagor, Class.demolisher, Class.ultimate, Class.cutter, Class.octagron], 4, 'poly', 'rock']; 
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
@@ -5565,7 +5565,10 @@ var maintainloop = (() => {
                         Class.sandstorm,
                         Class.triplecruise,
                         Class.minispread,
-                        Class.autospread
+                        Class.autospread,
+                        Class.cloak,
+                        Class.mega_cloak,
+                        Class.grief
                       ])
                     );
                     o.name += ran.chooseBotName();
