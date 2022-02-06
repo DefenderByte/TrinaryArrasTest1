@@ -19138,7 +19138,7 @@ exports.djTurret2 = {
                     FOV: base.FOV * 1.4,
                 },
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  25,    8.5,   -1.75,    0,      0,      0,      0,   ], 
+                    POSITION: [  27,    8.5,   -1.25,    0,      0,      0,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
                             TYPE: exports.bullet,
@@ -19199,6 +19199,7 @@ exports.djTurret2 = {
                 FOV: base.FOV * 1.1,
             },
             MAX_CHILDREN: 5,
+            INVISIBLE: [0.1, 0.01, 0.01],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
                     PROPERTIES: {
@@ -19224,6 +19225,7 @@ exports.djTurret2 = {
                     FOV: base.FOV * 1.1,
                 },
                 MAX_CHILDREN: 8,
+                INVISIBLE: [0.1, 0.01, 0.01],
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   6,     12,    1.2,     8,      0,      90,     0,   ], 
                         PROPERTIES: {
@@ -28543,6 +28545,11 @@ exports.invisoMarking = {
                             COLOR_UNMIX: 2,
                         }, },
                 ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 7.25,    0,      0,      0,      0,  1], 
+                        TYPE: exports.invisoMarking,
+                            },
+                ],
             };
 
 exports.octagronMissile = {
@@ -28927,7 +28934,7 @@ exports.botT3_E = {
 
             exports.devACs.UPGRADES_TIER_4 = [exports.arenaCloser2, exports.devACs2];
 
-exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin, exports.sniper, exports.director, exports.machine, exports.flank, exports.pellet, exports.inceptioner, exports.homing, exports.pound];
+exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin, exports.sniper, exports.director, exports.machine, exports.flank, exports.pellet, exports.inceptioner, exports.homing, exports.pound, exports.cloak];
 
     exports.single.UPGRADES_TIER_2 = [exports.singleceptioner, exports.homingSingle];
 
@@ -29002,8 +29009,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.machHoming.UPGRADES_TIER_3 = [exports.twinmachHoming, exports.flankmachHoming];
         exports.flankHoming.UPGRADES_TIER_3 = [exports.flankmachHoming];
 
-    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread];
-        exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam, exports.shell, exports.flankDestroy];
+    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread, exports.mega_cloak];
+        exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam, exports.shell, exports.flankDestroy, exports.grief];
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.steam.UPGRADES_TIER_4 = [exports.backbone0];
