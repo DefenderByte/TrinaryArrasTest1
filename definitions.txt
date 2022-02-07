@@ -28836,6 +28836,126 @@ exports.ascendedBerserkBody3 = {
     SHAPE: 6,
     INDEPENDENT: true,
 };
+            exports.ascendBerserkMinion1 = {
+                PARENT: [exports.minion],
+                DANGER: 7,
+                AI: {
+                    BLIND: false,
+                },
+                INVISIBLE: [0.1, 0.01, 0.01],
+                CONTROLLERS: ['nearestDifferentMaster', 'mapAltToFire', 'minion', 'canRepel'],
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.6,
+                    SPEED: base.SPEED * 0.85,
+                    FOV: base.FOV * 1.4,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  27,    8.5,   -1.25,    0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, }, {   
+                    POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                            LABEL: gunCalcNames.thruster,
+                        }, },
+                ],
+            };
+            exports.ascendBerserkMinion2 = {
+                PARENT: [exports.minion],
+                DANGER: 7,
+                AI: {
+                    BLIND: false,
+                },
+                INVISIBLE: [0.1, 0.01, 0.01],
+                CONTROLLERS: ['nearestDifferentMaster', 'mapAltToFire', 'minion', 'canRepel'],
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.6,
+                    SPEED: base.SPEED * 0.85,
+                    FOV: base.FOV * 1.4,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  19,     8,    -1.25,    0,     -2,     -20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, }, {
+                    POSITION: [  19,     8,    -1.25,    0,      2,      20,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, }, {
+                    POSITION: [  22,     8,    -1.25,    0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, },
+                ],
+            };
+            exports.ascendBerserkMinion3 = {
+                PARENT: [exports.minion],
+                DANGER: 7,
+                AI: {
+                    BLIND: false,
+                },
+                INVISIBLE: [0.1, 0.01, 0.01],
+                CONTROLLERS: ['nearestDifferentMaster', 'mapAltToFire', 'minion', 'canRepel'],
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.6,
+                    SPEED: base.SPEED * 0.85,
+                    FOV: base.FOV * 1.4,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  27,    8.5,   -1.25,    0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
+                            TYPE: exports.bullet,
+                        },
+                        COLOR_SETTINGS: {
+                            COLOR_UNMIX: 2,
+                        }, }, {
+                    POSITION: [  12,    3.5,     1,      0,     7.25,   180,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pure_gunner, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    3.5,     1,      0,    -7.25,   180,    0.75, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pure_gunner, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,    3.5,     1,      0,     3.75,   180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pure_gunner, g.fast]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  16,    3.5,     1,      0,    -3.75,   180,    0.25, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.pure_gunner, g.fast]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
             exports.ascendedBerserker = {
                 PARENT: [exports.miniboss],
                 LABEL: 'Ascended Berserker',
@@ -28857,69 +28977,51 @@ exports.ascendedBerserkBody3 = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
                             TYPE: exports.bullet,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
                         }, }, {
                     POSITION: [  4.5,    6,     1.2,     8,      0,      90,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.minion, {INDEPEDENT: true}],
+                            TYPE: [exports.ascendBerserkMinion1, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             MAX_CHILDREN: 1,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
                         }, }, {
                     POSITION: [  4.5,    6,     1.2,     8,      0,     270,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.minion, {INDEPEDENT: true}],
+                            TYPE: [exports.ascendBerserkMinion1, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             MAX_CHILDREN: 1,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
                         }, }, {
                     POSITION: [  4.5,    6,     1.2,     8,      0,     135,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.minion, {INDEPEDENT: true}],
+                            TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             MAX_CHILDREN: 1,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
                         }, }, {
                     POSITION: [  4.5,    6,     1.2,     8,      0,     225,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.minion, {INDEPEDENT: true}],
+                            TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             MAX_CHILDREN: 1,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
                         }, }, {
                     POSITION: [  4.5,    6,     1.2,     8,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.minion, {INDEPEDENT: true}],
+                            TYPE: [exports.ascendBerserkMinion3, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 1,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
+                            MAX_CHILDREN: 2,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -28929,7 +29031,87 @@ exports.ascendedBerserkBody3 = {
                     POSITION: [ 21.5,    0,      0,      90,    360, 0], 
                         TYPE: exports.ascendedBerserkBody2,
                         }, {
-                    POSITION: [  10,     0,      0,      0,     360, 1], 
+                    POSITION: [  15,     0,      0,      0,     360, 1], 
+                        TYPE: exports.ascendedBerserkBody3,
+                        },
+                ],
+            };
+            exports.ascendedBerserker2 = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'Ascended Berserker',
+                FACING_TYPE: 'toTarget',
+                COLOR: 8,
+                SIZE: 24,
+                VALUE: 200000,
+                INVISIBLE: [0.1, 0.01, 0.01],
+                BODY: {
+                    FOV: 1.3,
+                    SPEED: base.SPEED * 0.25,
+                    HEALTH: 25,
+                    SHIELD: base.SHIELD * 1.25,
+                    REGEN: base.REGEN,
+                    DAMAGE: base.DAMAGE * 2.5,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  27,    8.5,   -1.25,    0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  4.5,    6,     1.2,     8,      0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
+                            TYPE: [exports.ascendBerserkMinion1, {INDEPEDENT: true}],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [  4.5,    6,     1.2,     8,      0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
+                            TYPE: [exports.ascendBerserkMinion1, {INDEPEDENT: true}],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [  4.5,    6,     1.2,     8,      0,     135,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
+                            TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [  4.5,    6,     1.2,     8,      0,     225,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
+                            TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [  4.5,    6,     1.2,     8,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
+                            TYPE: [exports.ascendBerserkMinion3, {INDEPEDENT: true}],
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 2,
+                        }, },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 21.5,    0,      0,      0,     360, 0], 
+                        TYPE: exports.ascendedBerserkBody,
+                        }, {
+                    POSITION: [ 21.5,    0,      0,      90,    360, 0], 
+                        TYPE: exports.ascendedBerserkBody2,
+                        }, {
+                    POSITION: [  15,     0,      0,      0,     360, 1], 
                         TYPE: exports.ascendedBerserkBody3,
                         },
                 ],
@@ -29102,7 +29284,7 @@ exports.botT3_E = {
             exports.devBosses3.UPGRADES_TIER_4 = [exports.elite_ceptionist2, exports.elite_twister2, exports.elite_poacher2, exports.elite_assassin2, exports.elite_cyclone2, exports.elite_launcher2, exports.elite_crossbow2, exports.derogator2, exports.elite_machine2, exports.elite_cropDuster2, exports.elite_spawner2, exports.summondrive, exports.elite_borer2, exports.heptagonBoss2, exports.devBosses4];
             exports.devBosses4.UPGRADES_TIER_4 = [exports.seventron2, exports.hexadecagor2, exports.fallen_overlord, exports.demolisher2, exports.levi2, exports.markKlele29, exports.guardian2, exports.summon2, exports.elite_battleship2, exports.nestkeeper2, exports.awesomeship2, exports.wendigo2, exports.amalgalich2, exports.greenSummon2, exports.devBosses5];
             exports.devBosses5.UPGRADES_TIER_4 = [exports.evergunner2, exports.retrokeeper2, exports.elite_center_releaser2, exports.inverto2, exports.real_inverto2, exports.nailer2, exports.ultimate2, exports.elite_sniper2, exports.cutter2, exports.somerandom222, exports.celestial_dahyun2, exports.celestial_yabuki2, exports.celestial_chaeyeon2, exports.obsceles_soyeon2, exports.devBosses6];
-            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2, exports.nokiaMachine2, exports.skimGuard2, exports.savantHybent2, exports.moonwalkist2, exports.karmaDirectistA2, exports.streamSniper2, exports.fieldTremblist2];
+            exports.devBosses6.UPGRADES_TIER_4 = [exports.legendary_crasher2, exports.neph2, exports.hexaswarmer2, exports.madDummy2, exports.madDummyPhase2, exports.clock2, exports.nokiaMachine2, exports.skimGuard2, exports.savantHybent2, exports.moonwalkist2, exports.karmaDirectistA2, exports.streamSniper2, exports.fieldTremblist2, exports.ascendedBerserker2, exports.devBosses7];
 
             exports.devDominators.UPGRADES_TIER_4 = [exports.destroy_dominator2, exports.gun_dominator2, exports.trap_dominator2, exports.drone_dominator2];
 
