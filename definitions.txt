@@ -28751,73 +28751,6 @@ exports.octagronMissile = {
                 ],
             };
 
-            exports.stalker = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Stalker',
-                DANGER: 7,
-                INVISIBLE: [0.1, 0.01, 0.01],
-                BODY: {
-                    ACCELERATION: base.ACCEL * 0.6,
-                    SPEED: base.SPEED * 0.85,
-                    FOV: base.FOV * 1.4,
-                },
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  27,    8.5,   -1.25,    0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin]),
-                            TYPE: exports.bullet,
-                        },
-                        COLOR_SETTINGS: {
-                            COLOR_UNMIX: 2,
-                        }, },
-                ],
-            };
-            exports.landmine = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Landmine',
-                DANGER: 7,
-                INVISIBLE: [0.05, 0.003, 0.01],
-                BODY: {
-                    FOV: base.FOV * 1.05,
-                    DENSITY: base.DENSITY * 2,
-                },
-                IS_SMASHER: true,
-                SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
-                STAT_NAMES: statnames.smasher,
-                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [ 21.5,    0,      0,      0,     360, 0], 
-                        TYPE: exports.smasherBody,
-                        }, {
-                    POSITION: [ 21.5,    0,      0,      90,    360, 0], 
-                        TYPE: exports.landmineBody,
-                        },
-                ],
-            };
-        exports.manager = {
-            PARENT: [exports.genericTank],
-            LABEL: 'Manager',
-            DANGER: 6,
-            STAT_NAMES: statnames.drone,
-            BODY: {
-                ACCELERATION: base.ACCEL * 0.75,
-                FOV: base.FOV * 1.1,
-            },
-            MAX_CHILDREN: 5,
-            INVISIBLE: [0.1, 0.01, 0.01],
-            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                        TYPE: exports.drone,
-                        AUTOFIRE: true,
-                        SYNCS_SKILLS: true,
-                        STAT_CALCULATOR: gunCalcNames.drone,
-                    },
-                    COLOR_SETTINGS: {
-                        COLOR_UNMIX: 2,
-                    }, },
-            ],
-        };
 exports.ascendedBerserkBody = {
     CONTROLLERS: ['spin'],
     COLOR: 8,
@@ -29011,24 +28944,6 @@ exports.ascendedBerserkBody3 = {
                     POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.ascendBerserkMinion1, {INDEPEDENT: true}],
-                            AUTOFIRE: true,
-                            SYNCS_SKILLS: true,
-                            STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 1,
-                        }, }, {
-                    POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
-                            AUTOFIRE: true,
-                            SYNCS_SKILLS: true,
-                            STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 1,
-                        }, }, {
-                    POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
                             TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -29042,7 +28957,7 @@ exports.ascendedBerserkBody3 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 2,
+                            MAX_CHILDREN: 1,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -29127,24 +29042,6 @@ exports.ascendedBerserkBody3 = {
                     POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.ascendBerserkMinion1, {INDEPEDENT: true}],
-                            AUTOFIRE: true,
-                            SYNCS_SKILLS: true,
-                            STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 1,
-                        }, }, {
-                    POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
-                            TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
-                            AUTOFIRE: true,
-                            SYNCS_SKILLS: true,
-                            STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 1,
-                        }, }, {
-                    POSITION: [   6,     12,    1.2,     8,      0,     180,     0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory, g.weak, g.double_size, g.bigger]),
                             TYPE: [exports.ascendBerserkMinion2, {INDEPEDENT: true}],
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -29158,7 +29055,7 @@ exports.ascendedBerserkBody3 = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
-                            MAX_CHILDREN: 2,
+                            MAX_CHILDREN: 1,
                         }, },
                 ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
@@ -29173,8 +29070,6 @@ exports.ascendedBerserkBody3 = {
                         },
                 ],
             };
-
-
 
 exports.bot = {
     AUTO_UPGRADE: 'random',
