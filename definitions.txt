@@ -29245,7 +29245,7 @@ exports.botT3_E = {
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
             exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2, exports.sentryMultitool2, exports.sentryHoming2, exports.angryDummy2];
 
-            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.weirdspike, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0, exports.liberator, exports.cvsTrsh];
+            exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0, exports.liberator, exports.cvsTrsh];
             exports.cvsTrsh.UPGRADES_TIER_4 = [exports.pentaWTF, exports.penIsShot, exports.awesomeship2];
 
             exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.skimmer, exports.musketeer, exports.clover, exports.corrode];
@@ -29263,6 +29263,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.mauler.UPGRADES_TIER_3 = [exports.spike];
         exports.autopummeler.UPGRADES_TIER_3 = [exports.autosmash];
         exports.minimine.UPGRADES_TIER_3 = [exports.landmine];
+            exports.landmine.UPGRADES_TIER_4 = [exports.weirdspike];
         exports.irritate.UPGRADES_TIER_3 = [exports.jump];
 
     exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe, exports.twinHoming];
