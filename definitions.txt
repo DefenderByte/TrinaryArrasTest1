@@ -430,7 +430,7 @@ const basePolygonHealth = 2;
 exports.orangepentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 32,
+        LEVEL: 5,
     },
     LABEL: 'Orange Pentagon',
     VALUE: 19500,
@@ -464,7 +464,7 @@ exports.orangepentagon = {
 exports.orangetriangle = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 31,
+        LEVEL: 4,
     },
     LABEL: 'Orange Triangle',
     VALUE: 7500,
@@ -498,7 +498,7 @@ exports.orangetriangle = {
 exports.orangesquare = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 30,
+        LEVEL: 3,
     },
     LABEL: 'Orange Square',
     VALUE: 1500,
@@ -533,7 +533,7 @@ exports.orangesquare = {
 exports.greenbigPentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 29,
+        LEVEL: 5,
     },
     LABEL: 'Green Beta Pentagon',
     VALUE: 25000,
@@ -569,7 +569,7 @@ exports.greenbigPentagon = {
 exports.greenpentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 28,
+        LEVEL: 4,
     },
     LABEL: 'Green Pentagon',
     VALUE: 30000,
@@ -603,7 +603,7 @@ exports.greenpentagon = {
 exports.greentriangle = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 27,
+        LEVEL: 3,
     },
     LABEL: 'Green Triangle',
     VALUE: 7000,
@@ -637,7 +637,7 @@ exports.greentriangle = {
 exports.greensquare = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 26,
+        LEVEL: 2,
     },
     LABEL: 'Green Square',
     VALUE: 2000,
@@ -672,7 +672,7 @@ exports.greensquare = {
 exports.gem = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 25,
+        LEVEL: 1,
     },
     LABEL: 'Gem',
     VALUE: 2000,
@@ -694,7 +694,7 @@ exports.gem = {
 exports.hugeDecagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 24,
+        LEVEL: 10,
     },
     LABEL: 'Alpha Decagon',
     VALUE: 75000,
@@ -716,7 +716,7 @@ exports.hugeDecagon = {
 exports.hugeNonagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 23,
+        LEVEL: 9,
     },
     LABEL: 'Alpha Nonagon',
     VALUE: 62500,
@@ -738,7 +738,7 @@ exports.hugeNonagon = {
 exports.hugeOctagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 22,
+        LEVEL: 8,
     },
     LABEL: 'Alpha Octagon',
     VALUE: 50000,
@@ -760,7 +760,7 @@ exports.hugeOctagon = {
 exports.hugeHeptagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 21,
+        LEVEL: 7,
     },
     LABEL: 'Alpha Heptagon',
     VALUE: 37500,
@@ -782,7 +782,7 @@ exports.hugeHeptagon = {
 exports.hugeHexagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 20,
+        LEVEL: 6,
     },
     LABEL: 'Alpha Hexagon',
     VALUE: 25000,
@@ -804,7 +804,7 @@ exports.hugeHexagon = {
 exports.hugePentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 19,
+        LEVEL: 5,
     },
     LABEL: 'Alpha Pentagon',
     VALUE: 15000,
@@ -826,7 +826,7 @@ exports.hugePentagon = {
 exports.hugeTriangle = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 18,
+        LEVEL: 4,
     },
     LABEL: 'Alpha Triangle',
     VALUE: 7500,
@@ -848,7 +848,7 @@ exports.hugeTriangle = {
 exports.hugeSquare = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 17,
+        LEVEL: 3,
     },
     LABEL: 'Alpha Square',
     VALUE: 3750,
@@ -870,7 +870,7 @@ exports.hugeSquare = {
 exports.bigDecagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 16,
+        LEVEL: 9,
     },
     LABEL: 'Beta Decagon',
     VALUE: 22500,
@@ -892,7 +892,7 @@ exports.bigDecagon = {
 exports.bigNonagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 15,
+        LEVEL: 8,
     },
     LABEL: 'Beta Nonagon',
     VALUE: 18750,
@@ -914,7 +914,7 @@ exports.bigNonagon = {
 exports.bigOctagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 14,
+        LEVEL: 7,
     },
     LABEL: 'Beta Octagon',
     VALUE: 15000,
@@ -936,7 +936,7 @@ exports.bigOctagon = {
 exports.bigHeptagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 13,
+        LEVEL: 6,
     },
     LABEL: 'Beta Heptagon',
     VALUE: 11250,
@@ -958,7 +958,7 @@ exports.bigHeptagon = {
 exports.bigHexagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 12,
+        LEVEL: 5,
     },
     LABEL: 'Beta Hexagon',
     VALUE: 7500,
@@ -980,7 +980,7 @@ exports.bigHexagon = {
 exports.bigPentagon = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 11,
+        LEVEL: 4,
     },
     LABEL: 'Beta Pentagon',
     VALUE: 4500,
@@ -1002,7 +1002,7 @@ exports.bigPentagon = {
 exports.bigTriangle = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 10,
+        LEVEL: 3,
     },
     LABEL: 'Beta Triangle',
     VALUE: 2250,
@@ -1024,7 +1024,7 @@ exports.bigTriangle = {
 exports.bigSquare = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 9,
+        LEVEL: 2,
     },
     LABEL: 'Beta Square',
     VALUE: 1125,
