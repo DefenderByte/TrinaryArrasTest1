@@ -5062,7 +5062,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 420 && ran.dice(900 - timer)) {
+            if (timer > 6000 && ran.dice(16000 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 0;
                 let choice = [];
@@ -5406,7 +5406,7 @@ var maintainloop = (() => {
                         Class.rocketeer,
                         Class.director,
                         Class.overseer,
-                        ran.choose([Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.overlord, Class.fallen_overlord]),
+                        Class.overlord,
                         Class.master,
                         Class.overtrap,
                         Class.banshee,
@@ -5451,8 +5451,8 @@ var maintainloop = (() => {
                         Class.octo,
                         Class.hexatrap,
                         Class.tri,
-                        ran.choose([Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.booster, Class.fallen_booster2]),
-                        ran.choose([Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fighter, Class.fallen_fighter2]),
+                        Class.booster,
+                        Class.fighter,
                         Class.surfer,
                         Class.bomber,
                         Class.autotri,
