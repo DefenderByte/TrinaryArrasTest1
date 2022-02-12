@@ -5633,7 +5633,7 @@ var maintainloop = (() => {
                 a = Class[c.FOODPATHS[foodID.toString()][0][2]];
             }
             if (a !== {}) {
-                a.BODY.ACCELERATION = 0.015 / (a.FOOD.LEVEL + 1);
+                a.DANGER = a.FOOD.LEVEL;
             }
             return a;
         }
