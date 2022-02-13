@@ -2596,7 +2596,7 @@ class Entity {
             // If I'm a tank, call me a nameless player
             let name = (this.master.name == '') ?
                 (this.master.type === 'tank') ?
-                    "an unammed " + this.label :
+                    "an unnamed " + this.label :
                     (this.master.type === 'miniboss') ?
                         "a visiting " + this.label :
                         util.addArticle(this.label) 
@@ -5633,7 +5633,7 @@ var maintainloop = (() => {
                 a = Class[c.FOODPATHS[foodID.toString()][0][2]];
             }
             if (a !== {}) {
-                a.DANGER = a.FOOD.LEVEL;
+                a.RESIST = a.FOOD.LEVEL;
             }
             return a;
         }
