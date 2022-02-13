@@ -6064,18 +6064,75 @@ exports.miniboss2 = {
             DAMAGE: base.DAMAGE * 2.5,
         },
     };
+    exports.espraygun = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Flank Machine',
+        COLOR: 5,
+        DANGER: 7,
+        CONTROLLERS: ['reversespin'],
+        GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.mach, g.flank]),
+                TYPE: exports.bullet,
+                AUTOFIRE: true,
+            }, }, {
+            POSITION: [    12,     10,     1.4,     8,      0,     120,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.mach, g.flank]),
+                TYPE: exports.bullet,
+                AUTOFIRE: true,
+            }, }, {
+            POSITION: [    12,     10,     1.4,     8,      0,     240,     0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.mach, g.flank]),
+                TYPE: exports.bullet,
+                AUTOFIRE: true,
+            }, },
+        ],
+    };
+            exports.eSpraySpray = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sprayer',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                BODY: { FOV: 3 },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  23,     7,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.gunner, g.low_power, g.mach, g.fast, g.no_recoil]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                    POSITION: [  12,    10,     1.4,     8,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.mach, g.fast, g.no_recoil]),
+                        TYPE: exports.bullet,
+                    }, },
+                ],
+            };
         exports.elite_sprayer = { 
             PARENT: [exports.elite],
             LABEL: 'Harcadium Sprayer',
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  14,     6,      0,     180,     190, 0], 
-                    TYPE: [exports.spray, { COLOR: 5, CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], }],
+                POSITION: [   7,     8,     -7,      60,    120, 0], 
+                    TYPE: exports.eSpraySpray,
                         }, {
-                POSITION: [  14,     6,      0,      60,    190, 0], 
-                    TYPE: [exports.spray, { COLOR: 5, CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], }],
+                POSITION: [   7,     8,      7,      60,    120, 0], 
+                    TYPE: exports.eSpraySpray,
                         }, {
-                POSITION: [  14,     6,      0,     -60,    190, 0], 
-                    TYPE: [exports.spray, { COLOR: 5, CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], }],
+                POSITION: [   7,     8,     -7,     180,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     8,      7,     180,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     8,     -7,     300,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     8,      7,     300,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     0,      0,     180,    360, 1], 
+                    TYPE: exports.espraygun,
                         },
             ],
         };
@@ -6083,14 +6140,26 @@ exports.miniboss2 = {
             PARENT: [exports.elite2],
             LABEL: 'Harcadium Sprayer',
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  14,     6,      0,     180,     190, 0], 
-                    TYPE: [exports.spray, { COLOR: 5, CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], }],
+                POSITION: [   7,     8,     -7,      60,    120, 0], 
+                    TYPE: exports.eSpraySpray,
                         }, {
-                POSITION: [  14,     6,      0,      60,    190, 0], 
-                    TYPE: [exports.spray, { COLOR: 5, CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], }],
+                POSITION: [   7,     8,      7,      60,    120, 0], 
+                    TYPE: exports.eSpraySpray,
                         }, {
-                POSITION: [  14,     6,      0,     -60,    190, 0], 
-                    TYPE: [exports.spray, { COLOR: 5, CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], }],
+                POSITION: [   7,     8,     -7,     180,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     8,      7,     180,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     8,     -7,     300,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     8,      7,     300,    120, 0], 
+                    TYPE: exports.eSpraySpray,
+                        }, {
+                POSITION: [   7,     0,      0,     180,    360, 1], 
+                    TYPE: exports.espraygun,
                         },
             ],
         };
@@ -6178,7 +6247,7 @@ exports.miniboss2 = {
             LABEL: 'Castle Cassowary',
             COLOR: 17,
             SHAPE: 6,
-            SIZE: 12,
+            SIZE: 28,
             VALUE: 250000,
             BODY: {
                 FOV: 1.3,
@@ -6276,7 +6345,7 @@ exports.miniboss2 = {
             LABEL: 'Castle Cassowary',
             COLOR: 17,
             SHAPE: 6,
-            SIZE: 12,
+            SIZE: 28,
             VALUE: 250000,
             BODY: {
                 FOV: 1.3,
@@ -30452,6 +30521,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship, exports.bulwark];
             exports.tripletwin.UPGRADES_TIER_4 = [exports.triplecruise];
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst, exports.bentBlast];
+            exports.penta.UPGRADES_TIER_4 = [exports.quint];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
         exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc, exports.battery];
         exports.twinSnipe.UPGRADES_TIER_3 = [exports.dual, exports.sounder];
