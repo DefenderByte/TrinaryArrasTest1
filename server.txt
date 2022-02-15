@@ -5128,19 +5128,19 @@ var maintainloop = (() => {
                         sockets.broadcast('Influx Detected...');
                         break;
                     case 12: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, Class.mk1, Class.mk2, Class.mk3], 1, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, ran.choose([Class.mk1, Class.mk1, Class.mk1, Class.mk1, ran.choose([Class.mk2, Class.mk2, Class.mk2, Class.mk2, ran.choose([Class.mk3, Class.mk3, Class.mk3, Class.mk3, Class.mk4])])])], 1, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 13: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, Class.mk1, Class.mk2, Class.mk3], 2, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, ran.choose([Class.mk1, Class.mk1, Class.mk1, Class.mk1, ran.choose([Class.mk2, Class.mk2, Class.mk2, Class.mk2, ran.choose([Class.mk3, Class.mk3, Class.mk3, Class.mk3, Class.mk4])])])], 2, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 14: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, Class.mk1, Class.mk2, Class.mk3], 3, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, ran.choose([Class.mk1, Class.mk1, Class.mk1, Class.mk1, ran.choose([Class.mk2, Class.mk2, Class.mk2, Class.mk2, ran.choose([Class.mk3, Class.mk3, Class.mk3, Class.mk3, Class.mk4])])])], 3, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 15: 
-                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, Class.mk1, Class.mk2, Class.mk3], 4, 'woomy', 'nest']; 
+                        choice = [[ran.choose([Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, Class.defend, ran.choose([Class.custodian])]), Class.heptagonBoss, Class.guardian, ran.choose([Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.ai_summondrive]), Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, Class.summon, ran.choose([Class.madDummy])]), Class.nestkeeper, ran.choose([Class.mk1, Class.mk1, Class.mk1, Class.mk1, ran.choose([Class.mk2, Class.mk2, Class.mk2, Class.mk2, ran.choose([Class.mk3, Class.mk3, Class.mk3, Class.mk3, Class.mk4])])])], 4, 'woomy', 'nest']; 
                         sockets.broadcast('A strange trembling...');
                         break;
                     case 16: 
@@ -5589,7 +5589,10 @@ var maintainloop = (() => {
                         Class.grief,
                         Class.nightseeker,
                         Class.sounder,
-                        Class.fielder
+                        Class.fielder,
+                        Class.hybridspread,
+                        Class.boxer,
+                        Class.minimach
                       ])
                     );
                     o.name += ran.chooseBotName();
