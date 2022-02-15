@@ -30317,6 +30317,750 @@ exports.ultra_cannon2 = {
                 ],
             };
 
+            exports.hybridspread = makeHybrid(exports.minispread, "Spreadguard");
+
+        exports.boxer = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Boxer',
+            DANGER: 6,
+            BODY: {
+                ACCELERATION: base.ACCEL * 0.8,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  20,    12,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.double]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,     5.5,    180,     0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  20,     8,      1,      0,    -5.5,    180,    0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
+                        TYPE: exports.bullet,
+                    }, }, 
+            ],
+        };
+
+            exports.minimach = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Flooder',
+                DANGER: 7,
+                BODY: {
+                    FOV: 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,     8,     1.4,     8,      0,      0,      0,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.mach]),
+                            TYPE: exports.bullet,
+                        }, }, { 
+                    POSITION: [  14,     8,     1.4,     4,      0,      0,     1/3, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.mach]),
+                            TYPE: exports.bullet,
+                        }, }, { 
+                    POSITION: [  14,     8,     1.4,     0,      0,      0,     2/3, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.mach]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
+
+            exports.mk4MinionGun = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Weird Assassin',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                DANGER: 7,
+                BODY: {
+                    FOV: 1.5,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  35,     2,      1,      0,      0,      0,      0,   ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.hunter, g.hunter2, g.hunter2, g.preda]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  31,     6,      1,      0,      0,      0,     0.15, ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.hunter, g.hunter2, g.preda]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  28,     10,     1,      0,      0,      0,     0.3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.hunter, g.preda]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   9,     10,   -1.75,    5,      0,      0,      0,   ],
+                        },
+                ],
+            };
+            exports.mk4Minion = {
+                PARENT: [exports.minion],
+                LABEL: 'Mega Minion',
+                COLOR: 13,
+                SHAPE: 4,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.75,
+                    HEALTH: 25,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  24,    5.1,     1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.flank]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 4.5,    5.1,     -2,     8,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [  11,     12,    1.45,    8,      0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.flank, g.tri, g.thruster]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 5.5,     10,     4,      90,    180,   0, ], 
+                        TYPE: [exports.auto3gun],
+                        }, {
+                    POSITION: [ 5.5,     10,    -4,      90,    180,   0, ], 
+                        TYPE: [exports.auto3gun],
+                        }, {
+                    POSITION: [ 5.5,     10,     4,     -90,    180,   0, ], 
+                        TYPE: [exports.auto3gun],
+                        }, {
+                    POSITION: [ 5.5,     10,    -4,     -90,    180,   0, ], 
+                        TYPE: [exports.auto3gun],
+                        }, {
+                    POSITION: [  11,     0,      0,     180,    360,   1, ], 
+                        TYPE: [exports.mk4MinionGun],
+                        },
+                ],
+            };
+            exports.mk4OPQuint = {
+                PARENT: [exports.genericTank],
+                LABEL: 'OP Quintuplet',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                DANGER: 7,
+                COLOR: 13,
+                BODY: {
+                    FOV: 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,   3.333,    1,      0,   -1.667,    0,     2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,    1.667,    0,     2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,     -1,      0,     1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,      1,      0,     1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,   3.333,    1,      0,      0,      0,      0,   ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,   -1.667,    90,    2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,    1.667,    90,    2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,     -1,      90,    1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,      1,      90,    1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,   3.333,    1,      0,      0,      90,     0,   ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,   -1.667,   180,    2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,    1.667,   180,    2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,     -1,     180,    1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,      1,     180,    1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,   3.333,    1,      0,      0,     180,     0,   ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,   -1.667,   270,    2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  14,   3.333,    1,      0,    1.667,   270,    2/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,     -1,     270,    1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [ 15.5,  3.333,    1,      0,      1,     270,    1/3,  ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  17,   3.333,    1,      0,      0,     270,     0,   ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet, g.quint, g.flank, g.flank, g.single]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [   6,     9,    -1.75,    5,      0,      0,      0,   ],
+                        }, {
+                    POSITION: [   6,     9,    -1.75,    5,      0,      90,     0,   ],
+                        }, {
+                    POSITION: [   6,     9,    -1.75,    5,      0,     180,     0,   ],
+                        }, {
+                    POSITION: [   6,     9,    -1.75,    5,      0,     270,     0,   ],
+                        },
+                ],
+            };
+            exports.mk4Sounder = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Sounder',
+                DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                BODY: {
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [ 16.5,    9,     0.6,     7,      5,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.sniper]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [ 16.5,    9,     0.6,     7,     -5,      0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.sniper]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+            };
+            exports.mk4MegaCruise = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Frigate',
+                DANGER: 7,
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                BODY: {
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  11,    12,     0.65,    6,      3,     25,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.pound]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, }, {
+                    POSITION: [  11,    12,     0.65,    6,     -3,     -25,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.pound]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,
+                        }, },
+                ],
+            };
+            exports.mk4Minitrap = {
+                PARENT: [exports.genericTank],
+                DANGER: 6,
+                LABEL: 'Barricade',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                BODY: {
+                    FOV: 1.15,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
+                    POSITION: [  24,     8,      1,      0,      0,      0,      0, ], 
+                            }, {
+                    POSITION: [   4,     8,     1.3,     22,     0,      0,      0, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.barricade]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, { 
+                    POSITION: [   4,     8,     1.3,     18,     0,      0,    0.333, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.barricade]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, }, { 
+                    POSITION: [   4,     8,     1.3,     14,     0,      0,    0.667, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.barricade]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                ],
+            };
+            exports.mk4Spawner = {
+                PARENT: [exports.genericTank],
+                LABEL: '',
+                CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+                DANGER: 7,
+                MAX_CHILDREN: 1,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   4,     14,     1,      6,      0,      0,      0,   ],
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory, g.pound, g.double_size]),
+                            TYPE: exports.mk4Minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                        }, },
+                ],
+            };
+            exports.mk4 = {
+                PARENT: [exports.miniboss],
+                LABEL: 'MK-4',
+                COLOR: 13,
+                SHAPE: 4,
+                SIZE: 56,
+                VALUE: 750000,
+                STAT_NAMES: 6,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.3,
+                    HEALTH: 100,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  11,   3.35,     1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [  11,   3.35,     1,      0,      0,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [  11,   3.35,     1,      0,      0,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [  11,   3.35,     1,      0,      0,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,     270,     0,   ], 
+                        },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 3.5,    12.5,    0,      45,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    12.5,    0,     135,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    12.5,    0,     225,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    12.5,    0,     315,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,      45,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,     135,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,     225,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,     315,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,      0,     360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,      90,    360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,     180,    360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,     270,    360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 6.5,     0,      0,      0,     360,   1, ], 
+                        TYPE: [exports.mk4OPQuint],
+                        }, {
+                    POSITION: [ 7.5,     0,      2,      0,     360,   0, ], 
+                        TYPE: [exports.mk4Spawner],
+                        }, {
+                    POSITION: [ 7.5,     0,     -2,     120,    360,   0, ], 
+                        TYPE: [exports.mk4Spawner],
+                        }, {
+                    POSITION: [ 7.5,     0,      2,     240,    360,   0, ], 
+                        TYPE: [exports.mk4Spawner],
+                        },
+                ],
+            };
+            exports.mk4_nonauto = {
+                PARENT: [exports.miniboss2],
+                LABEL: 'MK-4',
+                COLOR: 13,
+                SHAPE: 4,
+                SIZE: 56,
+                VALUE: 750000,
+                STAT_NAMES: 6,
+                BODY: {
+                    FOV: 1.5,
+                    SPEED: base.SPEED * 0.3,
+                    HEALTH: 100,
+                    SHIELD: 1,
+                    REGEN: 0.1,
+                    DAMAGE: 3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  11,   3.35,     1,      0,      0,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [  11,   3.35,     1,      0,      0,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [  11,   3.35,     1,      0,      0,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [  11,   3.35,     1,      0,      0,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.6,   3.35,    1.25,    11,     0,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.hexatrap]),
+                            TYPE: exports.block,
+                        }, }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,      0,      0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,      90,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,      90,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,     180,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,     180,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,    5,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,    5,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,      5,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.93,   2.2,     1,     10.5,   -5,     270,     0,   ], 
+                        }, {
+                    POSITION: [ 0.4,   2.85,    1.01,   11.5,   -5,     270,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.minion,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            MAX_CHILDREN: 1,
+                        }, }, {
+                    POSITION: [ 2.75,   2.8,    1.01,    8,     -5,     270,     0,   ], 
+                        },
+                ],
+                TURRETS: [{
+                    /*********  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [ 3.5,    12.5,    0,      45,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    12.5,    0,     135,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    12.5,    0,     225,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    12.5,    0,     315,    180,   0, ], 
+                        TYPE: [exports.mk4Minitrap],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,      45,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,     135,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,     225,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,    9.1,     0,     315,    360,   1, ], 
+                        TYPE: [exports.mk4Sounder],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,      0,     360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,      90,    360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,     180,    360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 3.5,   6.435,    0,     270,    360,   1, ], 
+                        TYPE: [exports.mk4MegaCruise],
+                        }, {
+                    POSITION: [ 6.5,     0,      0,      0,     360,   1, ], 
+                        TYPE: [exports.mk4OPQuint],
+                        }, {
+                    POSITION: [ 7.5,     0,      2,      0,     360,   0, ], 
+                        TYPE: [exports.mk4Spawner],
+                        }, {
+                    POSITION: [ 7.5,     0,     -2,     120,    360,   0, ], 
+                        TYPE: [exports.mk4Spawner],
+                        }, {
+                    POSITION: [ 7.5,     0,      2,     240,    360,   0, ], 
+                        TYPE: [exports.mk4Spawner],
+                        },
+                ],
+            };
+
 exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
@@ -30492,7 +31236,7 @@ exports.botT3_E = {
             exports.devSentries.UPGRADES_TIER_4 = [exports.sentrySwarm2, exports.sentryGun2, exports.sentryTrap2, exports.sentrySnipe2, exports.guardian_lite2, exports.crasher_dasher2, exports.crash_fighter2, exports.caltrop_fighter2, exports.baby_leviathan2, exports.penta_sentry2, exports.nestdefend_krios2, exports.rareSentrySwarm2, exports.rareSentryGun2, exports.rareSentryTrap2, exports.devSentries2];
             exports.devSentries2.UPGRADES_TIER_4 = [exports.nestdefend_tethys2, exports.defend_lite2, exports.triangleCascade2, exports.nestdefend_mnemosyne2, exports.eDestroyLite2, exports.eGunnerLite2, exports.sentryMultitool2, exports.sentryHoming2, exports.angryDummy2, exports.ultra_cannon2];
 
-            exports.devXK.UPGRADES_TIER_4 = [exports.mk1_nonauto, exports.mk2_nonauto, exports.mk3_nonauto];
+            exports.devXK.UPGRADES_TIER_4 = [exports.mk1_nonauto, exports.mk2_nonauto, exports.mk3_nonauto, exports.mk4_nonauto];
 
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0, exports.liberator, exports.cvsTrsh];
             exports.cvsTrsh.UPGRADES_TIER_4 = [exports.pentaWTF, exports.penIsShot, exports.awesomeship2];
@@ -30517,7 +31261,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.landmine.UPGRADES_TIER_4 = [exports.weirdspike];
         exports.irritate.UPGRADES_TIER_3 = [exports.jump];
 
-    exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe, exports.twinHoming];
+    exports.twin.UPGRADES_TIER_2 = [exports.gunner, exports.double, exports.bent, exports.cruiser, exports.hexa, exports.twinceptioner, exports.twinSnipe, exports.twinHoming, exports.boxer];
         exports.double.UPGRADES_TIER_3 = [exports.autodouble, exports.tripletwin, exports.split, exports.bentdouble, exports.battleship, exports.bulwark];
             exports.tripletwin.UPGRADES_TIER_4 = [exports.triplecruise];
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst, exports.bentBlast];
@@ -30544,9 +31288,9 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
 
     exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini, exports.machceptioner, exports.blast, exports.gatling, exports.machHoming];
         exports.spray.UPGRADES_TIER_3 = [exports.volcano];
-        exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1, exports.hotshot, exports.miniassass];
+        exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1, exports.hotshot, exports.miniassass, exports.minimach];
         exports.blast.UPGRADES_TIER_3 = [exports.hotshot, exports.bentBlast, exports.dualBlast, exports.halfNHalf, exports.dissuate];
-        exports.gatling.UPGRADES_TIER_3 = [exports.charge, exports.halfNHalf];
+        exports.gatling.UPGRADES_TIER_3 = [exports.charge, exports.halfNHalf, exports.minimach];
 
     exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.flankceptioner, exports.flankHoming];
         exports.flank.UPGRADES_TIER_3 = [exports.tripletwin];
@@ -30582,7 +31326,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.machHoming.UPGRADES_TIER_3 = [exports.twinmachHoming, exports.flankmachHoming];
         exports.flankHoming.UPGRADES_TIER_3 = [exports.flankmachHoming];
 
-    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread, exports.mega_cloak];
+    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread, exports.mega_cloak, exports.boxer];
         exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam, exports.shell, exports.flankDestroy, exports.grief];
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
@@ -30595,7 +31339,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.flankPound.UPGRADES_TIER_3 = [exports.flankArty, exports.quadPound, exports.flankDestroy];
             exports.quadPound.UPGRADES_TIER_4 = [exports.hexaDestroy];
             exports.flankDestroy.UPGRADES_TIER_4 = [exports.hexaDestroy];
-        exports.minispread.UPGRADES_TIER_3 = [exports.spread, exports.splitPellet, exports.autospread];
+        exports.minispread.UPGRADES_TIER_3 = [exports.spread, exports.splitPellet, exports.autospread, exports.hybridspread];
 
     exports.cloak.UPGRADES_TIER_2 = [exports.minimine, exports.manager, exports.mega_cloak];
         exports.cloak.UPGRADES_TIER_3 = [exports.stalker];
