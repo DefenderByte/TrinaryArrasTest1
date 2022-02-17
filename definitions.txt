@@ -30341,9 +30341,48 @@ exports.ultra_cannon2 = {
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.double]),
                         TYPE: exports.bullet,
-                    }, }, 
+                    }, },
             ],
         };
+            exports.pyrexMissile = {
+                PARENT: [exports.missile],
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  14,     6,      1,      0,     5.5,    180,     0,   ], 
+                        PROPERTIES: {
+                            AUTOFIRE: true,
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.skim, g.double_reload, g.low_power, g.much_more_recoil, g.more_speed, g.more_speed]),
+                            TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                            STAT_CALCULATOR: gunCalcNames.thruster,
+                        }, }, {
+                    POSITION: [  14,     6,      1,      0,    -5.5,    180,    0.5,  ], 
+                        PROPERTIES: {
+                            AUTOFIRE: true,
+                            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.skim, g.double_reload, g.low_power, g.much_more_recoil, g.more_speed, g.more_speed]),
+                            TYPE: [exports.bullet, { PERSISTS_AFTER_DEATH: true, }],
+                            STAT_CALCULATOR: gunCalcNames.thruster,
+                        }, },
+                ],
+            };
+            exports.pyrexCannon = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Pyrex Cannon',
+                DANGER: 7,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.8,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,    12,      1,      0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.skim, g.double]),
+                            TYPE: exports.pyrexMissile,
+                            STAT_CALCULATOR: gunCalcNames.sustained,
+                        }, }, {
+                    POSITION: [  14,     6,      1,      0,     5.5,    180,     0,   ], 
+                        }, {
+                    POSITION: [  14,     6,      1,      0,    -5.5,    180,    0.5,  ], 
+                        },
+                ],
+            };
 
             exports.minimach = {
                 PARENT: [exports.genericTank],
