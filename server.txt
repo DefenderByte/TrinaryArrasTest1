@@ -5592,7 +5592,16 @@ var maintainloop = (() => {
                         Class.fielder,
                         Class.hybridspread,
                         Class.boxer,
-                        Class.minimach
+                        Class.minimach,
+                        Class.megamach,
+                        Class.howitze,
+                        Class.scale,
+                        Class.overdread,
+                        Class.trapfact,
+                        Class.foghorn,
+                        Class.cartridge,
+                        Class.trapSpread,
+                        Class.hewn_gunner
                       ])
                     );
                     o.name += ran.chooseBotName();
