@@ -31061,6 +31061,18 @@ exports.ultra_cannon2 = {
                 ],
             };
 
+            exports.megamach = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Mega Machine',
+                DANGER: 6,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  20,     12,    1.2,     0,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.pound]),
+                            TYPE: exports.bullet,
+                        }, },
+                ],
+            };
             exports.howitze = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Howitzer',
@@ -31560,7 +31572,7 @@ exports.botT3_E = {
             exports.devMisc.UPGRADES_TIER_4 = [exports.mothership2, exports.ball, exports.op_anni, exports.yaeyasnywbf, exports.gttsu0, exports.liberator, exports.cvsTrsh];
             exports.cvsTrsh.UPGRADES_TIER_4 = [exports.pentaWTF, exports.penIsShot, exports.awesomeship2];
 
-            exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.skimmer, exports.musketeer, exports.clover, exports.corrode];
+            exports.testbedTanks.UPGRADES_TIER_4 = [exports.rocketeer, exports.skimmer, exports.musketeer, exports.clover, exports.corrode, exports.foghorn];
 
             exports.testbedRemoved.UPGRADES_TIER_4 = [exports.fielder];
 
@@ -31586,7 +31598,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.bent.UPGRADES_TIER_3 = [exports.bentdouble, exports.penta, exports.benthybrid, exports.triple, exports.spread, exports.bentHoming, exports.sunburst, exports.bentBlast];
             exports.penta.UPGRADES_TIER_4 = [exports.quint];
             exports.triple.UPGRADES_TIER_4 = [exports.quint];
-        exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc, exports.battery];
+        exports.gunner.UPGRADES_TIER_3 = [exports.machinegunner, exports.autogunner, exports.nailgun, exports.overgunner, exports.auto4, exports.guntrap, exports.hurricane, exports.vulc, exports.battery, exports.scale, exports.hewn_gunner];
         exports.twinSnipe.UPGRADES_TIER_3 = [exports.dual, exports.sounder];
 
     exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.bore, exports.snipeceptioner, exports.twinSnipe, exports.gatling];
@@ -31597,15 +31609,15 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
         exports.hunter.UPGRADES_TIER_3 = [exports.dual, exports.preda, exports.poach, exports.shift, exports.huntAss, exports.nightseeker];
 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.manager, exports.spawn];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.master, exports.overtrap, exports.autoover, exports.overgunner, exports.battleship, exports.manageseer];
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.master, exports.overtrap, exports.autoover, exports.overgunner, exports.battleship, exports.manageseer, exports.overdread];
         exports.underseer.UPGRADES_TIER_3 = [exports.autounderseer, exports.necromancer];
-        exports.cruiser.UPGRADES_TIER_3 = [exports.autocruiser, exports.battleship, exports.carrier, exports.fortress, exports.megaCruise, exports.sounder];
+        exports.cruiser.UPGRADES_TIER_3 = [exports.autocruiser, exports.battleship, exports.carrier, exports.fortress, exports.megaCruise, exports.sounder, exports.overdread];
             exports.autocruiser.UPGRADES_TIER_4 = [exports.sandstorm];
             exports.battleship.UPGRADES_TIER_4 = [exports.sandstorm, exports.triplecruise];
         exports.manager.UPGRADES_TIER_3 = [exports.manageseer];
-        exports.spawn.UPGRADES_TIER_3 = [exports.factory, exports.snipeFact, exports.machineFact];
+        exports.spawn.UPGRADES_TIER_3 = [exports.factory, exports.snipeFact, exports.machineFact, exports.trapfact];
 
-    exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini, exports.machceptioner, exports.blast, exports.gatling, exports.machHoming];
+    exports.machine.UPGRADES_TIER_2 = [exports.gunner, exports.automachine, exports.spray, exports.mini, exports.machceptioner, exports.blast, exports.gatling, exports.machHoming, exports.megamach];
         exports.spray.UPGRADES_TIER_3 = [exports.volcano];
         exports.mini.UPGRADES_TIER_3 = [exports.nailgun, exports.automini, exports.stream, exports.hybridmini, exports.minitrap, exports.mini1, exports.hotshot, exports.miniassass, exports.minimach];
         exports.blast.UPGRADES_TIER_3 = [exports.hotshot, exports.bentBlast, exports.dualBlast, exports.halfNHalf, exports.dissuate];
@@ -31622,7 +31634,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.guntrap.UPGRADES_TIER_4 = [exports.eGunner];
 
     exports.pellet.UPGRADES_TIER_2 = [exports.gunner, exports.cruiser, exports.hewn_pellet, exports.sail, exports.bore, exports.punt, exports.pelletceptioner];
-        exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier, exports.sunburst, exports.splitPellet];
+        exports.hewn_pellet.UPGRADES_TIER_3 = [exports.carrier, exports.sunburst, exports.splitPellet, exports.hewn_gunner];
         exports.bore.UPGRADES_TIER_3 = [exports.nailgun, exports.screw_punt];
 
     exports.inceptioner.UPGRADES_TIER_2 = [exports.ceptionist, exports.singleceptioner, exports.twinceptioner, exports.snipeceptioner, exports.machceptioner, exports.flankceptioner, exports.pelletceptioner];
@@ -31641,24 +31653,25 @@ exports.basic.UPGRADES_TIER_1 = [exports.single, exports.pummeler, exports.twin,
             exports.pelletceptionist.UPGRADES_TIER_4 = [exports.pelletceptionist2];
             
     exports.homing.UPGRADES_TIER_2 = [exports.homingSingle, exports.twinHoming, exports.machHoming, exports.flankHoming];
+        exports.homing.UPGRADES_TIER_3 = [exports.cartridge];
         exports.twinHoming.UPGRADES_TIER_3 = [exports.bentHoming, exports.twinmachHoming];
         exports.machHoming.UPGRADES_TIER_3 = [exports.twinmachHoming, exports.flankmachHoming];
         exports.flankHoming.UPGRADES_TIER_3 = [exports.flankmachHoming];
 
-    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread, exports.mega_cloak, exports.boxer];
+    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery, exports.blast, exports.flankPound, exports.minispread, exports.mega_cloak, exports.boxer, exports.megamach];
         exports.destroy.UPGRADES_TIER_3 = [exports.autodestroy, exports.anni, exports.hiveshooter, exports.hybrid, exports.shotgun, exports.steam, exports.shell, exports.flankDestroy, exports.grief];
             exports.hybrid.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.autodestroy.UPGRADES_TIER_4 = [exports.eDestroy];
             exports.steam.UPGRADES_TIER_4 = [exports.backbone0];
         exports.builder.UPGRADES_TIER_3 = [exports.engineer, exports.construct, exports.autobuilder, exports.boomer, exports.twinbuilder];
             exports.boomer.UPGRADES_TIER_4 = [exports.bentboomer];
-        exports.artillery.UPGRADES_TIER_3 = [exports.autoarty, exports.mortar, exports.gunnary, exports.shell, exports.flankArty];
+        exports.artillery.UPGRADES_TIER_3 = [exports.autoarty, exports.mortar, exports.gunnary, exports.shell, exports.flankArty, exports.howitze];
             exports.artillery.UPGRADES_TIER_4 = [exports.artycruise];
             exports.skimmer.UPGRADES_TIER_4 = [exports.demoman];
         exports.flankPound.UPGRADES_TIER_3 = [exports.flankArty, exports.quadPound, exports.flankDestroy];
             exports.quadPound.UPGRADES_TIER_4 = [exports.hexaDestroy];
             exports.flankDestroy.UPGRADES_TIER_4 = [exports.hexaDestroy];
-        exports.minispread.UPGRADES_TIER_3 = [exports.spread, exports.splitPellet, exports.autospread, exports.hybridspread];
+        exports.minispread.UPGRADES_TIER_3 = [exports.spread, exports.splitPellet, exports.autospread, exports.hybridspread, exports.scale, exports.trapSpread];
 
     exports.cloak.UPGRADES_TIER_2 = [exports.minimine, exports.manager, exports.mega_cloak];
         exports.cloak.UPGRADES_TIER_3 = [exports.stalker];
